@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -69,11 +70,11 @@ extends class_0229 {
         this.IllIIlllllllIIlIIlIIIIlIl.lIllllIIlIIIlIllllllIIIll(this.IlIlIIlllIIlIllIIIlllllIl / 2 + 4);
         this.IllIIlllllllIIlIIlIIIIlIl.lIlllIlllIIIIlIIlllIllIII(7, 8);
         this.IIIllIllIIlIlIlIlIllllIIl = new class_0598(this.lIlIllIIlIIlIIlIIlIIlIIll, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 204, this.lIIlIIIIIlIlllIlIIlIlIlll - 70, 200, 18);
-        this.lIIIIlIlIIlllllIIllIIlIII = new class_1249(100, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 4, this.lIIlIIIIIlIlllIlIIlIlIlll - 71, 114, 20, "Clear Glass: " + (String) LunarClient.getInstance().getSettingsManager().IIIIlIllIlIIlIIlIllIlIlll.lIlllIlllIIIIlIIlllIllIII());
+        this.lIIIIlIlIIlllllIIllIIlIII = new class_1249(100, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 4, this.lIIlIIIIIlIlllIlIIlIlIlll - 71, 114, 20, "Clear Glass: " + (String) LunarClient.getInstance().getSettingsManager().rsClearGlass.getValue());
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(this.lIIIIlIlIIlllllIIllIIlIII);
-        this.lIlllIlllIlIIIIlllIlIlIIl = new class_1249(101, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 118, this.lIIlIIIIIlIlllIlIIlIlIlll - 71, 86, 20, "Red String: " + ((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIllllllllIIIlIlI.lIlllIlllIIIIlIIlllIllIII() != false ? "ON" : "OFF"));
+        this.lIlllIlllIlIIIIlllIlIlIIl = new class_1249(101, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 118, this.lIIlIIIIIlIlllIlIIlIlIlll - 71, 86, 20, "Red String: " + ((Boolean) LunarClient.getInstance().getSettingsManager().rsRedString.getValue() != false ? "ON" : "OFF"));
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(this.lIlllIlllIlIIIIlllIlIlIIl);
-        this.IlIIlllllIIlIlIlllllIllll = new class_1249(102, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 4, this.lIIlIIIIIlIlllIlIIlIlIlll - 91, 200, 20, "Background: " + ((Boolean) LunarClient.getInstance().getSettingsManager().llllIIIIlIIIlIIIIIIlIllll.lIlllIlllIIIIlIIlllIllIII() != false ? "Transparent" : "Normal"));
+        this.IlIIlllllIIlIlIlllllIllll = new class_1249(102, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 4, this.lIIlIIIIIlIlllIlIIlIlIlll - 91, 200, 20, "Background: " + ((Boolean) LunarClient.getInstance().getSettingsManager().rsTransparentBg.getValue() != false ? "Transparent" : "Normal"));
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(this.IlIIlllllIIlIlIlllllIllll);
     }
 
@@ -138,28 +139,28 @@ extends class_0229 {
         if (class_11972.IllIIIllIIIIlIlIlIllIIlll) {
             Object object;
             if (class_11972 == this.lIIIIlIlIIlllllIIllIIlIII) {
-                object = LunarClient.getInstance().getSettingsManager().IIIIlIllIlIIlIIlIllIlIlll;
-                for (int i = 0; i < ((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl()).length; ++i) {
-                    if (!((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl())[i].toLowerCase().equalsIgnoreCase((String)((class_1609)object).lIlllIlllIIIIlIIlllIllIII())) continue;
-                    if (i + 1 >= ((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl()).length) {
-                        ((class_1609)object).lllIlIIlIIIlIlIIIllIlllIl(((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl())[0]);
+                object = LunarClient.getInstance().getSettingsManager().rsClearGlass;
+                for (int i = 0; i < ((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl()).length; ++i) {
+                    if (!((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl())[i].toLowerCase().equalsIgnoreCase((String)((Setting)object).getValue())) continue;
+                    if (i + 1 >= ((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl()).length) {
+                        ((Setting)object).setValue(((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl())[0]);
                         break;
                     }
-                    ((class_1609)object).lllIlIIlIIIlIlIIIllIlllIl(((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl())[i + 1]);
-                    ((class_1609)object).lllIlIIlIIIlIlIIIllIlllIl(((String[])((class_1609)object).IllIIlllllllIIlIIlIIIIlIl())[i + 1]);
+                    ((Setting)object).setValue(((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl())[i + 1]);
+                    ((Setting)object).setValue(((String[])((Setting)object).IllIIlllllllIIlIIlIIIIlIl())[i + 1]);
                     break;
                 }
-                this.lIIIIlIlIIlllllIIllIIlIII.IllIIlllllllIIlIIlIIIIlIl = "Clear Glass: " + (String)((class_1609)object).lIlllIlllIIIIlIIlllIllIII();
+                this.lIIIIlIlIIlllllIIllIIlIII.IllIIlllllllIIlIIlIIIIlIl = "Clear Glass: " + (String)((Setting)object).getValue();
                 this.lllllIlllIIllIlIIlIIIllII.IllIIIllIIIIlIlIlIllIIlll.lllIIIllIIIIlllIlIIllIIll();
             }
             if (class_11972 == this.lIlllIlllIlIIIIlllIlIlIIl) {
-                ((class_1609)object).lllIlIIlIIIlIlIIIllIlllIl((Boolean)((class_1609)(object = LunarClient.getInstance().getSettingsManager().IlIlIIlllIllllllllIIIlIlI)).lIlllIlllIIIIlIIlllIllIII() == false);
-                this.lIlllIlllIlIIIIlllIlIlIIl.IllIIlllllllIIlIIlIIIIlIl = "Red String: " + ((Boolean)((class_1609)object).lIlllIlllIIIIlIIlllIllIII() != false ? "ON" : "OFF");
+                ((Setting)object).setValue((Boolean)((Setting)(object = LunarClient.getInstance().getSettingsManager().rsRedString)).getValue() == false);
+                this.lIlllIlllIlIIIIlllIlIlIIl.IllIIlllllllIIlIIlIIIIlIl = "Red String: " + ((Boolean)((Setting)object).getValue() != false ? "ON" : "OFF");
                 this.lllllIlllIIllIlIIlIIIllII.IllIIIllIIIIlIlIlIllIIlll.lllIIIllIIIIlllIlIIllIIll();
             }
             if (class_11972 == this.IlIIlllllIIlIlIlllllIllll) {
-                ((class_1609)object).lllIlIIlIIIlIlIIIllIlllIl((Boolean)((class_1609)(object = LunarClient.getInstance().getSettingsManager().llllIIIIlIIIlIIIIIIlIllll)).lIlllIlllIIIIlIIlllIllIII() == false);
-                this.IlIIlllllIIlIlIlllllIllll.IllIIlllllllIIlIIlIIIIlIl = "Background: " + ((Boolean)((class_1609)object).lIlllIlllIIIIlIIlllIllIII() != false ? "TRANSPARENT" : "NORMAL");
+                ((Setting)object).setValue((Boolean)((Setting)(object = LunarClient.getInstance().getSettingsManager().rsTransparentBg)).getValue() == false);
+                this.IlIIlllllIIlIlIlllllIllll.IllIIlllllllIIlIIlIIIIlIl = "Background: " + ((Boolean)((Setting)object).getValue() != false ? "TRANSPARENT" : "NORMAL");
                 this.lllllIlllIIllIlIIlIIIllII.IllIIIllIIIIlIlIlIllIIlll.lllIIIllIIIIlllIlIIllIIll();
             }
             if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 2) {
@@ -239,7 +240,7 @@ extends class_0229 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, float f) {
-        if (this.lllllIlllIIllIlIIlIIIllII.theWorld != null && ((Boolean) LunarClient.getInstance().getSettingsManager().llllIIIIlIIIlIIIIIIlIllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (this.lllllIlllIIllIlIIlIIIllII.theWorld != null && ((Boolean) LunarClient.getInstance().getSettingsManager().rsTransparentBg.getValue()).booleanValue()) {
             this.llIIlIllIllllIlIIIIlIIlll();
         } else {
             this.IlIllllllIIlIIllllIIlIIIl(0);
@@ -247,7 +248,7 @@ extends class_0229 {
         this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
         if (this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl.isEmpty()) {
             String string = this.IIIllIllIIlIlIlIlIllllIIl.lllIlIIlIIIlIlIIIllIlllIl().isEmpty() ? "Discovering resource packs..." : "No resource packs found.";
-            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "" + (Object)((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll) + string, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, 60, 0xFFFFFF);
+            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, (Object)((Object) EnumChatFormatting.GRAY) + "" + (Object)((Object) EnumChatFormatting.ITALIC) + string, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, 60, 0xFFFFFF);
         }
         this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
         this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("resourcePack.title", new Object[0]), this.IlIlIIlllIIlIllIIIlllllIl / 2, 16, 0xFFFFFF);
@@ -255,7 +256,7 @@ extends class_0229 {
         super.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
         this.IIIllIllIIlIlIlIlIllllIIl.lIllllIIlIIIlIllllllIIIll();
         if (this.IIIllIllIIlIlIlIlIllllIIl.lllIlIIlIIIlIlIIIllIlllIl().isEmpty() && !this.IIIllIllIIlIlIlIlIllllIIl.IllIIIllIIIIlIlIlIllIIlll()) {
-            this.lllIlIIlIIIlIlIIIllIlllIl(this.lIlIllIIlIIlIIlIIlIIlIIll, (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "" + (Object)((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll) + "Search...", this.IlIlIIlllIIlIllIIIlllllIl / 2 - 200, this.lIIlIIIIIlIlllIlIIlIlIlll - 65, 0xFFFFFF);
+            this.lllIlIIlIIIlIlIIIllIlllIl(this.lIlIllIIlIIlIIlIIlIIlIIll, (Object)((Object) EnumChatFormatting.GRAY) + "" + (Object)((Object) EnumChatFormatting.ITALIC) + "Search...", this.IlIlIIlllIIlIllIIIlllllIl / 2 - 200, this.lIIlIIIIIlIlllIlIIlIlIlll - 65, 0xFFFFFF);
         }
     }
 

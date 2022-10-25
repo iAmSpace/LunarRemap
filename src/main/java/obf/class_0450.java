@@ -18,6 +18,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

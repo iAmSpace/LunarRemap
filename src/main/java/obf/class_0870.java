@@ -44,8 +44,8 @@ extends class_1246 {
         IChatComponent class_22552 = class_0870.lllIIIllIIIIlllIlIIllIIll(class_19692, arrstring, 1, !(class_19692 instanceof class_0814));
         ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.message.display.incoming", class_19692.llIIIIllIIIIIIIlIIIlIIIIl(), class_22552.IIIllIllIIlIlIlIlIllllIIl());
         ChatComponentTranslation class_17903 = new ChatComponentTranslation("commands.message.display.outgoing", class_18222.llIIIIllIIIIIIIlIIIlIIIIl(), class_22552.IIIllIllIIlIlIlIlIllllIIl());
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl).lllIlIIlIIIlIlIIIllIlllIl(true);
-        class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl).lllIlIIlIIIlIlIIIllIlllIl(true);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY).lllIlIIlIIIlIlIIIllIlllIl(true);
+        class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY).lllIlIIlIIIlIlIIIllIlllIl(true);
         class_18222.lllIIIllIIIIlllIlIIllIIll(class_17902);
         class_19692.lllIIIllIIIIlllIlIIllIIll(class_17903);
     }

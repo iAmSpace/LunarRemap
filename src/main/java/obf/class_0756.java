@@ -9,6 +9,9 @@ package obf;/*
 import com.mojang.authlib.GameProfile;
 import io.netty.util.concurrent.GenericFutureListener;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.status.client.C01PacketPing;
+import net.minecraft.network.status.server.S00PacketServerInfo;
+import net.minecraft.network.status.server.S01PacketPong;
 import net.minecraft.util.IChatComponent;
 import org.apache.commons.lang3.ArrayUtils;
 
@@ -26,7 +29,7 @@ implements class_0709 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0046 class_00462) {
+    public void lllIIIllIIIIlllIlIIllIIll(S00PacketServerInfo class_00462) {
         CharSequence charSequence;
         class_0111 class_01112 = class_00462.IlIllllllIIlIIllllIIlIIIl();
         this.lllIIIllIIIIlllIlIIllIIll.lllIIlIIIllllllIIIIlIlIlI = class_01112.lllIIIllIIIIlllIlIIllIIll != null;
@@ -41,7 +44,7 @@ implements class_0709 {
             this.lllIIIllIIIIlllIlIIllIIll.IllIIlllllllIIlIIlIIIIlIl = 0;
         }
         if (class_01112.lllIlIIlIIIlIlIIIllIlllIl() != null) {
-            this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl = (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "" + class_01112.lllIlIIlIIIlIlIIIllIlllIl().lllIlIIlIIIlIlIIIllIlllIl() + "" + (Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + "/" + (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + class_01112.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll();
+            this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl = (Object)((Object) EnumChatFormatting.GRAY) + "" + class_01112.lllIlIIlIIIlIlIIIllIlllIl().lllIlIIlIIIlIlIIIllIlllIl() + "" + (Object)((Object) EnumChatFormatting.DARK_GRAY) + "/" + (Object)((Object) EnumChatFormatting.GRAY) + class_01112.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll();
             if (ArrayUtils.isNotEmpty((Object[])class_01112.lllIlIIlIIIlIlIIIllIlllIl().IlIllllllIIlIIllllIIlIIIl())) {
                 charSequence = new StringBuilder();
                 for (GameProfile gameProfile : class_01112.lllIlIIlIIIlIlIIIllIlllIl().IlIllllllIIlIIllllIIlIIIl()) {
@@ -59,7 +62,7 @@ implements class_0709 {
                 this.lllIIIllIIIIlllIlIIllIIll.lIIIIlIlIIlllllIIllIIlIII = ((StringBuilder)charSequence).toString();
             }
         } else {
-            this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl = (Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + "???";
+            this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl = (Object)((Object) EnumChatFormatting.DARK_GRAY) + "???";
         }
         if (class_01112.lIlllIlllIIIIlIIlllIllIII() != null) {
             charSequence = class_01112.lIlllIlllIIIIlIIlllIllIII();
@@ -71,37 +74,37 @@ implements class_0709 {
         } else {
             this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll((String)null);
         }
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1894(Minecraft.llllllIlIllllIlIlIlIIIIlI()), new GenericFutureListener[0]);
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C01PacketPing(Minecraft.getSystemTime()), new GenericFutureListener[0]);
         this.lIlllIlllIIIIlIIlllIllIII = true;
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1714 class_17142) {
+    public void lllIIIllIIIIlllIlIIllIIll(S01PacketPong class_17142) {
         long l = class_17142.IlIllllllIIlIIllllIIlIIIl();
-        long l2 = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        long l2 = Minecraft.getSystemTime();
         this.lllIIIllIIIIlllIlIIllIIll.IIIllIIlIIIIIIlIlIIllIIlI = l2 - l;
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0722("Finished"));
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
         if (!this.lIlllIlllIIIIlIIlllIllIII) {
             class_2245.IlIllllllIIlIIllllIIlIIIl().error("Can't ping " + this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl + ": " + class_22552.IlIllllllIIlIIllllIIlIIIl());
-            this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + "Can't connect to server.";
+            this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.DARK_RED) + "Can't connect to server.";
             this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl = "";
             class_2245.lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl, this.lllIIIllIIIIlllIlIIllIIll);
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
-        if (class_05463 != class_0546.IlIllllllIIlIIllllIIlIIIl) {
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
+        if (class_05463 != EnumConnectionState.STATUS) {
             throw new UnsupportedOperationException("Unexpected change in protocol to " + (Object)((Object)class_05463));
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
     }
 }
 

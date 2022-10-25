@@ -7,6 +7,8 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.TimeZone;
 import javax.xml.parsers.DocumentBuilderFactory;
+
+import net.minecraft.util.ResourceLocation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

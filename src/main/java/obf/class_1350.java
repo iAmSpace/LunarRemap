@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
@@ -18,7 +19,7 @@ extends class_1603 {
     private static final ResourceLocation lllIIIllIIIIlllIlIIllIIll = new ResourceLocation("textures/map/map_background.png");
     private final class_1333 lIllllIIlIIIlIllllllIIIll = new class_1333();
     private final Minecraft IIIllIIlIIIIIIlIlIIllIIlI = Minecraft.getMinecraft();
-    private class_2102 IllIIlllllllIIlIIlIIIIlIl;
+    private IIcon IllIIlllllllIIlIIlIIIIlIl;
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {

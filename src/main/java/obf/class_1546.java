@@ -7,6 +7,7 @@ package obf;/*
  */
 import java.awt.Color;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MathHelper;

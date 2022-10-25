@@ -7,7 +7,9 @@ package obf;/*
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

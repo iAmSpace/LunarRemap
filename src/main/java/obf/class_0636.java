@@ -8,6 +8,7 @@ package obf;/*
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.network.play.server.S26PacketMapChunkBulk;
 import net.minecraft.util.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -140,7 +141,7 @@ public class class_0636 {
                 arrayList.add(class_07232);
             }
         }
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2053(arrayList));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S26PacketMapChunkBulk(arrayList));
         this.lIlllIlllIIIIlIIlllIllIII.add(class_18222);
         this.lllIlIIlIIIlIlIIIllIlllIl(class_18222);
     }

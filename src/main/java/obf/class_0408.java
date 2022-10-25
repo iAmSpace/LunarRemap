@@ -20,7 +20,7 @@ extends class_1272 {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return this.IllIIIllIIIIlIlIlIllIIlll.lllIIIllIIIIlllIlIIllIIll(2, n);
     }
 

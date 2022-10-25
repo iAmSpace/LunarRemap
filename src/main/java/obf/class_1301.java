@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import optifine.Config;
 
@@ -28,8 +29,8 @@ public class class_1301 {
     public int IlIlIIlllIIlIllIIIlllllIl = 1;
     public int[] lIIlIIIIIlIlllIlIIlIlIlll = null;
     public int lIlIlIIlIIIIlIIIIIlllIIII = 1;
-    public class_2102[] IlIIIlIIIIllIIIllIIIIIIll = null;
-    public class_2102[] IIlllIlIlllIllIIIlllIIlIl = null;
+    public IIcon[] IlIIIlIIIIllIIIllIIIIIIll = null;
+    public IIcon[] IIlllIlIlllIllIIIlllIIlIl = null;
     public static final int lIlIllIIlIIlIIlIIlIIlIIll = 0;
     public static final int llIIlIllIllllIlIIIIlIIlll = 1;
     public static final int llIllllIlIllIIIlIllIIlIlI = 2;
@@ -523,7 +524,7 @@ public class class_1301 {
 
     private String[] IlIllllllIIlIIllllIIlIIIl() {
         String[] arrstring;
-        class_2102 class_21022 = class_1301.IlIlIIlllIIlIllIIIlllllIl(this.lllIIIllIIIIlllIlIIllIIll);
+        IIcon class_21022 = class_1301.IlIlIIlllIIlIllIIIlllllIl(this.lllIIIllIIIIlllIlIIllIIll);
         if (class_21022 == null) {
             arrstring = null;
         } else {
@@ -534,7 +535,7 @@ public class class_1301 {
         return arrstring;
     }
 
-    private static class_2102 IlIlIIlllIIlIllIIIlllllIl(String string) {
+    private static IIcon IlIlIIlllIIlIllIIIlllllIl(String string) {
         return class_1511.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII(string);
     }
 
@@ -701,11 +702,11 @@ public class class_1301 {
         }
     }
 
-    private static class_2102[] lllIIIllIIIIlllIlIIllIIll(String[] arrstring, class_1511 class_15112) {
+    private static IIcon[] lllIIIllIIIIlllIlIIllIIll(String[] arrstring, class_1511 class_15112) {
         if (arrstring == null) {
             return null;
         }
-        ArrayList<class_2102> arrayList = new ArrayList<class_2102>();
+        ArrayList<IIcon> arrayList = new ArrayList<IIcon>();
         for (int i = 0; i < arrstring.length; ++i) {
             String string;
             ResourceLocation class_17732;
@@ -718,10 +719,10 @@ public class class_1301 {
             if (!(bl = Config.IlIllllllIIlIIllllIIlIIIl(class_17732 = new ResourceLocation(string = string3 + ".png")))) {
                 Config.lllIlIIlIIIlIlIIIllIlllIl("File not found: " + string);
             }
-            class_2102 class_21022 = class_15112.lllIIIllIIIIlllIlIIllIIll(string2);
+            IIcon class_21022 = class_15112.lllIIIllIIIIlllIlIIllIIll(string2);
             arrayList.add(class_21022);
         }
-        class_2102[] arrclass_2102 = arrayList.toArray(new class_2102[arrayList.size()]);
+        IIcon[] arrclass_2102 = arrayList.toArray(new IIcon[arrayList.size()]);
         return arrclass_2102;
     }
 

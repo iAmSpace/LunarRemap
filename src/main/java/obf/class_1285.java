@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.settings.GameSettings;
 
 /*
@@ -7,13 +8,13 @@ import net.minecraft.client.settings.GameSettings;
  */
 public class class_1285
 implements class_0677 {
-    private final class_1335 lllIlIIlIIIlIlIIIllIlllIl;
+    private final KeyBinding lllIlIIlIIIlIlIIIllIlllIl;
     private final String IlIllllllIIlIIllllIIlIIIl;
     private final class_1197 lIlllIlllIIIIlIIlllIllIII;
     private final class_1197 IlIIIIIllllllIIlllIllllll;
     final /* synthetic */ class_2035 lllIIIllIIIIlllIlIIllIIll;
 
-    private class_1285(class_2035 class_20352, class_1335 class_13352) {
+    private class_1285(class_2035 class_20352, KeyBinding class_13352) {
         this.lllIIIllIIIIlllIlIIllIIll = class_20352;
         this.lllIlIIlIIIlIlIIIllIlllIl = class_13352;
         this.IlIllllllIIlIIllllIIlIIIl = class_0616.lllIIIllIIIIlllIlIIllIIll(class_13352.IIIllIIlIIIIIIlIlIIllIIlI(), new Object[0]);
@@ -34,16 +35,16 @@ implements class_0677 {
         this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl = GameSettings.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl());
         boolean bl3 = false;
         if (this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl() != 0) {
-            for (class_1335 class_13352 : class_2035.lllIIIllIIIIlllIlIIllIIll((class_2035)this.lllIIIllIIIIlllIlIIllIIll).gameSettings.llIlllllIIlIIlIIllllIllll) {
+            for (KeyBinding class_13352 : class_2035.lllIIIllIIIIlllIlIIllIIll((class_2035)this.lllIIIllIIIIlllIlIIllIIll).gameSettings.keyBindings) {
                 if (class_13352 == this.lllIlIIlIIIlIlIIIllIlllIl || class_13352.IIIllIllIIlIlIlIlIllllIIl() != this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl()) continue;
                 bl3 = true;
                 break;
             }
         }
         if (bl2) {
-            this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl = (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + "> " + (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + " <";
+            this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl = (Object)((Object) EnumChatFormatting.WHITE) + "> " + (Object)((Object) EnumChatFormatting.YELLOW) + this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl + (Object)((Object) EnumChatFormatting.WHITE) + " <";
         } else if (bl3) {
-            this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl;
+            this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl = (Object)((Object) EnumChatFormatting.RED) + this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl;
         }
         this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_2035.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll), n6, n7);
     }
@@ -56,7 +57,7 @@ implements class_0677 {
         }
         if (this.IlIIIIIllllllIIlllIllllll.IlIllllllIIlIIllllIIlIIIl(class_2035.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll), n2, n3)) {
             class_2035.lllIIIllIIIIlllIlIIllIIll((class_2035)this.lllIIIllIIIIlllIlIIllIIll).gameSettings.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, this.lllIlIIlIIIlIlIIIllIlllIl.IllIIlllllllIIlIIlIIIIlIl());
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
             return true;
         }
         return false;
@@ -68,7 +69,7 @@ implements class_0677 {
         this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(n2, n3);
     }
 
-    class_1285(class_2035 class_20352, class_1335 class_13352, Object object) {
+    class_1285(class_2035 class_20352, KeyBinding class_13352, Object object) {
         this(class_20352, class_13352);
     }
 }

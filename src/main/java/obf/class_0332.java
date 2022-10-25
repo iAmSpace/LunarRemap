@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
@@ -26,7 +27,7 @@ public class class_0332 {
         this.lIllllIIlIIIlIllllllIIIll = new ItemStack(Item.lllIIIllIIIIlllIlIIllIIll(n));
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1609 class_16092, float f, float f2, int n) {
+    public void lllIIIllIIIIlllIlIIllIIll(Setting class_16092, float f, float f2, int n) {
         float f3;
         int n2 = 17;
         GL11.glPushMatrix();
@@ -44,14 +45,14 @@ public class class_0332 {
         if (d <= 0.0) {
             return;
         }
-        if (((String)class_16092.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("Bright")) {
+        if (((String)class_16092.getValue()).equalsIgnoreCase("Bright")) {
             GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.0f, (float)0.2f);
             class_0857.lllIIIllIIIIlllIlIIllIIll((double)(f + (float)n2), (double)(f2 + (float)n2), (double)n2, 0.0, (float)this.IlIllllllIIlIIllllIIlIIIl / 3.95f, (int)this.IlIllllllIIlIIllllIIlIIIl, d);
             GL11.glColor4f((float)0.9f, (float)0.9f, (float)0.9f, (float)1.0f);
             class_0857.lllIIIllIIIIlllIlIIllIIll((double)(f + (float)n2), (double)(f2 + (float)n2), (double)((float)n2 + 0.1f), (double)(n2 - 2), (float)this.IlIllllllIIlIIllllIIlIIIl / 3.95f, (int)this.IlIllllllIIlIIllllIIlIIIl, this.IlIllllllIIlIIllllIIlIIIl);
             GL11.glColor4f((float)0.35f, (float)0.35f, (float)0.35f, (float)0.6f);
             class_0857.lllIIIllIIIIlllIlIIllIIll((double)(f + (float)n2), (double)(f2 + (float)n2), (double)((float)n2 + 0.1f), (double)(n2 - 2), (float)this.IlIllllllIIlIIllllIIlIIIl / 3.95f, (int)this.IlIllllllIIlIIllllIIlIIIl, d);
-        } else if (((String)class_16092.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("Dark")) {
+        } else if (((String)class_16092.getValue()).equalsIgnoreCase("Dark")) {
             GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.0f, (float)0.2f);
             class_0857.lllIIIllIIIIlllIlIIllIIll(f + (float)n2, f2 + (float)n2, n2);
             GL11.glColor4f((float)0.0f, (float)0.0f, (float)0.0f, (float)0.2f);
@@ -60,7 +61,7 @@ public class class_0332 {
             class_0857.lllIIIllIIIIlllIlIIllIIll((double)(f + (float)n2), (double)(f2 + (float)n2), (double)((float)n2 + 0.1f), (double)(n2 - 2), (float)this.IlIllllllIIlIIllllIIlIIIl / 3.95f, (int)this.IlIllllllIIlIIllllIIlIIIl, this.IlIllllllIIlIIllllIIlIIIl);
             GL11.glColor4f((float)0.0f, (float)0.5f, (float)0.0f, (float)1.0f);
             class_0857.lllIIIllIIIIlllIlIIllIIll((double)(f + (float)n2), (double)(f2 + (float)n2), (double)((float)n2 + 0.1f), (double)(n2 - 2), (float)this.IlIllllllIIlIIllllIIlIIIl / 3.95f, (int)this.IlIllllllIIlIIllllIIlIIIl, d);
-        } else if (((String)class_16092.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("Colored")) {
+        } else if (((String)class_16092.getValue()).equalsIgnoreCase("Colored")) {
             float f6 = (float)(n >> 24 & 0xFF) / 255.0f;
             f3 = (float)(n >> 16 & 0xFF) / 255.0f;
             float f7 = (float)(n >> 8 & 0xFF) / 255.0f;

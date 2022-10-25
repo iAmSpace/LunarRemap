@@ -4,6 +4,8 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.SettingsManager;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
@@ -19,15 +21,15 @@ extends class_2117 {
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII + (this.lIllllIIlIIIlIllllllIIIll / 2 - 15) - 41, this.IlIIIIIllllllIIlllIllllll + 4, this.lIlllIlllIIIIlIIlllIllIII + (this.lIllllIIlIIIlIllllllIIIll / 2 - 15) + 41, this.IlIIIIIllllllIIlllIllllll + 51, -16777216);
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
         class_0857.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("client/defaults/crosshair.png"), (float)(this.lIlllIlllIIIIlIIlllIllIII + (this.lIllllIIlIIIlIllllllIIIll / 2 - 15) - 40), (float)(this.IlIIIIIllllllIIlllIllllll + 5), 80.0f, 45.0f);
-        class_0625 class_06252 = LunarClient.getInstance().getSettingsManager();
+        SettingsManager class_06252 = LunarClient.getInstance().getSettingsManager();
         GL11.glPushMatrix();
         float f2 = 1.0f / LunarClient.IllIIIllIIIIlIlIlIllIIlll();
         GL11.glScalef((float)f2, (float)f2, (float)f2);
-        float f3 = ((Float)class_06252.llIlllIIllIlllIlIlIlIIIll.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        float f4 = ((Float)class_06252.IIIIlIIlIIIllIIIIllIIIlII.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        float f5 = ((Float)class_06252.lIlIIllllIlIIIIllIIIIlIIl.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        int n3 = class_06252.llllllIlIllllIlIlIlIIIIlI.lllIIIllIIIIlllIlIIllIIll();
-        boolean bl = (Boolean)class_06252.IIllIllIIllIIlllIIIlIlllI.lIlllIlllIIIIlIIlllIllIII();
+        float f3 = ((Float)class_06252.csSize.getValue()).floatValue();
+        float f4 = ((Float)class_06252.csGap.getValue()).floatValue();
+        float f5 = ((Float)class_06252.csThickness.getValue()).floatValue();
+        int n3 = class_06252.csColor.lllIIIllIIIIlllIlIIllIIll();
+        boolean bl = (Boolean)class_06252.csOutline.getValue();
         int n4 = this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll / 2 - 15;
         int n5 = this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 + 3;
         if (bl) {

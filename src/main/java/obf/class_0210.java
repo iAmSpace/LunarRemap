@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.renderer.OpenGlHelper;
 import org.lwjgl.opengl.GL11;
 
@@ -127,7 +128,7 @@ public class class_0210 {
         class_08682.lllIIIllIIIIlllIlIIllIIll();
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, class_2102 class_21022, int n3, int n4) {
+    public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, IIcon class_21022, int n3, int n4) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl();
         class_08682.lllIIIllIIIIlllIlIIllIIll(n + 0, n2 + n4, IlIlllIIIIIIlIIllIIllIlll, class_21022.IlIllllllIIlIIllllIIlIIIl(), class_21022.lIllllIIlIIIlIllllllIIIll());

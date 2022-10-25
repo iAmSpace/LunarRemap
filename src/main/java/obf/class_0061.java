@@ -10,8 +10,8 @@ import net.minecraft.util.MathHelper;
 public class class_0061
 extends class_0143 {
     private boolean llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
 
     protected class_0061(boolean bl) {
         super(class_1855.IllIIIIllIIllIllIlllIlIIl);
@@ -21,7 +21,7 @@ extends class_0143 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.lIlIIllllIlIIIIllIIIIlIIl : (n == 0 ? this.lIlIIllllIlIIIIllIIIIlIIl : (n2 == 2 && n == 2 ? this.llIlllIIllIlllIlIlIlIIIll : (n2 == 3 && n == 5 ? this.llIlllIIllIlllIlIlIlIIIll : (n2 == 0 && n == 3 ? this.llIlllIIllIlllIlIlIlIIIll : (n2 == 1 && n == 4 ? this.llIlllIIllIlllIlIlIlIIIll : this.llIIIIllIIIIIIIlIIIlIIIIl)))));
     }
 

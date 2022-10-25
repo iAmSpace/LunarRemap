@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -50,7 +51,7 @@ public class class_2059 {
                 this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll(class_05492, class_08972.IllIIIllIIIIlIlIlIllIIlll(), 1.0f);
             }
         } else {
-            class_2102 class_21022 = class_19652.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
+            IIcon class_21022 = class_19652.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
             if (class_21022 == null) {
                 GL11.glPopMatrix();
                 return;
@@ -84,14 +85,14 @@ public class class_2059 {
                 GL11.glPushMatrix();
                 float f9 = 0.125f;
                 GL11.glScalef((float)f9, (float)f9, (float)f9);
-                float f10 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 3000L) / 3000.0f * 8.0f;
+                float f10 = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0f * 8.0f;
                 GL11.glTranslatef((float)f10, (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)-50.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_2059.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 256, 256, 0.0625f);
                 GL11.glPopMatrix();
                 GL11.glPushMatrix();
                 GL11.glScalef((float)f9, (float)f9, (float)f9);
-                f10 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 4873L) / 4873.0f * 8.0f;
+                f10 = (float)(Minecraft.getSystemTime() % 4873L) / 4873.0f * 8.0f;
                 GL11.glTranslatef((float)(-f10), (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)10.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_2059.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 256, 256, 0.0625f);
@@ -438,7 +439,7 @@ public class class_2059 {
         GL11.glEnable((int)3008);
     }
 
-    private void lllIIIllIIIIlllIlIIllIIll(float f, class_2102 class_21022) {
+    private void lllIIIllIIIIlllIlIIllIIll(float f, IIcon class_21022) {
         this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII().lllIIIllIIIIlllIlIIllIIll(class_1511.lllIIIllIIIIlllIlIIllIIll);
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         float f2 = 0.1f;
@@ -498,7 +499,7 @@ public class class_2059 {
         float f2 = 1.0f;
         for (int i = 0; i < 2; ++i) {
             GL11.glPushMatrix();
-            class_2102 class_21022 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(1);
+            IIcon class_21022 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(1);
             this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII().lllIIIllIIIIlllIlIIllIIll(class_1511.lllIIIllIIIIlllIlIIllIIll);
             float f3 = class_21022.IlIllllllIIlIIllllIIlIIIl();
             float f4 = class_21022.lIlllIlllIIIIlIIlllIllIII();

@@ -59,8 +59,8 @@ public class StatBase {
 
     public IChatComponent IlIIIIIllllllIIlllIllllll() {
         IChatComponent class_22552 = this.statName.IIIllIllIIlIlIlIlIllllIIl();
-        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl);
-        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.lllIlIIlIIIlIlIIIllIlllIl, new class_0722(this.statId)));
+        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY);
+        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.SHOW_ACHIEVEMENT, new class_0722(this.statId)));
         return class_22552;
     }
 

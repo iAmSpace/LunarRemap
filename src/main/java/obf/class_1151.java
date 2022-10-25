@@ -22,9 +22,9 @@ extends class_0229 {
     private final class_1319 IlIIIIIllllllIIlllIllllll;
     private String lIllllIIlIIIlIllllllIIIll = "";
     private boolean IIIllIIlIIIIIIlIlIIllIIlI = false;
-    private class_1165 IllIIlllllllIIlIIlIIIIlIl;
+    private Profile IllIIlllllllIIlIIlIIIIlIl;
 
-    public class_1151(class_1165 class_11652, class_0229 class_02292, class_1319 class_13192, int n, float f) {
+    public class_1151(Profile class_11652, class_0229 class_02292, class_1319 class_13192, int n, float f) {
         this(class_02292, class_13192, n, f);
         this.IllIIlllllllIIlIIlIIIIlIl = class_11652;
     }
@@ -57,7 +57,7 @@ extends class_0229 {
             this.IIIllIIlIIIIIIlIlIIllIIlI = false;
             this.lllIlIIlIIIlIlIIIllIlllIl = new class_0598(this.lllllIlllIIllIlIIlIIIllII.IlIlllIIIIIIlIIllIIllIlll, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 70, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 - 6, 140, 10);
             if (this.IllIIlllllllIIlIIlIIIIlIl != null) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll());
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(this.IllIIlllllllIIlIIlIIIIlIl.getName());
             }
             this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl(true);
         }
@@ -100,52 +100,52 @@ extends class_0229 {
             }
             case 28: {
                 if (this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl().length() < 3) {
-                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Name must be at least 3 characters long.";
+                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.RED) + "Name must be at least 3 characters long.";
                     break;
                 }
                 if (this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl().equalsIgnoreCase("default")) {
-                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "That name is already in use.";
+                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.RED) + "That name is already in use.";
                     break;
                 }
                 if (!this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl().matches("([a-zA-Z0-9-_ \\]\\[]+)")) {
-                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Illegal characters in name.";
+                    this.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.RED) + "Illegal characters in name.";
                     break;
                 }
-                if (this.IllIIlllllllIIlIIlIIIIlIl != null && !this.IllIIlllllllIIlIIlIIIIlIl.lllIlIIlIIIlIlIIIllIlllIl()) {
-                    File file = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles" + File.separator + this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll() + ".cfg");
+                if (this.IllIIlllllllIIlIIlIIIIlIl != null && !this.IllIIlllllllIIlIIlIIIIlIl.isEditable()) {
+                    File file = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles" + File.separator + this.IllIIlllllllIIlIIlIIIIlIl.getName() + ".cfg");
                     File file2 = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles" + File.separator + this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl() + ".cfg");
                     if (!file.exists()) break;
                     try {
                         Files.copy(file.toPath(), file2.toPath(), new CopyOption[0]);
                         Files.delete(file.toPath());
-                        this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl());
+                        this.IllIIlllllllIIlIIlIIIIlIl.setName(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl());
                         this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
                         ((class_0822)this.lllIIIllIIIIlllIlIIllIIll).IllIIIllIIIIlIlIlIllIIlll = ((class_0822)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll;
                     }
                     catch (Exception exception) {
-                        this.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Could not save profile.";
+                        this.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.RED) + "Could not save profile.";
                         exception.printStackTrace();
                     }
                     break;
                 }
-                class_1165 class_11652 = null;
-                for (class_1165 class_11653 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                    if (!class_11653.lllIIIllIIIIlllIlIIllIIll().toLowerCase().equalsIgnoreCase(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl())) continue;
+                Profile class_11652 = null;
+                for (Profile class_11653 : LunarClient.getInstance().profiles) {
+                    if (!class_11653.getName().toLowerCase().equalsIgnoreCase(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl())) continue;
                     class_11652 = class_11653;
                     break;
                 }
                 if (class_11652 == null) {
-                    LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
-                    class_1165 class_11654 = new class_1165(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl(), false);
-                    LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.add(class_11654);
-                    LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = class_11654;
+                    LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().activeProfile.getName());
+                    Profile class_11654 = new Profile(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl(), false);
+                    LunarClient.getInstance().profiles.add(class_11654);
+                    LunarClient.getInstance().activeProfile = class_11654;
                     this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll.add(new class_0883(this.IlIIIIIllllllIIlllIllllll, this.lIlllIlllIIIIlIIlllIllIII, class_11654, this.IlIllllllIIlIIllllIIlIIIl));
-                    LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+                    LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().activeProfile.getName());
                     this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
                     ((class_0822)this.lllIIIllIIIIlllIlIIllIIll).IllIIIllIIIIlIlIlIllIIlll = ((class_0822)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll;
                     break;
                 }
-                this.lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "That name is already in use.";
+                this.lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.RED) + "That name is already in use.";
                 break;
             }
             default: {

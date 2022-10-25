@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
@@ -16,8 +18,8 @@ import org.lwjgl.opengl.GL11;
 
 public class class_1699
 extends class_2117 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll;
-    private List IllIIlllllllIIlIIlIIIIlIl;
+    private Setting lllIIIllIIIIlllIlIIllIIll;
+    private List<class_1788> IllIIlllllllIIlIIlIIIIlIl;
     private boolean IIIllIllIIlIlIlIlIllllIIl = false;
     private boolean IllIIIllIIIIlIlIlIllIIlll = false;
     private boolean lIIIIlIlIIlllllIIllIIlIII = false;
@@ -36,10 +38,10 @@ extends class_2117 {
     private int llIIlIllIllllIlIIIIlIIlll;
     private int llIllllIlIllIIIlIllIIlIlI;
 
-    public class_1699(class_1609 class_16092, float f) {
+    public class_1699(Setting class_16092, float f) {
         super(f);
         this.lllIIIllIIIIlllIlIIllIIll = class_16092;
-        this.llIIllIllIlIIlIIllIllllll = new class_1788(f, (Integer)class_16092.lIlllIlllIIIIlIIlllIllIII(), 1.0f);
+        this.llIIllIllIlIIlIIllIllllll = new class_1788(f, (Integer)class_16092.getValue(), 1.0f);
         this.IllIIlllllllIIlIIlIIIIlIl = new ArrayList();
         for (int i = 0; i < 16; ++i) {
             int n = Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.IlIllllllIIlIIllllIIlIIIl[i];
@@ -57,7 +59,7 @@ extends class_2117 {
         this.lIIlIIIIIlIlllIlIIlIlIlll = this.IlIIIIIllllllIIlllIllllll + 119;
         this.lIlIlIIlIIIIlIIIIIlllIIII = this.IlIlIIlllIIlIllIIIlllllIl - this.IlIlIIlIlIllIIlIlIIllIIIl;
         this.IlIIIlIIIIllIIIllIIIIIIll = this.lIIlIIIIIlIlllIlIIlIlIlll - this.lllllIlllIIllIlIIlIIIllII;
-        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 10, (float)(this.IlIIIIIllllllIIlllIllllll + 4), Color.LIGHT_GRAY.getRGB());
+        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 10, (float)(this.IlIIIIIllllllIIlllIllllll + 4), Color.LIGHT_GRAY.getRGB());
         this.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll = this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll();
         this.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII + 160, this.IlIIIIIllllllIIlllIllllll + 3, 14, 14);
         this.llIIllIllIlIIlIIllIllllll.IlIllllllIIlIIllllIIlIIIl = this.IlIllllllIIlIIllllIIlIIIl;
@@ -67,7 +69,7 @@ extends class_2117 {
         LunarClient.getInstance().robotoLight18px.lllIIIllIIIIlllIlIIllIIll(Integer.toHexString(this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll()), this.lIlllIlllIIIIlIIlllIllIII + 194, (float)(this.IlIIIIIllllllIIlllIllllll + 4), Color.WHITE.getRGB());
         boolean bl = (float)n > (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 40) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 12) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 > (float)(this.IlIIIIIllllllIIlllIllllll + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 < (float)(this.IlIIIIIllllllIIlllIllllll + 18 + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
         String string2 = string = bl ? "(Favorite)" : "(+)";
-        if (LunarClient.getInstance().getSettingsManager().lllIIIllIIIIlllIlIIllIIll((Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII())) {
+        if (LunarClient.getInstance().getSettingsManager().lllIIIllIIIIlllIlIIllIIll((Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue())) {
             string = bl ? "(Un-favorite)" : "(-)";
         }
         LunarClient.getInstance().robotoLight18px.lllIIIllIIIIlllIlIIllIIll(string, this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 16 - LunarClient.getInstance().robotoLight18px.lllIlIIlIIIlIlIIIllIlllIl(string), (float)(this.IlIIIIIllllllIIlllIllllll + 4), bl ? Color.WHITE.getRGB() : Color.LIGHT_GRAY.getRGB());
@@ -111,12 +113,12 @@ extends class_2117 {
                     boolean bl8 = (float)n3 == this.lIlIlIIlIIIIlIIIIIlllIIII - 1.0f && (float)n > (this.IlIlIIlIlIllIIlIlIIllIIIl + this.lIlIlIIlIIIIlIIIIIlllIIII) * this.lllIlIIlIIIlIlIIIllIlllIl && bl4;
                     boolean bl9 = bl2 = (float)n4 == this.IlIIIlIIIIllIIIllIIIIIIll - 1.0f && (float)n2 > (this.lllllIlllIIllIlIIlIIIllII + this.IlIIIlIIIIllIIIllIIIIIIll + (float)this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && bl3;
                     if (this.IllIIIllIIIIlIlIlIllIIlll && (bl5 || bl6 || bl7 || bl8 || bl2)) {
-                        this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(n5);
+                        this.lllIIIllIIIIlllIlIIllIIll.setValue(n5);
                         this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl = new int[]{n3, n4};
                     }
                     if (this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl != null) {
                         arrn = this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl;
-                    } else if (n5 == (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()) {
+                    } else if (n5 == (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue()) {
                         arrn = new int[]{n3, n4};
                     }
                     class_08682.lllIlIIlIIIlIlIIIllIlllIl();
@@ -157,7 +159,7 @@ extends class_2117 {
         if (LunarClient.getInstance().getSettingsManager().lIlIlIIIIIIlIIllllIlIIllI.size() >= 16) {
             LunarClient.getInstance().getSettingsManager().lIlIlIIIIIIlIIllllIlIIllI.remove(0);
         }
-        LunarClient.getInstance().getSettingsManager().lIlIlIIIIIIlIIllllIlIIllI.add(new class_1788(this.lllIlIIlIIIlIlIIIllIlllIl, (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII(), 1.0f));
+        LunarClient.getInstance().getSettingsManager().lIlIlIIIIIIlIIllllIlIIllI.add(new class_1788(this.lllIlIIlIIIlIlIIIllIlllIl, (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue(), 1.0f));
         Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
     }
 
@@ -166,11 +168,11 @@ extends class_2117 {
         this.IlIllllllIIlIIllllIIlIIIl();
         int n3 = 0;
         while ((float)n3 < this.IlIIIlIIIIllIIIllIIIIIIll) {
-            int n4 = (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII();
+            int n4 = (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue();
             int n5 = new Color(n4 >> 16 & 0xFF, n4 >> 8 & 0xFF, n4 & 0xFF, Math.round(255.0f - (float)n3 / this.IlIIIlIIIIllIIIllIIIIIIll * 255.0f)).getRGB();
             if (this.llIIlllIllIllllIIIlIIIIII && (float)n2 >= ((float)this.IlIllllllIIlIIllllIIlIIIl + this.lllllIlllIIllIlIIlIIIllII + (float)n3) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 <= ((float)this.IlIllllllIIlIIllllIIlIIIl + this.lllllIlllIIllIlIIlIIIllII + (float)n3 + 1.0f) * this.lllIlIIlIIIlIlIIIllIlllIl) {
                 this.IlIlllIIIIIIlIIllIIllIlll = (float)n3 / this.IlIIIlIIIIllIIIllIIIIIIll;
-                this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(n5);
+                this.lllIIIllIIIIlllIlIIllIIll.setValue(n5);
             }
             class_0210.lllIIIllIIIIlllIlIIllIIll(this.IlIlIIlIlIllIIlIlIIllIIIl + this.lIlIlIIlIIIIlIIIIIlllIIII + 19.0f, this.lllllIlllIIllIlIIlIIIllII + (float)n3, this.IlIlIIlIlIllIIlIlIIllIIIl + this.lIlIlIIlIIIIlIIIIIlllIIII + 27.0f, this.lllllIlllIIllIlIIlIIIllII + (float)n3 + 1.0f, n5);
             ++n3;
@@ -186,9 +188,9 @@ extends class_2117 {
         while ((float)n3 < this.IlIIIlIIIIllIIIllIIIIIIll) {
             int n4;
             if (this.lIIIIlIlIIlllllIIllIIlIII && (float)n2 >= ((float)this.IlIllllllIIlIIllllIIlIIIl + this.lllllIlllIIllIlIIlIIIllII + (float)n3) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 <= ((float)this.IlIllllllIIlIIllllIIlIIIl + this.lllllIlllIIllIlIIlIIIllII + (float)n3 + 1.0f) * this.lllIlIIlIIIlIlIIIllIlllIl) {
-                n4 = (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII();
+                n4 = (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue();
                 float[] arrf = Color.RGBtoHSB(n4 >> 16 & 0xFF, n4 >> 8 & 0xFF, n4 & 0xFF, null);
-                this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Color.HSBtoRGB(this.lllIIlIIIllllllIIIIlIlIlI, arrf[1], arrf[2]));
+                this.lllIIIllIIIIlllIlIIllIIll.setValue(Color.HSBtoRGB(this.lllIIlIIIllllllIIIIlIlIlI, arrf[1], arrf[2]));
                 this.lllIIlIIIllllllIIIIlIlIlI = (float)n3 / this.IlIIIlIIIIllIIIllIIIIIIll;
             }
             n4 = Color.HSBtoRGB((float)n3 / this.IlIIIlIIIIllIIIllIIIIIIll, 1.0f, 1.0f);
@@ -215,7 +217,7 @@ extends class_2117 {
         }
     }
 
-    private void lllIIIllIIIIlllIlIIllIIll(List list, int n, int n2, int n3, int n4, int n5) {
+    private void lllIIIllIIIIlllIlIIllIIll(List<class_1788> list, int n, int n2, int n3, int n4, int n5) {
         int n6 = 0;
         int n7 = 0;
         int n8 = 8;
@@ -251,7 +253,7 @@ extends class_2117 {
         }
     }
 
-    private void lllIIIllIIIIlllIlIIllIIll(List list, int n, int n2, int n3, int n4) {
+    private void lllIIIllIIIIlllIlIIllIIll(List<class_1788> list, int n, int n2, int n3, int n4) {
         int n5 = 0;
         int n6 = 0;
         int n7 = 8;
@@ -265,14 +267,13 @@ extends class_2117 {
                 int n9 = n + n6 * 12;
                 n8 = n2 + n5 * 12;
                 class_17882.IlIllllllIIlIIllllIIlIIIl = this.IlIllllllIIlIIllllIIlIIIl;
-                class_17882.IlIllllllIIlIIllllIIlIIIl = this.IlIllllllIIlIIllllIIlIIIl;
                 class_17882.lllIIIllIIIIlllIlIIllIIll(n9, n8, 10, 10);
             }
             if (class_17882.lllIIIllIIIIlllIlIIllIIll(n3, n4)) {
                 if (list == this.IllIIlllllllIIlIIlIIIIlIl) {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(new Color(class_17882.lllIIIllIIIIlllIlIIllIIll).getRGB());
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(new Color(class_17882.lllIIIllIIIIlllIlIIllIIll).getRGB());
                 } else {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(new Color(class_17882.lllIIIllIIIIlllIlIIllIIll, true).getRGB());
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(new Color(class_17882.lllIIIllIIIIlllIlIIllIIll, true).getRGB());
                 }
                 Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
                 float[] arrf = Color.RGBtoHSB(class_17882.lllIIIllIIIIlllIlIIllIIll >> 16 & 0xFF, class_17882.lllIIIllIIIIlllIlIIllIIll >> 8 & 0xFF, class_17882.lllIIIllIIIIlllIlIIllIIll & 0xFF, null);
@@ -292,20 +293,20 @@ extends class_2117 {
         boolean bl3 = bl = (float)n > (float)this.lIlllIlllIIIIlIIlllIllIII * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 40) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 > (float)(this.IlIIIIIllllllIIlllIllllll + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 < (float)(this.IlIIIIIllllllIIlllIllllll + 18 + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
         if (bl) {
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-            float[] arrf = Color.RGBtoHSB((Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() >> 16 & 0xFF, (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() >> 8 & 0xFF, (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() & 0xFF, null);
+            float[] arrf = Color.RGBtoHSB((Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue() >> 16 & 0xFF, (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue() >> 8 & 0xFF, (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue() & 0xFF, null);
             this.lllIIlIIIllllllIIIIlIlIlI = arrf[0];
             int n4 = (int)(arrf[1] * this.lIlIlIIlIIIIlIIIIIlllIIII);
             int n5 = (int)(this.IlIIIlIIIIllIIIllIIIIIIll - arrf[2] * this.IlIIIlIIIIllIIIllIIIIIIll);
             this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl = new int[]{n4, n5};
             this.IIIllIllIIlIlIlIlIllllIIl = !this.IIIllIllIIlIlIlIlIllllIIl;
         } else if (bl2) {
-            if (LunarClient.getInstance().getSettingsManager().lllIIIllIIIIlllIlIIllIIll((Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII())) {
-                LunarClient.getInstance().getSettingsManager().lllIlIIlIIIlIlIIIllIlllIl((Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII());
+            if (LunarClient.getInstance().getSettingsManager().lllIIIllIIIIlllIlIIllIIll((Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue())) {
+                LunarClient.getInstance().getSettingsManager().lllIlIIlIIIlIlIIIllIlllIl((Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue());
             } else {
                 if (LunarClient.getInstance().getSettingsManager().llIIlIIllIIllIlIIllIIllII.size() >= 16) {
                     LunarClient.getInstance().getSettingsManager().llIIlIIllIIllIlIIllIIllII.remove(0);
                 }
-                LunarClient.getInstance().getSettingsManager().llIIlIIllIIllIlIIllIIllII.add(new class_1788(this.lllIlIIlIIIlIlIIIllIlllIl, (Integer)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII(), 1.0f));
+                LunarClient.getInstance().getSettingsManager().llIIlIIllIIllIlIIllIIllII.add(new class_1788(this.lllIlIIlIIIlIlIIIllIlllIl, (Integer)this.lllIIIllIIIIlllIlIIllIIll.getValue(), 1.0f));
             }
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
         } else if (this.IIIllIllIIlIlIlIlIllllIIl) {

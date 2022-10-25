@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -29,7 +30,7 @@ extends class_1716 {
         this.llIIllIllIlIIlIIllIllllll = new class_1189(LunarClient.getInstance().getSettingsManager().llIIllIllIlIIlIIllIllllll);
         this.lllIIlIIIllllllIIIIlIlIlI = new class_1326(this);
         this.IlIlllIIIIIIlIIllIIllIlll = new class_0869(this.lIllllIIlIIIlIllllllIIIll.robotoMedium13px, "Filter", -11842741, -11842741);
-        this.IlIlIIlIlIllIIlIlIIllIIIl = new class_0806((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.lIlllIlllIIIIlIIlllIllIII() != false ? "Unpin" : "Pin");
+        this.IlIlIIlIlIllIIlIlIIllIIIl = new class_0806((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.getValue() != false ? "Unpin" : "Pin");
         this.IIIllIllIIlIlIlIlIllllIIl = new ArrayList();
         for (class_1878 class_18782 : LunarClient.getInstance().lIlllIlllIlIIIIlllIlIlIIl().lllIlIIlIIIlIlIIIllIlllIl()) {
             this.IIIllIllIIlIlIlIlIllllIIl.add(new class_0148(this, class_18782));
@@ -213,8 +214,8 @@ extends class_1716 {
                 }
             }
             if (this.IlIlIIlIlIllIIlIlIIllIIIl.lllIIIllIIIIlllIlIIllIIll(f, f2)) {
-                this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.lllIlIIlIIIlIlIIIllIlllIl((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.lIlllIlllIIIIlIIlllIllIII() == false);
-                this.IlIlIIlIlIllIIlIlIIllIIIl.lllIIIllIIIIlllIlIIllIIll((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.lIlllIlllIIIIlIIlllIllIII() != false ? "Unpin" : "Pin");
+                this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.setValue((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.getValue() == false);
+                this.IlIlIIlIlIllIIlIlIIllIIIl.lllIIIllIIIIlllIlIIllIIll((Boolean)this.lIllllIIlIIIlIllllllIIIll.getSettingsManager().IlIlIIlIlIllIIlIlIIllIIIl.getValue() != false ? "Unpin" : "Pin");
             }
         }
         if (this.lllIIIllIIIIlllIlIIllIIll(f, f2) && f2 < this.lllIlIIlIIIlIlIIIllIlllIl + this.lIIIIlIlIIlllllIIllIIlIII && !bl2 && !this.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll(f, f2) && !this.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll(f, f2)) {

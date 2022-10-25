@@ -1,5 +1,9 @@
 package obf;
 
+import net.minecraft.network.play.server.S25PacketBlockBreakAnim;
+import net.minecraft.network.play.server.S28PacketEffect;
+import net.minecraft.network.play.server.S29PacketSoundEffect;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -29,12 +33,12 @@ implements class_2249 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(String string, double d, double d2, double d3, float f, float f2) {
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(d, d2, d3, f > 1.0f ? (double)(16.0f * f) : 16.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new class_0633(string, d, d2, d3, f, f2));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(d, d2, d3, f > 1.0f ? (double)(16.0f * f) : 16.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new S29PacketSoundEffect(string, d, d2, d3, f, f2));
     }
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0814 class_08142, String string, double d, double d2, double d3, float f, float f2) {
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_08142, d, d2, d3, f > 1.0f ? (double)(16.0f * f) : 16.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new class_0633(string, d, d2, d3, f, f2));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_08142, d, d2, d3, f > 1.0f ? (double)(16.0f * f) : 16.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new S29PacketSoundEffect(string, d, d2, d3, f, f2));
     }
 
     @Override
@@ -56,12 +60,12 @@ implements class_2249 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0814 class_08142, int n, int n2, int n3, int n4, int n5) {
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_08142, n2, n3, n4, 64.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new class_2186(n, n2, n3, n4, n5, false));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_08142, n2, n3, n4, 64.0, this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new S28PacketEffect(n, n2, n3, n4, n5, false));
     }
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4, int n5) {
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_2186(n, n2, n3, n4, n5, true));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S28PacketEffect(n, n2, n3, n4, n5, true));
     }
 
     @Override
@@ -71,7 +75,7 @@ implements class_2249 {
             double d2;
             double d3;
             if (class_18222 == null || class_18222.lIlIllIIlIIlIIlIIlIIlIIll != this.lllIlIIlIIIlIlIIIllIlllIl || class_18222.llllllIlIllllIlIlIlIIIIlI() == n || !((d3 = (double)n2 - class_18222.IlIIlllllIIlIlIlllllIllll) * d3 + (d2 = (double)n3 - class_18222.llIIlIlIlllIIllIlIlllIllI) * d2 + (d = (double)n4 - class_18222.IllIIIIllIIllIllIlllIlIIl) * d < 1024.0)) continue;
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2103(n, n2, n3, n4, n5));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S25PacketBlockBreakAnim(n, n2, n3, n4, n5));
         }
     }
 

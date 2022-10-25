@@ -8,6 +8,7 @@ package obf;/*
  */
 import java.net.URI;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.settings.GameSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

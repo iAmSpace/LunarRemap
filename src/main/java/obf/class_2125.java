@@ -11,9 +11,9 @@ public class class_2125
 extends Block {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"default", "chiseled", "smooth"};
     private static final String[] lIlIIllllIlIIIIllIIIIlIIl = new String[]{"normal", "carved", "smooth"};
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    private class_2102 lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lllIIIIIIlIlllIIlIlIIIllI;
 
     public class_2125() {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
@@ -21,7 +21,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n != 1 && (n != 0 || n2 != 1 && n2 != 2)) {
             if (n == 0) {
                 return this.lllIIIIIIlIlllIIlIlIIIllI;
@@ -48,7 +48,7 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[lIlIIllllIlIIIIllIIIIlIIl.length];
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[lIlIIllllIlIIIIllIIIIlIIl.length];
         for (int i = 0; i < this.llIlllIIllIlllIlIlIlIIIll.length; ++i) {
             this.llIlllIIllIlllIlIlIlIIIll[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + lIlIIllllIlIIIIllIIIIlIIl[i]);
         }

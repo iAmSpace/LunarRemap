@@ -121,7 +121,7 @@ public class class_1605 {
         hashMap.put("X-Minecraft-Version", "1.7.10");
         this.IIIllIIlIIIIIIlIlIIllIIlI = true;
         Minecraft.getMinecraft().lllIIIllIIIIlllIlIIllIIll(class_08492);
-        class_0790.lllIIIllIIIIlllIlIIllIIll(file, string, new class_1593(this), hashMap, 0x3200000, class_08492, Minecraft.getMinecraft().lllIIIIIIlIlllIIlIlIIIllI());
+        HttpUtil.lllIIIllIIIIlllIlIIllIIll(file, string, new class_1593(this), hashMap, 0x3200000, class_08492, Minecraft.getMinecraft().lllIIIIIIlIlllIIlIlIIIllI());
     }
 
     public class_0449 IlIIIIIllllllIIlllIllllll() {

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import optifine.Config;
@@ -325,7 +326,7 @@ class_0887 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(String string) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(String string) {
         if (string == null) {
             throw new IllegalArgumentException("Name cannot be null!");
         }

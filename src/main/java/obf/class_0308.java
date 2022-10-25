@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -20,6 +22,6 @@ public interface class_0308 {
 
     public float IllIIlllllllIIlIIlIIIIlIl();
 
-    public class_0350 IIIllIllIIlIlIlIlIllllIIl();
+    public AttenuationType IIIllIllIIlIlIlIlIllllIIl();
 }
 

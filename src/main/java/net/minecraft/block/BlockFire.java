@@ -10,7 +10,7 @@ public class BlockFire
 extends Block {
     private int[] llllllIlIllllIlIlIlIIIIlI = new int[256];
     private int[] lIlIIllllIlIIIIllIIIIlIIl = new int[256];
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
 
     protected BlockFire() {
         super(class_1855.IlIlllIIIIIIlIIllIIllIlll);
@@ -287,15 +287,15 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_layer_0"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_layer_1")};
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_layer_0"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_layer_1")};
     }
 
-    public class_2102 IllIIlllllllIIlIIlIIIIlIl(int n) {
+    public IIcon IllIIlllllllIIlIIlIIIIlIl(int n) {
         return this.llIlllIIllIlllIlIlIlIIIll[n];
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.llIlllIIllIlllIlIlIlIIIll[0];
     }
 

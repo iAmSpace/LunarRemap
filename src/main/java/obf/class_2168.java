@@ -8,6 +8,8 @@ package obf;/*
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.network.play.server.S3FPacketCustomPayload;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -27,8 +29,8 @@ extends ChannelInboundHandlerAdapter {
     }
 
     public void channelRead(ChannelHandlerContext channelHandlerContext, Object object) {
-        class_1147 class_11472;
-        if (object instanceof class_1147 && (class_11472 = (class_1147)object).IlIllllllIIlIIllllIIlIIIl().equals("LC|PING")) {
+        S3FPacketCustomPayload class_11472;
+        if (object instanceof S3FPacketCustomPayload && (class_11472 = (S3FPacketCustomPayload)object).IlIllllllIIlIIllllIIlIIIl().equals("LC|PING")) {
             this.lllIlIIlIIIlIlIIIllIlllIl = System.nanoTime();
             long l = (long)new DataInputStream(new ByteArrayInputStream(class_11472.lIlllIlllIIIIlIIlllIllIII())).readInt() & 0xFFFFFFFFL;
             if (l != this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll()) {
@@ -48,7 +50,7 @@ extends ChannelInboundHandlerAdapter {
             catch (IOException iOException) {
                 // empty catch block
             }
-            channelHandlerContext.channel().eventLoop().execute(() -> channelHandlerContext.channel().writeAndFlush((Object)new class_0917("LC|PONG", byteArrayOutputStream.toByteArray())));
+            channelHandlerContext.channel().eventLoop().execute(() -> channelHandlerContext.channel().writeAndFlush((Object)new C17PacketCustomPayload("LC|PONG", byteArrayOutputStream.toByteArray())));
         }
         if (System.nanoTime() - this.lllIlIIlIIIlIlIIIllIlllIl > 45000000000L) {
             throw new IOException("LC Protocol Error 5\n(Try updating your client)");

@@ -1,6 +1,11 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S21PacketChunkData;
+import net.minecraft.network.play.server.S22PacketMultiBlockChange;
+import net.minecraft.network.play.server.S23PacketBlockChange;
+import net.minecraft.network.play.server.S26PacketMapChunkBulk;
 import optifine.Config;
 
 import java.util.ArrayList;
@@ -54,7 +59,7 @@ public class class_0096 {
         if (this.IlIllllllIIlIIllllIIlIIIl.contains(class_18222)) {
             class_0723 class_07232 = class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl);
             if (bl && class_07232.IIIllIllIIlIlIlIlIllllIIl()) {
-                class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0150(class_07232, true, 0));
+                class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S21PacketChunkData(class_07232, true, 0));
             }
             this.IlIllllllIIlIIllllIIlIIIl.remove(class_18222);
             class_18222.lIllllIIlIIIlIllllllIIIll.remove(this.lIlllIlllIIIIlIIlllIllIII);
@@ -97,7 +102,7 @@ public class class_0096 {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032) {
         for (int i = 0; i < this.IlIllllllIIlIIllllIIlIIIl.size(); ++i) {
             class_1822 class_18222 = (class_1822)this.IlIllllllIIlIIllllIIlIIIl.get(i);
             if (class_18222.lIllllIIlIIIlIllllllIIIll.contains(this.lIlllIlllIIIIlIIlllIllIII)) continue;
@@ -111,14 +116,14 @@ public class class_0096 {
                 int n = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll * 16 + (this.IlIIIIIllllllIIlllIllllll[0] >> 12 & 0xF);
                 int n2 = this.IlIIIIIllllllIIlllIllllll[0] & 0xFF;
                 int n3 = this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl * 16 + (this.IlIIIIIllllllIIlllIllllll[0] >> 8 & 0xF);
-                this.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl)));
+                this.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl)));
                 if (class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).a_(n, n2, n3).lllIIlIIIllllllIIIIlIlIlI()) {
                     this.lllIIIllIIIIlllIlIIllIIll(class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).lllIlIIlIIIlIlIIIllIlllIl(n, n2, n3));
                 }
             } else if (this.lIllllIIlIIIlIllllllIIIll == 64) {
                 int n = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll * 16;
                 int n4 = this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl * 16;
-                this.lllIIIllIIIIlllIlIIllIIll(new class_0150(class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl), false, this.IIIllIIlIIIIIIlIlIIllIIlI));
+                this.lllIIIllIIIIlllIlIIllIIll(new S21PacketChunkData(class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl), false, this.IIIllIIlIIIIIIlIlIIllIIlI));
                 for (int i = 0; i < 16; ++i) {
                     if ((this.IIIllIIlIIIIIIlIlIIllIIlI & 1 << i) == 0) continue;
                     int n5 = i << 4;
@@ -128,7 +133,7 @@ public class class_0096 {
                     }
                 }
             } else {
-                this.lllIIIllIIIIlllIlIIllIIll(new class_1656(this.lIllllIIlIIIlIllllllIIIll, this.IlIIIIIllllllIIlllIllllll, class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl)));
+                this.lllIIIllIIIIlllIlIIllIIll(new S22PacketMultiBlockChange(this.lIllllIIlIIIlIllllllIIIll, this.IlIIIIIllllllIIlllIllllll, class_0636.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl).IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl)));
                 for (int i = 0; i < this.lIllllIIlIIIlIllllllIIIll; ++i) {
                     int n = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll * 16 + (this.IlIIIIIllllllIIlllIllllll[i] >> 12 & 0xF);
                     int n6 = this.IlIIIIIllllllIIlllIllllll[i] & 0xFF;
@@ -143,7 +148,7 @@ public class class_0096 {
     }
 
     private void lllIIIllIIIIlllIlIIllIIll(class_1774 class_17742) {
-        class_0703 class_07032;
+        Packet class_07032;
         if (class_17742 != null && (class_07032 = class_17742.IllIIlllllllIIlIIlIIIIlIl()) != null) {
             this.lllIIIllIIIIlllIlIIllIIll(class_07032);
         }
@@ -155,7 +160,7 @@ public class class_0096 {
             class_0723 class_07232 = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll().IlIIIIIllllllIIlllIllllll(this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll, this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl);
             ArrayList<class_0723> arrayList = new ArrayList<class_0723>(1);
             arrayList.add(class_07232);
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2053(arrayList));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S26PacketMapChunkBulk(arrayList));
         }
     }
 

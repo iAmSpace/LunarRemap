@@ -15,6 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 import net.minecraft.crash.CrashReport;
 import org.apache.logging.log4j.LogManager;

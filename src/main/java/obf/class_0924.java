@@ -15,6 +15,7 @@ package obf;/*
  */
 import com.google.common.base.Charsets;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import net.minecraft.util.ResourceLocation;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;
 import io.netty.buffer.Unpooled;
@@ -99,7 +100,7 @@ implements class_0677 {
         for (int i = 0; i < Math.min(list.size(), 2); ++i) {
             this.IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl((String)list.get(i), n2 + 32 + 3, n3 + 12 + this.IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll * i, 0x808080);
         }
-        String string2 = bl4 ? (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + this.lIllllIIlIIIlIllllllIIIll.IIIllIllIIlIlIlIlIllllIIl : this.lIllllIIlIIIlIllllllIIIll.IlIllllllIIlIIllllIIlIIIl;
+        String string2 = bl4 ? (Object)((Object) EnumChatFormatting.DARK_RED) + this.lIllllIIlIIIlIllllllIIIll.IIIllIllIIlIlIlIlIllllIIl : this.lIllllIIlIIIlIllllllIIIll.IlIllllllIIlIIllllIIlIIIl;
         int n9 = this.IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(string2);
         this.IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl(string2, n2 + n4 - n9 - 15 - 2, n3 + 1, 0x808080);
         int n10 = 0;
@@ -118,7 +119,7 @@ implements class_0677 {
             }
         } else {
             n10 = 1;
-            n8 = (int)(Minecraft.llllllIlIllllIlIlIlIIIIlI() / 100L + (long)(n * 2) & 7L);
+            n8 = (int)(Minecraft.getSystemTime() / 100L + (long)(n * 2) & 7L);
             if (n8 > 4) {
                 n8 = 8 - n8;
             }
@@ -221,10 +222,10 @@ implements class_0677 {
     public boolean lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4, int n5, int n6) {
         boolean bl;
         this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(n);
-        if (Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.IIIllIIlIIIIIIlIlIIllIIlI < 250L) {
+        if (Minecraft.getSystemTime() - this.IIIllIIlIIIIIIlIlIIllIIlI < 250L) {
             this.lIlllIlllIIIIlIIlllIllIII.IIIllIIlIIIIIIlIlIIllIIlI();
         }
-        this.IIIllIIlIIIIIIlIlIIllIIlI = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.IIIllIIlIIIIIIlIlIIllIIlI = Minecraft.getSystemTime();
         Minecraft class_06672 = Minecraft.getMinecraft();
         boolean bl2 = this.lIlllIlllIIIIlIIlllIllIII.IlIIIIIllllllIIlllIllllll(this);
         boolean bl3 = this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(this);

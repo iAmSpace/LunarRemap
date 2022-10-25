@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
@@ -23,7 +24,7 @@ extends class_1603 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212, double d, double d2, double d3, float f, float f2) {
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(this.lIllllIIlIIIlIllllllIIIll);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(this.lIllllIIlIIIlIllllllIIIll);
         if (class_21022 != null) {
             GL11.glPushMatrix();
             GL11.glTranslatef((float)((float)d), (float)((float)d2), (float)((float)d3));
@@ -53,7 +54,7 @@ extends class_1603 {
         return class_1511.lllIlIIlIIIlIlIIIllIlllIl;
     }
 
-    private void lllIIIllIIIIlllIlIIllIIll(class_0868 class_08682, class_2102 class_21022) {
+    private void lllIIIllIIIIlllIlIIllIIll(class_0868 class_08682, IIcon class_21022) {
         float f = class_21022.IlIllllllIIlIIllllIIlIIIl();
         float f2 = class_21022.lIlllIlllIIIIlIIlllIllIII();
         float f3 = class_21022.IlIIIIIllllllIIlllIllllll();

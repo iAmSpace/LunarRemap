@@ -14,7 +14,7 @@ class class_0010 {
 
     class_0010(class_0822 class_08222, List list) {
         this.lIllllIIlIIIlIllllllIIIll = class_08222;
-        ArrayList<class_1665> arrayList = new ArrayList<class_1665>();
+        ArrayList<AbstractModule> arrayList = new ArrayList<AbstractModule>();
         ArrayList<class_0767> arrayList2 = new ArrayList<class_0767>();
         ArrayList<Float> arrayList3 = new ArrayList<Float>();
         ArrayList<Float> arrayList4 = new ArrayList<Float>();
@@ -25,7 +25,7 @@ class class_0010 {
             arrayList2.add(class_13762.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll());
             arrayList3.add(Float.valueOf(class_13762.lllIIIllIIIIlllIlIIllIIll.IllIIIllIIIIlIlIlIllIIlll()));
             arrayList4.add(Float.valueOf(class_13762.lllIIIllIIIIlllIlIIllIIll.lIIIIlIlIIlllllIIllIIlIII()));
-            arrayList5.add(class_13762.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII());
+            arrayList5.add(class_13762.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.getValue());
         }
         this.lllIIIllIIIIlllIlIIllIIll = arrayList;
         this.lllIlIIlIIIlIlIIIllIlllIl = arrayList2;

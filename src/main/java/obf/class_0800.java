@@ -54,6 +54,9 @@ import java.util.concurrent.TimeUnit;
 import javax.crypto.SecretKey;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.network.play.server.S12PacketEntityVelocity;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.ChatComponentTranslation;
 import org.apache.commons.lang3.Validate;
@@ -78,8 +81,8 @@ extends SimpleChannelInboundHandler {
     private final Queue llIIllIllIlIIlIIllIllllll = Queues.newConcurrentLinkedQueue();
     private Channel lllIIlIIIllllllIIIIlIlIlI;
     private SocketAddress IlIlllIIIIIIlIIllIIllIlll;
-    private class_2075 IlIlIIlIlIllIIlIlIIllIIIl;
-    private class_0546 lllllIlllIIllIlIIlIIIllII;
+    private INetHandler IlIlIIlIlIllIIlIlIIllIIIl;
+    private EnumConnectionState lllllIlllIIllIlIIlIIIllII;
     private IChatComponent IlIlIIlllIIlIllIIIlllllIl;
     private boolean lIIlIIIIIlIlllIlIIlIlIlll;
     public boolean IIIllIllIIlIlIlIlIllllIIl = false;
@@ -94,13 +97,13 @@ extends SimpleChannelInboundHandler {
         super.channelActive(channelHandlerContext);
         this.lllIIlIIIllllllIIIIlIlIlI = channelHandlerContext.channel();
         this.IlIlllIIIIIIlIIllIIllIlll = this.lllIIlIIIllllllIIIIlIlIlI.remoteAddress();
-        this.lllIIIllIIIIlllIlIIllIIll(class_0546.lllIIIllIIIIlllIlIIllIIll);
+        this.lllIIIllIIIIlllIlIIllIIll(EnumConnectionState.HANDSHAKING);
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462) {
-        this.lllllIlllIIllIlIIlIIIllII = (class_0546)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).getAndSet((Object)class_05462));
-        this.lllIIlIIIllllllIIIIlIlIlI.attr(IlIIIIIllllllIIlllIllllll).set((Object)class_05462.lllIIIllIIIIlllIlIIllIIll(this.lIIIIlIlIIlllllIIllIIlIII));
-        this.lllIIlIIIllllllIIIIlIlIlI.attr(lIllllIIlIIIlIllllllIIIll).set((Object)class_05462.lllIlIIlIIIlIlIIIllIlllIl(this.lIIIIlIlIIlllllIIllIIlIII));
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462) {
+        this.lllllIlllIIllIlIIlIIIllII = (EnumConnectionState)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).getAndSet((Object)class_05462));
+        this.lllIIlIIIllllllIIIIlIlIlI.attr(IlIIIIIllllllIIlllIllllll).set((Object)class_05462.func_150757_a(this.lIIIIlIlIIlllllIIllIIlIII));
+        this.lllIIlIIIllllllIIIIlIlIlI.attr(lIllllIIlIIIlIllllllIIIll).set((Object)class_05462.func_150754_b(this.lIIIIlIlIIlllllIIllIIlIII));
         this.lllIIlIIIllllllIIIIlIlIlI.config().setAutoRead(true);
         IllIIIllIIIIlIlIlIllIIlll.debug("Enabled auto read");
     }
@@ -114,23 +117,23 @@ extends SimpleChannelInboundHandler {
         this.lllIIIllIIIIlllIlIIllIIll(class_17902);
     }
 
-    protected void lllIIIllIIIIlllIlIIllIIll(ChannelHandlerContext channelHandlerContext, class_0703 class_07032) {
+    protected void lllIIIllIIIIlllIlIIllIIll(ChannelHandlerContext channelHandlerContext, Packet class_07032) {
         if (this.lllIIlIIIllllllIIIIlIlIlI.isOpen()) {
-            if (class_07032.lllIIIllIIIIlllIlIIllIIll()) {
-                class_07032.lllIIIllIIIIlllIlIIllIIll(this.IlIlIIlIlIllIIlIlIIllIIIl);
+            if (class_07032.hasPriority()) {
+                class_07032.processPacket(this.IlIlIIlIlIllIIlIlIIllIIIl);
             } else {
                 this.llIIlllIllIllllIIIlIIIIII.add(class_07032);
             }
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2075 class_20752) {
+    public void lllIIIllIIIIlllIlIIllIIll(INetHandler class_20752) {
         Validate.notNull((Object)class_20752, (String)"packetListener", (Object[])new Object[0]);
         IllIIIllIIIIlIlIlIllIIlll.debug("Set listener of {} to {}", new Object[]{this, class_20752});
         this.IlIlIIlIlIllIIlIlIIllIIIl = class_20752;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032, GenericFutureListener ... arrgenericFutureListener) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032, GenericFutureListener ... arrgenericFutureListener) {
         if (this.lllIIlIIIllllllIIIIlIlIlI != null && this.lllIIlIIIllllllIIIIlIlIlI.isOpen()) {
             this.IIIllIllIIlIlIlIlIllllIIl();
             this.lllIlIIlIIIlIlIIIllIlllIl(class_07032, arrgenericFutureListener);
@@ -139,9 +142,9 @@ extends SimpleChannelInboundHandler {
         }
     }
 
-    private void lllIlIIlIIIlIlIIIllIlllIl(class_0703 class_07032, GenericFutureListener[] arrgenericFutureListener) {
-        class_0546 class_05462 = class_0546.lllIIIllIIIIlllIlIIllIIll(class_07032);
-        class_0546 class_05463 = (class_0546)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).get());
+    private void lllIlIIlIIIlIlIIIllIlllIl(Packet class_07032, GenericFutureListener[] arrgenericFutureListener) {
+        EnumConnectionState class_05462 = EnumConnectionState.func_150752_a(class_07032);
+        EnumConnectionState class_05463 = (EnumConnectionState)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).get());
         if (class_05463 != class_05462) {
             IllIIIllIIIIlIlIlIllIIlll.debug("Disabled auto read");
             this.lllIIlIIIllllllIIIIlIlIlI.config().setAutoRead(false);
@@ -167,19 +170,19 @@ extends SimpleChannelInboundHandler {
 
     public void lllIIIllIIIIlllIlIIllIIll() {
         this.IIIllIllIIlIlIlIlIllllIIl();
-        class_0546 class_05462 = (class_0546)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).get());
+        EnumConnectionState class_05462 = (EnumConnectionState)((Object)this.lllIIlIIIllllllIIIIlIlIlI.attr(lIlllIlllIIIIlIIlllIllIII).get());
         if (this.lllllIlllIIllIlIIlIIIllII != class_05462) {
             if (this.lllllIlllIIllIlIIlIIIllII != null) {
-                this.IlIlIIlIlIllIIlIlIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this.lllllIlllIIllIlIIlIIIllII, class_05462);
+                this.IlIlIIlIlIllIIlIlIIllIIIl.onConnectionStateTransition(this.lllllIlllIIllIlIIlIIIllII, class_05462);
             }
             this.lllllIlllIIllIlIIlIIIllII = class_05462;
         }
         if (this.IlIlIIlIlIllIIlIlIIllIIIl != null) {
             for (int i = 1000; !this.llIIlllIllIllllIIIlIIIIII.isEmpty() && i >= 0; --i) {
-                class_0703 class_07032 = (class_0703)this.llIIlllIllIllllIIIlIIIIII.poll();
-                class_07032.lllIIIllIIIIlllIlIIllIIll(this.IlIlIIlIlIllIIlIlIIllIIIl);
+                Packet class_07032 = (Packet)this.llIIlllIllIllllIIIlIIIIII.poll();
+                class_07032.processPacket(this.IlIlIIlIlIllIIlIlIIllIIIl);
             }
-            this.IlIlIIlIlIllIIlIlIIllIIIl.lllIIIllIIIIlllIlIIllIIll();
+            this.IlIlIIlIlIllIIlIlIIllIIIl.onNetworkTick();
         }
         this.lllIIlIIIllllllIIIIlIlIlI.flush();
     }
@@ -215,8 +218,8 @@ extends SimpleChannelInboundHandler {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(SecretKey secretKey) {
-        this.lllIIlIIIllllllIIIIlIlIlI.pipeline().addBefore("splitter", "decrypt", (ChannelHandler)new class_0490(class_0936.lllIIIllIIIIlllIlIIllIIll(2, secretKey)));
-        this.lllIIlIIIllllllIIIIlIlIlI.pipeline().addBefore("prepender", "encrypt", (ChannelHandler)new class_2121(class_0936.lllIIIllIIIIlllIlIIllIIll(1, secretKey)));
+        this.lllIIlIIIllllllIIIIlIlIlI.pipeline().addBefore("splitter", "decrypt", (ChannelHandler)new class_0490(CryptManager.lllIIIllIIIIlllIlIIllIIll(2, secretKey)));
+        this.lllIIlIIIllllllIIIIlIlIlI.pipeline().addBefore("prepender", "encrypt", (ChannelHandler)new class_2121(CryptManager.lllIIIllIIIIlllIlIIllIIll(1, secretKey)));
         if (this.IIIllIllIIlIlIlIlIllllIIl) {
             Object object;
             String string = Minecraft.getMinecraft().getSession().getPlayerID();
@@ -224,10 +227,10 @@ extends SimpleChannelInboundHandler {
                 object = MessageDigest.getInstance("SHA-512");
                 ((MessageDigest)object).update(secretKey.getEncoded());
                 ((MessageDigest)object).update(class_0817.class.getName().getBytes());
-                ((MessageDigest)object).update(class_0852.class.getName().getBytes());
+                ((MessageDigest)object).update(S12PacketEntityVelocity.class.getName().getBytes());
                 ((MessageDigest)object).update(string.getBytes());
                 ((MessageDigest)object).update(Minecraft.getMinecraft().IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl.getBytes());
-                this.lllIIlIIIllllllIIIIlIlIlI.writeAndFlush((Object)new class_0917("LC|INIT", ((MessageDigest)object).digest()));
+                this.lllIIlIIIllllllIIIIlIlIlI.writeAndFlush((Object)new C17PacketCustomPayload("LC|INIT", ((MessageDigest)object).digest()));
                 System.out.println("Sent LC|INIT");
             }
             catch (NoSuchAlgorithmException noSuchAlgorithmException) {
@@ -248,7 +251,7 @@ extends SimpleChannelInboundHandler {
                 catch (IOException iOException) {
                     // empty catch block
                 }
-                this.lllIIlIIIllllllIIIIlIlIlI.writeAndFlush((Object)new class_0917("LC|PING", byteArrayOutputStream.toByteArray()));
+                this.lllIIlIIIllllllIIIIlIlIlI.writeAndFlush((Object)new C17PacketCustomPayload("LC|PING", byteArrayOutputStream.toByteArray()));
             }, 1L, 5L, TimeUnit.SECONDS);
         }
         this.lIIlIIIIIlIlllIlIIlIlIlll = true;
@@ -258,7 +261,7 @@ extends SimpleChannelInboundHandler {
         return this.lllIIlIIIllllllIIIIlIlIlI != null && this.lllIIlIIIllllllIIIIlIlIlI.isOpen();
     }
 
-    public class_2075 IlIIIIIllllllIIlllIllllll() {
+    public INetHandler IlIIIIIllllllIIlllIllllll() {
         return this.IlIlIIlIlIllIIlIlIIllIIIl;
     }
 
@@ -271,7 +274,7 @@ extends SimpleChannelInboundHandler {
     }
 
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object object) {
-        this.lllIIIllIIIIlllIlIIllIIll(channelHandlerContext, (class_0703)object);
+        this.lllIIIllIIIIlllIlIIllIIll(channelHandlerContext, (Packet)object);
     }
 
     public Channel IllIIlllllllIIlIIlIIIIlIl() {

@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
@@ -22,7 +24,7 @@ extends class_1194 {
     private class_1096 lIIlIIIIIlIlllIlIIlIlIlll;
     public class_1194 lllIIlIIIllllllIIIIlIlIlI;
     public boolean IlIlllIIIIIIlIIllIIllIlll = false;
-    public class_1665 IlIlIIlIlIllIIlIlIIllIIIl = null;
+    public AbstractModule IlIlIIlIlIllIIlIlIIllIIIl = null;
     private class_0527 lIlIlIIlIIIIlIIIIIlllIIII = null;
     private class_0527 IlIIIlIIIIllIIIllIIIIIIll = null;
     private Map IIlllIlIlllIllIIIlllIIlIl;
@@ -30,21 +32,21 @@ extends class_1194 {
 
     public class_0914(List list, float f, int n, int n2, int n3, int n4) {
         super(f, n, n2, n3, n4);
-        this.IlIlIIlllIIlIllIIIlllllIl = list == LunarClient.getInstance().getModuleManager().lllIlIIlIIIlIlIIIllIlllIl;
+        this.IlIlIIlllIIlIllIIIlllllIl = list == LunarClient.getInstance().getModuleManager().staffModules;
         this.lllllIlllIIllIlIIlIIIllII = -12418828;
         this.lIIlIIIIIlIlllIlIIlIlIlll = new class_1096(this, this.lllllIlllIIllIlIIlIIIllII, f);
         this.lllIIIllIIIIlllIlIIllIIll = new ArrayList();
         for (Object object : list) {
-            if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII() && !((class_1665)object).IlIIIIIllllllIIlllIllllll()) continue;
-            this.lllIIIllIIIIlllIlIIllIIll.add(new class_0129(this, this.lllllIlllIIllIlIIlIIIllII, (class_1665)object, f));
+            if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII() && !((AbstractModule)object).IlIIIIIllllllIIlllIllllll()) continue;
+            this.lllIIIllIIIIlllIlIIllIIll.add(new class_0129(this, this.lllllIlllIIllIlIIlIIIllII, (AbstractModule)object, f));
         }
         this.lIlIlIIlIIIIlIIIIIlllIIII = new class_0527(null, "arrow-64.png", this.lIlllIlllIIIIlIIlllIllIII + 2, this.IlIIIIIllllllIIlllIllllll + 4, 28, 28, -12418828, f);
         this.IlIlIIlIlIllIIlIlIIllIIIl = null;
         this.IIlllIlIlllIllIIIlllIIlIl = new HashMap();
         for (Object object : list) {
-            if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII() && !((class_1665)object).IlIIIIIllllllIIlllIllllll() || object == LunarClient.getInstance().getModuleManager().lIlllIlllIIIIlIIlllIllIII) continue;
+            if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII() && !((AbstractModule)object).IlIIIIIllllllIIlllIllllll() || object == LunarClient.getInstance().getModuleManager().lIlllIlllIIIIlIIlllIllIII) continue;
             Object object2 = new ArrayList();
-            for (class_1609 class_16092 : ((class_1665)object).llIIlllIllIllllIIIlIIIIII()) {
+            for (Setting class_16092 : ((AbstractModule)object).llIIlllIllIllllIIIlIIIIII()) {
                 switch (class_16092.IllIIIllIIIIlIlIlIllIIlll()) {
                     case lIllllIIlIIIlIllllllIIIll: {
                         object2.add(new class_0990(class_16092, f));
@@ -53,8 +55,8 @@ extends class_1194 {
                     case IlIIIIIllllllIIlllIllllll: 
                     case lIlllIlllIIIIlIIlllIllIII: 
                     case IlIllllllIIlIIllllIIlIIIl: {
-                        if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((class_2256)object).lllIIIllIIIIlllIlIIllIIll() || ((class_1665)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((class_1665)object).llIIlIlIlllIIllIlIlllIllI) break;
-                        if (class_16092.IllIIIllIIIIlIlIlIllIIlll().equals((Object)class_1318.lIlllIlllIIIIlIIlllIllIII) && class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("color")) {
+                        if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((class_2256)object).lllIIIllIIIIlllIlIIllIIll() || ((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((AbstractModule)object).llIIlIlIlllIIllIlIlllIllI) break;
+                        if (class_16092.IllIIIllIIIIlIlIlIllIIlll().equals((Object)class_1318.lIlllIlllIIIIlIIlllIllIII) && class_16092.getName().toLowerCase().contains("color")) {
                             object2.add(new class_1699(class_16092, f));
                             break;
                         }
@@ -66,12 +68,12 @@ extends class_1194 {
                         break;
                     }
                     case lllIIIllIIIIlllIlIIllIIll: {
-                        if (!class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label")) break;
+                        if (!class_16092.getName().equalsIgnoreCase("label")) break;
                         object2.add(new class_0325(class_16092, f));
                     }
                 }
             }
-            if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII()) {
+            if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII()) {
                 object2.add(new class_1388(((class_2256)object).lllIIIllIIIIlllIlIIllIIll(), f));
                 if (object == LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII) {
                     object2.add(new class_1113(LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll(), "net.minecraft.init.Blocks", f));
@@ -80,36 +82,36 @@ extends class_1194 {
             this.IIlllIlIlllIllIIIlllIIlIl.put(object, object2);
         }
         this.lIlIllIIlIIlIIlIIlIIlIIll = new ArrayList();
-        block15: for (Object object : LunarClient.getInstance().getSettingsManager().IIIllIIlIIIIIIlIlIIllIIlI) {
-            switch (((class_1609)object).IllIIIllIIIIlIlIlIllIIlll()) {
+        block15: for (Object object : LunarClient.getInstance().getSettingsManager().settingsList) {
+            switch (((Setting)object).IllIIIllIIIIlIlIlIllIIlll()) {
                 case lIllllIIlIIIlIllllllIIIll: {
-                    if (object == LunarClient.getInstance().getSettingsManager().IIIIlIllIlIIlIIlIllIlIlll) continue block15;
-                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0990((class_1609)object, f));
+                    if (object == LunarClient.getInstance().getSettingsManager().rsClearGlass) continue block15;
+                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0990((Setting)object, f));
                     break;
                 }
                 case IlIIIIIllllllIIlllIllllll: 
                 case lIlllIlllIIIIlIIlllIllIII: 
                 case IlIllllllIIlIIllllIIlIIIl: {
-                    if (((class_1609)object).IllIIIllIIIIlIlIlIllIIlll().equals((Object)class_1318.lIlllIlllIIIIlIIlllIllIII) && ((class_1609)object).lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("color")) {
-                        this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_1699((class_1609)object, f));
+                    if (((Setting)object).IllIIIllIIIIlIlIlIllIIlll().equals((Object)class_1318.lIlllIlllIIIIlIIlllIllIII) && ((Setting)object).getName().toLowerCase().contains("color")) {
+                        this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_1699((Setting)object, f));
                         break;
                     }
-                    if (((class_1609)object).lIllllIIlIIIlIllllllIIIll().equals("World Time")) {
-                        this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0195((class_1609)object, f));
+                    if (((Setting)object).getName().equals("World Time")) {
+                        this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0195((Setting)object, f));
                         break;
                     }
-                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0401((class_1609)object, f));
+                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0401((Setting)object, f));
                     break;
                 }
                 case lllIlIIlIIIlIlIIIllIlllIl: {
-                    if (object == LunarClient.getInstance().getSettingsManager().IIIIlIllIlIIlIIlIllIlIlll) continue block15;
-                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_2141((class_1609)object, f));
+                    if (object == LunarClient.getInstance().getSettingsManager().rsClearGlass) continue block15;
+                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_2141((Setting)object, f));
                     break;
                 }
                 case lllIIIllIIIIlllIlIIllIIll: {
-                    if (!((class_1609)object).lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label")) break;
-                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0325((class_1609)object, f));
-                    if (!((String) LunarClient.getInstance().getSettingsManager().lIlllIlllIIIIlIIlllIllIII().lIlllIlllIIIIlIIlllIllIII()).equals(((class_1609)object).lIlllIlllIIIIlIIlllIllIII())) break;
+                    if (!((Setting)object).getName().equalsIgnoreCase("label")) break;
+                    this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_0325((Setting)object, f));
+                    if (!((String) LunarClient.getInstance().getSettingsManager().lIlllIlllIIIIlIIlllIllIII().getValue()).equals(((Setting)object).getValue())) break;
                     this.lIlIllIIlIIlIIlIIlIIlIIll.add(new class_1208(f));
                 }
             }
@@ -228,11 +230,11 @@ extends class_1194 {
                 }
             } else if (this.IlIlllIIIIIIlIIllIIllIlll) {
                 if (this.IlIIIlIIIIllIIIllIIIIIIll.lllIIIllIIIIlllIlIIllIIll(n, n2)) {
-                    for (class_1665 class_16652 : LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll) {
-                        for (class_1609 class_16092 : class_16652.llIIlllIllIllllIIIlIIIIII()) {
-                            if (class_16092.IllIIIllIIIIlIlIlIllIIlll() != class_1318.lIlllIlllIIIIlIIlllIllIII || !class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("color") || class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("background")) continue;
+                    for (AbstractModule class_16652 : LunarClient.getInstance().getModuleManager().modules) {
+                        for (Setting class_16092 : class_16652.llIIlllIllIllllIIIlIIIIII()) {
+                            if (class_16092.IllIIIllIIIIlIlIlIllIIlll() != class_1318.lIlllIlllIIIIlIIlllIllIII || !class_16092.getName().toLowerCase().contains("color") || class_16092.getName().toLowerCase().contains("background")) continue;
                             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-                            class_16092.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().getSettingsManager().lllIIIIIIlIlllIIlIlIIIllI.lIlllIlllIIIIlIIlllIllIII());
+                            class_16092.setValue(LunarClient.getInstance().getSettingsManager().coDefaultColor.getValue());
                         }
                     }
                 } else {
@@ -246,12 +248,12 @@ extends class_1194 {
     }
 
     @Override
-    public boolean lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652) {
+    public boolean lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652) {
         return !class_16652.llIIlllIllIllllIIIlIIIIII().isEmpty() || class_16652.IIIllIIlIIIIIIlIlIIllIIlI().contains("Zans");
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_1665 class_16652) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(AbstractModule class_16652) {
         Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
         this.IIIllIllIIlIlIlIlIllllIIl = 0;
         this.IllIIlllllllIIlIIlIIIIlIl = 0.0;

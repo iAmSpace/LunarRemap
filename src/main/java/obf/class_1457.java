@@ -15,9 +15,9 @@ implements class_2098 {
         for (int i = 0; i < class_00132.IlIIIIIllllllIIlllIllllll(); ++i) {
             ItemStack class_08973 = class_00132.llIIllIllIlIIlIIllIllllll(i);
             if (class_08973 == null) continue;
-            if (class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981) {
-                class_0981 class_09812 = (class_0981)class_08973.lllIIIllIIIIlllIlIIllIIll();
-                if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() != class_0557.lllIIIllIIIIlllIlIIllIIll || class_08972 != null) {
+            if (class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor) {
+                ItemArmor class_09812 = (ItemArmor)class_08973.lllIIIllIIIIlllIlIIllIIll();
+                if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() != ArmorMaterial.CLOTH || class_08972 != null) {
                     return false;
                 }
                 class_08972 = class_08973;
@@ -42,13 +42,13 @@ implements class_2098 {
         int[] arrn = new int[3];
         int n4 = 0;
         int n5 = 0;
-        class_0981 class_09812 = null;
+        ItemArmor class_09812 = null;
         for (n3 = 0; n3 < class_00132.IlIIIIIllllllIIlllIllllll(); ++n3) {
             ItemStack class_08973 = class_00132.llIIllIllIlIIlIIllIllllll(n3);
             if (class_08973 == null) continue;
-            if (class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981) {
-                class_09812 = (class_0981)class_08973.lllIIIllIIIIlllIlIIllIIll();
-                if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() != class_0557.lllIIIllIIIIlllIlIIllIIll || class_08972 != null) {
+            if (class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor) {
+                class_09812 = (ItemArmor)class_08973.lllIIIllIIIIlllIlIIllIIll();
+                if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() != ArmorMaterial.CLOTH || class_08972 != null) {
                     return null;
                 }
                 class_08972 = class_08973.llIIlllIllIllllIIIlIIIIII();

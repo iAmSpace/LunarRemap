@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
@@ -58,7 +59,7 @@ extends class_2043 {
     }
 
     private boolean lllIIIllIIIIlllIlIIllIIll(class_0825 class_08252) {
-        return this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().equals("") || class_1227.lllIIIllIIIIlllIlIIllIIll(class_08252.IllIIlllllllIIlIIlIIIIlIl().lllIIIllIIIIlllIlIIllIIll()).toLowerCase().startsWith(this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().toLowerCase());
+        return this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().equals("") || EnumChatFormatting.getTextWithoutFormattingCodes(class_08252.IllIIlllllllIIlIIlIIIIlIl().lllIIIllIIIIlllIlIIllIIll()).toLowerCase().startsWith(this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().toLowerCase());
     }
 
     @Override
@@ -167,7 +168,7 @@ extends class_2043 {
                 LunarClient.getInstance().getWebsocket().lllIIIllIIIIlllIlIIllIIll(new class_0022("", this.IIIllIllIIlIlIlIlIllllIIl.IIIllIllIIlIlIlIlIllllIIl()));
                 this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll("");
             } else {
-                class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Error!", "Incorrect username.");
+                class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.RED) + "Error!", "Incorrect username.");
             }
         }
     }

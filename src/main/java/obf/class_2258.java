@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class class_2258
 extends class_1899 {
-    private static final class_2102[] llllllIlIllllIlIlIlIIIIlI = new class_2102[16];
+    private static final IIcon[] llllllIlIllllIlIlIlIIIIlI = new IIcon[16];
 
     public class_2258(class_1855 class_18552) {
         super("glass", class_18552, false);
@@ -17,7 +17,7 @@ extends class_1899 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return llllllIlIllllIlIlIlIIIIlI[n2 % llllllIlIllllIlIlIlIIIIlI.length];
     }
 

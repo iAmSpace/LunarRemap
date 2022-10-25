@@ -35,8 +35,8 @@ extends class_2043 {
         this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll(0.0f, f2, f3, 13.0f);
         this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(f + f3 - 4.0f, f2, 4.0f, f4);
         this.IIIllIIlIIIIIIlIlIIllIIlI.sort((class_18732, class_18733) -> {
-            String string = class_1227.lllIIIllIIIIlllIlIIllIIll(class_18732.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII());
-            String string2 = class_1227.lllIIIllIIIIlllIlIIllIIll(class_18733.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII());
+            String string = EnumChatFormatting.getTextWithoutFormattingCodes(class_18732.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII());
+            String string2 = EnumChatFormatting.getTextWithoutFormattingCodes(class_18733.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII());
             if (class_18732.IllIIlllllllIIlIIlIIIIlIl().IIIllIIlIIIIIIlIlIIllIIlI() == class_18733.IllIIlllllllIIlIIlIIIIlIl().IIIllIIlIIIIIIlIlIIllIIlI()) {
                 return string.compareTo(string2);
             }
@@ -53,7 +53,7 @@ extends class_2043 {
     }
 
     private boolean lllIIIllIIIIlllIlIIllIIll(class_1873 class_18732) {
-        return this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().equals("") || class_1227.lllIIIllIIIIlllIlIIllIIll(class_18732.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII()).toLowerCase().startsWith(this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().toLowerCase());
+        return this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().equals("") || EnumChatFormatting.getTextWithoutFormattingCodes(class_18732.IllIIlllllllIIlIIlIIIIlIl().lIlllIlllIIIIlIIlllIllIII()).toLowerCase().startsWith(this.IllIIlllllllIIlIIlIIIIlIl.IIIllIllIIlIlIlIlIllllIIl().toLowerCase());
     }
 
     @Override

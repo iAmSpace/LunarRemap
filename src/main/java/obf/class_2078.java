@@ -22,13 +22,13 @@ extends class_0229 {
         int n = -16;
         boolean bl = true;
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(1, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 120 + n, class_0616.lllIIIllIIIIlllIlIIllIIll("menu.returnToMenu", new Object[0])));
-        if (!this.lllllIlllIIllIlIIlIIIllII.IIIIlIllIlIIlIIlIllIlIlll()) {
+        if (!this.lllllIlllIIllIlIIlIIIllII.isIntegratedServerRunning()) {
             ((class_1197)this.lIlIlIIlIIIIlIIIIIlllIIII.get((int)0)).IllIIlllllllIIlIIlIIIIlIl = class_0616.lllIIIllIIIIlllIlIIllIIll("menu.disconnect", new Object[0]);
         }
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(4, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 24 + n, class_0616.lllIIIllIIIIlllIlIIllIIll("menu.returnToGame", new Object[0])));
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(0, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 96 + n, 98, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("menu.options", new Object[0])));
         class_1197 class_11972 = new class_1197(7, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 96 + n, 98, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("menu.shareToLan", new Object[0]));
-        class_11972.IllIIIllIIIIlIlIlIllIIlll = this.lllllIlllIIllIlIIlIIIllII.IlIlIIlllIllllllllIIIlIlI() && !this.lllllIlllIIllIlIIlIIIllII.llllIIIIlIIIlIIIIIIlIllll().lIIlIIlIllIlIIlIlIIlIlIlI();
+        class_11972.IllIIIllIIIIlIlIlIllIIlll = this.lllllIlllIIllIlIIlIIIllII.isSingleplayer() && !this.lllllIlllIIllIlIIlIIIllII.getIntegratedServer().lIIlIIlIllIlIIlIlIIlIlIlI();
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(5, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 48 + n, 98, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("gui.achievements", new Object[0])));
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(6, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 48 + n, 98, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("gui.stats", new Object[0])));
         if (!class_11972.IllIIIllIIIIlIlIlIllIIlll) {

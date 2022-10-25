@@ -11,7 +11,7 @@ import java.util.List;
 public class class_1272
 extends Item {
     protected final Block IIIllIllIIlIlIlIlIllllIIl;
-    private class_2102 IllIIIllIIIIlIlIlIllIIlll;
+    private IIcon IllIIIllIIIIlIlIlIllIIlll;
 
     public class_1272(Block class_05492) {
         this.IIIllIllIIlIlIlIlIllllIIl = class_05492;
@@ -28,7 +28,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return this.IllIIIllIIIIlIlIlIllIIlll != null ? this.IllIIIllIIIIlIlIlIllIIlll : this.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII(1);
     }
 

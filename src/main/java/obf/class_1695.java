@@ -11,9 +11,9 @@ public class class_1695
 extends Block {
     private static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"skin_brown", "skin_red"};
     private final int lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    private class_2102 lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lllIIIIIIlIlllIIlIlIIIllI;
 
     public class_1695(class_1855 class_18552, int n) {
         super(class_18552);
@@ -21,7 +21,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 == 10 && n > 1 ? this.IIIIlIIlIIIllIIIIllIIIlII : (n2 >= 1 && n2 <= 9 && n == 1 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : (n2 >= 1 && n2 <= 3 && n == 2 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : (n2 >= 7 && n2 <= 9 && n == 3 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : ((n2 == 1 || n2 == 4 || n2 == 7) && n == 4 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : ((n2 == 3 || n2 == 6 || n2 == 9) && n == 5 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : (n2 == 14 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl] : (n2 == 15 ? this.IIIIlIIlIIIllIIIIllIIIlII : this.lllIIIIIIlIlllIIlIlIIIllI)))))));
     }
 
@@ -46,7 +46,7 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[llllllIlIllllIlIlIlIIIIlI.length];
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[llllllIlIllllIlIlIlIIIIlI.length];
         for (int i = 0; i < this.llIlllIIllIlllIlIlIlIIIll.length; ++i) {
             this.llIlllIIllIlllIlIlIlIIIll[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + llllllIlIllllIlIlIlIIIIlI[i]);
         }

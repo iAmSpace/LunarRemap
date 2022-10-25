@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.util.List;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.SettingsManager;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
@@ -83,19 +85,19 @@ extends class_0210 {
             GL11.glEnable((int)3042);
             GL11.glEnable((int)3008);
             OpenGlHelper.glBlendFunc(775, 769, 1, 0);
-            class_0625 class_06252 = LunarClient.getInstance().getSettingsManager();
+            SettingsManager class_06252 = LunarClient.getInstance().getSettingsManager();
             if (this.IllIIlllllllIIlIIlIIIIlIl.lllllIlllIIllIlIIlIIIllII == null || this.IllIIlllllllIIlIIlIIIIlIl.lllllIlllIIllIlIIlIIIllII instanceof class_1056) {
-                if (((Boolean)class_06252.llIIIIllIIIIIIIlIIIlIIIIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                if ((Boolean) class_06252.csCustomCrosshair.getValue()) {
                     GL11.glPushMatrix();
                     float f4 = 1.0f / LunarClient.IllIIIllIIIIlIlIlIllIIlll();
                     n11 = (int)((float)n12 / f4);
                     n10 = (int)((float)n13 / f4);
                     GL11.glScalef((float)f4, (float)f4, (float)f4);
-                    f2 = ((Float)class_06252.llIlllIIllIlllIlIlIlIIIll.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-                    float f5 = ((Float)class_06252.IIIIlIIlIIIllIIIIllIIIlII.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-                    float f6 = ((Float)class_06252.lIlIIllllIlIIIIllIIIIlIIl.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-                    n9 = class_06252.llllllIlIllllIlIlIlIIIIlI.lllIIIllIIIIlllIlIIllIIll();
-                    n8 = ((Boolean)class_06252.IIllIllIIllIIlllIIIlIlllI.lIlllIlllIIIIlIIlllIllIII()).booleanValue();
+                    f2 = (Float) class_06252.csSize.getValue();
+                    float f5 = (Float) class_06252.csGap.getValue();
+                    float f6 = (Float) class_06252.csThickness.getValue();
+                    n9 = class_06252.csColor.lllIIIllIIIIlllIlIIllIIll();
+                    n8 = (Boolean) class_06252.csOutline.getValue() ? 1 : 0;
                     n7 = n11 / 2;
                     int n14 = n10 / 2;
                     if (n8 != 0) {
@@ -254,9 +256,9 @@ extends class_0210 {
             this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, "f: " + n3 + " (" + class_1632.IlIllllllIIlIIllllIIlIIIl[n3] + ") / " + MathHelper.IIIllIIlIIIIIIlIlIIllIIlI(this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.IIIIlIllIlIIlIIlIllIlIlll), 2, 88, 0xE0E0E0);
             if (this.IllIIlllllllIIlIIlIIIIlIl.theWorld != null && this.IllIIlllllllIIlIIlIIIIlIl.theWorld.IlIIIIIllllllIIlllIllllll(n8, n7, n4)) {
                 object = this.IllIIlllllllIIlIIlIIIIlIl.theWorld.lIlllIlllIIIIlIIlllIllIII(n8, n4);
-                this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, "lc: " + (((class_0723)object).lllIIIllIIIIlllIlIIllIIll() + 15) + " b: " + object.lllIIIllIIIIlllIlIIllIIll((int)(n8 & 15), (int)(n4 & 15), (class_1076)this.IllIIlllllllIIlIIlIIIIlIl.theWorld.IIIllIllIIlIlIlIlIllllIIl()).IlIIIlIllIIIllIIIIlIIlIll + " bl: " + ((class_0723)object).lllIIIllIIIIlllIlIIllIIll(class_1346.lllIlIIlIIIlIlIIIllIlllIl, n8 & 0xF, n7, n4 & 0xF) + " sl: " + ((class_0723)object).lllIIIllIIIIlllIlIIllIIll(class_1346.lllIIIllIIIIlllIlIIllIIll, n8 & 0xF, n7, n4 & 0xF) + " rl: " + ((class_0723)object).lllIlIIlIIIlIlIIIllIlllIl(n8 & 0xF, n7, n4 & 0xF, 0), 2, 96, 0xE0E0E0);
+                this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, "lc: " + (((class_0723)object).lllIIIllIIIIlllIlIIllIIll() + 15) + " b: " + ((class_0723)object).lllIIIllIIIIlllIlIIllIIll((int)(n8 & 15), (int)(n4 & 15), (class_1076)this.IllIIlllllllIIlIIlIIIIlIl.theWorld.IIIllIllIIlIlIlIlIllllIIl()).IlIIIlIllIIIllIIIIlIIlIll + " bl: " + ((class_0723)object).lllIIIllIIIIlllIlIIllIIll(class_1346.lllIlIIlIIIlIlIIIllIlllIl, n8 & 0xF, n7, n4 & 0xF) + " sl: " + ((class_0723)object).lllIIIllIIIIlllIlIIllIIll(class_1346.lllIIIllIIIIlllIlIIllIIll, n8 & 0xF, n7, n4 & 0xF) + " rl: " + ((class_0723)object).lllIlIIlIIIlIlIIIllIlllIl(n8 & 0xF, n7, n4 & 0xF, 0), 2, 96, 0xE0E0E0);
             }
-            this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, String.format("ws: %.3f, fs: %.3f, g: %b, fl: %d", Float.valueOf(this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl()), Float.valueOf(this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll()), this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.llllllIlIllllIlIlIlIIIIlI, this.IllIIlllllllIIlIIlIIIIlIl.theWorld.lIllllIIlIIIlIllllllIIIll(n8, n4)), 2, 104, 0xE0E0E0);
+            this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, String.format("ws: %.3f, fs: %.3f, g: %b, fl: %d", this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl(), Float.valueOf(this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll()), this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.llllllIlIllllIlIlIlIIIIlI, this.IllIIlllllllIIlIIlIIIIlIl.theWorld.lIllllIIlIIIlIllllllIIIll(n8, n4)), 2, 104, 0xE0E0E0);
             if (this.IllIIlllllllIIlIIlIIIIlIl.lIIlIIIIIlIlllIlIIlIlIlll != null && this.IllIIlllllllIIlIIlIIIIlIl.lIIlIIIIIlIlllIlIIlIlIlll.lllIIIllIIIIlllIlIIllIIll()) {
                 this.lllIlIIlIIIlIlIIIllIlllIl(class_18542, String.format("shader: %s", this.IllIIlllllllIIlIIlIIIIlIl.lIIlIIIIIlIlllIlIIlIlIlll.IllIIlllllllIIlIIlIIIIlIl().lllIlIIlIIIlIlIIIllIlllIl()), 2, 112, 0xE0E0E0);
             }
@@ -270,7 +272,7 @@ extends class_0210 {
             LunarClient.getInstance().getEventBus().callEvent(new class_1217(class_03212));
         }
         LunarClient.getInstance().getEventBus().callEvent(new class_0097(class_03212));
-        if (!this.IllIIlllllllIIlIIlIIIIlIl.gameSettings.showDebugInfo || ((Boolean) LunarClient.getInstance().getSettingsManager().IllIIIIllIIllIllIlllIlIIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (!this.IllIIlllllllIIlIIlIIIIlIl.gameSettings.showDebugInfo || ((Boolean) LunarClient.getInstance().getSettingsManager().rsShowHudInDbg.getValue()).booleanValue()) {
             LunarClient.getInstance().getEventBus().callEvent(new class_2201(class_03212));
         }
         if (this.IllIIlllllllIIlIIlIIIIlIl.lllllIlllIIllIlIIlIIIllII == null) {
@@ -309,7 +311,7 @@ extends class_0210 {
         this.IllIIlllllllIIlIIlIIIIlIl.mcProfiler.endSection();
         GL11.glPopMatrix();
         class_06932 = this.IllIIlllllllIIlIIlIIIIlIl.theWorld.IlIlIIlllIllllllllIIIlIlI().lllIIIllIIIIlllIlIIllIIll(0);
-        if (this.IllIIlllllllIIlIIlIIIIlIl.gameSettings.lIlIIIlIlIllIlIlIIIlIlIII.lIlllIlllIIIIlIIlllIllIII() && (!this.IllIIlllllllIIlIIlIIIIlIl.IIIIlIllIlIIlIIlIllIlIlll() || this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl.size() > 1 || class_06932 != null)) {
+        if (this.IllIIlllllllIIlIIlIIIIlIl.gameSettings.lIlIIIlIlIllIlIlIIIlIlIII.lIlllIlllIIIIlIIlllIllIII() && (!this.IllIIlllllllIIlIIlIIIIlIl.isIntegratedServerRunning() || this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl.size() > 1 || class_06932 != null)) {
             int n28;
             this.IllIIlllllllIIlIIlIIIIlIl.mcProfiler.startSection("playerList");
             class_1764 class_17642 = this.IllIIlllllllIIlIIlIIIIlIl.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl;
@@ -339,7 +341,7 @@ extends class_0210 {
                 class_18542.lllIIIllIIIIlllIlIIllIIll(string, (float)n8, (float)n7, 0xFFFFFF);
                 if (class_06932 != null && (n3 = n8 + n29 - 12 - 5) - (n4 = n8 + class_18542.lllIIIllIIIIlllIlIIllIIll(string) + 5) > 5) {
                     object = class_06932.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_09582.lllIIIllIIIIlllIlIIllIIll, class_06932);
-                    String string5 = (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "" + ((class_0678)object).lllIlIIlIIIlIlIIIllIlllIl();
+                    String string5 = (Object)((Object) EnumChatFormatting.YELLOW) + "" + ((class_0678)object).lllIlIIlIIIlIlIIIllIlllIl();
                     class_18542.lllIIIllIIIIlllIlIIllIIll(string5, (float)(n3 - class_18542.lllIIIllIIIIlllIlIIllIIll(string5)), (float)n7, 0xFFFFFF);
                 }
                 GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
@@ -597,7 +599,7 @@ extends class_0210 {
         GL11.glDepthMask((boolean)false);
         OpenGlHelper.glBlendFunc(770, 771, 1, 0);
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)f);
-        class_2102 class_21022 = Blocks.IIIIIIlIIIIIIIIIIlIlIlIlI.lIlllIlllIIIIlIIlllIllIII(1);
+        IIcon class_21022 = Blocks.IIIIIIlIIIIIIIIIIlIlIlIlI.lIlllIlllIIIIlIIlllIllIII(1);
         this.IllIIlllllllIIlIIlIIIIlIl.llIIlIIllIIllIlIIllIIllII().lllIIIllIIIIlllIlIIllIIll(class_1511.lllIIIllIIIIlllIlIIllIIll);
         float f2 = class_21022.IlIllllllIIlIIllllIIlIIIl();
         float f3 = class_21022.IlIIIIIllllllIIlllIllllll();

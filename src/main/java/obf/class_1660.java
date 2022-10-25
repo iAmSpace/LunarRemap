@@ -185,10 +185,10 @@ public abstract class class_1660 {
                         n6 = n2 - this.IlIllllllIIlIIllllIIlIIIl - this.llIIlllIllIllllIIIlIIIIII + (int)this.IlIlIIlllIIlIllIIIlllllIl - 4;
                         n5 = n6 / this.IllIIlllllllIIlIIlIIIIlIl;
                         if (n >= n8 && n <= n7 && n5 >= 0 && n6 >= 0 && n5 < n9) {
-                            n4 = n5 == this.lIIlIIIIIlIlllIlIIlIlIlll && Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.lIlIlIIlIIIIlIIIIIlllIIII < 250L ? 1 : 0;
+                            n4 = n5 == this.lIIlIIIIIlIlllIlIIlIlIlll && Minecraft.getSystemTime() - this.lIlIlIIlIIIIlIIIIIlllIIII < 250L ? 1 : 0;
                             this.lllIIIllIIIIlllIlIIllIIll(n5, n4 != 0, n, n2);
                             this.lIIlIIIIIlIlllIlIIlIlIlll = n5;
-                            this.lIlIlIIlIIIIlIIIIIlllIIII = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                            this.lIlIlIIlIIIIlIIIIIlllIIII = Minecraft.getSystemTime();
                         } else if (n >= n8 && n <= n7 && n6 < 0) {
                             this.lllIIIllIIIIlllIlIIllIIll(n - n8, n2 - this.IlIllllllIIlIIllllIIlIIIl + (int)this.IlIlIIlllIIlIllIIIlllllIl - 4);
                             n12 = 0;

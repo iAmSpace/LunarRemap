@@ -30,9 +30,9 @@ extends ByteToMessageDecoder {
             }
             arrby[i] = byteBuf.readByte();
             if (arrby[i] < 0) continue;
-            class_0181 class_01812 = new class_0181(Unpooled.wrappedBuffer((byte[])arrby));
+            PacketBuffer class_01812 = new PacketBuffer(Unpooled.wrappedBuffer((byte[])arrby));
             try {
-                int n = class_01812.lllIIIllIIIIlllIlIIllIIll();
+                int n = class_01812.readVarIntFromBuffer();
                 if (byteBuf.readableBytes() >= n) {
                     list.add(byteBuf.readBytes(n));
                     return;

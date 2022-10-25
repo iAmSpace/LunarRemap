@@ -204,7 +204,7 @@ implements class_0291 {
                 Item class_06113 = Item.lllIIIllIIIIlllIlIIllIIll(Integer.parseInt(string));
                 if (class_06113 != null) {
                     ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.generic.deprecatedId", Item.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(class_06113));
-                    class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl);
+                    class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY);
                     class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
                 }
                 class_06112 = class_06113;
@@ -228,7 +228,7 @@ implements class_0291 {
             if (Block.blockRegistry.lllIlIIlIIIlIlIIIllIlllIl(n)) {
                 Block class_05492 = Block.lllIIIllIIIIlllIlIIllIIll(n);
                 ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.generic.deprecatedId", Block.blockRegistry.lllIlIIlIIIlIlIIIllIlllIl(class_05492));
-                class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl);
+                class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY);
                 class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
                 return class_05492;
             }

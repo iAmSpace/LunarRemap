@@ -10,6 +10,7 @@ package obf;/*
 import com.mojang.authlib.exceptions.AuthenticationException;
 import java.awt.Color;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.util.MathHelper;
 import net.minecraft.client.renderer.OpenGlHelper;

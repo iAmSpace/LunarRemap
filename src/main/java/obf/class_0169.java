@@ -5,6 +5,7 @@ package obf;/*
  *  com.mojang.authlib.minecraft.MinecraftProfileTexture$Type
  */
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
+import net.minecraft.util.ResourceLocation;
 
 public interface class_0169 {
     public void lllIIIllIIIIlllIlIIllIIll(MinecraftProfileTexture.Type var1, ResourceLocation var2);

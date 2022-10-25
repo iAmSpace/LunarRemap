@@ -7,16 +7,17 @@ package obf;/*
  */
 import io.netty.channel.ChannelFutureListener;
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.network.Packet;
 
 class class_1718
 implements Runnable {
-    final /* synthetic */ class_0546 lllIIIllIIIIlllIlIIllIIll;
-    final /* synthetic */ class_0546 lllIlIIlIIIlIlIIIllIlllIl;
-    final /* synthetic */ class_0703 IlIllllllIIlIIllllIIlIIIl;
+    final /* synthetic */ EnumConnectionState lllIIIllIIIIlllIlIIllIIll;
+    final /* synthetic */ EnumConnectionState lllIlIIlIIIlIlIIIllIlllIl;
+    final /* synthetic */ Packet IlIllllllIIlIIllllIIlIIIl;
     final /* synthetic */ GenericFutureListener[] lIlllIlllIIIIlIIlllIllIII;
     final /* synthetic */ class_0800 IlIIIIIllllllIIlllIllllll;
 
-    class_1718(class_0800 class_08002, class_0546 class_05462, class_0546 class_05463, class_0703 class_07032, GenericFutureListener[] arrgenericFutureListener) {
+    class_1718(class_0800 class_08002, EnumConnectionState class_05462, EnumConnectionState class_05463, Packet class_07032, GenericFutureListener[] arrgenericFutureListener) {
         this.IlIIIIIllllllIIlllIllllll = class_08002;
         this.lllIIIllIIIIlllIlIIllIIll = class_05462;
         this.lllIlIIlIIIlIlIIIllIlllIl = class_05463;

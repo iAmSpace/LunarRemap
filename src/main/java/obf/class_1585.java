@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.crash.CrashReport;
 import org.lwjgl.opengl.GL11;
 
 public class class_1585
-implements class_2102 {
+implements IIcon {
     private final String IlIlIIlIlIllIIlIlIIllIIIl;
     protected List lllIIIllIIIIlllIlIIllIIll = Lists.newArrayList();
     private class_0762 lllllIlllIIllIlIIlIIIllII;

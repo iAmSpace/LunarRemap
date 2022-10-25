@@ -117,8 +117,8 @@ extends class_2117 {
         }
     }
 
-    public abstract boolean lllIIIllIIIIlllIlIIllIIll(class_1665 var1);
+    public abstract boolean lllIIIllIIIIlllIlIIllIIll(AbstractModule var1);
 
-    public abstract void lllIlIIlIIIlIlIIIllIlllIl(class_1665 var1);
+    public abstract void lllIlIIlIIIlIlIIIllIlllIl(AbstractModule var1);
 }
 

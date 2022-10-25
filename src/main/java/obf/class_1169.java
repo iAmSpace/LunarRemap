@@ -7,18 +7,19 @@ package obf;/*
 import java.util.Collection;
 import java.util.Iterator;
 
+import com.moonsworth.lunar.client.config.Setting;
 import net.minecraft.scoreboard.IScoreObjectiveCriteria;
 import org.lwjgl.opengl.GL11;
 
 public class class_1169
-extends class_1665 {
-    public class_1609 lllIIIllIIIIlllIlIIllIIll;
+extends AbstractModule {
+    public Setting lllIIIllIIIIlllIlIIllIIll;
     public static class_0561 lllIlIIlIIIlIlIIIllIlllIl = class_0561.lllIIIllIIIIlllIlIIllIIll;
 
     public class_1169() {
         super("Scoreboard");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.IIIllIllIIlIlIlIlIllllIIl);
-        this.lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Remove Scoreboard numbers").lllIlIIlIIIlIlIIIllIlllIl(true);
+        this.lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Remove Scoreboard numbers").setValue(true);
         this.lllIIIllIIIIlllIlIIllIIll(class_1217.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_0097.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIlIIlIIIlIlIIIllIlllIl(true);
@@ -36,10 +37,10 @@ extends class_1665 {
         GL11.glTranslatef((float)(this.lllIIIllIIIIlllIlIIllIIll() ? -12.0f : 2.0f), (float)this.lIlllIlllIlIIIIlllIlIlIIl, (float)0.0f);
         class_0141 class_01412 = new class_0141();
         class_0693 class_06932 = new class_0693(class_01412, "Lunar Client", IScoreObjectiveCriteria.lllIlIIlIIIlIlIIIllIlllIl);
-        class_06932.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "" + (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + "Lunar" + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + " " + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + "Client");
+        class_06932.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.RED) + "" + (Object)((Object) EnumChatFormatting.AQUA) + "Lunar" + (Object)((Object) EnumChatFormatting.RESET) + " " + (Object)((Object) EnumChatFormatting.BOLD) + "Client");
         class_01412.lllIIIllIIIIlllIlIIllIIll("Steve", class_06932);
         class_01412.lllIIIllIIIIlllIlIIllIIll("Alex", class_06932);
-        this.lllIIIllIIIIlllIlIIllIIll(class_06932, class_12172.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl(), class_12172.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(), this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll, ((Float)this.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue());
+        this.lllIIIllIIIIlllIlIIllIIll(class_06932, class_12172.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl(), class_12172.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(), this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll, ((Float)this.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue());
         GL11.glPopMatrix();
     }
 
@@ -52,7 +53,7 @@ extends class_1665 {
         GL11.glTranslatef((float)(this.lllIIIllIIIIlllIlIIllIIll() ? -12.0f : 2.0f), (float)this.lIlllIlllIlIIIIlllIlIlIIl, (float)0.0f);
         class_0693 class_06932 = this.lIIlIIIIIlIlllIlIIlIlIlll.theWorld.IlIlIIlllIllllllllIIIlIlI().lllIIIllIIIIlllIlIIllIIll(1);
         if (class_06932 != null) {
-            this.lllIIIllIIIIlllIlIIllIIll(class_06932, class_00972.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl(), class_00972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(), this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll, ((Float)this.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue());
+            this.lllIIIllIIIIlllIlIIllIIll(class_06932, class_00972.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl(), class_00972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(), this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll, ((Float)this.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue());
         }
         GL11.glPopMatrix();
     }
@@ -66,7 +67,7 @@ extends class_1665 {
             int n4 = n3 + 16;
             for (class_0678 class_06782 : collection) {
                 class_0531 class_05312 = class_01412.IIIllIIlIIIIIIlIlIIllIIlI(class_06782.lIlllIlllIIIIlIIlllIllIII());
-                String string = class_0531.lllIIIllIIIIlllIlIIllIIll(class_05312, class_06782.lIlllIlllIIIIlIIlllIllIII()) + ": " + (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + class_06782.lllIlIIlIIIlIlIIIllIlllIl();
+                String string = class_0531.lllIIIllIIIIlllIlIIllIIll(class_05312, class_06782.lIlllIlllIIIIlIIlllIllIII()) + ": " + (Object)((Object) EnumChatFormatting.RED) + class_06782.lllIlIIlIIIlIlIIIllIlllIl();
                 n3 = Math.max(n3, class_18542.lllIIIllIIIIlllIlIIllIIll(string));
             }
             int n5 = 0;
@@ -85,7 +86,7 @@ extends class_1665 {
                 class_0678 class_06783 = (class_0678)iterator.next();
                 class_0531 class_05313 = class_01412.IIIllIIlIIIIIIlIlIIllIIlI(class_06783.lIlllIlllIIIIlIIlllIllIII());
                 String string = class_0531.lllIIIllIIIIlllIlIIllIIll(class_05313, class_06783.lIlllIlllIIIIlIIlllIllIII());
-                String string2 = (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "" + class_06783.lllIlIIlIIIlIlIIIllIlllIl();
+                String string2 = (Object)((Object) EnumChatFormatting.RED) + "" + class_06783.lllIlIIlIIIlIlIIIllIlllIl();
                 int n11 = n5 - ++n8 * class_18542.lllIIIllIIIIlllIlIIllIIll;
                 n9 = n10 - (n7 - 2 + (bl ? 14 : 0));
                 class_18542.lllIlIIlIIIlIlIIIllIlllIl(string, n7 + (bl ? 16 : 0), n11, 0x20FFFFFF);
@@ -101,7 +102,7 @@ extends class_1665 {
     }
 
     private boolean lllIIIllIIIIlllIlIIllIIll() {
-        return lllIlIIlIIIlIlIIIllIlllIl == class_0561.lllIIIllIIIIlllIlIIllIIll ? (Boolean)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() : lllIlIIlIIIlIlIIIllIlllIl == class_0561.IlIllllllIIlIIllllIIlIIIl;
+        return lllIlIIlIIIlIlIIIllIlllIl == class_0561.lllIIIllIIIIlllIlIIllIIll ? (Boolean)this.lllIIIllIIIIlllIlIIllIIll.getValue() : lllIlIIlIIIlIlIIIllIlllIl == class_0561.IlIllllllIIlIIllllIIlIIIl;
     }
 }
 

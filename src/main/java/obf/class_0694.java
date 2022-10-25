@@ -1,6 +1,8 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,21 +20,21 @@ extends class_0688 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
-        this.IlIllllllIIlIIllllIIlIIIl = class_01812.IlIllllllIIlIIllllIIlIIIl(52);
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
+        this.IlIllllllIIlIIllllIIlIIIl = class_01812.readStringFromBuffer(52);
         int n = class_01812.readInt();
         this.lllIIIllIIIIlllIlIIllIIll = new ArrayList();
         for (int i = 0; i < n; ++i) {
             long l = class_01812.readLong();
             float f = class_01812.readFloat();
             boolean bl = class_01812.readBoolean();
-            String string = class_01812.IlIllllllIIlIIllllIIlIIIl(512);
-            String string2 = class_01812.IlIllllllIIlIIllllIIlIIIl(128);
-            String string3 = class_01812.IlIllllllIIlIIllllIIlIIIl(128);
+            String string = class_01812.readStringFromBuffer(512);
+            String string2 = class_01812.readStringFromBuffer(128);
+            String string3 = class_01812.readStringFromBuffer(128);
             this.lllIIIllIIIIlllIlIIllIIll.add(new Cosmetic(l, this.IlIllllllIIlIIllllIIlIIIl, string2, string3, f, bl, string));
         }
     }

@@ -4,23 +4,25 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import net.minecraft.util.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class class_1473
-extends class_1665 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll;
-    private class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    private class_1609 IlIllllllIIlIIllllIIlIIIl;
+extends AbstractModule {
+    private Setting lllIIIllIIIIlllIlIIllIIll;
+    private Setting lllIlIIlIIIlIlIIIllIlllIl;
+    private Setting IlIllllllIIlIIllllIIlIIIl;
     private ResourceLocation lIlllIlllIIIIlIIlllIllIII = new ResourceLocation("textures/gui/compass.png");
 
     public class_1473() {
         super("Direction HUD");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.IlIIIIIllllllIIlllIllllll);
         this.lllIIIllIIIIlllIlIIllIIll(false);
-        this.IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Show While Typing").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Marker Color").lllIlIIlIIIlIlIIIllIlllIl(-43691).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
-        this.lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "Direction Color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Show While Typing").setValue(true);
+        this.lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Marker Color").setValue(-43691).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "Direction Color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
         this.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("client/icons/mods/dirhud.png"), 65, 12);
         this.lllIIIllIIIIlllIlIIllIIll(class_2201.class, this::lllIIIllIIIIlllIlIIllIIll);
     }
@@ -32,7 +34,7 @@ extends class_1665 {
         GL11.glPushMatrix();
         this.lllIIIllIIIIlllIlIIllIIll(class_22012.lllIIIllIIIIlllIlIIllIIll());
         this.IlIllllllIIlIIllllIIlIIIl(66.0f, 18.0f);
-        if (!this.lIIlIIIIIlIlllIlIIlIlIlll.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().IlIIIIIllllllIIlllIllllll() || ((Boolean)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (!this.lIIlIIIIIlIlllIlIIlIlIlll.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().IlIIIIIllllllIIlllIllllll() || ((Boolean)this.IlIllllllIIlIIllllIIlIIIl.getValue()).booleanValue()) {
             GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
             this.lllIlIIlIIIlIlIIIllIlllIl(class_22012.lllIIIllIIIIlllIlIIllIIll());
             GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
@@ -44,7 +46,7 @@ extends class_1665 {
         int n = MathHelper.IlIllllllIIlIIllllIIlIIIl((double)(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IIIIlIllIlIIlIIlIllIlIlll * 256.0f / 360.0f) + 0.5) & 0xFF;
         int n2 = 0;
         int n3 = 0;
-        if ((Integer)this.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII() != 4095) {
+        if ((Integer)this.lllIlIIlIIIlIlIIIllIlllIl.getValue() != 4095) {
             int n4 = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll();
             this.lIIlIIIIIlIlllIlIIlIlIlll.llIIlIIllIIllIlIIllIIllII().lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII);
             GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);

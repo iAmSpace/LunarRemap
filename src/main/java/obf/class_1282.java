@@ -27,6 +27,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.renderer.OpenGlHelper;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;

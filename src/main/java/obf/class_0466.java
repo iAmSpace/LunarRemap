@@ -8,6 +8,8 @@ package obf;/*
  */
 import java.util.List;
 
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import org.apache.commons.io.Charsets;
@@ -101,7 +103,7 @@ implements class_1283 {
             string = "";
         }
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(string);
-        this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0917("MC|ItemName", string.getBytes(Charsets.UTF_8)));
+        this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload("MC|ItemName", string.getBytes(Charsets.UTF_8)));
     }
 
     @Override

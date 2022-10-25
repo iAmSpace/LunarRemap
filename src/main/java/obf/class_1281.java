@@ -10,6 +10,7 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.renderer.OpenGlHelper;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;

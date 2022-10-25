@@ -37,7 +37,7 @@ public class class_0400 {
         this.lllIIIllIIIIlllIlIIllIIll(Blocks.lIIIIlIIIIllIlIIllllIlIII, new ItemStack(Items.IIllllIIlIlIlIlllIIIllIIl), 1.0f);
         this.lllIIIllIIIIlllIlIIllIIll(Items.IIlllllIIlIIlIlIIlIIlIlII, new ItemStack(Items.IIlIlIIIIlIlllIlIlIIIIIlI), 0.35f);
         this.lllIIIllIIIIlllIlIIllIIll(Blocks.lllllllIlIIlIlIIIlIlIIlll, new ItemStack(Items.IIlIlIIIIlIlllIIlIIlIIIII), 0.1f);
-        for (class_1818 class_18182 : class_1818.values()) {
+        for (FishType class_18182 : FishType.values()) {
             if (!class_18182.IIIllIllIIlIlIlIlIllllIIl()) continue;
             this.lllIIIllIIIIlllIlIIllIIll(new ItemStack(Items.IllIlllIIIlllllIllIIlIlIl, 1, class_18182.lllIIIllIIIIlllIlIIllIIll()), new ItemStack(Items.cooked_fished, 1, class_18182.lllIIIllIIIIlllIlIIllIIll()), 0.35f);
         }

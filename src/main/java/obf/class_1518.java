@@ -9,6 +9,7 @@ package obf;/*
 import java.util.List;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MathHelper;
@@ -236,7 +237,7 @@ extends class_1603 {
             }
             GL11.glRotatef((float)(f4 * this.lllIlIIlIIIlIlIIIllIlllIl(class_19652)), (float)0.0f, (float)0.0f, (float)1.0f);
         } else {
-            String string = class_1227.lllIIIllIIIIlllIlIIllIIll(class_19652.llllIIIIlIIIlIIIIIIlIllll());
+            String string = EnumChatFormatting.getTextWithoutFormattingCodes(class_19652.llllIIIIlIIIlIIIIIIlIllll());
             if (!(!string.equals("Dinnerbone") && !string.equals("Grumm") || class_19652 instanceof class_0814 && ((class_0814)class_19652).IlIllIIIIllllIIllIllIIIIl())) {
                 GL11.glTranslatef((float)0.0f, (float)(class_19652.lllIIIIlIlIIlIIlllIIIIIIl + 0.1f), (float)0.0f);
                 GL11.glRotatef((float)180.0f, (float)0.0f, (float)0.0f, (float)1.0f);

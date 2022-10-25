@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -44,7 +45,7 @@ extends class_2059 {
             }
         } else {
             boolean bl;
-            class_2102 class_21022 = class_19652.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
+            IIcon class_21022 = class_19652.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
             if (class_21022 == null) {
                 GL11.glPopMatrix();
                 return;
@@ -79,14 +80,14 @@ extends class_2059 {
                 GL11.glPushMatrix();
                 float f9 = 0.125f;
                 GL11.glScalef((float)f9, (float)f9, (float)f9);
-                float f10 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 3000L) / 3000.0f * 8.0f;
+                float f10 = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0f * 8.0f;
                 GL11.glTranslatef((float)f10, (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)-50.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_1767.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 16, 16, 0.0625f);
                 GL11.glPopMatrix();
                 GL11.glPushMatrix();
                 GL11.glScalef((float)f9, (float)f9, (float)f9);
-                f10 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 4873L) / 4873.0f * 8.0f;
+                f10 = (float)(Minecraft.getSystemTime() % 4873L) / 4873.0f * 8.0f;
                 GL11.glTranslatef((float)(-f10), (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)10.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_1767.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 16, 16, 0.0625f);

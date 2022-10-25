@@ -7,6 +7,7 @@ package obf;/*
  */
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.network.play.client.C12PacketUpdateSign;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -35,7 +36,7 @@ extends class_0229 {
         Keyboard.enableRepeatEvents((boolean)false);
         class_1764 class_17642 = this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll();
         if (class_17642 != null) {
-            class_17642.lllIIIllIIIIlllIlIIllIIll(new class_0317(this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl, this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl, this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII, this.lllIIIllIIIIlllIlIIllIIll.IllIIlllllllIIlIIlIIIIlIl));
+            class_17642.lllIIIllIIIIlllIlIIllIIll(new C12PacketUpdateSign(this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl, this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl, this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII, this.lllIIIllIIIIlllIlIIllIIll.IllIIlllllllIIlIIlIIIIlIl));
         }
         this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(true);
     }

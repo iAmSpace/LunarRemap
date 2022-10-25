@@ -61,7 +61,7 @@ public class class_1291 {
         return this.lIllllIIlIIIlIllllllIIIll.llIIlIlIlllIIllIlIlllIllI();
     }
 
-    public class_2102 IlIIIIIllllllIIlllIllllll() {
+    public IIcon IlIIIIIllllllIIlllIllllll() {
         return null;
     }
 

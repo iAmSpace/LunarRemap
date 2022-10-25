@@ -26,6 +26,8 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 import javax.vecmath.Matrix4f;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.opengl.GL11;
 

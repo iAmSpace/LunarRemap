@@ -9,6 +9,9 @@ package obf;/*
 import com.google.common.collect.Iterables;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+
 import java.util.UUID;
 
 public class class_0090
@@ -49,10 +52,10 @@ extends class_1774 {
     }
 
     @Override
-    public class_0703 IllIIlllllllIIlIIlIIIIlIl() {
+    public Packet IllIIlllllllIIlIIlIIIIlIl() {
         class_0775 class_07752 = new class_0775();
         this.lllIlIIlIIIlIlIIIllIlllIl(class_07752);
-        return new class_1180(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 4, class_07752);
+        return new S35PacketUpdateTileEntity(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 4, class_07752);
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(int n) {

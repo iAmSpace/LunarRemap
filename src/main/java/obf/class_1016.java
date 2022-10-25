@@ -1,6 +1,6 @@
 package obf;
 
-import com.moonsworth.lunar.client.Event;
+import com.moonsworth.lunar.client.events.Event;
 
 /*
  * Decompiled with CFR 0.150.

@@ -13,12 +13,12 @@ extends class_0688 {
     private byte[] IlIllllllIIlIIllllIIlIIIl;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
-        this.lllIIIllIIIIlllIlIIllIIll = class_0936.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll((ByteBuf)class_01812));
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
+        this.lllIIIllIIIIlllIlIIllIIll = CryptManager.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll((ByteBuf)class_01812));
         this.IlIllllllIIlIIllllIIlIIIl = this.lllIIIllIIIIlllIlIIllIIll((ByteBuf)class_01812);
     }
 

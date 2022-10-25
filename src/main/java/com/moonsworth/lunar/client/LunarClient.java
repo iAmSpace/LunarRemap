@@ -5,7 +5,19 @@ import com.jagrosh.discordipc.IPCListener;
 import com.jagrosh.discordipc.entities.DiscordBuild;
 import com.jagrosh.discordipc.entities.RichPresence;
 import com.jagrosh.discordipc.entities.pipe.PipeStatus;
+import com.moonsworth.lunar.client.config.SettingsManager;
+import com.moonsworth.lunar.client.events.EventBus;
+import com.moonsworth.lunar.client.events.type.PluginMessageEvent;
+import com.moonsworth.lunar.client.font.FontRegistry;
+import com.moonsworth.lunar.client.font.LCFontRenderer;
+import com.moonsworth.lunar.client.module.ModuleManager;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
+import com.moonsworth.lunar.client.util.dashmgr.DashManager;
+import com.moonsworth.lunar.client.util.netmgr.NetworkManager;
+import com.moonsworth.lunar.client.util.threads.LunarRPCUpdateThread;
+import com.moonsworth.lunar.ipc.LunarIPCListener;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 import obf.*;
 
 import java.io.BufferedReader;
@@ -14,6 +26,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.time.OffsetDateTime;
@@ -28,14 +41,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class LunarClient {
-    private List IIlllIlIlllIllIIIlllIIlIl = new ArrayList();
-    public List lllIIIllIIIIlllIlIIllIIll = new ArrayList();
-    public List lllIlIIlIIIlIlIIIllIlllIl = new ArrayList();
-    public class_1165 IlIllllllIIlIIllllIIlIIIl;
+    private List<ResourceLocation> IIlllIlIlllIllIIIlllIIlIl = new ArrayList<>();
+    public List<Profile> profiles = new ArrayList<>();
+    public List<class_0227> lllIlIIlIIIlIlIIIllIlllIl = new ArrayList<>();
+    public Profile activeProfile;
     private static LunarClient instance;
-    private class_0835 moduleManager;
-    private class_0625 settingsManager;
-    private class_2204 networkManager;
+    private ModuleManager moduleManager;
+    private SettingsManager settingsManager;
+    private NetworkManager networkManager;
     public class_0576 lIlllIlllIIIIlIIlllIllIII;
     private EventBus eventBus;
     private static String gitCommitIdAbbrv;
@@ -48,13 +61,13 @@ public class LunarClient {
     private List<Cosmetic> llllIIIIlIIIlIIIIIIlIllll;
     private List<Cosmetic> llIIIIllIIIIIIIlIIIlIIIIl;
     private final class_0064 IIllIllIIllIIlllIIIlIlllI;
-    private final class_0241 llllllIlIllllIlIlIlIIIIlI;
+    private final DashManager dashManager;
     private final class_1354 lIlIIllllIlIIIIllIIIIlIIl;
     private final class_1740 llIlllIIllIlllIlIlIlIIIll;
     private final long startTime;
     private final class_1201 lllIIIIIIlIlllIIlIlIIIllI;
     private final class_1130 llIIlIIllIIllIlIIllIIllII;
-    private static List lIlIlIIIIIIlIIllllIlIIllI;
+    private static List<class_1098> lIlIlIIIIIIlIIllllIlIIllI;
     public static long IlIIIIIllllllIIlllIllllll;
     private IPCClient discordIPC;
     private class_0135 status = class_0135.lllIIIllIIIIlllIlIIllIIll;
@@ -94,15 +107,15 @@ public class LunarClient {
         this.lIlIIllllIlIIIIllIIIIlIIl();
         System.out.println("[LC] Created default configuration presets");
         instance = this;
-        this.settingsManager = new class_0625();
+        this.settingsManager = new SettingsManager();
         System.out.println("[LC] Created settings");
         this.eventBus = new EventBus();
         System.out.println("[LC] Created EventBus");
-        this.moduleManager = new class_0835(this.eventBus);
+        this.moduleManager = new ModuleManager(this.eventBus);
         System.out.println("[LC] Created Mod Manager");
-        this.networkManager = new class_2204();
+        this.networkManager = new NetworkManager();
         System.out.println("[LC] Created Network Manager");
-        this.llllllIlIllllIlIlIlIIIIlI = new class_0241();
+        this.dashManager = new DashManager();
         System.out.println("[LC] Created Dash Manager");
         this.IIllIllIIllIIlllIIIlIlllI = new class_0064();
         this.lIlIIllllIlIIIIllIIIIlIIl = new class_1354();
@@ -112,7 +125,7 @@ public class LunarClient {
         System.out.println("[LC] Created Friend Manager");
         this.eventBus.addEvent(class_0780.class, this.networkManager::lllIIIllIIIIlllIlIIllIIll);
         this.eventBus.addEvent(class_1594.class, this.networkManager::lllIIIllIIIIlllIlIIllIIll);
-        this.eventBus.addEvent(class_0026.class, this.networkManager::lllIIIllIIIIlllIlIIllIIll);
+        this.eventBus.addEvent(PluginMessageEvent.class, this.networkManager::onPluginMessage);
         this.eventBus.addEvent(class_0479.class, this.networkManager::lllIIIllIIIIlllIlIIllIIll);
         this.eventBus.addEvent(class_2201.class, this.lllIIIIIIlIlllIIlIlIIIllI::lllIIIllIIIIlllIlIIllIIll);
         this.eventBus.addEvent(class_0312.class, this.lllIIIIIIlIlllIIlIlIIIllI::lllIIIllIIIIlllIlIIllIIll);
@@ -120,12 +133,12 @@ public class LunarClient {
     }
 
     public boolean IlIllllllIIlIIllllIIlIIIl() {
-        class_0559 class_05592;
-        ScheduledExecutorService scheduledExecutorService;
+        LunarRPCUpdateThread class_05592 = new LunarRPCUpdateThread();
+        UUID uuid;
         this.loadFonts();
         System.out.println("[LC] Loaded all fonts");
         this.loadProfiles();
-        System.out.println("[LC] Loaded " + this.lllIIIllIIIIlllIlIIllIIll.size() + " custom profiles");
+        System.out.println("[LC] Loaded " + this.profiles.size() + " custom profiles");
         this.readClientProperties();
         System.out.println("[LC] Loaded client properties");
         this.llllllIlIllllIlIlIlIIIIlI();
@@ -143,23 +156,24 @@ public class LunarClient {
         }
         boolean bl = this.lIlIIllllIlIIIIllIIIIlIIl.lIlllIlllIIIIlIIlllIllIII();
         try {
-            scheduledExecutorService = this.lIlIIllllIlIIIIllIIIIlIIl.IIIllIllIIlIlIlIlIllllIIl() == null ? null : UUID.fromString(class_2051.lllIIIllIIIIlllIlIIllIIll(this.lIlIIllllIlIIIIllIIIIlIIl.IIIllIllIIlIlIlIlIllllIIl().get("profile").getAsString()));
-            class_0559 class_05593 = class_05592 = scheduledExecutorService == null ? null : this.lIlIIllllIlIIIIllIIIIlIIl.lllIIIllIIIIlllIlIIllIIll((UUID)((Object)scheduledExecutorService)).lllIIIllIIIIlllIlIIllIIll();
+            uuid = this.lIlIIllllIlIIIIllIIIIlIIl.IIIllIllIIlIlIlIlIllllIIl() == null ? null :
+                    UUID.fromString(class_2051.lllIIIllIIIIlllIlIIllIIll(this.lIlIIllllIlIIIIllIIIIlIIl.IIIllIllIIlIlIlIlIllllIIl().get("profile").getAsString()));
+            String _0559 = uuid == null ? null : this.lIlIIllllIlIIIIllIIIIlIIl.lllIIIllIIIIlllIlIIllIIll((UUID)((Object)uuid)).lllIIIllIIIIlllIlIIllIIll();
             if (!bl) {
-                if (scheduledExecutorService != null) {
-                    System.out.println("[LC] Could not login the user " + scheduledExecutorService + "(" + (String)((Object)class_05592) + ") with the token stored on disk. (Expired session?)");
+                if (uuid != null) {
+                    System.out.println("[LC] Could not login the user " + uuid + "(" + _0559 + ") with the token stored on disk. (Expired session?)");
                 } else {
                     System.out.println("[LC] No currentUser in launcher_profiles, what do?");
                 }
             } else {
-                System.out.println("[LC] Logged in user " + scheduledExecutorService + "(" + (String)((Object)class_05592) + ") with the token stored on disk.");
+                System.out.println("[LC] Logged in user " + uuid + "(" + _0559 + ") with the token stored on disk.");
             }
         }
         catch (Exception exception) {
             exception.printStackTrace();
         }
+        ScheduledExecutorService scheduledExecutorService;
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        class_05592 = new class_0559();
         scheduledExecutorService.scheduleAtFixedRate(class_05592, 0L, this.settingsManager.IllIIIllIIIIlIlIlIllIIlll, TimeUnit.SECONDS);
         System.out.println("[LC] Scheduled session server status updates");
         this.llllIIIIlIIIlIIIIIIlIllll = new ArrayList<>();
@@ -195,7 +209,6 @@ public class LunarClient {
             }
             catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
-                return;
             }
         }).start();
         this.connectToIPCClient();
@@ -205,7 +218,7 @@ public class LunarClient {
     private void connectToIPCClient() {
         try {
             this.discordIPC = new IPCClient(562286213059444737L);
-            this.discordIPC.setListener((IPCListener)new class_0593(this));
+            this.discordIPC.setListener((IPCListener)new LunarIPCListener(this));
             this.discordIPC.connect(new DiscordBuild[0]);
             System.out.println("[LC] Connected to Discord IPC");
         }
@@ -214,7 +227,7 @@ public class LunarClient {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(String string, String string2, boolean bl) {
+    public void updateRichPresence(String string, String string2, boolean bl) {
         if (this.discordIPC == null || this.discordIPC.getStatus() != PipeStatus.CONNECTED) {
             return;
         }
@@ -240,7 +253,7 @@ public class LunarClient {
 
     public void lllIIIllIIIIlllIlIIllIIll(String string, String string2, int n) {
         boolean bl = string.equals(string2 + ":" + n);
-        this.lllIIIllIIIIlllIlIIllIIll(string, null, bl);
+        this.updateRichPresence(string, null, bl);
         if (!bl) {
             this.websocket.lllIIIllIIIIlllIlIIllIIll(string);
         } else {
@@ -252,11 +265,11 @@ public class LunarClient {
         return instance;
     }
 
-    public class_0835 getModuleManager() {
+    public ModuleManager getModuleManager() {
         return this.moduleManager;
     }
 
-    public class_0625 getSettingsManager() {
+    public SettingsManager getSettingsManager() {
         return this.settingsManager;
     }
 
@@ -282,7 +295,7 @@ public class LunarClient {
         return string;
     }
 
-    public void connectToWebsocket() {
+    public void connectToWebsocket() throws URISyntaxException {
         if (this.websocket != null) {
             this.websocket.lllIIIllIIIIlllIlIIllIIll(true);
             try {
@@ -351,7 +364,7 @@ public class LunarClient {
         }
     }
 
-    public class_2204 getNetworkManager() {
+    public NetworkManager getNetworkManager() {
         return this.networkManager;
     }
 
@@ -378,18 +391,18 @@ public class LunarClient {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(String string, float f) {
-        if (!((Boolean)this.settingsManager.lllllIlllIIllIlIIlIIIllII.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (!((Boolean)this.settingsManager.asMuteLunarSounds.getValue()).booleanValue()) {
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(string, f);
         }
     }
 
     private void loadProfiles() {
-        this.lllIIIllIIIIlllIlIIllIIll.add(new class_1165("default", true));
+        this.profiles.add(new Profile("default", true));
         File file = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles");
         if (file.exists()) {
             for (File file2 : file.listFiles()) {
                 if (!file2.getName().endsWith(".cfg")) continue;
-                this.lllIIIllIIIIlllIlIIllIIll.add(new class_1165(file2.getName().replace(".cfg", ""), false));
+                this.profiles.add(new Profile(file2.getName().replace(".cfg", ""), false));
             }
         }
     }
@@ -429,10 +442,10 @@ public class LunarClient {
     }
 
     public void lllIIlIIIllllllIIIIlIlIlI() {
-        if (this.IlIllllllIIlIIllllIIlIIIl == this.lllIIIllIIIIlllIlIIllIIll.get(0)) {
-            class_1165 class_11652;
-            LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = class_11652 = new class_1165(this.lIlllIlllIIIIlIIlllIllIII("Profile 1"), false);
-            LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.add(class_11652);
+        if (this.activeProfile == this.profiles.get(0)) {
+            Profile class_11652;
+            LunarClient.getInstance().activeProfile = class_11652 = new Profile(this.lIlllIlllIIIIlIIlllIllIII("Profile 1"), false);
+            LunarClient.getInstance().profiles.add(class_11652);
             LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll();
             Minecraft class_06672 = Minecraft.getMinecraft();
             if (class_06672.lllllIlllIIllIlIIlIIIllII instanceof class_0822) {
@@ -443,7 +456,7 @@ public class LunarClient {
     }
 
     public boolean IlIlllIIIIIIlIIllIIllIlll() {
-        for (class_1665 class_16652 : this.getModuleManager().lllIlIIlIIIlIlIIIllIlllIl) {
+        for (AbstractModule class_16652 : this.getModuleManager().staffModules) {
             if (!class_16652.IlIIIIIllllllIIlllIllllll()) continue;
             return true;
         }
@@ -506,7 +519,7 @@ public class LunarClient {
         return class_17732;
     }
 
-    public static String[] lIlIlIIlIIIIlIIIIIlllIIII() {
+    public static String[] getInputDevices() {
         String[] arrstring = new String[lIlIlIIIIIIlIIllllIlIIllI.size()];
         int n = 0;
         for (class_1098 class_10982 : lIlIlIIIIIIlIIllllIlIIllI) {
@@ -556,8 +569,8 @@ public class LunarClient {
         return this.IIllIllIIllIIlllIIIlIlllI;
     }
 
-    public class_0241 lIlllIlllIlIIIIlllIlIlIIl() {
-        return this.llllllIlIllllIlIlIlIIIIlI;
+    public DashManager lIlllIlllIlIIIIlllIlIlIIl() {
+        return this.dashManager;
     }
 
     public class_1354 IlIIlllllIIlIlIlllllIllll() {

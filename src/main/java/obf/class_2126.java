@@ -10,7 +10,7 @@ import java.util.List;
 
 public class class_2126
 extends Item {
-    private class_2102 IIIllIllIIlIlIlIlIllllIIl;
+    private IIcon IIIllIllIIlIlIlIlIllllIIl;
 
     public class_2126() {
         this.lllIIIllIIIIlllIlIIllIIll(true);
@@ -39,7 +39,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 > 0 ? this.IIIllIllIIlIlIlIlIllllIIl : super.lllIIIllIIIIlllIlIIllIIll(n, n2);
     }
 

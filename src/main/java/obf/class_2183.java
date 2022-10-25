@@ -1,6 +1,12 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S3BPacketScoreboardObjective;
+import net.minecraft.network.play.server.S3CPacketUpdateScore;
+import net.minecraft.network.play.server.S3DPacketDisplayScoreboard;
+import net.minecraft.network.play.server.S3EPacketTeams;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -21,7 +27,7 @@ extends class_0141 {
     public void lllIIIllIIIIlllIlIIllIIll(class_0678 class_06782) {
         super.lllIIIllIIIIlllIlIIllIIll(class_06782);
         if (this.lllIlIIlIIIlIlIIIllIlllIl.contains(class_06782.IlIllllllIIlIIllllIIlIIIl())) {
-            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_1588(class_06782, 0));
+            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3CPacketUpdateScore(class_06782, 0));
         }
         this.lIllllIIlIIIlIllllllIIIll();
     }
@@ -29,7 +35,7 @@ extends class_0141 {
     @Override
     public void IllIIlllllllIIlIIlIIIIlIl(String string) {
         super.IllIIlllllllIIlIIlIIIIlIl(string);
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_1588(string));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3CPacketUpdateScore(string));
         this.lIllllIIlIIIlIllllllIIIll();
     }
 
@@ -39,14 +45,14 @@ extends class_0141 {
         super.lllIIIllIIIIlllIlIIllIIll(n, class_06932);
         if (class_06933 != class_06932 && class_06933 != null) {
             if (this.IllIIIllIIIIlIlIlIllIIlll(class_06933) > 0) {
-                this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_2139(n, class_06932));
+                this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3DPacketDisplayScoreboard(n, class_06932));
             } else {
                 this.IIIllIllIIlIlIlIlIllllIIl(class_06933);
             }
         }
         if (class_06932 != null) {
             if (this.lllIlIIlIIIlIlIIIllIlllIl.contains(class_06932)) {
-                this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_2139(n, class_06932));
+                this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3DPacketDisplayScoreboard(n, class_06932));
             } else {
                 this.IIIllIIlIIIIIIlIlIIllIIlI(class_06932);
             }
@@ -58,7 +64,7 @@ extends class_0141 {
     public boolean lllIIIllIIIIlllIlIIllIIll(String string, String string2) {
         if (super.lllIIIllIIIIlllIlIIllIIll(string, string2)) {
             class_0531 class_05312 = this.lIlllIlllIIIIlIIlllIllIII(string2);
-            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, Arrays.asList(string), 3));
+            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, Arrays.asList(string), 3));
             this.lIllllIIlIIIlIllllllIIIll();
             return true;
         }
@@ -68,7 +74,7 @@ extends class_0141 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(String string, class_0531 class_05312) {
         super.lllIIIllIIIIlllIlIIllIIll(string, class_05312);
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, Arrays.asList(string), 4));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, Arrays.asList(string), 4));
         this.lIllllIIlIIIlIllllllIIIll();
     }
 
@@ -82,7 +88,7 @@ extends class_0141 {
     public void lIlllIlllIIIIlIIlllIllIII(class_0693 class_06932) {
         super.lIlllIlllIIIIlIIlllIllIII(class_06932);
         if (this.lllIlIIlIIIlIlIIIllIlllIl.contains(class_06932)) {
-            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_1015(class_06932, 2));
+            this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3BPacketScoreboardObjective(class_06932, 2));
         }
         this.lIllllIIlIIIlIllllllIIIll();
     }
@@ -99,21 +105,21 @@ extends class_0141 {
     @Override
     public void lllIlIIlIIIlIlIIIllIlllIl(class_0531 class_05312) {
         super.lllIlIIlIIIlIlIIIllIlllIl(class_05312);
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, 0));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, 0));
         this.lIllllIIlIIIlIllllllIIIll();
     }
 
     @Override
     public void IlIllllllIIlIIllllIIlIIIl(class_0531 class_05312) {
         super.IlIllllllIIlIIllllIIlIIIl(class_05312);
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, 2));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, 2));
         this.lIllllIIlIIIlIllllllIIIll();
     }
 
     @Override
     public void lIlllIlllIIIIlIIlllIllIII(class_0531 class_05312) {
         super.lIlllIlllIIIIlIIlllIllIII(class_05312);
-        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, 1));
+        this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, 1));
         this.lIllllIIlIIIlIllllllIIIll();
     }
 
@@ -128,14 +134,14 @@ extends class_0141 {
     }
 
     public List lIllllIIlIIIlIllllllIIIll(class_0693 class_06932) {
-        ArrayList<class_0703> arrayList = new ArrayList<class_0703>();
-        arrayList.add(new class_1015(class_06932, 0));
+        ArrayList<Packet> arrayList = new ArrayList<Packet>();
+        arrayList.add(new S3BPacketScoreboardObjective(class_06932, 0));
         for (int i = 0; i < 3; ++i) {
             if (this.lllIIIllIIIIlllIlIIllIIll(i) != class_06932) continue;
-            arrayList.add(new class_2139(i, class_06932));
+            arrayList.add(new S3DPacketDisplayScoreboard(i, class_06932));
         }
         for (class_0678 class_06782 : this.lllIIIllIIIIlllIlIIllIIll(class_06932)) {
-            arrayList.add(new class_1588(class_06782, 0));
+            arrayList.add(new S3CPacketUpdateScore(class_06782, 0));
         }
         return arrayList;
     }
@@ -143,7 +149,7 @@ extends class_0141 {
     public void IIIllIIlIIIIIIlIlIIllIIlI(class_0693 class_06932) {
         List list = this.lIllllIIlIIIlIllllllIIIll(class_06932);
         for (class_1822 class_18222 : this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().IlIIIIIllllllIIlllIllllll) {
-            for (class_0703 class_07032 : list) {
+            for (Packet class_07032 : list) {
                 class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_07032);
             }
         }
@@ -151,11 +157,11 @@ extends class_0141 {
     }
 
     public List IllIIlllllllIIlIIlIIIIlIl(class_0693 class_06932) {
-        ArrayList<class_0703> arrayList = new ArrayList<class_0703>();
-        arrayList.add(new class_1015(class_06932, 1));
+        ArrayList<Packet> arrayList = new ArrayList<Packet>();
+        arrayList.add(new S3BPacketScoreboardObjective(class_06932, 1));
         for (int i = 0; i < 3; ++i) {
             if (this.lllIIIllIIIIlllIlIIllIIll(i) != class_06932) continue;
-            arrayList.add(new class_2139(i, class_06932));
+            arrayList.add(new S3DPacketDisplayScoreboard(i, class_06932));
         }
         return arrayList;
     }
@@ -163,7 +169,7 @@ extends class_0141 {
     public void IIIllIllIIlIlIlIlIllllIIl(class_0693 class_06932) {
         List list = this.IllIIlllllllIIlIIlIIIIlIl(class_06932);
         for (class_1822 class_18222 : this.lllIIIllIIIIlllIlIIllIIll.lIIIllIIIIIllllIlIlIllIll().IlIIIIIllllllIIlllIllllll) {
-            for (class_0703 class_07032 : list) {
+            for (Packet class_07032 : list) {
                 class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_07032);
             }
         }

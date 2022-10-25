@@ -15,7 +15,7 @@ public class class_0373
 extends class_0854
 implements class_0588 {
     private static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"deadbush", "tallgrass", "fern"};
-    private class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_0373() {
         super(class_1855.llIIlllIllIllllIIIlIIIIII);
@@ -24,7 +24,7 @@ implements class_0588 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n2 >= this.lIlIIllllIlIIIIllIIIIlIIl.length) {
             n2 = 0;
         }
@@ -88,7 +88,7 @@ implements class_0588 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[llllllIlIllllIlIlIlIIIIlI.length];
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[llllllIlIllllIlIlIlIIIIlI.length];
         for (int i = 0; i < this.lIlIIllllIlIIIIllIIIIlIIl.length; ++i) {
             this.lIlIIllllIlIIIIllIIIIlIIl[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(llllllIlIllllIlIlIlIIIIlI[i]);
         }

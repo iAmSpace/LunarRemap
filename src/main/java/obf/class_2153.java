@@ -21,8 +21,8 @@ extends Item {
     }
 
     @Override
-    public class_0552 lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
-        return this.llIIllIllIlIIlIIllIllllll(class_08972).lIlllIlllIIIIlIIlllIllIII() > 0 ? class_0552.lllIlIIlIIIlIlIIIllIlllIl : super.lIIIIlIlIIlllllIIllIIlIII(class_08972);
+    public EnumRarity lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
+        return this.llIIllIllIlIIlIIllIllllll(class_08972).lIlllIlllIIIIlIIlllIllIII() > 0 ? EnumRarity.uncommon : super.lIIIIlIlIIlllllIIllIIlIII(class_08972);
     }
 
     public class_2145 llIIllIllIlIIlIIllIllllll(ItemStack class_08972) {

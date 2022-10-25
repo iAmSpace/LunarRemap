@@ -41,6 +41,7 @@ import java.util.Set;
 import javax.imageio.ImageIO;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.C14PacketTabComplete;
 import net.minecraft.stats.Achievement;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.item.ItemStack;
@@ -293,12 +294,12 @@ implements class_0945 {
             }
             this.lllllIlllIIllIlIIlIIIllII.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0722(stringBuilder.toString()), 1);
         }
-        this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(class_1227.lllIIIllIIIIlllIlIIllIIll((String)this.IIIllIllIIlIlIlIlIllllIIl.get(this.IllIIlllllllIIlIIlIIIIlIl++)));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(EnumChatFormatting.getTextWithoutFormattingCodes((String)this.IIIllIllIIlIlIlIlIllllIIl.get(this.IllIIlllllllIIlIIlIIIIlIl++)));
     }
 
     private void lllIIIllIIIIlllIlIIllIIll(String string, String string2) {
         if (string.length() >= 1) {
-            this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0287(string));
+            this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C14PacketTabComplete(string));
             this.IIIllIIlIIIIIIlIlIIllIIlI = true;
         }
     }
@@ -333,7 +334,7 @@ implements class_0945 {
         IChatComponent class_22552 = this.lllllIlllIIllIlIIlIIIllII.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(Mouse.getX(), Mouse.getY());
         if (class_22552 != null && class_22552.lllIlIIlIIIlIlIIIllIlllIl().IIIllIllIIlIlIlIlIllllIIl() != null) {
             class_0015 class_00152 = class_22552.lllIlIIlIIIlIlIIIllIlllIl().IIIllIllIIlIlIlIlIllllIIl();
-            if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.IlIllllllIIlIIllllIIlIIIl) {
+            if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.SHOW_ITEM) {
                 ItemStack class_08972 = null;
                 try {
                     class_2037 class_20372 = class_0605.lllIIIllIIIIlllIlIIllIIll(class_00152.lllIlIIlIIIlIlIIIllIlllIl().IlIllllllIIlIIllllIIlIIIl());
@@ -347,12 +348,12 @@ implements class_0945 {
                 if (class_08972 != null) {
                     this.lllIIIllIIIIlllIlIIllIIll(class_08972, n, n2);
                 } else {
-                    this.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Invalid Item!", n, n2);
+                    this.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object) EnumChatFormatting.RED) + "Invalid Item!", n, n2);
                 }
-            } else if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.lllIIIllIIIIlllIlIIllIIll) {
+            } else if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.SHOW_TEXT) {
                 this.lllIIIllIIIIlllIlIIllIIll(Splitter.on((String)"\n").splitToList((CharSequence)class_00152.lllIlIIlIIIlIlIIIllIlllIl().lIlllIlllIIIIlIIlllIllIII()), n, n2);
-            } else if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.lllIlIIlIIIlIlIIIllIlllIl) {
-                StatBase class_03192 = StatList.lllIIIllIIIIlllIlIIllIIll(class_00152.lllIlIIlIIIlIlIIIllIlllIl().IlIllllllIIlIIllllIIlIIIl());
+            } else if (class_00152.lllIIIllIIIIlllIlIIllIIll() == class_0248.SHOW_ACHIEVEMENT) {
+                StatBase class_03192 = StatList.func_151177_a(class_00152.lllIlIIlIIIlIlIIIllIlllIl().IlIllllllIIlIIllllIIlIIIl());
                 if (class_03192 != null) {
                     IChatComponent class_22553 = class_03192.IlIIIIIllllllIIlllIllllll();
                     ChatComponentTranslation class_17902 = new ChatComponentTranslation("stats.tooltip.type." + (class_03192.lIlllIlllIIIIlIIlllIllIII() ? "achievement" : "statistic"), new Object[0]);
@@ -364,7 +365,7 @@ implements class_0945 {
                     }
                     this.lllIIIllIIIIlllIlIIllIIll(arrayList, n, n2);
                 } else {
-                    this.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Invalid statistic/achievement!", n, n2);
+                    this.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object) EnumChatFormatting.RED) + "Invalid statistic/achievement!", n, n2);
                 }
             }
             GL11.glDisable((int)2896);
@@ -387,7 +388,7 @@ implements class_0945 {
             String string = this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl().substring(this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(-1, this.lllIIIllIIIIlllIlIIllIIll.IllIIlllllllIIlIIlIIIIlIl(), false));
             arrstring2 = new String[this.IIIllIllIIlIlIlIlIllllIIl.size()];
             for (int i = 0; i < this.IIIllIllIIlIlIlIlIllllIIl.size(); ++i) {
-                arrstring2[i] = class_1227.lllIIIllIIIIlllIlIIllIIll((String)this.IIIllIllIIlIlIlIlIllllIIl.get(i));
+                arrstring2[i] = EnumChatFormatting.getTextWithoutFormattingCodes((String)this.IIIllIllIIlIlIlIlIllllIIl.get(i));
             }
             String string2 = StringUtils.getCommonPrefix((String[])arrstring2);
             if (string2.length() > 0 && !string.equalsIgnoreCase(string2)) {

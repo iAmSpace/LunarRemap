@@ -81,7 +81,7 @@ extends SimpleChannelInboundHandler {
                 this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl.IllIIlllllllIIlIIlIIIIlIl = -1;
                 this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl = string2;
                 this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl.lIllllIIlIIIlIllllllIIIll = string3;
-                this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl = (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "" + n2 + "" + (Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + "/" + (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + n3;
+                this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl = (Object)((Object) EnumChatFormatting.GRAY) + "" + n2 + "" + (Object)((Object) EnumChatFormatting.DARK_GRAY) + "/" + (Object)((Object) EnumChatFormatting.GRAY) + n3;
             }
         }
         channelHandlerContext.close();

@@ -5,6 +5,7 @@ package obf;/*
  *  org.lwjgl.input.Mouse
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
@@ -12,10 +13,10 @@ import org.lwjgl.opengl.GL11;
 
 public class class_1998
 extends class_0229 {
-    private final class_1665 lllIIIllIIIIlllIlIIllIIll;
+    private final AbstractModule lllIIIllIIIIlllIlIIllIIll;
     private class_0822 lllIlIIlIIIlIlIIIllIlllIl;
 
-    public class_1998(class_0822 class_08222, class_1665 class_16652) {
+    public class_1998(class_0822 class_08222, AbstractModule class_16652) {
         class_16652.lllIIIllIIIIlllIlIIllIIll(true);
         this.lllIIIllIIIIlllIlIIllIIll = class_16652;
         this.lllIlIIlIIIlIlIIIllIlllIl = class_08222;
@@ -72,8 +73,8 @@ extends class_0229 {
         float f5 = (float)n2 - arrf[1] - arrf2[1];
         if (!Mouse.isButtonDown((int)1)) {
             float[] arrf3 = this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_03212, false);
-            f4 = this.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, f4, arrf3, (float)((int)(this.lllIIIllIIIIlllIlIIllIIll.llIllllIlIllIIIlIllIIlIlI * ((Float)this.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue())), false);
-            f5 = this.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, f5, arrf3, (float)((int)(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIlIIIIlllIlIlIIl * ((Float)this.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue())), false);
+            f4 = this.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, f4, arrf3, (float)((int)(this.lllIIIllIIIIlllIlIIllIIll.llIllllIlIllIIIlIllIIlIlI * ((Float)this.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue())), false);
+            f5 = this.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, f5, arrf3, (float)((int)(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIlIIIIlllIlIlIIl * ((Float)this.lllIIIllIIIIlllIlIIllIIll.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue())), false);
         }
         this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(f4, f5);
         GL11.glPushMatrix();
@@ -86,26 +87,26 @@ extends class_0229 {
         GL11.glPopMatrix();
     }
 
-    private float lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652, float f, float[] arrf, float f2, boolean bl) {
+    private float lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652, float f, float[] arrf, float f2, boolean bl) {
         int n;
         float f3 = f;
         int n2 = n = bl ? 0 : 3;
         if (f3 + arrf[0] < (float)n) {
             f3 = -arrf[0] + (float)n;
-        } else if (f3 + arrf[0] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue() + f2 > (float)(this.IlIlIIlllIIlIllIIIlllllIl - n)) {
-            f3 = (int)((float)this.IlIlIIlllIIlIllIIIlllllIl - arrf[0] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue() - f2 - (float)n);
+        } else if (f3 + arrf[0] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue() + f2 > (float)(this.IlIlIIlllIIlIllIIIlllllIl - n)) {
+            f3 = (int)((float)this.IlIlIIlllIIlIllIIIlllllIl - arrf[0] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue() - f2 - (float)n);
         }
         return f3;
     }
 
-    private float lllIlIIlIIIlIlIIIllIlllIl(class_1665 class_16652, float f, float[] arrf, float f2, boolean bl) {
+    private float lllIlIIlIIIlIlIIIllIlllIl(AbstractModule class_16652, float f, float[] arrf, float f2, boolean bl) {
         int n;
         float f3 = f;
         int n2 = n = bl ? 0 : 2;
         if (f3 + arrf[1] < (float)n) {
             f3 = -arrf[1] + (float)n;
-        } else if (f3 + arrf[1] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue() + f2 > (float)(this.lIIlIIIIIlIlllIlIIlIlIlll - n)) {
-            f3 = (int)((float)this.lIIlIIIIIlIlllIlIIlIlIlll - arrf[1] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue() - f2 - (float)n);
+        } else if (f3 + arrf[1] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue() + f2 > (float)(this.lIIlIIIIIlIlllIlIIlIlIlll - n)) {
+            f3 = (int)((float)this.lIIlIIIIIlIlllIlIIlIlIlll - arrf[1] * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue() - f2 - (float)n);
         }
         return f3;
     }

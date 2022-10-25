@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
@@ -37,7 +38,7 @@ extends class_0759 {
             LunarClient.getInstance().robotoMedium13px.lllIIIllIIIIlllIlIIllIIll("DENY", this.lllIIIllIIIIlllIlIIllIIll + 56.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 11.0f, bl3 ? -52429 : 0x7FFF3333);
         }
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        ResourceLocation class_17732 = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll()), this.IllIIlllllllIIlIIlIIIIlIl.lllIlIIlIIIlIlIIIllIlllIl());
+        ResourceLocation class_17732 = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getTextWithoutFormattingCodes(this.IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll()), this.IllIIlllllllIIlIIlIIIIlIl.lllIlIIlIIIlIlIIIllIlllIl());
         class_0857.lllIIIllIIIIlllIlIIllIIll(class_17732, 7.0f, this.lllIIIllIIIIlllIlIIllIIll + 5.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 4.0f);
         GL11.glPopMatrix();
     }

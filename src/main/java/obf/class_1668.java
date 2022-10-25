@@ -17,6 +17,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
 import java.io.IOException;
 import java.util.List;
+
+import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
@@ -35,20 +37,20 @@ extends ByteToMessageDecoder {
     protected void decode(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, List list) {
         int n = byteBuf.readableBytes();
         if (n != 0) {
-            class_0181 class_01812 = new class_0181(byteBuf);
-            int n2 = class_01812.lllIIIllIIIIlllIlIIllIIll();
-            class_0703 class_07032 = class_0703.lllIIIllIIIIlllIlIIllIIll((BiMap)channelHandlerContext.channel().attr(class_0800.IlIIIIIllllllIIlllIllllll).get(), n2);
+            PacketBuffer class_01812 = new PacketBuffer(byteBuf);
+            int n2 = class_01812.readVarIntFromBuffer();
+            Packet class_07032 = Packet.generatePacket((BiMap)channelHandlerContext.channel().attr(class_0800.IlIIIIIllllllIIlllIllllll).get(), n2);
             if (class_07032 == null) {
                 throw new IOException("Bad packet id " + n2);
             }
-            class_07032.lllIIIllIIIIlllIlIIllIIll(class_01812);
+            class_07032.readPacketData(class_01812);
             if (class_01812.readableBytes() > 0) {
                 throw new IOException("Packet was larger than I expected, found " + class_01812.readableBytes() + " bytes extra whilst reading packet " + n2);
             }
             list.add(class_07032);
             this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(n2, n);
             if (lllIIIllIIIIlllIlIIllIIll.isDebugEnabled()) {
-                lllIIIllIIIIlllIlIIllIIll.debug(lllIlIIlIIIlIlIIIllIlllIl, " IN: [{}:{}] {}[{}]", new Object[]{channelHandlerContext.channel().attr(class_0800.lIlllIlllIIIIlIIlllIllIII).get(), n2, class_07032.getClass().getName(), class_07032.lllIlIIlIIIlIlIIIllIlllIl()});
+                lllIIIllIIIIlllIlIIllIIll.debug(lllIlIIlIIIlIlIIIllIlllIl, " IN: [{}:{}] {}[{}]", new Object[]{channelHandlerContext.channel().attr(class_0800.lIlllIlllIIIIlIIlllIllIII).get(), n2, class_07032.getClass().getName(), class_07032.serialize()});
             }
         }
     }

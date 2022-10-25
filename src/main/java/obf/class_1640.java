@@ -15,10 +15,10 @@ public class class_1640
 extends Block {
     private boolean llllllIlIllllIlIlIlIIIIlI = true;
     private Set lIlIIllllIlIIIIllIIIIlIIl = new HashSet();
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    private class_2102 lllIIIIIIlIlllIIlIlIIIllI;
-    private class_2102 llIIlIIllIIllIlIIllIIllII;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon llIIlIIllIIllIlIIllIIllII;
 
     public class_1640() {
         super(class_1855.lllllIlllIIllIlIIlIIIllII);
@@ -334,7 +334,7 @@ extends Block {
         this.llIIIIllIIIIIIIlIIIlIIIIl = this.llIlllIIllIlllIlIlIlIIIll;
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string.equals("cross") ? Blocks.IlIIIlIllIIIllIIIIlIIlIll.llIlllIIllIlllIlIlIlIIIll : (string.equals("line") ? Blocks.IlIIIlIllIIIllIIIIlIIlIll.IIIIlIIlIIIllIIIIllIIIlII : (string.equals("cross_overlay") ? Blocks.IlIIIlIllIIIllIIIIlIIlIll.lllIIIIIIlIlllIIlIlIIIllI : (string.equals("line_overlay") ? Blocks.IlIIIlIllIIIllIIIIlIIlIll.llIIlIIllIIllIlIIllIIllII : null)));
     }
 }

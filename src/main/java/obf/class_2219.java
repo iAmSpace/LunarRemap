@@ -1,5 +1,8 @@
 package obf;
 
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S33PacketUpdateSign;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -31,10 +34,10 @@ extends class_1774 {
     }
 
     @Override
-    public class_0703 IllIIlllllllIIlIIlIIIIlIl() {
+    public Packet IllIIlllllllIIlIIlIIIIlIl() {
         String[] arrstring = new String[4];
         System.arraycopy(this.IllIIlllllllIIlIIlIIIIlIl, 0, arrstring, 0, 4);
-        return new class_0136(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, arrstring);
+        return new S33PacketUpdateSign(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, arrstring);
     }
 
     public boolean lllIIIllIIIIlllIlIIllIIll() {

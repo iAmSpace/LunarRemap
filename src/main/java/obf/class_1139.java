@@ -25,6 +25,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.TreeSet;
 
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -136,10 +138,10 @@ class_0785 {
             System.err.println("could not get network interface addresses");
             socketException.printStackTrace();
         }
-        ArrayList<class_1335> arrayList = new ArrayList<class_1335>();
-        arrayList.addAll(Arrays.asList(this.lllIIIllIIIIlllIlIIllIIll.gameSettings.llIlllllIIlIIlIIllllIllll));
+        ArrayList<KeyBinding> arrayList = new ArrayList<KeyBinding>();
+        arrayList.addAll(Arrays.asList(this.lllIIIllIIIIlllIlIIllIIll.gameSettings.keyBindings));
         arrayList.addAll(Arrays.asList(this.IlIllllllIIlIIllllIIlIIIl.lllIIIIIIlIlllIIlIlIIIllI));
-        this.lllIIIllIIIIlllIlIIllIIll.gameSettings.llIlllllIIlIIlIIllllIllll = arrayList.toArray(new class_1335[arrayList.size()]);
+        this.lllIIIllIIIIlllIlIIllIIll.gameSettings.keyBindings = arrayList.toArray(new KeyBinding[arrayList.size()]);
         this.IlIlIIlllIllllllllIIIlIlI.start();
         this.IlIlIIlllIllllllllIIIlIlI.setPriority(5);
         this.IIIIlIIlIIIllIIIIllIIIlII[0] = new class_0041(32, 32);
@@ -155,14 +157,14 @@ class_0785 {
         this.llIIlIIllIIllIlIIllIIllII[2] = new class_0243(128, 128, 6);
         this.llIIlIIllIIllIlIIllIIllII[3] = new class_0243(256, 256, 6);
         this.lIlIlIIIIIIlIIllllIlIIllI = new class_0243(128, 128, 6);
-        this.IlllIIIllllIIllIllIlIIlIl[0] = (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + "VoxelMap" + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + "! " + this.lllIlIIlIIIlIlIIIllIlllIl + " " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome1");
+        this.IlllIIIllllIIllIllIlIIlIl[0] = (Object)((Object) EnumChatFormatting.DARK_RED) + "VoxelMap" + (Object)((Object) EnumChatFormatting.WHITE) + "! " + this.lllIlIIlIIIlIlIIIllIlllIl + " " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome1");
         this.IlllIIIllllIIllIllIlIIlIl[1] = class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome2");
         this.IlllIIIllllIIllIllIlIIlIl[2] = class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome3");
         this.IlllIIIllllIIllIllIlIIlIl[3] = class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome4");
-        this.IlllIIIllllIIllIllIlIIlIl[4] = (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIIIIllIIIIIIIlIIIlIIIIl.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome5a") + ", " + (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + ": " + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llllllIlIllllIlIlIlIIIIlI.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome5b");
-        this.IlllIIIllllIIllIllIlIIlIl[5] = (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.IIllIllIIllIIlllIIIlIlllI.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome6");
-        this.IlllIIIllllIIllIllIlIIlIl[6] = (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIlllIIllIlllIlIlIlIIIll.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome7");
-        this.IlllIIIllllIIllIllIlIIlIl[7] = (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIIIIllIIIIIIIlIIIlIIIIl.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome8");
+        this.IlllIIIllllIIllIllIlIIlIl[4] = (Object)((Object) EnumChatFormatting.AQUA) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIIIIllIIIIIIIlIIIlIIIIl.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object) EnumChatFormatting.WHITE) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome5a") + ", " + (Object)((Object) EnumChatFormatting.AQUA) + ": " + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llllllIlIllllIlIlIlIIIIlI.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object) EnumChatFormatting.WHITE) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome5b");
+        this.IlllIIIllllIIllIllIlIIlIl[5] = (Object)((Object) EnumChatFormatting.AQUA) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.IIllIllIIllIIlllIIIlIlllI.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object) EnumChatFormatting.WHITE) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome6");
+        this.IlllIIIllllIIllIllIlIIlIl[6] = (Object)((Object) EnumChatFormatting.AQUA) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIlllIIllIlllIlIlIlIIIll.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object) EnumChatFormatting.WHITE) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome7");
+        this.IlllIIIllllIIllIllIlIIlIl[7] = (Object)((Object) EnumChatFormatting.WHITE) + class_1835.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl.llIIIIllIIIIIIIlIIIlIIIIl.IIIllIllIIlIlIlIlIllllIIl()) + (Object)((Object) EnumChatFormatting.GRAY) + ": " + class_0950.lllIIIllIIIIlllIlIIllIIll("minimap.ui.welcome8");
         if (class_2210.IlIllllllIIlIIllllIIlIIIl) {
             class_2210.lllIIIllIIIIlllIlIIllIIll();
         }
@@ -591,7 +593,7 @@ class_0785 {
             this.llIIllIllIlIIlIIllIllllll();
         }
         if (class_0006.lllIlIIlIIIlIlIIIllIlllIl() != null && !class_0006.lllIlIIlIIIlIlIIIllIlllIl().equals(this.IIllIllIIllIIlllIIIlIlllI)) {
-            if (this.lllIIIllIIIIlllIlIIllIIll.IIIIlIllIlIIlIIlIllIlIlll()) {
+            if (this.lllIIIllIIIIlllIlIIllIIll.isIntegratedServerRunning()) {
                 object2 = this.lIlllIlllIIIIlIIlllIllIII();
             } else {
                 object2 = this.IlIIIIIllllllIIlllIllllll();
@@ -606,7 +608,7 @@ class_0785 {
                 this.IIIllIIlIIIIIIlIlIIllIIlI.IlIIIIIllllllIIlllIllllll();
                 this.IlIllllllIIlIIllllIIlIIIl.IlIIlllllIIlIlIlllllIllll = this.lIlllIlllIIIIlIIlllIllIII != null;
                 this.IlIllllllIIlIIllllIIlIIIl.llIIlIlIlllIIllIlIlllIllI = this.lIlllIlllIIIIlIIlllIllIII != null;
-                if (!this.lllIIIllIIIIlllIlIIllIIll.IIIIlIllIlIIlIIlIllIlIlll()) {
+                if (!this.lllIIIllIIIIlllIlIIllIIll.isIntegratedServerRunning()) {
                     this.IllIIIIllIIllIllIlllIlIIl = System.currentTimeMillis();
                     this.IIIIIIIIlIllIIllIIlllIllI = true;
                 }
@@ -647,7 +649,7 @@ class_0785 {
     }
 
     public String lIlllIlllIIIIlIIlllIllIII() {
-        return this.lllIIIllIIIIlllIlIIllIIll.llllIIIIlIIIlIIIIIIlIllll().IlIlIIlllIllllllllIIIlIlI();
+        return this.lllIIIllIIIIlllIlIIllIIll.getIntegratedServer().IlIlIIlllIllllllllIIIlIlI();
     }
 
     public String IlIIIIIllllllIIlllIllllll() {
@@ -1320,7 +1322,7 @@ class_0785 {
         int n6 = 255;
         if (bl) {
             n6 = 0;
-        } else if (!(n == this.lIllllIIlIIIlIllllllIIIll.lllIlIIlIIIlIlIIIllIlllIl() || n == 0 || !this.IlIllllllIIlIIllllIIlIIIl.IIIllIIlIIIIIIlIlIIllIIlI || ((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().lIlIlIIlIIIIlIIIIIlllIIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue())) {
+        } else if (!(n == this.lIllllIIlIIIlIllllllIIIll.lllIlIIlIIIlIlIIIllIlllIl() || n == 0 || !this.IlIllllllIIlIIllllIIlIIIl.IIIllIIlIIIIIIlIlIIllIIlI || ((Boolean) LunarClient.getInstance().getSettingsManager().fpsEnableFpsBoost.getValue()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().fpsFullBright.getValue()).booleanValue())) {
             class_0723 class_07232 = class_13342.lIlllIlllIIIIlIIlllIllIII(n3, n4);
             int n7 = class_07232.lllIIIllIIIIlllIlIIllIIll(class_1346.lllIlIIlIIIlIlIIIllIlllIl, n3 & 0xF, Math.max(Math.min(n5, 255), 0), n4 & 0xF);
             int n8 = class_07232.lllIIIllIIIIlllIlIIllIIll(class_1346.lllIIIllIIIIlllIlIIllIIll, n3 & 0xF, Math.max(Math.min(n5, 255), 0), n4 & 0xF);

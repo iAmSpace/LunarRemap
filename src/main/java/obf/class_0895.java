@@ -14,7 +14,7 @@ public class class_0895
 extends class_0854
 implements class_0588 {
     private final Block llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_0895(Block class_05492) {
         this.llllllIlIllllIlIlIlIIIIlI = class_05492;
@@ -191,7 +191,7 @@ implements class_0588 {
         this.lIlIIllllIlIIIIllIIIIlIIl = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_connected");
     }
 
-    public class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public IIcon llIlllIIllIlllIlIlIlIIIll() {
         return this.lIlIIllllIlIIIIllIIIIlIIl;
     }
 

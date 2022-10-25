@@ -7,27 +7,29 @@ package obf;/*
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
 
 public class class_0283
-extends class_1665 {
-    private class_1609 lllIIlIIIllllllIIIIlIlIlI;
-    public static class_1609 lllIIIllIIIIlllIlIIllIIll;
-    public static class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    public static class_1609 IlIllllllIIlIIllllIIlIIIl;
-    public static class_1609 lIlllIlllIIIIlIIlllIllIII;
-    public static class_1609 IlIIIIIllllllIIlllIllllll;
-    private class_1609 IlIlllIIIIIIlIIllIIllIlll;
-    public static class_1609 lIllllIIlIIIlIllllllIIIll;
-    public static class_1609 IIIllIIlIIIIIIlIlIIllIIlI;
-    public static class_1609 IllIIlllllllIIlIIlIIIIlIl;
-    public static class_1609 IIIllIllIIlIlIlIlIllllIIl;
-    private class_1609 IlIlIIlIlIllIIlIlIIllIIIl;
-    public static class_1609 IllIIIllIIIIlIlIlIllIIlll;
-    public static class_1609 lIIIIlIlIIlllllIIllIIlIII;
+extends AbstractModule {
+    private Setting lllIIlIIIllllllIIIIlIlIlI;
+    public static Setting lllIIIllIIIIlllIlIIllIIll;
+    public static Setting lllIlIIlIIIlIlIIIllIlllIl;
+    public static Setting IlIllllllIIlIIllllIIlIIIl;
+    public static Setting lIlllIlllIIIIlIIlllIllIII;
+    public static Setting IlIIIIIllllllIIlllIllllll;
+    private Setting IlIlllIIIIIIlIIllIIllIlll;
+    public static Setting lIllllIIlIIIlIllllllIIIll;
+    public static Setting IIIllIIlIIIIIIlIlIIllIIlI;
+    public static Setting IllIIlllllllIIlIIlIIIIlIl;
+    public static Setting IIIllIllIIlIlIlIlIllllIIl;
+    private Setting IlIlIIlIlIllIIlIlIIllIIIl;
+    public static Setting IllIIIllIIIIlIlIlIllIIlll;
+    public static Setting lIIIIlIlIIlllllIIllIIlIII;
     public static class_1785 llIIlllIllIllllIIIlIIIIII;
     public static final List llIIllIllIlIIlIIllIllllll;
     private static List lllllIlllIIllIlIIlIIIllII;
@@ -37,20 +39,20 @@ extends class_1665 {
         super("Armor Status");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.IllIIIllIIIIlIlIlIllIIlll);
         this.lllIlIIlIIIlIlIIIllIlllIl(false);
-        this.lllIIlIIIllllllIIIIlIlIlI = new class_1609(this, "label").lllIlIIlIIIlIlIIIllIlllIl("General Options");
-        lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "List Mode").lllIlIIlIIIlIlIIIllIlllIl("vertical").lllIIIllIIIIlllIlIIllIIll(new String[]{"vertical", "horizontal"});
-        lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "Item Name").lllIlIIlIIIlIlIIIllIlllIl(false);
-        IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Item Count").lllIlIIlIIIlIlIIIllIlllIl(true);
-        IlIIIIIllllllIIlllIllllll = new class_1609(this, "Equipped Item").lllIlIIlIIIlIlIIIllIlllIl(true);
-        lIlllIlllIIIIlIIlllIllIII = new class_1609(this, "Show While Typing").lllIlIIlIIIlIlIIIllIlllIl(false);
-        this.IlIlllIIIIIIlIIllIIllIlll = new class_1609(this, "label").lllIlIIlIIIlIlIIIllIlllIl("Damage Options");
-        lIllllIIlIIIlIllllllIIIll = new class_1609(this, "Damage Overlay").lllIlIIlIIIlIlIIIllIlllIl(true);
-        IIIllIIlIIIIIIlIlIIllIIlI = new class_1609(this, "Show Item Damage").lllIlIIlIIIlIlIIIllIlllIl(true);
-        IllIIlllllllIIlIIlIIIIlIl = new class_1609(this, "Show Armor Damage").lllIlIIlIIIlIlIIIllIlllIl(true);
-        IIIllIllIIlIlIlIlIllllIIl = new class_1609(this, "Show Max Damage").lllIlIIlIIIlIlIIIllIlllIl(false);
-        this.IlIlIIlIlIllIIlIlIIllIIIl = new class_1609(this, "label").lllIlIIlIIIlIlIIIllIlllIl("Damage Display");
-        IllIIIllIIIIlIlIlIllIIlll = new class_1609(this, "Damage Display Type").lllIlIIlIIIlIlIIIllIlllIl("value").lllIIIllIIIIlllIlIIllIIll("value", "percent", "none");
-        lIIIIlIlIIlllllIIllIIlIII = new class_1609(this, "Damage Threshold Type").lllIlIIlIIIlIlIIIllIlllIl("percent").lllIIIllIIIIlllIlIIllIIll(new String[]{"percent", "value"});
+        this.lllIIlIIIllllllIIIIlIlIlI = new Setting(this, "label").setValue("General Options");
+        lllIIIllIIIIlllIlIIllIIll = new Setting(this, "List Mode").setValue("vertical").setAcceptedValues(new String[]{"vertical", "horizontal"});
+        lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "Item Name").setValue(false);
+        IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Item Count").setValue(true);
+        IlIIIIIllllllIIlllIllllll = new Setting(this, "Equipped Item").setValue(true);
+        lIlllIlllIIIIlIIlllIllIII = new Setting(this, "Show While Typing").setValue(false);
+        this.IlIlllIIIIIIlIIllIIllIlll = new Setting(this, "label").setValue("Damage Options");
+        lIllllIIlIIIlIllllllIIIll = new Setting(this, "Damage Overlay").setValue(true);
+        IIIllIIlIIIIIIlIlIIllIIlI = new Setting(this, "Show Item Damage").setValue(true);
+        IllIIlllllllIIlIIlIIIIlIl = new Setting(this, "Show Armor Damage").setValue(true);
+        IIIllIllIIlIlIlIlIllllIIl = new Setting(this, "Show Max Damage").setValue(false);
+        this.IlIlIIlIlIllIIlIlIIllIIIl = new Setting(this, "label").setValue("Damage Display");
+        IllIIIllIIIIlIlIlIllIIlll = new Setting(this, "Damage Display Type").setValue("value").setAcceptedValues("value", "percent", "none");
+        lIIIIlIlIIlllllIIllIIlIII = new Setting(this, "Damage Threshold Type").setValue("percent").setAcceptedValues(new String[]{"percent", "value"});
         llIIllIllIlIIlIIllIllllll.add(new class_1650(10, "4"));
         llIIllIllIlIIlIIllIllllll.add(new class_1650(25, "c"));
         llIIllIllIlIIlIIllIllllll.add(new class_1650(40, "6"));
@@ -78,9 +80,9 @@ extends class_1665 {
             arrayList.add(new class_1966(new ItemStack(Item.lllIIIllIIIIlllIlIIllIIll(312)), 16, 16, 2, true));
             arrayList.add(new class_1966(new ItemStack(Item.lllIIIllIIIIlllIlIIllIIll(313)), 16, 16, 2, true));
         }
-        if (((Boolean)IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IllIlIlIIIlIllIlIlIIlllII() != null) {
+        if (((Boolean)IlIIIIIllllllIIlllIllllll.getValue()).booleanValue() && this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IllIlIlIIIlIllIlIlIIlllII() != null) {
             arrayList.add(new class_1966(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IllIlIlIIIlIllIlIlIIlllII(), 16, 16, 2, false));
-        } else if (((Boolean)IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        } else if (((Boolean)IlIIIIIllllllIIlllIllllll.getValue()).booleanValue()) {
             arrayList.add(new class_1966(new ItemStack(Item.lllIIIllIIIIlllIlIIllIIll(276)), 16, 16, 2, false));
         }
         GL11.glPushMatrix();
@@ -96,7 +98,7 @@ extends class_1665 {
         if (!this.lllIIlIIIllllllIIIIlIlIlI()) {
             return;
         }
-        if (!(this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_0822 || this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_1998 || this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_1056 && !((Boolean)lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue())) {
+        if (!(this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_0822 || this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_1998 || this.lIIlIIIIIlIlllIlIIlIlIlll.lllllIlllIIllIlIIlIIIllII instanceof class_1056 && !((Boolean)lIlllIlllIIIIlIIlllIllIII.getValue()).booleanValue())) {
             this.lllIIIllIIIIlllIlIIllIIll(this.lIIlIIIIIlIlllIlIIlIlIlll);
             if (!lllllIlllIIllIlIIlIIIllII.isEmpty()) {
                 GL11.glPushMatrix();
@@ -114,7 +116,7 @@ extends class_1665 {
         lllllIlllIIllIlIIlIIIllII.clear();
         for (int i = 3; i >= -1; --i) {
             ItemStack class_08972 = null;
-            if (i == -1 && ((Boolean)IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (i == -1 && ((Boolean)IlIIIIIllllllIIlllIllllll.getValue()).booleanValue()) {
                 class_08972 = class_06672.lIIIIlIlIIlllllIIllIIlIII.IllIlIlIIIlIllIlIlIIlllII();
             } else if (i != -1) {
                 class_08972 = class_06672.lIIIIlIlIIlllllIIllIIlIII.lllIIlIIIllllllIIIIlIlIlI.lllIlIIlIIIlIlIIIllIlllIl[i];
@@ -127,8 +129,8 @@ extends class_1665 {
     private void lllIIIllIIIIlllIlIIllIIll(Minecraft class_06672, List list) {
         if (list.size() > 0) {
             int n;
-            int n2 = n = (Boolean)lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII() != false ? 18 : 16;
-            if (((String)lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("vertical")) {
+            int n2 = n = (Boolean)lllIlIIlIIIlIlIIIllIlllIl.getValue() != false ? 18 : 16;
+            if (((String)lllIIIllIIIIlllIlIIllIIll.getValue()).equalsIgnoreCase("vertical")) {
                 int n3 = 0;
                 int n4 = 0;
                 boolean bl = class_1271.IlIllllllIIlIIllllIIlIIIl(this.IlIlllIIIIIIlIIllIIllIlll()) == class_1564.IlIIIIIllllllIIlllIllllll;
@@ -140,7 +142,7 @@ extends class_1665 {
                 }
                 this.lIlllIlllIlIIIIlllIlIlIIl = n3;
                 this.llIllllIlIllIIIlIllIIlIlI = n4;
-            } else if (((String)lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("horizontal")) {
+            } else if (((String)lllIIIllIIIIlllIlIIllIIll.getValue()).equalsIgnoreCase("horizontal")) {
                 boolean bl = false;
                 int n5 = 0;
                 int n6 = 0;

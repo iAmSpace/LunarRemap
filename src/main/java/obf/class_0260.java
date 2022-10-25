@@ -1,48 +1,36 @@
 package obf;
 
-/*
- * Decompiled with CFR 0.150.
- */
+import net.minecraft.util.ResourceLocation;
+
 public enum class_0260 {
-    lllIIIllIIIIlllIlIIllIIll("MENU", 0, new ResourceLocation("minecraft:music.menu"), 20, 600),
-    lllIlIIlIIIlIlIIIllIlllIl("GAME", 1, new ResourceLocation("minecraft:music.game"), 12000, 24000),
-    IlIllllllIIlIIllllIIlIIIl("CREATIVE", 2, new ResourceLocation("minecraft:music.game.creative"), 1200, 3600),
-    lIlllIlllIIIIlIIlllIllIII("CREDITS", 3, new ResourceLocation("minecraft:music.game.end.credits"), Integer.MAX_VALUE, Integer.MAX_VALUE),
-    IlIIIIIllllllIIlllIllllll("NETHER", 4, new ResourceLocation("minecraft:music.game.nether"), 1200, 3600),
-    lIllllIIlIIIlIllllllIIIll("END_BOSS", 5, new ResourceLocation("minecraft:music.game.end.dragon"), 0, 0),
-    IIIllIIlIIIIIIlIlIIllIIlI("END", 6, new ResourceLocation("minecraft:music.game.end"), 6000, 24000);
+    MENU(new ResourceLocation("minecraft:music.menu"), 20, 600),
+    GAME(new ResourceLocation("minecraft:music.game"), 12000, 24000),
+    CREATIVE(new ResourceLocation("minecraft:music.game.creative"), 1200, 3600),
+    CREDITS(new ResourceLocation("minecraft:music.game.end.credits"), Integer.MAX_VALUE, Integer.MAX_VALUE),
+    NETHER(new ResourceLocation("minecraft:music.game.nether"), 1200, 3600),
+    END_BOSS(new ResourceLocation("minecraft:music.game.end.dragon"), 0, 0),
+    END(new ResourceLocation("minecraft:music.game.end"), 6000, 24000);
 
-    private final ResourceLocation IllIIlllllllIIlIIlIIIIlIl;
-    private final int IIIllIllIIlIlIlIlIllllIIl;
-    private final int IllIIIllIIIIlIlIlIllIIlll;
-    private static final class_0260[] lIIIIlIlIIlllllIIllIIlIII;
+    private final ResourceLocation field_148645_h;
+    private final int field_148646_i;
+    private final int field_148643_j;
 
-    /*
-     * WARNING - Possible parameter corruption
-     * WARNING - void declaration
-     */
-    private class_0260(ResourceLocation class_17732, int n, int n2) {
-        void var7_5;
-        void var6_4;
-        this.IllIIlllllllIIlIIlIIIIlIl = (ResourceLocation)n2;
-        this.IIIllIllIIlIlIlIlIllllIIl = var6_4;
-        this.IllIIIllIIIIlIlIlIllIIlll = var7_5;
+    class_0260(ResourceLocation p_i45111_3_, int p_i45111_4_, int p_i45111_5_) {
+        this.field_148645_h = p_i45111_3_;
+        this.field_148646_i = p_i45111_4_;
+        this.field_148643_j = p_i45111_5_;
     }
 
-    public ResourceLocation lllIIIllIIIIlllIlIIllIIll() {
-        return this.IllIIlllllllIIlIIlIIIIlIl;
+    public ResourceLocation getMusicTickerLocation() {
+        return this.field_148645_h;
     }
 
-    public int lllIlIIlIIIlIlIIIllIlllIl() {
-        return this.IIIllIllIIlIlIlIlIllllIIl;
+    public int func_148634_b() {
+        return this.field_148646_i;
     }
 
-    public int IlIllllllIIlIIllllIIlIIIl() {
-        return this.IllIIIllIIIIlIlIlIllIIlll;
-    }
-
-    static {
-        lIIIIlIlIIlllllIIllIIlIII = new class_0260[]{lllIIIllIIIIlllIlIIllIIll, lllIlIIlIIIlIlIIIllIlllIl, IlIllllllIIlIIllllIIlIIIl, lIlllIlllIIIIlIIlllIllIII, IlIIIIIllllllIIlllIllllll, lIllllIIlIIIlIllllllIIIll, IIIllIIlIIIIIIlIlIIllIIlI};
+    public int func_148633_c() {
+        return this.field_148643_j;
     }
 }
 

@@ -6,13 +6,14 @@ package obf;/*
  */
 import java.awt.Color;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
 public class class_0129
 extends class_2117 {
     private final int IllIIlllllllIIlIIlIIIIlIl;
-    public final class_1665 lllIIIllIIIIlllIlIIllIIll;
+    public final AbstractModule lllIIIllIIIIlllIlIIllIIll;
     private final class_1194 IIIllIllIIlIlIlIlIllllIIl;
     private final class_0730 IllIIIllIIIIlIlIlIllIIlll;
     private final class_0730 lIIIIlIlIIlllllIIllIIlIII;
@@ -20,7 +21,7 @@ extends class_2117 {
     private int llIIllIllIlIIlIIllIllllll = 0;
     private ResourceLocation lllIIlIIIllllllIIIIlIlIlI = new ResourceLocation("client/icons/right.png");
 
-    public class_0129(class_1194 class_11942, int n, class_1665 class_16652, float f) {
+    public class_0129(class_1194 class_11942, int n, AbstractModule class_16652, float f) {
         super(f);
         this.IIIllIllIIlIlIlIlIllllIIl = class_11942;
         this.IllIIlllllllIIlIIlIIIIlIl = n;

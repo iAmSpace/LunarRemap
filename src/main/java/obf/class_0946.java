@@ -17,7 +17,7 @@ public class class_0946
 extends Item {
     private static final String[] IllIIIllIIIIlIlIlIllIIlll = new String[]{"skeleton", "wither", "zombie", "char", "creeper"};
     public static final String[] IIIllIllIIlIlIlIlIllllIIl = new String[]{"skeleton", "wither", "zombie", "steve", "creeper"};
-    private class_2102[] lIIIIlIlIIlllllIIllIIlIII;
+    private IIcon[] lIIIIlIlIIlllllIIllIIlIII;
 
     public class_0946() {
         this.lllIIIllIIIIlllIlIIllIIll(class_0931.IlIllllllIIlIIllllIIlIIIl);
@@ -86,7 +86,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         if (n < 0 || n >= IllIIIllIIIIlIlIlIllIIlll.length) {
             n = 0;
         }
@@ -122,7 +122,7 @@ extends Item {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.lIIIIlIlIIlllllIIllIIlIII = new class_2102[IIIllIllIIlIlIlIlIllllIIl.length];
+        this.lIIIIlIlIIlllllIIllIIlIII = new IIcon[IIIllIllIIlIlIlIlIllllIIl.length];
         for (int i = 0; i < IIIllIllIIlIlIlIlIllllIIl.length; ++i) {
             this.lIIIIlIlIIlllllIIllIIlIII[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_" + IIIllIllIIlIlIlIlIllllIIl[i]);
         }

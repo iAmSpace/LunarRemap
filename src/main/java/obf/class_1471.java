@@ -6,6 +6,7 @@ package obf;/*
  */
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
@@ -151,7 +152,7 @@ extends class_1716 {
         if (string.equals("clear") || string.equals("cls")) {
             LunarClient.getInstance().lIlIllIIlIIlIIlIIlIIlIIll().clear();
         } else {
-            LunarClient.getInstance().lIlIllIIlIIlIIlIIlIIlIIll().add((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "> " + string);
+            LunarClient.getInstance().lIlIllIIlIIlIIlIIlIIlIIll().add((Object)((Object) EnumChatFormatting.GRAY) + "> " + string);
             LunarClient.getInstance().getWebsocket().lllIIIllIIIIlllIlIIllIIll((class_0688)new class_0375(string));
         }
         this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll("");

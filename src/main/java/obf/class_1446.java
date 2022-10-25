@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 
 import java.io.FileNotFoundException;
@@ -69,7 +70,7 @@ public class class_1446 {
         }
     }
 
-    public static class_1363 lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022) {
+    public static class_1363 lllIIIllIIIIlllIlIIllIIll(IIcon class_21022) {
         if (!(class_21022 instanceof class_1585)) {
             return null;
         }

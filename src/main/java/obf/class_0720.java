@@ -85,7 +85,7 @@ extends class_0187 {
 
     @Override
     public boolean lllIIIllIIIIlllIlIIllIIll(String string, class_1832 class_18322) {
-        class_18322.lllIIIllIIIIlllIlIIllIIll(0);
+        class_18322.setLoadingProgress(0);
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         ArrayList arrayList3 = new ArrayList();
@@ -139,7 +139,7 @@ extends class_0187 {
         for (File file2 : iterable) {
             this.lllIIIllIIIIlllIlIIllIIll(file, file2, class_10762, n, n2, class_18322);
             int n3 = (int)Math.round(100.0 * (double)(++n) / (double)n2);
-            class_18322.lllIIIllIIIIlllIlIIllIIll(n3);
+            class_18322.setLoadingProgress(n3);
         }
     }
 
@@ -172,7 +172,7 @@ extends class_0187 {
                 n3 = (int)Math.round(100.0 * (double)(n * 1024) / (double)(n2 * 1024));
                 int n4 = (int)Math.round(100.0 * (double)((i + 1) * 32 + n * 1024) / (double)(n2 * 1024));
                 if (n4 <= n3) continue;
-                class_18322.lllIIIllIIIIlllIlIIllIIll(n4);
+                class_18322.setLoadingProgress(n4);
             }
             class_19382.lllIIIllIIIIlllIlIIllIIll();
             class_19383.lllIIIllIIIIlllIlIIllIIll();

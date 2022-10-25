@@ -23,6 +23,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;

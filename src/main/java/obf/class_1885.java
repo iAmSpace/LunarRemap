@@ -28,7 +28,7 @@ extends TimerTask {
                 hashMap.put("snooper_count", class_1296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll));
                 hashMap.put("snooper_token", class_1296.IIIllIIlIIIIIIlIlIIllIIlI(this.lllIIIllIIIIlllIlIIllIIll));
             }
-            class_0790.lllIIIllIIIIlllIlIIllIIll(class_1296.IllIIlllllllIIlIIlIIIIlIl(this.lllIIIllIIIIlllIlIIllIIll), hashMap, true);
+            HttpUtil.lllIIIllIIIIlllIlIIllIIll(class_1296.IllIIlllllllIIlIIlIIIIlIl(this.lllIIIllIIIIlllIlIIllIIll), hashMap, true);
         }
     }
 }

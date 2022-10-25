@@ -7,7 +7,9 @@ package obf;/*
  */
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
 import net.minecraft.client.Minecraft;
 import optifine.Config;
 

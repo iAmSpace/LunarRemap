@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import net.minecraft.network.play.server.S2BPacketChangeGameState;
 import optifine.Config;
 import net.minecraft.util.MathHelper;
 import net.minecraft.profiler.Profiler;
@@ -158,9 +159,9 @@ extends class_0976 {
             this.IIlllIlIlllIllIIIlllIIlIl.IlIIIIIllllllIIlllIllllll(0);
             this.IIlllIlIlllIllIIIlllIIlIl.lllIIIllIIIIlllIlIIllIIll(false);
             this.IIIllIllIIlIlIlIlIllllIIl(0.0f);
-            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(2, 0.0f));
-            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(7, 0.0f));
-            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(8, 0.0f));
+            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(2, 0.0f));
+            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(7, 0.0f));
+            this.llIIlIIllIIllIlIIllIIllII().lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(8, 0.0f));
         }
     }
 

@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.client.settings.KeyBinding;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -62,7 +64,7 @@ extends class_1634 {
             }
             ((class_1197)this.llIIllIllIlIIlIIllIllllll().get((int)this.IlIIIIIllllllIIlllIllllll)).IllIIlllllllIIlIIlIIIIlIl = this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(this.IlIIIIIllllllIIlllIllllll);
             this.IlIIIIIllllllIIlllIllllll = -1;
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
         } else {
             super.lllIIIllIIIIlllIlIIllIIll(c, n);
         }
@@ -79,14 +81,14 @@ extends class_1634 {
             int n4 = 0;
             while (true) {
                 if (n4 < this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI.length) {
-                    if (this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() == 0 || (n4 == i || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[n4].IIIllIllIIlIlIlIlIllllIIl()) && (this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.llIlllllIIlIIlIIllllIllll[n4].IIIllIllIIlIlIlIlIllllIIl() || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].equals(this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.llIlllllIIlIIlIIllllIllll[n4]))) {
+                    if (this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() == 0 || (n4 == i || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[n4].IIIllIllIIlIlIlIlIllllIIl()) && (this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.keyBindings[n4].IIIllIllIIlIlIlIlIllllIIl() || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].equals(this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.keyBindings[n4]))) {
                         ++n4;
                         continue;
                     }
                     bl = true;
                     continue;
                 }
-                if (n4 >= this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.llIlllllIIlIIlIIllllIllll.length || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != 0 && this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() == this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.llIlllllIIlIIlIIllllIllll[n4].IIIllIllIIlIlIlIlIllllIIl() && !this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].equals(this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.llIlllllIIlIIlIIllllIllll[n4])) break;
+                if (n4 >= this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.keyBindings.length || this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() != 0 && this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].IIIllIllIIlIlIlIlIllllIIl() == this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.keyBindings[n4].IIIllIllIIlIlIlIlIllllIIl() && !this.lIlllIlllIIIIlIIlllIllIII.lllIIIIIIlIlllIIlIlIIIllI[i].equals(this.lIlllIlllIIIIlIIlllIllIII.llIIlIIllIIllIlIIllIIllII.gameSettings.keyBindings[n4])) break;
                 ++n4;
             }
             bl = true;

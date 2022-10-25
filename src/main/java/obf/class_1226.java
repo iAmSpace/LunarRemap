@@ -29,6 +29,7 @@ import java.io.Reader;
 import java.net.Proxy;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;

@@ -7,6 +7,8 @@ package obf;/*
 import com.moonsworth.lunar.client.LunarClient;
 import io.netty.util.concurrent.GenericFutureListener;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.handshake.client.C00Handshake;
+import net.minecraft.network.login.client.C00PacketLoginStart;
 import net.minecraft.util.ChatComponentTranslation;
 
 import java.net.InetAddress;
@@ -48,8 +50,8 @@ extends Thread {
             class_0019.lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl, class_0800.lllIIIllIIIIlllIlIIllIIll(inetAddress, this.lllIlIIlIIIlIlIIIllIlllIl));
             class_0019.lllIlIIlIIIlIlIIIllIlllIl((class_0019)this.IlIllllllIIlIIllllIIlIIIl).IIIllIllIIlIlIlIlIllllIIl = Minecraft.getMinecraft().IlIllllllIIlIIllllIIlIIIl.lllIIlIIIllllllIIIIlIlIlI;
             class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll(new class_0188(class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl), class_0019.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl), class_0019.lIlllIlllIIIIlIIlllIllIII(this.IlIllllllIIlIIllllIIlIIIl)));
-            class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll(new class_0302(Minecraft.getMinecraft().IlIllllllIIlIIllllIIlIIIl.IllIIlllllllIIlIIlIIIIlIl == -1332 ? -1332 : 5, this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl, class_0546.lIlllIlllIIIIlIIlllIllIII), new GenericFutureListener[0]);
-            class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll(new class_1222(class_0019.IlIIIIIllllllIIlllIllllll(this.IlIllllllIIlIIllllIIlIIIl).getSession().func_148256_e()), new GenericFutureListener[0]);
+            class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll(new C00Handshake(Minecraft.getMinecraft().IlIllllllIIlIIllllIIlIIIl.IllIIlllllllIIlIIlIIIIlIl == -1332 ? -1332 : 5, this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl, EnumConnectionState.LOGIN), new GenericFutureListener[0]);
+            class_0019.lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll(new C00PacketLoginStart(class_0019.IlIIIIIllllllIIlllIllllll(this.IlIllllllIIlIIllllIIlIIIl).getSession().func_148256_e()), new GenericFutureListener[0]);
         }
         catch (UnknownHostException unknownHostException) {
             if (class_0019.lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl)) {

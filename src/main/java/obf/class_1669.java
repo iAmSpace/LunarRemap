@@ -8,6 +8,8 @@ package obf;/*
  *  org.apache.logging.log4j.Logger
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.util.ResourceLocation;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.item.ItemStack;
@@ -78,7 +80,7 @@ extends class_1522 {
             ByteBuf byteBuf = Unpooled.buffer();
             try {
                 byteBuf.writeInt(this.lIllllIIlIIIlIllllllIIIll);
-                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0917("MC|TrSel", byteBuf));
+                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload("MC|TrSel", byteBuf));
             }
             catch (Exception exception) {
                 lllIIIllIIIIlllIlIIllIIll.error("Couldn't send trade info", (Throwable)exception);

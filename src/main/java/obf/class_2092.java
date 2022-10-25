@@ -14,7 +14,7 @@ extends Block {
     private final String llllllIlIllllIlIlIlIIIIlI;
     private final boolean lIlIIllllIlIIIIllIIIIlIIl;
     private final String llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     protected class_2092(String string, String string2, class_1855 class_18552, boolean bl) {
         super(class_18552);
@@ -119,7 +119,7 @@ extends Block {
         this.lllIIIllIIIIlllIlIIllIIll(f, 0.0f, f3, f2, 1.0f, f4);
     }
 
-    public class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public IIcon llIlllIIllIlllIlIlIlIIIll() {
         return this.IIIIlIIlIIIllIIIIllIIIlII;
     }
 

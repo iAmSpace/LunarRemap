@@ -12,7 +12,7 @@ extends class_1194 {
 
     public class_1001(float f, int n, int n2, int n3, int n4) {
         super(f, n, n2, n3, n4);
-        for (class_1665 class_16652 : LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll) {
+        for (AbstractModule class_16652 : LunarClient.getInstance().getModuleManager().modules) {
             if (class_16652 == LunarClient.getInstance().getModuleManager().lIIIIlIlIIlllllIIllIIlIII) continue;
             class_0036 class_00362 = new class_0036(this, class_16652, f);
             this.lllIIIllIIIIlllIlIIllIIll.add(class_00362);
@@ -20,12 +20,12 @@ extends class_1194 {
     }
 
     @Override
-    public boolean lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652) {
+    public boolean lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652) {
         return false;
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_1665 class_16652) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(AbstractModule class_16652) {
     }
 
     @Override

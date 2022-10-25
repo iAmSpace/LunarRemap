@@ -9,7 +9,7 @@ import java.util.Random;
 
 public abstract class class_0816
 extends Block {
-    private class_2102[] llllllIlIllllIlIlIlIIIIlI;
+    private IIcon[] llllllIlIllllIlIlIlIIIIlI;
 
     protected class_0816(class_1855 class_18552) {
         super(class_18552);
@@ -56,7 +56,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n != 0 && n != 1 ? this.llllllIlIllllIlIlIlIIIIlI[1] : this.llllllIlIllllIlIlIlIIIIlI[0];
     }
 
@@ -361,10 +361,10 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llllllIlIllllIlIlIlIIIIlI = this.IlIlIIlllIllllllllIIIlIlI == class_1855.IIIllIllIIlIlIlIlIllllIIl ? new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll("lava_still"), class_08872.lllIIIllIIIIlllIlIIllIIll("lava_flow")} : new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll("water_still"), class_08872.lllIIIllIIIIlllIlIIllIIll("water_flow")};
+        this.llllllIlIllllIlIlIlIIIIlI = this.IlIlIIlllIllllllllIIIlIlI == class_1855.IIIllIllIIlIlIlIlIllllIIl ? new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll("lava_still"), class_08872.lllIIIllIIIIlllIlIIllIIll("lava_flow")} : new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll("water_still"), class_08872.lllIIIllIIIIlllIlIIllIIll("water_flow")};
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string == "water_still" ? Blocks.IIIllIllIIlIlIlIlIllllIIl.llllllIlIllllIlIlIlIIIIlI[0] : (string == "water_flow" ? Blocks.IIIllIllIIlIlIlIlIllllIIl.llllllIlIllllIlIlIlIIIIlI[1] : (string == "lava_still" ? Blocks.lIIIIlIlIIlllllIIllIIlIII.llllllIlIllllIlIlIlIIIIlI[0] : (string == "lava_flow" ? Blocks.lIIIIlIlIIlllllIIllIIlIII.llllllIlIllllIlIlIlIIIIlI[1] : null)));
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class class_0984
 extends Item {
-    private class_2102 IIIllIllIIlIlIlIlIllllIIl;
+    private IIcon IIIllIllIIlIlIlIlIllllIIl;
 
     public class_0984() {
         this.lllIIIllIIIIlllIlIIllIIll(true);
@@ -28,7 +28,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return n == 1 ? this.IIIllIllIIlIlIlIlIllllIIl : super.IlIllllllIIlIIllllIIlIIIl(n);
     }
 

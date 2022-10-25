@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -13,7 +15,7 @@ implements class_0308 {
     protected float IIIllIIlIIIIIIlIlIIllIIlI;
     protected boolean IllIIlllllllIIlIIlIIIIlIl = false;
     protected int IIIllIllIIlIlIlIlIllllIIl = 0;
-    protected class_0350 IllIIIllIIIIlIlIlIllIIlll = class_0350.lllIlIIlIIIlIlIIIllIlllIl;
+    protected AttenuationType IllIIIllIIIIlIlIlIllIIlll = AttenuationType.LINEAR;
 
     protected class_0505(ResourceLocation class_17732) {
         this.lllIlIIlIIIlIlIIIllIlllIl = class_17732;
@@ -60,7 +62,7 @@ implements class_0308 {
     }
 
     @Override
-    public class_0350 IIIllIllIIlIlIlIlIllllIIl() {
+    public AttenuationType IIIllIllIIlIlIlIlIllllIIl() {
         return this.IllIIIllIIIIlIlIlIllIIlll;
     }
 }

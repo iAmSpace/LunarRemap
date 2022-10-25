@@ -7,7 +7,9 @@ package obf;/*
 import java.awt.Color;
 import java.util.function.Supplier;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.font.LCFontRenderer;
 import org.lwjgl.opengl.GL11;
 
 public class class_0980

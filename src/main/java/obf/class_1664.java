@@ -1,5 +1,6 @@
 package obf;
 
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 
 /*
@@ -7,36 +8,36 @@ import com.moonsworth.lunar.client.LunarClient;
  */
 public class class_1664
 extends class_2256 {
-    public static class_1609 lllIIIllIIIIlllIlIIllIIll;
-    public static class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    public static class_1609 IlIllllllIIlIIllllIIlIIIl;
-    public static class_1609 lIlllIlllIIIIlIIlllIllIII;
-    public static class_1609 IlIIIIIllllllIIlllIllllll;
-    public static class_1609 lIllllIIlIIIlIllllllIIIll;
-    public static class_1609 IIIllIIlIIIIIIlIlIIllIIlI;
-    public static class_1609 IllIIlllllllIIlIIlIIIIlIl;
-    public static class_1609 IIIllIllIIlIlIlIlIllllIIl;
-    public static class_1609 IllIIIllIIIIlIlIlIllIIlll;
-    public static class_1609 lIIIIlIlIIlllllIIllIIlIII;
-    public static class_1609 llIIlllIllIllllIIIlIIIIII;
-    public static class_1609 llIIllIllIlIIlIIllIllllll;
+    public static Setting lllIIIllIIIIlllIlIIllIIll;
+    public static Setting lllIlIIlIIIlIlIIIllIlllIl;
+    public static Setting IlIllllllIIlIIllllIIlIIIl;
+    public static Setting lIlllIlllIIIIlIIlllIllIII;
+    public static Setting IlIIIIIllllllIIlllIllllll;
+    public static Setting lIllllIIlIIIlIllllllIIIll;
+    public static Setting IIIllIIlIIIIIIlIlIIllIIlI;
+    public static Setting IllIIlllllllIIlIIlIIIIlIl;
+    public static Setting IIIllIllIIlIlIlIlIllllIIl;
+    public static Setting IllIIIllIIIIlIlIlIllIIlll;
+    public static Setting lIIIIlIlIIlllllIIllIIlIII;
+    public static Setting llIIlllIllIllllIIIlIIIIII;
+    public static Setting llIIllIllIlIIlIIllIllllll;
 
     public class_1664(String string) {
         super(string);
         this.IlIllllllIIlIIllllIIlIIIl(true);
-        lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Trimp").lllIlIIlIIIlIlIIIllIlllIl(true);
-        lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "Trimp Multiplier").lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(1.4f)).lllIIIllIIIIlllIlIIllIIll((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
-        IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Hard cap").lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(2.0f)).lllIIIllIIIIlllIlIIllIIll((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
-        lIlllIlllIIIIlIIlllIllIII = new class_1609(this, "Soft cap").lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(1.4f)).lllIIIllIIIIlllIlIIllIIll((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
-        IlIIIIIllllllIIlllIllllll = new class_1609(this, "Soft cap degen").lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(0.65f)).lllIIIllIIIIlllIlIIllIIll((Object)Float.valueOf(0.1f), (Object)Float.valueOf(4.0f));
-        lIllllIIlIIIlIllllllIIIll = new class_1609(this, "Sharking").lllIlIIlIIIlIlIIIllIlllIl(true);
-        IIIllIIlIIIIIIlIlIIllIIlI = new class_1609(this, "Sharking surface tension").lllIlIIlIIIlIlIIIllIlllIl(0.2).lllIIIllIIIIlllIlIIllIIll((Object)0.0, (Object)1.0);
-        IllIIlllllllIIlIIlIIIIlIl = new class_1609(this, "Sharking water friction").lllIlIIlIIIlIlIIIllIlllIl(0.1).lllIIIllIIIIlllIlIIllIIll((Object)0.0, (Object)1.0);
-        IIIllIllIIlIlIlIlIllllIIl = new class_1609(this, "Accelerate").lllIlIIlIIIlIlIIIllIlllIl(20.0).lllIIIllIIIIlllIlIIllIIll((Object)5.0, (Object)100.0);
-        IllIIIllIIIIlIlIlIllIIlll = new class_1609(this, "Air accelerate").lllIlIIlIIIlIlIIIllIlllIl(28.0).lllIIIllIIIIlllIlIIllIIll((Object)5.0, (Object)150.0);
-        llIIllIllIlIIlIIllIllllll = new class_1609(this, "Max air accel per tick").lllIlIIlIIIlIlIIIllIlllIl(0.095).lllIIIllIIIIlllIlIIllIIll((Object)0.0, (Object)1.0);
-        lIIIIlIlIIlllllIIllIIlIII = new class_1609(this, "Uncapped BunnyHop").lllIlIIlIIIlIlIIIllIlllIl(true);
-        llIIlllIllIllllIIIlIIIIII = new class_1609(this, "Increased FallDistance").lllIlIIlIIIlIlIIIllIlllIl(0.0).lllIIIllIIIIlllIlIIllIIll((Object)0.0, (Object)10.0);
+        lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Trimp").setValue(true);
+        lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "Trimp Multiplier").setValue(Float.valueOf(1.4f)).setMinMax((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
+        IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Hard cap").setValue(Float.valueOf(2.0f)).setMinMax((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
+        lIlllIlllIIIIlIIlllIllIII = new Setting(this, "Soft cap").setValue(Float.valueOf(1.4f)).setMinMax((Object)Float.valueOf(1.0f), (Object)Float.valueOf(4.0f));
+        IlIIIIIllllllIIlllIllllll = new Setting(this, "Soft cap degen").setValue(Float.valueOf(0.65f)).setMinMax((Object)Float.valueOf(0.1f), (Object)Float.valueOf(4.0f));
+        lIllllIIlIIIlIllllllIIIll = new Setting(this, "Sharking").setValue(true);
+        IIIllIIlIIIIIIlIlIIllIIlI = new Setting(this, "Sharking surface tension").setValue(0.2).setMinMax((Object)0.0, (Object)1.0);
+        IllIIlllllllIIlIIlIIIIlIl = new Setting(this, "Sharking water friction").setValue(0.1).setMinMax((Object)0.0, (Object)1.0);
+        IIIllIllIIlIlIlIlIllllIIl = new Setting(this, "Accelerate").setValue(20.0).setMinMax((Object)5.0, (Object)100.0);
+        IllIIIllIIIIlIlIlIllIIlll = new Setting(this, "Air accelerate").setValue(28.0).setMinMax((Object)5.0, (Object)150.0);
+        llIIllIllIlIIlIIllIllllll = new Setting(this, "Max air accel per tick").setValue(0.095).setMinMax((Object)0.0, (Object)1.0);
+        lIIIIlIlIIlllllIIllIIlIII = new Setting(this, "Uncapped BunnyHop").setValue(true);
+        llIIlllIllIllllIIIlIIIIII = new Setting(this, "Increased FallDistance").setValue(0.0).setMinMax((Object)0.0, (Object)10.0);
     }
 
     public static boolean llIIlIllIllllIlIIIIlIIlll() {

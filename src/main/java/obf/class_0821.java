@@ -21,6 +21,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import javax.imageio.ImageIO;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -65,7 +67,7 @@ implements class_0449 {
         return class_0821.lllIIIllIIIIlllIlIIllIIll(class_02332, this.lllIIIllIIIIlllIlIIllIIll("pack.mcmeta"), string);
     }
 
-    static class_1574 lllIIIllIIIIlllIlIIllIIll(class_0233 class_02332, InputStream inputStream, String string) {
+    public static class_1574 lllIIIllIIIIlllIlIIllIIll(class_0233 class_02332, InputStream inputStream, String string) {
         JsonObject jsonObject = null;
         BufferedReader bufferedReader = null;
         try {

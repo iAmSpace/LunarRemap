@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 
 import java.util.ArrayList;

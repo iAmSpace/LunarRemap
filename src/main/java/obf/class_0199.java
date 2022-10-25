@@ -5,6 +5,10 @@ package obf;/*
  *  io.netty.util.concurrent.GenericFutureListener
  */
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.network.status.client.C00PacketServerQuery;
+import net.minecraft.network.status.client.C01PacketPing;
+import net.minecraft.network.status.server.S00PacketServerInfo;
+import net.minecraft.network.status.server.S01PacketPong;
 import net.minecraft.util.IChatComponent;
 
 public class class_0199
@@ -18,28 +22,28 @@ implements class_0367 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
-        if (class_05463 != class_0546.IlIllllllIIlIIllllIIlIIIl) {
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
+        if (class_05463 != EnumConnectionState.STATUS) {
             throw new UnsupportedOperationException("Unexpected change in protocol to " + (Object)((Object)class_05463));
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1723 class_17232) {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0046(this.lllIIIllIIIIlllIlIIllIIll.lIlIIllIllIIIIIlIllllIIIl()), new GenericFutureListener[0]);
+    public void lllIIIllIIIIlllIlIIllIIll(C00PacketServerQuery class_17232) {
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new S00PacketServerInfo(this.lllIIIllIIIIlllIlIIllIIll.lIlIIllIllIIIIIlIllllIIIl()), new GenericFutureListener[0]);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1894 class_18942) {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1714(class_18942.IlIllllllIIlIIllllIIlIIIl()), new GenericFutureListener[0]);
+    public void lllIIIllIIIIlllIlIIllIIll(C01PacketPing class_18942) {
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new S01PacketPong(class_18942.IlIllllllIIlIIllllIIlIIIl()), new GenericFutureListener[0]);
     }
 }
 

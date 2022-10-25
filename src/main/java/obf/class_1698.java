@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
+
 /*
  * Decompiled with CFR 0.150.
  */

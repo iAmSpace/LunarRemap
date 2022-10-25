@@ -7,6 +7,7 @@ package obf;/*
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import optifine.Config;
 import org.lwjgl.opengl.GL11;

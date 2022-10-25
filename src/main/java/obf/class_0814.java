@@ -7,6 +7,7 @@ package obf;/*
  */
 import com.google.common.base.Charsets;
 import com.mojang.authlib.GameProfile;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -1214,8 +1215,8 @@ implements class_1969 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, int n) {
-        class_2102 class_21022 = super.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
+    public IIcon lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, int n) {
+        IIcon class_21022 = super.lllIIIllIIIIlllIlIIllIIll(class_08972, n);
         if (class_08972.lllIIIllIIIIlllIlIIllIIll() == Items.llIllllIIIIIlIIlIlllIIlll && this.IIlIlIIIIlIlllIIlIIlIIIII != null) {
             class_21022 = Items.llIllllIIIIIlIIlIlllIIlll.IlIIIlIIIIllIIIllIIIIIIll();
         } else {

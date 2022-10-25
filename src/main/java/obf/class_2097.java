@@ -19,6 +19,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.realms.RealmsBridge;
 import net.minecraft.util.MathHelper;
@@ -47,7 +48,7 @@ implements class_0945 {
     private static final ResourceLocation IlIIlllllIIlIlIlllllIllll = new ResourceLocation("texts/splashes.txt");
     private static final ResourceLocation llIIlIlIlllIIllIlIlllIllI = new ResourceLocation("textures/gui/title/minecraft.png");
     private static final ResourceLocation[] IllIIIIllIIllIllIlllIlIIl = new ResourceLocation[]{new ResourceLocation("textures/gui/title/background/0.png"), new ResourceLocation("textures/gui/title/background/1.png"), new ResourceLocation("textures/gui/title/background/2.png"), new ResourceLocation("textures/gui/title/background/3.png"), new ResourceLocation("textures/gui/title/background/4.png"), new ResourceLocation("textures/gui/title/background/5.png")};
-    public static final String lllIIIllIIIIlllIlIIllIIll = "Please click " + (Object)((Object)class_1227.lIlIlIIlIIIIlIIIIIlllIIII) + "here" + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + " for more information.";
+    public static final String lllIIIllIIIIlllIlIIllIIll = "Please click " + (Object)((Object) EnumChatFormatting.UNDERLINE) + "here" + (Object)((Object) EnumChatFormatting.RESET) + " for more information.";
     private int IIIIIIIIlIllIIllIIlllIllI;
     private int IIlIIlIlIlIllIIlIlIIIIlll;
     private int llIIIlllIlllIlIllIIIIllIl;

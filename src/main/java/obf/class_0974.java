@@ -9,7 +9,7 @@ import java.util.List;
 
 public class class_0974
 extends Block {
-    private class_2102[] llllllIlIllllIlIlIlIIIIlI;
+    private IIcon[] llllllIlIllllIlIlIlIIIIlI;
 
     public class_0974(class_1855 class_18552) {
         super(class_18552);
@@ -17,7 +17,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.llllllIlIllllIlIlIlIIIIlI[n2 % this.llllllIlIllllIlIlIlIIIIlI.length];
     }
 
@@ -43,7 +43,7 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llllllIlIllllIlIlIlIIIIlI = new class_2102[16];
+        this.llllllIlIllllIlIlIlIIIIlI = new IIcon[16];
         for (int i = 0; i < this.llllllIlIllllIlIlIlIIIIlI.length; ++i) {
             this.llllllIlIllllIlIlIlIIIIlI[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + class_1908.IllIIIllIIIIlIlIlIllIIlll[class_0974.IIIllIllIIlIlIlIlIllllIIl(i)]);
         }

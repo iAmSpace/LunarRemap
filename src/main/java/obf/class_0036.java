@@ -7,13 +7,16 @@ package obf;/*
 import java.awt.Color;
 import java.util.Objects;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.font.LCFontRenderer;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class class_0036
 extends class_2117 {
-    private class_1665 lllIIIllIIIIlllIlIIllIIll;
+    private AbstractModule lllIIIllIIIIlllIlIIllIIll;
     private class_0527 IllIIlllllllIIlIIlIIIIlIl;
     private class_0527 IIIllIllIIlIlIlIlIllllIIl;
     private class_0527 IllIIIllIIIIlIlIlIllIIlll;
@@ -21,7 +24,7 @@ extends class_2117 {
     private final class_0730 llIIlllIllIllllIIIlIIIIII;
     private final class_0730 llIIllIllIlIIlIIllIllllll;
 
-    public class_0036(class_1194 class_11942, class_1665 class_16652, float f) {
+    public class_0036(class_1194 class_11942, AbstractModule class_16652, float f) {
         super(f);
         this.lllIIIllIIIIlllIlIIllIIll = class_16652;
         this.lIIIIlIlIIlllllIIllIIlIII = class_11942;
@@ -59,8 +62,8 @@ extends class_2117 {
             Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Score", this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll / 2, this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 40, -1);
             Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Steve", (float)(this.lIlllIlllIIIIlIIlllIllIII + 24), (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 28), -1);
             Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Alex", (float)(this.lIlllIlllIIIIlIIlllIllIII + 24), (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 18), -1);
-            Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "0", this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 26, this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 18, -1);
-            Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "1", this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 26, this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 28, -1);
+            Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.RED) + "0", this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 26, this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 18, -1);
+            Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.RED) + "1", this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 26, this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 - 28, -1);
         }
         if (this.lllIIIllIIIIlllIlIIllIIll == LunarClient.getInstance().getModuleManager().IllIIIllIIIIlIlIlIllIIlll) {
             object = new class_0332("EnderPearl", 368, 9000L);
@@ -159,10 +162,10 @@ extends class_2117 {
         if (this.lllIIIllIIIIlllIlIIllIIll == LunarClient.getInstance().getModuleManager().llIIlllIllIllllIIIlIIIIII) {
             return;
         }
-        for (class_1609 class_16092 : this.lllIIIllIIIIlllIlIIllIIll.llIIlllIllIllllIIIlIIIIII()) {
-            if (class_16092.IllIIIllIIIIlIlIlIllIIlll() != class_1318.lIlllIlllIIIIlIIlllIllIII || !class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("color") || class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("background") || class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().contains("pressed")) continue;
+        for (Setting class_16092 : this.lllIIIllIIIIlllIlIIllIIll.llIIlllIllIllllIIIlIIIIII()) {
+            if (class_16092.IllIIIllIIIIlIlIlIllIIlll() != class_1318.lIlllIlllIIIIlIIlllIllIII || !class_16092.getName().toLowerCase().contains("color") || class_16092.getName().toLowerCase().contains("background") || class_16092.getName().toLowerCase().contains("pressed")) continue;
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-            class_16092.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().getSettingsManager().lllIIIIIIlIlllIIlIlIIIllI.lIlllIlllIIIIlIIlllIllIII());
+            class_16092.setValue(LunarClient.getInstance().getSettingsManager().coDefaultColor.getValue());
         }
     }
 }

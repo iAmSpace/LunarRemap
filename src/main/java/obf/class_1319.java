@@ -8,6 +8,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -64,12 +65,12 @@ extends class_1194 {
     }
 
     @Override
-    public boolean lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652) {
+    public boolean lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652) {
         return true;
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_1665 class_16652) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(AbstractModule class_16652) {
     }
 
     public void lllIlIIlIIIlIlIIIllIlllIl() {
@@ -79,16 +80,16 @@ extends class_1194 {
             if (file.exists()) {
                 for (File file2 : file.listFiles()) {
                     if (!file2.getName().endsWith(".cfg")) continue;
-                    class_1165 class_11652 = null;
-                    for (class_1165 class_11653 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                        if (!file2.getName().equals(class_11653.lllIIIllIIIIlllIlIIllIIll() + ".cfg")) continue;
+                    Profile class_11652 = null;
+                    for (Profile class_11653 : LunarClient.getInstance().profiles) {
+                        if (!file2.getName().equals(class_11653.getName() + ".cfg")) continue;
                         class_11652 = class_11653;
                     }
                     if (class_11652 != null) continue;
-                    LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.add(new class_1165(file2.getName().replace(".cfg", ""), false));
+                    LunarClient.getInstance().profiles.add(new Profile(file2.getName().replace(".cfg", ""), false));
                 }
             }
-            for (class_1165 class_11654 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
+            for (Profile class_11654 : LunarClient.getInstance().profiles) {
                 this.lllIIIllIIIIlllIlIIllIIll.add(new class_0883(this, this.lllIIlIIIllllllIIIIlIlIlI, class_11654, this.lllIlIIlIIIlIlIIIllIlllIl));
             }
             this.lllIIIllIIIIlllIlIIllIIll.sort((class_08832, class_08833) -> {

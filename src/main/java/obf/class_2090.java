@@ -5,10 +5,8 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-final class class_2090
+public final class class_2090
 implements ParameterizedType {
-    class_2090() {
-    }
 
     @Override
     public Type[] getActualTypeArguments() {

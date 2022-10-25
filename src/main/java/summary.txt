@@ -26,5 +26,5 @@ channelRead(io.netty.channel.ChannelHandlerContext java.lang.Object )
 obf.class_1764
 ----------------------------
 
-lllIIIllIIIIlllIlIIllIIll(obf.class_1147 )
+lllIIIllIIIIlllIlIIllIIll(net.minecraft.network.play.server.S3FPacketCustomPayload )
   Unable to fully structure code

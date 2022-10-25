@@ -11,7 +11,7 @@ extends class_1988 {
     }
 
     @Override
-    protected class_2102 IllIIlllllllIIlIIlIIIIlIl(int n) {
+    protected IIcon IllIIlllllllIIlIIlIIIIlIl(int n) {
         return this.llIIIIllIIIIIIIlIIIlIIIIl;
     }
 

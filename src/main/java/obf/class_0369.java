@@ -4,6 +4,7 @@ package obf;/*
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S2BPacketChangeGameState;
 import net.minecraft.util.MathHelper;
 
 import java.util.List;
@@ -224,7 +225,7 @@ implements class_1946 {
                                 class_1250.lllIlIIlIIIlIlIIIllIlllIl((class_1965)this.IlIllllllIIlIIllllIIlIIIl, (class_1521)class_19652);
                             }
                             if (this.IlIllllllIIlIIllllIIlIIIl != null && class_11122.IIIllIIlIIIIIIlIlIIllIIlI != this.IlIllllllIIlIIllllIIlIIIl && class_11122.IIIllIIlIIIIIIlIlIIllIIlI instanceof class_0814 && this.IlIllllllIIlIIllllIIlIIIl instanceof class_1822) {
-                                ((class_1822)this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(6, 0.0f));
+                                ((class_1822)this.IlIllllllIIlIIllllIIlIIIl).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(6, 0.0f));
                             }
                         }
                         this.lllIIIllIIIIlllIlIIllIIll("random.bowhit", 1.0f, 1.2f / (this.IlllIIlllllllIIllIlIllllI.nextFloat() * 0.2f + 0.9f));

@@ -8,6 +8,7 @@ package obf;/*
  *  org.lwjgl.input.Keyboard
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.client.nethandler.LCPacket;
 import com.moonsworth.client.nethandler.shared.LCPacketWaypointAdd;
 import com.moonsworth.client.nethandler.shared.LCPacketWaypointRemove;
@@ -105,7 +106,7 @@ extends class_1634 {
                 if (this.lIllllIIlIIIlIllllllIIIll != null) {
                     this.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll(false, 0);
                 } else {
-                    if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                    if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                         this.lllllIlllIIllIlIIlIIIllII.lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
                     }
                     this.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll((class_0229)null);
@@ -133,7 +134,7 @@ extends class_1634 {
                     }
                 } else {
                     this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl(this.IlIIIIIllllllIIlllIllllll);
-                    if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                    if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                         Minecraft.getMinecraft().lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
                     }
                     this.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll((class_0229)null);

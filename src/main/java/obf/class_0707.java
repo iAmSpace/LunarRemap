@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 class class_0707
 implements Callable {
-    final /* synthetic */ class_0519 lllIIIllIIIIlllIlIIllIIll;
+    final /* synthetic */ IntegratedServer lllIIIllIIIIlllIlIIllIIll;
 
-    class_0707(class_0519 class_05192) {
+    class_0707(IntegratedServer class_05192) {
         this.lllIIIllIIIIlllIlIIllIIll = class_05192;
     }
 

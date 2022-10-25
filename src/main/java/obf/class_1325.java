@@ -52,7 +52,7 @@ extends class_1291 {
     }
 
     @Override
-    public class_2102 IlIIIIIllllllIIlllIllllll() {
+    public IIcon IlIIIIIllllllIIlllIllllll() {
         return this.lllIlIIlIIIlIlIIIllIlllIl.IlIIIIIllllllIIlllIllllll();
     }
 

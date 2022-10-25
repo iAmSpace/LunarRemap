@@ -7,6 +7,7 @@ package obf;/*
  */
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import org.lwjgl.opengl.GL11;

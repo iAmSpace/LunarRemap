@@ -31,7 +31,7 @@ public class Item {
     private Item lIIIIlIlIIlllllIIllIIlIII;
     private String llIIlllIllIllllIIIlIIIIII;
     private String llIIllIllIlIIlIIllIllllll;
-    protected class_2102 IIIllIIlIIIIIIlIlIIllIIlI;
+    protected IIcon IIIllIIlIIIIIIlIlIIllIIlI;
     protected String IllIIlllllllIIlIIlIIIIlIl;
 
     public static int lllIIIllIIIIlllIlIIllIIll(Item class_06112) {
@@ -89,26 +89,26 @@ public class Item {
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(295, "wheat_seeds", new class_1626(Blocks.lllIIIlIIlIlIllIIIIIlIIll, Blocks.IIIlIlIllIlllllIlIllllllI).lllIIIllIIIIlllIlIIllIIll("seeds").IlIllllllIIlIIllllIIlIIIl("seeds_wheat"));
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(296, "wheat", new Item().lllIIIllIIIIlllIlIIllIIll("wheat").lllIIIllIIIIlllIlIIllIIll(class_0931.llIIlllIllIllllIIIlIIIIII).IlIllllllIIlIIllllIIlIIIl("wheat"));
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(297, "bread", new class_1949(5, 0.6f, false).lllIIIllIIIIlllIlIIllIIll("bread").IlIllllllIIlIIllllIIlIIIl("bread"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(298, "leather_helmet", new class_0981(class_0557.lllIIIllIIIIlllIlIIllIIll, 0, 0).lllIIIllIIIIlllIlIIllIIll("helmetCloth").IlIllllllIIlIIllllIIlIIIl("leather_helmet"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(299, "leather_chestplate", new class_0981(class_0557.lllIIIllIIIIlllIlIIllIIll, 0, 1).lllIIIllIIIIlllIlIIllIIll("chestplateCloth").IlIllllllIIlIIllllIIlIIIl("leather_chestplate"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(300, "leather_leggings", new class_0981(class_0557.lllIIIllIIIIlllIlIIllIIll, 0, 2).lllIIIllIIIIlllIlIIllIIll("leggingsCloth").IlIllllllIIlIIllllIIlIIIl("leather_leggings"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(301, "leather_boots", new class_0981(class_0557.lllIIIllIIIIlllIlIIllIIll, 0, 3).lllIIIllIIIIlllIlIIllIIll("bootsCloth").IlIllllllIIlIIllllIIlIIIl("leather_boots"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(302, "chainmail_helmet", new class_0981(class_0557.lllIlIIlIIIlIlIIIllIlllIl, 1, 0).lllIIIllIIIIlllIlIIllIIll("helmetChain").IlIllllllIIlIIllllIIlIIIl("chainmail_helmet"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(303, "chainmail_chestplate", new class_0981(class_0557.lllIlIIlIIIlIlIIIllIlllIl, 1, 1).lllIIIllIIIIlllIlIIllIIll("chestplateChain").IlIllllllIIlIIllllIIlIIIl("chainmail_chestplate"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(304, "chainmail_leggings", new class_0981(class_0557.lllIlIIlIIIlIlIIIllIlllIl, 1, 2).lllIIIllIIIIlllIlIIllIIll("leggingsChain").IlIllllllIIlIIllllIIlIIIl("chainmail_leggings"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(305, "chainmail_boots", new class_0981(class_0557.lllIlIIlIIIlIlIIIllIlllIl, 1, 3).lllIIIllIIIIlllIlIIllIIll("bootsChain").IlIllllllIIlIIllllIIlIIIl("chainmail_boots"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(306, "iron_helmet", new class_0981(class_0557.IlIllllllIIlIIllllIIlIIIl, 2, 0).lllIIIllIIIIlllIlIIllIIll("helmetIron").IlIllllllIIlIIllllIIlIIIl("iron_helmet"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(307, "iron_chestplate", new class_0981(class_0557.IlIllllllIIlIIllllIIlIIIl, 2, 1).lllIIIllIIIIlllIlIIllIIll("chestplateIron").IlIllllllIIlIIllllIIlIIIl("iron_chestplate"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(308, "iron_leggings", new class_0981(class_0557.IlIllllllIIlIIllllIIlIIIl, 2, 2).lllIIIllIIIIlllIlIIllIIll("leggingsIron").IlIllllllIIlIIllllIIlIIIl("iron_leggings"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(309, "iron_boots", new class_0981(class_0557.IlIllllllIIlIIllllIIlIIIl, 2, 3).lllIIIllIIIIlllIlIIllIIll("bootsIron").IlIllllllIIlIIllllIIlIIIl("iron_boots"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(310, "diamond_helmet", new class_0981(class_0557.IlIIIIIllllllIIlllIllllll, 3, 0).lllIIIllIIIIlllIlIIllIIll("helmetDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_helmet"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(311, "diamond_chestplate", new class_0981(class_0557.IlIIIIIllllllIIlllIllllll, 3, 1).lllIIIllIIIIlllIlIIllIIll("chestplateDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_chestplate"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(312, "diamond_leggings", new class_0981(class_0557.IlIIIIIllllllIIlllIllllll, 3, 2).lllIIIllIIIIlllIlIIllIIll("leggingsDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_leggings"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(313, "diamond_boots", new class_0981(class_0557.IlIIIIIllllllIIlllIllllll, 3, 3).lllIIIllIIIIlllIlIIllIIll("bootsDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_boots"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(314, "golden_helmet", new class_0981(class_0557.lIlllIlllIIIIlIIlllIllIII, 4, 0).lllIIIllIIIIlllIlIIllIIll("helmetGold").IlIllllllIIlIIllllIIlIIIl("gold_helmet"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(315, "golden_chestplate", new class_0981(class_0557.lIlllIlllIIIIlIIlllIllIII, 4, 1).lllIIIllIIIIlllIlIIllIIll("chestplateGold").IlIllllllIIlIIllllIIlIIIl("gold_chestplate"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(316, "golden_leggings", new class_0981(class_0557.lIlllIlllIIIIlIIlllIllIII, 4, 2).lllIIIllIIIIlllIlIIllIIll("leggingsGold").IlIllllllIIlIIllllIIlIIIl("gold_leggings"));
-        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(317, "golden_boots", new class_0981(class_0557.lIlllIlllIIIIlIIlllIllIII, 4, 3).lllIIIllIIIIlllIlIIllIIll("bootsGold").IlIllllllIIlIIllllIIlIIIl("gold_boots"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(298, "leather_helmet", new ItemArmor(ArmorMaterial.CLOTH, 0, 0).lllIIIllIIIIlllIlIIllIIll("helmetCloth").IlIllllllIIlIIllllIIlIIIl("leather_helmet"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(299, "leather_chestplate", new ItemArmor(ArmorMaterial.CLOTH, 0, 1).lllIIIllIIIIlllIlIIllIIll("chestplateCloth").IlIllllllIIlIIllllIIlIIIl("leather_chestplate"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(300, "leather_leggings", new ItemArmor(ArmorMaterial.CLOTH, 0, 2).lllIIIllIIIIlllIlIIllIIll("leggingsCloth").IlIllllllIIlIIllllIIlIIIl("leather_leggings"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(301, "leather_boots", new ItemArmor(ArmorMaterial.CLOTH, 0, 3).lllIIIllIIIIlllIlIIllIIll("bootsCloth").IlIllllllIIlIIllllIIlIIIl("leather_boots"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(302, "chainmail_helmet", new ItemArmor(ArmorMaterial.CHAIN, 1, 0).lllIIIllIIIIlllIlIIllIIll("helmetChain").IlIllllllIIlIIllllIIlIIIl("chainmail_helmet"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(303, "chainmail_chestplate", new ItemArmor(ArmorMaterial.CHAIN, 1, 1).lllIIIllIIIIlllIlIIllIIll("chestplateChain").IlIllllllIIlIIllllIIlIIIl("chainmail_chestplate"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(304, "chainmail_leggings", new ItemArmor(ArmorMaterial.CHAIN, 1, 2).lllIIIllIIIIlllIlIIllIIll("leggingsChain").IlIllllllIIlIIllllIIlIIIl("chainmail_leggings"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(305, "chainmail_boots", new ItemArmor(ArmorMaterial.CHAIN, 1, 3).lllIIIllIIIIlllIlIIllIIll("bootsChain").IlIllllllIIlIIllllIIlIIIl("chainmail_boots"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(306, "iron_helmet", new ItemArmor(ArmorMaterial.IRON, 2, 0).lllIIIllIIIIlllIlIIllIIll("helmetIron").IlIllllllIIlIIllllIIlIIIl("iron_helmet"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(307, "iron_chestplate", new ItemArmor(ArmorMaterial.IRON, 2, 1).lllIIIllIIIIlllIlIIllIIll("chestplateIron").IlIllllllIIlIIllllIIlIIIl("iron_chestplate"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(308, "iron_leggings", new ItemArmor(ArmorMaterial.IRON, 2, 2).lllIIIllIIIIlllIlIIllIIll("leggingsIron").IlIllllllIIlIIllllIIlIIIl("iron_leggings"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(309, "iron_boots", new ItemArmor(ArmorMaterial.IRON, 2, 3).lllIIIllIIIIlllIlIIllIIll("bootsIron").IlIllllllIIlIIllllIIlIIIl("iron_boots"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(310, "diamond_helmet", new ItemArmor(ArmorMaterial.DIAMOND, 3, 0).lllIIIllIIIIlllIlIIllIIll("helmetDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_helmet"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(311, "diamond_chestplate", new ItemArmor(ArmorMaterial.DIAMOND, 3, 1).lllIIIllIIIIlllIlIIllIIll("chestplateDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_chestplate"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(312, "diamond_leggings", new ItemArmor(ArmorMaterial.DIAMOND, 3, 2).lllIIIllIIIIlllIlIIllIIll("leggingsDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_leggings"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(313, "diamond_boots", new ItemArmor(ArmorMaterial.DIAMOND, 3, 3).lllIIIllIIIIlllIlIIllIIll("bootsDiamond").IlIllllllIIlIIllllIIlIIIl("diamond_boots"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(314, "golden_helmet", new ItemArmor(ArmorMaterial.GOLD, 4, 0).lllIIIllIIIIlllIlIIllIIll("helmetGold").IlIllllllIIlIIllllIIlIIIl("gold_helmet"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(315, "golden_chestplate", new ItemArmor(ArmorMaterial.GOLD, 4, 1).lllIIIllIIIIlllIlIIllIIll("chestplateGold").IlIllllllIIlIIllllIIlIIIl("gold_chestplate"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(316, "golden_leggings", new ItemArmor(ArmorMaterial.GOLD, 4, 2).lllIIIllIIIIlllIlIIllIIll("leggingsGold").IlIllllllIIlIIllllIIlIIIl("gold_leggings"));
+        lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(317, "golden_boots", new ItemArmor(ArmorMaterial.GOLD, 4, 3).lllIIIllIIIIlllIlIIllIIll("bootsGold").IlIllllllIIlIIllllIIlIIIl("gold_boots"));
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(318, "flint", new Item().lllIIIllIIIIlllIlIIllIIll("flint").lllIIIllIIIIlllIlIIllIIll(class_0931.llIIlllIllIllllIIIlIIIIII).IlIllllllIIlIIllllIIlIIIl("flint"));
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(319, "porkchop", new class_1949(3, 0.3f, true).lllIIIllIIIIlllIlIIllIIll("porkchopRaw").IlIllllllIIlIIllllIIlIIIl("porkchop_raw"));
         lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(320, "cooked_porkchop", new class_1949(8, 0.8f, true).lllIIIllIIIIlllIlIIllIIll("porkchopCooked").IlIllllllIIlIIllllIIlIIIl("porkchop_cooked"));
@@ -304,11 +304,11 @@ public class Item {
         return 1;
     }
 
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return this.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 
-    public final class_2102 lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972) {
+    public final IIcon lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972) {
         return this.IlIllllllIIlIIllllIIlIIIl(class_08972.IllIIIllIIIIlIlIlIllIIlll());
     }
 
@@ -475,8 +475,8 @@ public class Item {
         return class_08972.llIllllIlIllIIIlIllIIlIlI();
     }
 
-    public class_0552 lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
-        return class_08972.llIllllIlIllIIIlIllIIlIlI() ? class_0552.IlIllllllIIlIIllllIIlIIIl : class_0552.lllIIIllIIIIlllIlIIllIIll;
+    public EnumRarity lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
+        return class_08972.llIllllIlIllIIIlIllIIlIlI() ? EnumRarity.rare : EnumRarity.common;
     }
 
     public boolean llIIlllIllIllllIIIlIIIIII(ItemStack class_08972) {
@@ -510,7 +510,7 @@ public class Item {
         return false;
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.IlIllllllIIlIIllllIIlIIIl(n);
     }
 

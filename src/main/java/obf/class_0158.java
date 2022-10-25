@@ -16,11 +16,11 @@ extends class_0688 {
     private Map IlIIIIIllllllIIlllIllllll;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         int n;
         this.lllIIIllIIIIlllIlIIllIIll = class_01812.readBoolean();
         this.IlIllllllIIlIIllllIIlIIIl = class_01812.readBoolean();
@@ -28,11 +28,11 @@ extends class_0688 {
         int n3 = class_01812.readInt();
         this.lIlllIlllIIIIlIIlllIllIII = new HashMap();
         for (n = 0; n < n2; ++n) {
-            this.lIlllIlllIIIIlIIlllIllIII.put(class_01812.IlIllllllIIlIIllllIIlIIIl(52), ImmutableList.of((Object)class_01812.IlIllllllIIlIIllllIIlIIIl(32), (Object)class_01812.readInt(), (Object)class_01812.IlIllllllIIlIIllllIIlIIIl(256)));
+            this.lIlllIlllIIIIlIIlllIllIII.put(class_01812.readStringFromBuffer(52), ImmutableList.of((Object)class_01812.readStringFromBuffer(32), (Object)class_01812.readInt(), (Object)class_01812.readStringFromBuffer(256)));
         }
         this.IlIIIIIllllllIIlllIllllll = new HashMap();
         for (n = 0; n < n3; ++n) {
-            this.IlIIIIIllllllIIlllIllllll.put(class_01812.IlIllllllIIlIIllllIIlIIIl(52), ImmutableList.of((Object)class_01812.IlIllllllIIlIIllllIIlIIIl(32), (Object)class_01812.readLong()));
+            this.IlIIIIIllllllIIlllIllllll.put(class_01812.readStringFromBuffer(52), ImmutableList.of((Object)class_01812.readStringFromBuffer(32), (Object)class_01812.readLong()));
         }
     }
 

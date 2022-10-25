@@ -1,7 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
-import com.moonsworth.lunar.client.Event;
+import com.moonsworth.lunar.client.events.Event;
 
 import java.beans.ConstructorProperties;
 

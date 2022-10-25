@@ -8,10 +8,10 @@ import java.util.List;
 
 public class class_0374
 extends Item {
-    private class_2102 IIIllIllIIlIlIlIlIllllIIl;
+    private IIcon IIIllIllIIlIlIlIlIllllIIl;
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 > 0 ? this.IIIllIllIIlIlIlIlIllllIIl : super.lllIIIllIIIIlllIlIIllIIll(n, n2);
     }
 

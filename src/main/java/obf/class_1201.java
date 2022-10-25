@@ -16,7 +16,7 @@ import org.lwjgl.opengl.GL11;
 public class class_1201 {
     private final Minecraft lllIIIllIIIIlllIlIIllIIll = Minecraft.getMinecraft();
     private final LunarClient lllIlIIlIIIlIlIIIllIlllIl = LunarClient.getInstance();
-    private final List IlIllllllIIlIIllllIIlIIIl = Lists.newArrayList();
+    private final List<class_1696> IlIllllllIIlIIllllIIlIIIl = Lists.newArrayList();
 
     public void lllIIIllIIIIlllIlIIllIIll(class_2201 class_22012) {
         GL11.glEnable((int)3042);
@@ -50,7 +50,7 @@ public class class_1201 {
         }
     }
 
-    public List lllIIIllIIIIlllIlIIllIIll() {
+    public List<class_1696> lllIIIllIIIIlllIlIIllIIll() {
         return this.IlIllllllIIlIIllllIIlIIIl;
     }
 }

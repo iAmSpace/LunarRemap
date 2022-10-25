@@ -23,6 +23,9 @@ import java.util.List;
 
 import net.minecraft.crash.CrashReport;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.C15PacketClientSettings;
+import net.minecraft.network.play.server.*;
 import net.minecraft.scoreboard.IScoreObjectiveCriteria;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.stats.StatBase;
@@ -144,14 +147,14 @@ implements class_1283 {
                 object2[n2++] = (Integer)object.next();
                 object.remove();
             }
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0175((int[])object2));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S13PacketDestroyEntities((int[])object2));
         }
         if (!this.lIllllIIlIIIlIllllllIIIll.isEmpty()) {
             Object object3;
             ArrayList<class_0723> arrayList = new ArrayList<class_0723>();
             object2 = this.lIllllIIlIIIlIllllllIIIll.iterator();
             object = new ArrayList();
-            while (object2.hasNext() && arrayList.size() < class_2053.IlIllllllIIlIIllllIIlIIIl()) {
+            while (object2.hasNext() && arrayList.size() < S26PacketMapChunkBulk.IlIllllllIIlIIllllIIlIIIl()) {
                 object3 = (class_1108)object2.next();
                 if (object3 != null) {
                     class_0723 class_07232;
@@ -164,7 +167,7 @@ implements class_1283 {
                 object2.remove();
             }
             if (!arrayList.isEmpty()) {
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2053(arrayList));
+                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S26PacketMapChunkBulk(arrayList));
                 object3 = ((ArrayList)object).iterator();
                 while (object3.hasNext()) {
                     class_1774 class_17742 = (class_1774)object3.next();
@@ -184,10 +187,10 @@ implements class_1283 {
                 Object object;
                 ItemStack class_08972 = this.lllIIlIIIllllllIIIIlIlIlI.llIIllIllIlIIlIIllIllllll(i);
                 if (class_08972 == null || !class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIlIIIllllllIIIIlIlIlI() || (object = ((class_1747)class_08972.lllIIIllIIIIlllIlIIllIIll()).lIlllIlllIIIIlIIlllIllIII(class_08972, this.lIlIllIIlIIlIIlIIlIIlIIll, this)) == null) continue;
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll((class_0703)object);
+                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll((Packet)object);
             }
             if (this.lllIIIlllIlllIIlIllllIIlI() != this.IIlIlIlIIlllIIIlIIIIlIIIl || this.lllIIIIlIIllIIIlIllIlllII != this.lllIIIlllIlllIIlIllllIIlI.lllIIIllIIIIlllIlIIllIIll() || this.lllIIIlllIlllIIlIllllIIlI.lIlllIlllIIIIlIIlllIllIII() == 0.0f != this.IlIllIIIIllllIIllIllIIIIl) {
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1160(this.lllIIIlllIlllIIlIllllIIlI(), this.lllIIIlllIlllIIlIllllIIlI.lllIIIllIIIIlllIlIIllIIll(), this.lllIIIlllIlllIIlIllllIIlI.lIlllIlllIIIIlIIlllIllIII()));
+                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S06PacketUpdateHealth(this.lllIIIlllIlllIIlIllllIIlI(), this.lllIIIlllIlllIIlIllllIIlI.lllIIIllIIIIlllIlIIllIIll(), this.lllIIIlllIlllIIlIllllIIlI.lIlllIlllIIIIlIIlllIllIII()));
                 this.IIlIlIlIIlllIIIlIIIIlIIIl = this.lllIIIlllIlllIIlIllllIIlI();
                 this.lllIIIIlIIllIIIlIllIlllII = this.lllIIIlllIlllIIlIllllIIlI.lllIIIllIIIIlllIlIIllIIll();
                 boolean bl = this.IlIllIIIIllllIIllIllIIIIl = this.lllIIIlllIlllIIlIllllIIlI.lIlllIlllIIIIlIIlllIllIII() == 0.0f;
@@ -201,7 +204,7 @@ implements class_1283 {
             }
             if (this.llllIllIIIlIllIllllllIlIl != this.lIlIlIIllIlIIIIIlIIlllIlI) {
                 this.lIlIlIIllIlIIIIIlIIlllIlI = this.llllIllIIIlIllIllllllIlIl;
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1134(this.llIlllllIIlIIlIIllllIllll, this.llllIllIIIlIllIllllllIlIl, this.lllIlllllIllIlIIlIlIIIlll));
+                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1FPacketSetExperience(this.llIlllllIIlIIlIIllllIllll, this.llllIllIIIlIllIllllllIlIl, this.lllIlllllIllIlIIlIlIIIlll));
             }
             if (this.IlllIIIllllIIllIllIlIIlIl % 20 * 5 == 0 && !this.IllIIIIllIIllIllIlllIlIIl().lllIIIllIIIIlllIlIIllIIll(AchievementList.field_150961_L)) {
                 this.IllIIlllllllIIlIIlIIIIlIl();
@@ -306,7 +309,7 @@ implements class_1283 {
             this.lllIIIllIIIIlllIlIIllIIll(AchievementList.theEnd2);
             this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl(this);
             this.IIIllIllIIlIlIlIlIllllIIl = true;
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(4, 0.0f));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(4, 0.0f));
         } else {
             if (this.lIIllllllllIlIllllllllIlI == 0 && n == 1) {
                 this.lllIIIllIIIIlllIlIIllIIll(AchievementList.theEnd);
@@ -326,7 +329,7 @@ implements class_1283 {
     }
 
     private void lllIlIIlIIIlIlIIIllIlllIl(class_1774 class_17742) {
-        class_0703 class_07032;
+        Packet class_07032;
         if (class_17742 != null && (class_07032 = class_17742.IllIIlllllllIIlIIlIIIIlIl()) != null) {
             this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_07032);
         }
@@ -342,7 +345,7 @@ implements class_1283 {
     public class_0690 IlIllllllIIlIIllllIIlIIIl(int n, int n2, int n3) {
         class_0690 class_06902 = super.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
         if (class_06902 == class_0690.lllIIIllIIIIlllIlIIllIIll) {
-            class_1089 class_10892 = new class_1089(this, n, n2, n3);
+            S0APacketUseBed class_10892 = new S0APacketUseBed(this, n, n2, n3);
             this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll((class_1521)this, class_10892);
             this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.IlIIlllllIIlIlIlllllIllll, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI);
             this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_10892);
@@ -353,7 +356,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(boolean bl, boolean bl2, boolean bl3) {
         if (this.IIIIIllIIlIlIlIIlIlIlIllI()) {
-            this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new class_0842(this, 2));
+            this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new S0BPacketAnimation(this, 2));
         }
         super.lllIIIllIIIIlllIlIIllIIll(bl, bl2, bl3);
         if (this.lllIIIllIIIIlllIlIIllIIll != null) {
@@ -364,7 +367,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212) {
         super.lllIIIllIIIIlllIlIIllIIll(class_15212);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2218(0, this, this.IlIIIlIIIIllIIIllIIIIIIll));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1BPacketEntityAttach(0, this, this.IlIIIlIIIIllIIIllIIIIIIll));
         this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.IlIIlllllIIlIlIlllllIllll, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI);
     }
 
@@ -380,7 +383,7 @@ implements class_1283 {
     public void lllIIIllIIIIlllIlIIllIIll(class_1774 class_17742) {
         if (class_17742 instanceof class_2219) {
             ((class_2219)class_17742).lllIIIllIIIIlllIlIIllIIll(this);
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1504(class_17742.lllIlIIlIIIlIlIIIllIlllIl, class_17742.IlIllllllIIlIIllllIIlIIIl, class_17742.lIlllIlllIIIIlIIlllIllIII));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S36PacketSignEditorOpen(class_17742.lllIlIIlIIIlIlIIIllIlllIl, class_17742.IlIllllllIIlIIllllIIlIIIl, class_17742.lIlllIlllIIIIlIIlllIllIII));
         }
     }
 
@@ -391,7 +394,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 1, "Crafting", 9, true));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 1, "Crafting", 9, true));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0491(this.lllIIlIIIllllllIIIIlIlIlI, this.lIlIllIIlIIlIIlIIlIIlIIll, n, n2, n3);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -400,7 +403,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, String string) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 4, string == null ? "" : string, 9, string != null));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 4, string == null ? "" : string, 9, string != null));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_1495(this.lllIIlIIIllllllIIIIlIlIlI, this.lIlIllIIlIIlIIlIIlIIlIIll, n, n2, n3);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -409,7 +412,7 @@ implements class_1283 {
     @Override
     public void lllIlIIlIIIlIlIIIllIlllIl(int n, int n2, int n3) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 8, "Repairing", 9, true));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 8, "Repairing", 9, true));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0631(this.lllIIlIIIllllllIIIIlIlIlI, this.lIlIllIIlIIlIIlIIlIIlIIll, n, n2, n3, this);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -421,7 +424,7 @@ implements class_1283 {
             this.IlIIIlIIIIllIIIllIIIIIIll();
         }
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 0, class_08502.IlIIlllllIIlIlIlllllIllll(), class_08502.IlIIIIIllllllIIlllIllllll(), class_08502.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 0, class_08502.IlIIlllllIIlIlIlllllIllll(), class_08502.IlIIIIIllllllIIlllIllllll(), class_08502.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0965(this.lllIIlIIIllllllIIIIlIlIlI, class_08502);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -430,7 +433,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0879 class_08792) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 9, class_08792.IlIIlllllIIlIlIlllllIllll(), class_08792.IlIIIIIllllllIIlllIllllll(), class_08792.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 9, class_08792.IlIIlllllIIlIlIlllllIllll(), class_08792.IlIIIIIllllllIIlllIllllll(), class_08792.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0080(this.lllIIlIIIllllllIIIIlIlIlI, class_08792);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -439,7 +442,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_2252 class_22522) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 9, class_22522.IlIIlllllIIlIlIlllllIllll(), class_22522.IlIIIIIllllllIIlllIllllll(), class_22522.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 9, class_22522.IlIIlllllIIlIlIlllllIllll(), class_22522.IlIIIIIllllllIIlllIllllll(), class_22522.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0080(this.lllIIlIIIllllllIIIIlIlIlI, class_22522);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -448,7 +451,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1587 class_15872) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 2, class_15872.IlIIlllllIIlIlIlllllIllll(), class_15872.IlIIIIIllllllIIlllIllllll(), class_15872.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 2, class_15872.IlIIlllllIIlIlIlllllIllll(), class_15872.IlIIIIIllllllIIlllIllllll(), class_15872.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_1370(this.lllIIlIIIllllllIIIIlIlIlI, class_15872);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -457,7 +460,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1646 class_16462) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, class_16462 instanceof class_1798 ? 10 : 3, class_16462.IlIIlllllIIlIlIlllllIllll(), class_16462.IlIIIIIllllllIIlllIllllll(), class_16462.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, class_16462 instanceof class_1798 ? 10 : 3, class_16462.IlIIlllllIIlIlIlllllIllll(), class_16462.IlIIIIIllllllIIlllIllllll(), class_16462.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_1837(this.lllIIlIIIllllllIIIIlIlIlI, class_16462);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -466,7 +469,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0647 class_06472) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 5, class_06472.IlIIlllllIIlIlIlllllIllll(), class_06472.IlIIIIIllllllIIlllIllllll(), class_06472.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 5, class_06472.IlIIlllllIIlIlIlllllIllll(), class_06472.IlIIIIIllllllIIlllIllllll(), class_06472.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_0177(this.lllIIlIIIllllllIIIIlIlIlI, class_06472);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -475,7 +478,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0396 class_03962) {
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 7, class_03962.IlIIlllllIIlIlIlllllIllll(), class_03962.IlIIIIIllllllIIlllIllllll(), class_03962.IIlllIlIlllIllIIIlllIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 7, class_03962.IlIIlllllIIlIlIlllllIllll(), class_03962.IlIIIIIllllllIIlllIllllll(), class_03962.IIlllIlIlllIllIIIlllIIlIl()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_1410(this.lllIIlIIIllllllIIIIlIlIlI, class_03962);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -491,14 +494,14 @@ implements class_1283 {
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
         class_1086 class_10862 = ((class_0610)this.lIIIlIllllIlllIIIIIllIIIl).lllIIIllIIIIlllIlIIllIIll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 6, string == null ? "" : string, class_10862.IlIIIIIllllllIIlllIllllll(), string != null));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 6, string == null ? "" : string, class_10862.IlIIIIIllllllIIlllIllllll(), string != null));
         class_1596 class_15962 = class_15102.lllIlIIlIIIlIlIIIllIlllIl(this);
         if (class_15962 != null) {
-            class_0181 class_01812 = new class_0181(Unpooled.buffer());
+            PacketBuffer class_01812 = new PacketBuffer(Unpooled.buffer());
             try {
                 class_01812.writeInt(this.IIllllllIIllIlIllllIIIlll);
                 class_15962.lllIIIllIIIIlllIlIIllIIll(class_01812);
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1147("MC|TrList", class_01812));
+                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S3FPacketCustomPayload("MC|TrList", class_01812));
             }
             catch (IOException iOException) {
                 IllIIIllIIIIlIlIlIllIIlll.error("Couldn't send trade list", (Throwable)iOException);
@@ -515,7 +518,7 @@ implements class_1283 {
             this.IlIIIlIIIIllIIIllIIIIIIll();
         }
         this.IIIIlIllIlIIlIIlIllIlIlll();
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2247(this.IIllllllIIllIlIllllIIIlll, 11, class_08502.IlIIlllllIIlIlIlllllIllll(), class_08502.IlIIIIIllllllIIlllIllllll(), class_08502.IIlllIlIlllIllIIIlllIIlIl(), class_16272.llllllIlIllllIlIlIlIIIIlI()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2DPacketOpenWindow(this.IIllllllIIllIlIllllIIIlll, 11, class_08502.IlIIlllllIIlIlIlllllIllll(), class_08502.IlIIIIIllllllIIlllIllllll(), class_08502.IIlllIlIlllIllIIIlllIIlIl(), class_16272.llllllIlIllllIlIlIlIIIIlI()));
         this.lIIIlIllllIlllIIIIIllIIIl = new class_1387(this.lllIIlIIIllllllIIIIlIlIlI, class_08502, class_16272);
         this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII = this.IIllllllIIllIlIllllIIIlll;
         this.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(this);
@@ -524,7 +527,7 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1071 class_10712, int n, ItemStack class_08972) {
         if (!(class_10712.lllIIIllIIIIlllIlIIllIIll(n) instanceof class_1373) && !this.IIIllIIlIIIIIIlIlIIllIIlI) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1480(class_10712.lIlllIlllIIIIlIIlllIllIII, n, class_08972));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2FPacketSetSlot(class_10712.lIlllIlllIIIIlIIlllIllIII, n, class_08972));
         }
     }
 
@@ -534,24 +537,24 @@ implements class_1283 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1071 class_10712, List list) {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1804(class_10712.lIlllIlllIIIIlIIlllIllIII, list));
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1480(-1, -1, this.lllIIlIIIllllllIIIIlIlIlI.IllIIlllllllIIlIIlIIIIlIl()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S30PacketWindowItems(class_10712.lIlllIlllIIIIlIIlllIllIII, list));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2FPacketSetSlot(-1, -1, this.lllIIlIIIllllllIIIIlIlIlI.IllIIlllllllIIlIIlIIIIlIl()));
     }
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1071 class_10712, int n, int n2) {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1236(class_10712.lIlllIlllIIIIlIIlllIllIII, n, n2));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S31PacketWindowProperty(class_10712.lIlllIlllIIIIlIIlllIllIII, n, n2));
     }
 
     @Override
     public void IlIIIlIIIIllIIIllIIIIIIll() {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1009(this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2EPacketCloseWindow(this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII));
         this.IlIlIIlIlIllIIlIlIIllIIIl();
     }
 
     public void IlIlllIIIIIIlIIllIIllIlll() {
         if (!this.IIIllIIlIIIIIIlIlIIllIIlI) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1480(-1, -1, this.lllIIlIIIllllllIIIIlIlIlI.IllIIlllllllIIlIIlIIIIlIl()));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2FPacketSetSlot(-1, -1, this.lllIIlIIIllllllIIIIlIlIlI.IllIIlllllllIIlIIlIIIIlIl()));
         }
     }
 
@@ -601,12 +604,12 @@ implements class_1283 {
 
     @Override
     public void lllIlIIlIIIlIlIIIllIlllIl(IChatComponent class_22552) {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0710(class_22552));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S02PacketChat(class_22552));
     }
 
     @Override
     protected void lIIllllIllIlllllIIllIllIl() {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0514(this, 9));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S19PacketEntityStatus(this, 9));
         super.lIIllllIllIlllllIIllIllIl();
     }
 
@@ -614,7 +617,7 @@ implements class_1283 {
     public void IlIllllllIIlIIllllIIlIIIl(ItemStack class_08972, int n) {
         super.IlIllllllIIlIIllllIIlIIIl(class_08972, n);
         if (class_08972 != null && class_08972.lllIIIllIIIIlllIlIIllIIll() != null && class_08972.lllIIIllIIIIlllIlIIllIIll().IlIIIIIllllllIIlllIllllll(class_08972) == class_1484.lllIlIIlIIIlIlIIIllIlllIl) {
-            this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new class_0842(this, 3));
+            this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new S0BPacketAnimation(this, 3));
         }
     }
 
@@ -630,19 +633,19 @@ implements class_1283 {
     @Override
     protected void IlIllllllIIlIIllllIIlIIIl(class_1852 class_18522) {
         super.IlIllllllIIlIIllllIIlIIIl(class_18522);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0570(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1DPacketEntityEffect(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
     }
 
     @Override
     protected void lllIIIllIIIIlllIlIIllIIll(class_1852 class_18522, boolean bl) {
         super.lllIIIllIIIIlllIlIIllIIll(class_18522, bl);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0570(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1DPacketEntityEffect(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
     }
 
     @Override
     protected void lIlllIlllIIIIlIIlllIllIII(class_1852 class_18522) {
         super.lIlllIlllIIIIlIIlllIllIII(class_18522);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1027(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1EPacketRemoveEntityEffect(this.llllllIlIllllIlIlIlIIIIlI(), class_18522));
     }
 
     @Override
@@ -652,18 +655,18 @@ implements class_1283 {
 
     @Override
     public void lllIlIIlIIIlIlIIIllIlllIl(class_1521 class_15212) {
-        this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new class_0842(class_15212, 4));
+        this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new S0BPacketAnimation(class_15212, 4));
     }
 
     @Override
     public void IlIllllllIIlIIllllIIlIIIl(class_1521 class_15212) {
-        this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new class_0842(class_15212, 5));
+        this.IIlllIlIlllIllIIIlllIIlIl().lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(this, new S0BPacketAnimation(class_15212, 5));
     }
 
     @Override
     public void lIlIllIIlIIlIIlIIlIIlIIll() {
         if (this.lllIIIllIIIIlllIlIIllIIll != null) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1170(this.lIIlIlIlIlIllIIlIIllllIll));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S39PacketPlayerAbilities(this.lIIlIlIlIlIllIIlIIllllIll));
         }
     }
 
@@ -674,12 +677,12 @@ implements class_1283 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_2243 class_22432) {
         this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(class_22432);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(3, class_22432.lllIIIllIIIIlllIlIIllIIll()));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(3, class_22432.lllIIIllIIIIlllIlIIllIIll()));
     }
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0710(class_22552));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S02PacketChat(class_22552));
     }
 
     @Override
@@ -704,7 +707,7 @@ implements class_1283 {
         return string;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0681 class_06812) {
+    public void lllIIIllIIIIlllIlIIllIIll(C15PacketClientSettings class_06812) {
         this.lIIIIlIlIIlllllIIllIIlIII = class_06812.IlIllllllIIlIIllllIIlIIIl();
         int n = 256 >> class_06812.lIlllIlllIIIIlIIlllIllIII();
         if (n <= 3 || n < 20) {
@@ -723,7 +726,7 @@ implements class_1283 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(String string) {
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1147("MC|RPack", string.getBytes(Charsets.UTF_8)));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S3FPacketCustomPayload("MC|RPack", string.getBytes(Charsets.UTF_8)));
     }
 
     @Override
@@ -741,7 +744,7 @@ implements class_1283 {
 
     public void IlIlIIlllIIlIllIIIlllllIl(class_1521 class_15212) {
         if (class_15212 instanceof class_0814) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0175(class_15212.llllllIlIllllIlIlIlIIIIlI()));
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S13PacketDestroyEntities(class_15212.llllllIlIllllIlIlIlIIIIlI()));
         } else {
             this.llIIlllIllIllllIIIlIIIIII.add(class_15212.llllllIlIllllIlIlIlIIIIlI());
         }

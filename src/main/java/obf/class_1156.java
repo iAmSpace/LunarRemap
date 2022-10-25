@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.network.play.server.S29PacketSoundEffect;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -71,9 +73,9 @@ extends class_1246 {
                 d14 += d10 / d12 * 2.0;
                 d15 += d11 / d12 * 2.0;
             }
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0633(string, d13, d14, d15, (float)d6, (float)d5));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S29PacketSoundEffect(string, d13, d14, d15, (float)d6, (float)d5));
         } else {
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0633(string, d, d2, d3, (float)d4, (float)d5));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S29PacketSoundEffect(string, d, d2, d3, (float)d4, (float)d5));
         }
         class_1156.lllIIIllIIIIlllIlIIllIIll(class_19692, (class_0291)this, "commands.playsound.success", string, class_18222.llllIIIIlIIIlIIIIIIlIllll());
     }

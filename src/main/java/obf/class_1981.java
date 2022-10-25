@@ -238,7 +238,7 @@ extends class_1246 {
             }
             if (arrstring.length == 4) {
                 if (string.equalsIgnoreCase("color")) {
-                    throw new class_0932("commands.scoreboard.teams.option.noValue", string, class_1981.lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(true, false)));
+                    throw new class_0932("commands.scoreboard.teams.option.noValue", string, class_1981.lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getValidValues(true, false)));
                 }
                 if (!string.equalsIgnoreCase("friendlyfire") && !string.equalsIgnoreCase("seeFriendlyInvisibles")) {
                     throw new class_0932("commands.scoreboard.teams.option.usage", new Object[0]);
@@ -247,12 +247,12 @@ extends class_1246 {
             }
             String string2 = arrstring[n++];
             if (string.equalsIgnoreCase("color")) {
-                class_1227 class_12272 = class_1227.lllIlIIlIIIlIlIIIllIlllIl(string2);
-                if (class_12272 == null || class_12272.lllIlIIlIIIlIlIIIllIlllIl()) {
-                    throw new class_0932("commands.scoreboard.teams.option.noValue", string, class_1981.lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(true, false)));
+                EnumChatFormatting class_12272 = EnumChatFormatting.getValueByName(string2);
+                if (class_12272 == null || class_12272.isFancyStyling()) {
+                    throw new class_0932("commands.scoreboard.teams.option.noValue", string, class_1981.lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getValidValues(true, false)));
                 }
                 class_05312.lllIlIIlIIIlIlIIIllIlllIl(class_12272.toString());
-                class_05312.IlIllllllIIlIIllllIIlIIIl(class_1227.IIlllIlIlllIllIIIlllIIlIl.toString());
+                class_05312.IlIllllllIIlIIllllIIlIIIl(EnumChatFormatting.RESET.toString());
             } else if (string.equalsIgnoreCase("friendlyfire")) {
                 if (!string2.equalsIgnoreCase("true") && !string2.equalsIgnoreCase("false")) {
                     throw new class_0932("commands.scoreboard.teams.option.noValue", string, class_1981.lllIIIllIIIIlllIlIIllIIll(Arrays.asList("true", "false")));
@@ -289,7 +289,7 @@ extends class_1246 {
                 throw new class_1953("commands.scoreboard.teams.list.player.empty", class_05312.lllIIIllIIIIlllIlIIllIIll());
             }
             ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.scoreboard.teams.list.player.count", collection.size(), class_05312.lllIIIllIIIIlllIlIIllIIll());
-            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
             class_19692.lllIIIllIIIIlllIlIIllIIll(new class_0722(class_1981.lllIIIllIIIIlllIlIIllIIll(collection.toArray())));
         } else {
@@ -298,7 +298,7 @@ extends class_1246 {
                 throw new class_1953("commands.scoreboard.teams.list.empty", new Object[0]);
             }
             ChatComponentTranslation class_17903 = new ChatComponentTranslation("commands.scoreboard.teams.list.count", collection.size());
-            class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+            class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17903);
             for (class_0531 class_05313 : collection) {
                 class_19692.lllIIIllIIIIlllIlIIllIIll(new ChatComponentTranslation("commands.scoreboard.teams.list.entry", class_05313.lllIIIllIIIIlllIlIIllIIll(), class_05313.lllIlIIlIIIlIlIIIllIlllIl(), class_05313.IlIllllllIIlIIllllIIlIIIl().size()));
@@ -394,7 +394,7 @@ extends class_1246 {
             throw new class_1953("commands.scoreboard.objectives.list.empty", new Object[0]);
         }
         ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.scoreboard.objectives.list.count", collection.size());
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
         class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
         for (class_0693 class_06932 : collection) {
             class_19692.lllIIIllIIIIlllIlIIllIIll(new ChatComponentTranslation("commands.scoreboard.objectives.list.entry", class_06932.lllIlIIlIIIlIlIIIllIlllIl(), class_06932.lIlllIlllIIIIlIIlllIllIII(), class_06932.IlIllllllIIlIIllllIIlIIIl().func_96636_a()));
@@ -429,7 +429,7 @@ extends class_1246 {
                 throw new class_1953("commands.scoreboard.players.list.player.empty", string);
             }
             ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.scoreboard.players.list.player.count", map.size(), string);
-            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
             for (class_0678 class_06782 : map.values()) {
                 class_19692.lllIIIllIIIIlllIlIIllIIll(new ChatComponentTranslation("commands.scoreboard.players.list.player.entry", class_06782.lllIlIIlIIIlIlIIIllIlllIl(), class_06782.IlIllllllIIlIIllllIIlIIIl().lIlllIlllIIIIlIIlllIllIII(), class_06782.IlIllllllIIlIIllllIIlIIIl().lllIlIIlIIIlIlIIIllIlllIl()));
@@ -440,7 +440,7 @@ extends class_1246 {
                 throw new class_1953("commands.scoreboard.players.list.empty", new Object[0]);
             }
             ChatComponentTranslation class_17903 = new ChatComponentTranslation("commands.scoreboard.players.list.count", collection.size());
-            class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+            class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17903);
             class_19692.lllIIIllIIIIlllIlIIllIIll(new class_0722(class_1981.lllIIIllIIIIlllIlIIllIIll(collection.toArray())));
         }
@@ -537,7 +537,7 @@ extends class_1246 {
                         }
                         if (arrstring.length == 5) {
                             if (arrstring[3].equalsIgnoreCase("color")) {
-                                return class_1981.lllIIIllIIIIlllIlIIllIIll(arrstring, class_1227.lllIIIllIIIIlllIlIIllIIll(true, false));
+                                return class_1981.lllIIIllIIIIlllIlIIllIIll(arrstring, EnumChatFormatting.getValidValues(true, false));
                             }
                             if (arrstring[3].equalsIgnoreCase("friendlyfire") || arrstring[3].equalsIgnoreCase("seeFriendlyInvisibles")) {
                                 return class_1981.lllIIIllIIIIlllIlIIllIIll(arrstring, "true", "false");

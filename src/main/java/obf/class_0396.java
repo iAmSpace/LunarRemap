@@ -4,6 +4,8 @@ package obf;/*
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.item.ItemStack;
 
@@ -145,10 +147,10 @@ implements class_0850 {
     }
 
     @Override
-    public class_0703 IllIIlllllllIIlIIlIIIIlIl() {
+    public Packet IllIIlllllllIIlIIlIIIIlIl() {
         class_0775 class_07752 = new class_0775();
         this.lllIlIIlIIIlIlIIIllIlllIl(class_07752);
-        return new class_1180(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 3, class_07752);
+        return new S35PacketUpdateTileEntity(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 3, class_07752);
     }
 
     @Override

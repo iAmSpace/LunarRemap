@@ -13,7 +13,7 @@ implements class_1832 {
     private String lllIIIllIIIIlllIlIIllIIll = "";
     private Minecraft lllIlIIlIIIlIlIIIllIlllIl;
     private String IlIllllllIIlIIllllIIlIIIl = "";
-    private long lIlllIlllIIIIlIIlllIllIII = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+    private long lIlllIlllIIIIlIIlllIllIII = Minecraft.getSystemTime();
     private boolean IlIIIIIllllllIIlllIllllll;
     private class_0321 lIllllIIlIIIlIllllllIIIll;
     private class_0778 IIIllIIlIIIIIIlIlIIllIIlI;
@@ -26,7 +26,7 @@ implements class_1832 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(String string) {
+    public void resetProgressAndMessage(String string) {
         this.IlIIIIIllllllIIlllIllllll = false;
         this.IlIllllllIIlIIllllIIlIIIl(string);
     }
@@ -61,7 +61,7 @@ implements class_1832 {
     }
 
     @Override
-    public void lIlllIlllIIIIlIIlllIllIII(String string) {
+    public void resetProgresAndWorkingMessage(String string) {
         if (!this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIllllllllIIIlIlI) {
             if (!this.IlIIIIIllllllIIlllIllllll) {
                 throw new class_1726();
@@ -69,19 +69,19 @@ implements class_1832 {
         } else {
             this.lIlllIlllIIIIlIIlllIllIII = 0L;
             this.lllIIIllIIIIlllIlIIllIIll = string;
-            this.lllIIIllIIIIlllIlIIllIIll(-1);
+            this.setLoadingProgress(-1);
             this.lIlllIlllIIIIlIIlllIllIII = 0L;
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(int n) {
+    public void setLoadingProgress(int n) {
         if (!this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlllIllllllllIIIlIlI) {
             if (!this.IlIIIIIllllllIIlllIllllll) {
                 throw new class_1726();
             }
         } else {
-            long l = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+            long l = Minecraft.getSystemTime();
             if (l - this.lIlllIlllIIIIlIIlllIllIII >= 100L) {
                 this.lIlllIlllIIIIlIIlllIllIII = l;
                 class_0321 class_03212 = new class_0321(this.lllIlIIlIIIlIlIIIllIlllIl, this.lllIlIIlIIIlIlIIIllIlllIl.displayWidth, this.lllIlIIlIIIlIlIIIllIlllIl.displayHeight);
@@ -153,7 +153,7 @@ implements class_1832 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void func_146586_a() {
     }
 }
 

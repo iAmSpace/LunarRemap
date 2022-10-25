@@ -8,6 +8,7 @@ package obf;/*
 import java.util.HashSet;
 import java.util.Set;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -113,13 +114,13 @@ extends class_0229 {
                 object = ((ItemStack)object).llIIlllIllIllllIIIlIIIIII();
                 ((ItemStack)object).lllIlIIlIIIlIlIIIllIlllIl = this.IIllIllIIllIIlllIIIlIlllI;
                 if (((ItemStack)object).lllIlIIlIIIlIlIIIllIlllIl == 0) {
-                    string = "" + (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "0";
+                    string = "" + (Object)((Object) EnumChatFormatting.YELLOW) + "0";
                 }
             }
             this.lllIIIllIIIIlllIlIIllIIll((ItemStack)object, n - n5 - n4, n2 - n6 - n3, string);
         }
         if (this.IIlIIlIlIlIllIIlIlIIIIlll != null) {
-            float f2 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.IllIIlllllllIIlIIlIIIIlIl) / 100.0f;
+            float f2 = (float)(Minecraft.getSystemTime() - this.IllIIlllllllIIlIIlIIIIlIl) / 100.0f;
             if (f2 >= 1.0f) {
                 f2 = 1.0f;
                 this.IIlIIlIlIlIllIIlIlIIIIlll = null;
@@ -156,7 +157,7 @@ extends class_0229 {
     protected abstract void lllIIIllIIIIlllIlIIllIIll(float var1, int var2, int var3);
 
     private void lllIIIllIIIIlllIlIIllIIll(class_1291 class_12912) {
-        class_2102 class_21022;
+        IIcon class_21022;
         int n = class_12912.IllIIlllllllIIlIIlIIIIlIl;
         int n2 = class_12912.IIIllIllIIlIlIlIlIllllIIl;
         ItemStack class_08972 = class_12912.lllIIIllIIIIlllIlIIllIIll();
@@ -176,11 +177,11 @@ extends class_0229 {
                 bl = true;
                 class_1071.lllIIIllIIIIlllIlIIllIIll(this.IllIIIIllIIllIllIlllIlIIl, this.IlIlIIlllIllllllllIIIlIlI, class_08972, class_12912.lllIIIllIIIIlllIlIIllIIll() == null ? 0 : class_12912.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl);
                 if (class_08972.lllIlIIlIIIlIlIIIllIlllIl > class_08972.lIlllIlllIIIIlIIlllIllIII()) {
-                    string = (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "" + class_08972.lIlllIlllIIIIlIIlllIllIII();
+                    string = (Object)((Object) EnumChatFormatting.YELLOW) + "" + class_08972.lIlllIlllIIIIlIIlllIllIII();
                     class_08972.lllIlIIlIIIlIlIIIllIlllIl = class_08972.lIlllIlllIIIIlIIlllIllIII();
                 }
                 if (class_08972.lllIlIIlIIIlIlIIIllIlllIl > class_12912.lIlllIlllIIIIlIIlllIllIII()) {
-                    string = (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "" + class_12912.lIlllIlllIIIIlIIlllIllIII();
+                    string = (Object)((Object) EnumChatFormatting.YELLOW) + "" + class_12912.lIlllIlllIIIIlIIlllIllIII();
                     class_08972.lllIlIIlIIIlIlIIIllIlllIl = class_12912.lIlllIlllIIIIlIIlllIllIII();
                 }
             } else {
@@ -242,7 +243,7 @@ extends class_0229 {
         super.lllIIIllIIIIlllIlIIllIIll(n, n2, n3);
         boolean bl = n3 == this.lllllIlllIIllIlIIlIIIllII.gameSettings.IIlllllIIlIIlIlIIlIIlIlII.IIIllIllIIlIlIlIlIllllIIl() + 100;
         class_1291 class_12912 = this.lllIlIIlIIIlIlIIIllIlllIl(n, n2);
-        long l = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        long l = Minecraft.getSystemTime();
         this.IIIIlIIlIIIllIIIIllIIIlII = this.lIlIIllllIlIIIIllIIIIlIIl == class_12912 && l - this.llllllIlIllllIlIlIlIIIIlI < 250L && this.llIlllIIllIlllIlIlIlIIIll == n3;
         this.llIIIIllIIIIIIIlIIIlIIIIl = false;
         if (n3 == 0 || n3 == 1 || bl) {
@@ -314,7 +315,7 @@ extends class_0229 {
                         this.lIlllIlllIIIIlIIlllIllIII = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll().llIIlllIllIllllIIIlIIIIII();
                     }
                 } else if (this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl > 1 && class_12912 != null && class_1071.lllIIIllIIIIlllIlIIllIIll(class_12912, this.lIlllIlllIIIIlIIlllIllIII, false)) {
-                    long l2 = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                    long l2 = Minecraft.getSystemTime();
                     if (this.llIIIlllIlllIlIllIIIIllIl == class_12912) {
                         if (l2 - this.IIIIlIllIlIIlIIlIllIlIlll > 500L) {
                             this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIIlIIIIIIlIlIIllIIlI, 0, 0);
@@ -388,7 +389,7 @@ extends class_0229 {
                             this.lIllllIIlIIIlIllllllIIIll = n2 - n5;
                             this.IIIllIIlIIIIIIlIlIIllIIlI = this.lllIlIIlIIIlIlIIIllIlllIl;
                             this.IIlIIlIlIlIllIIlIlIIIIlll = this.lIlllIlllIIIIlIIlllIllIII;
-                            this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                            this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.getSystemTime();
                         } else {
                             this.IIlIIlIlIlIllIIlIlIIIIlll = null;
                         }
@@ -397,7 +398,7 @@ extends class_0229 {
                         this.lIllllIIlIIIlIllllllIIIll = n2 - n5;
                         this.IIIllIIlIIIIIIlIlIIllIIlI = this.lllIlIIlIIIlIlIIIllIlllIl;
                         this.IIlIIlIlIlIllIIlIlIIIIlll = this.lIlllIlllIIIIlIIlllIllIII;
-                        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.getSystemTime();
                     }
                     this.lIlllIlllIIIIlIIlllIllIII = null;
                     this.lllIlIIlIIIlIlIIIllIlllIl = null;

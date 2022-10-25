@@ -12,6 +12,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import net.minecraft.network.play.client.C16PacketClientStatus;
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.Charsets;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,7 +47,7 @@ extends class_0229 {
     }
 
     private void lIllllIIlIIIlIllllllIIIll() {
-        this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0499(class_1297.lllIIIllIIIIlllIlIIllIIll));
+        this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C16PacketClientStatus(class_1297.lllIIIllIIIIlllIlIIllIIll));
         this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);
     }
 
@@ -60,7 +63,7 @@ extends class_0229 {
             try {
                 int n;
                 String string = "";
-                String string2 = "" + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + (Object)((Object)class_1227.lllllIlllIIllIlIIlIIIllII) + (Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII);
+                String string2 = "" + (Object)((Object) EnumChatFormatting.WHITE) + (Object)((Object) EnumChatFormatting.OBFUSCATED) + (Object)((Object) EnumChatFormatting.GREEN) + (Object)((Object) EnumChatFormatting.AQUA);
                 int n2 = 274;
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.lllllIlllIIllIlIIlIIIllII.getResourceManager().getResource(new ResourceLocation("texts/end.txt")).getInputStream(), Charsets.UTF_8));
                 Random random = new Random(8124371L);
@@ -70,7 +73,7 @@ extends class_0229 {
                         n = string.indexOf(string2);
                         String string3 = string.substring(0, n);
                         String string4 = string.substring(n + string2.length());
-                        string = string3 + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + (Object)((Object)class_1227.lllllIlllIIllIlIIlIIIllII) + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + string4;
+                        string = string3 + (Object)((Object) EnumChatFormatting.WHITE) + (Object)((Object) EnumChatFormatting.OBFUSCATED) + "XXXXXXXX".substring(0, random.nextInt(4) + 3) + string4;
                     }
                     this.IlIIIIIllllllIIlllIllllll.addAll(this.lllllIlllIIllIlIIlIIIllII.IlIlllIIIIIIlIIllIIllIlll.IlIllllllIIlIIllllIIlIIIl(string, n2));
                     this.IlIIIIIllllllIIlllIllllll.add("");

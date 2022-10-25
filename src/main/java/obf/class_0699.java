@@ -7,6 +7,8 @@ package obf;/*
  */
 import java.util.Random;
 
+import net.minecraft.network.play.client.C16PacketClientStatus;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
 import net.minecraft.stats.Achievement;
@@ -53,7 +55,7 @@ implements class_1216 {
 
     @Override
     public void n_() {
-        this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0499(class_1297.lllIlIIlIIIlIlIIIllIlllIl));
+        this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C16PacketClientStatus(class_1297.lllIlIIlIIIlIlIIIllIlllIl));
         this.lIlIlIIlIIIIlIIIIIlllIIII.clear();
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1249(1, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 24, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 + 74, 80, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("gui.done", new Object[0])));
     }
@@ -80,7 +82,7 @@ implements class_1216 {
         if (this.llllIIIIlIIIlIIIIIIlIllll) {
             this.llIIlIllIllllIlIIIIlIIlll();
             this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("multiplayer.downloadingStats", new Object[0]), this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2, 0xFFFFFF);
-            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, lllIIIllIIIIlllIlIIllIIll[(int)(Minecraft.llllllIlIllllIlIlIlIIIIlI() / 150L % (long)lllIIIllIIIIlllIlIIllIIll.length)], this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 + this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll * 2, 0xFFFFFF);
+            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, lllIIIllIIIIlllIlIIllIIll[(int)(Minecraft.getSystemTime() / 150L % (long)lllIIIllIIIIlllIlIIllIIll.length)], this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 + this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll * 2, 0xFFFFFF);
         } else {
             int n3;
             if (Mouse.isButtonDown((int)0)) {
@@ -229,7 +231,7 @@ implements class_1216 {
             while ((float)n7 * f3 - (float)n16 < 224.0f) {
                 random.setSeed(this.lllllIlllIIllIlIIlIIIllII.getSession().getPlayerID().hashCode() + n14 + n7 + (n15 + n18) * 16);
                 n6 = random.nextInt(1 + n15 + n18) + (n15 + n18) / 2;
-                class_2102 class_21022 = Blocks.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll(0, 0);
+                IIcon class_21022 = Blocks.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll(0, 0);
                 if (n6 <= 37 && n15 + n18 != 35) {
                     if (n6 == 22) {
                         class_21022 = random.nextInt(2) == 0 ? Blocks.diamond_ore.lllIIIllIIIIlllIlIIllIIll(0, 0) : Blocks.lIIIlIIllIllIIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(0, 0);

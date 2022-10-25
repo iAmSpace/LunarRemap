@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 
 /*
@@ -13,12 +14,12 @@ extends class_0851 {
     }
 
     @Override
-    public boolean lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652) {
+    public boolean lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652) {
         return !class_16652.lIllllIIlIIIlIllllllIIIll();
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_1665 class_16652) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(AbstractModule class_16652) {
         if (class_16652.IlIlllIIIIIIlIIllIIllIlll() == null || class_16652.IIIllIIlIIIIIIlIlIIllIIlI().equalsIgnoreCase("Zans Minimap")) {
             if (!class_16652.lIllllIIlIIIlIllllllIIIll()) {
                 Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));

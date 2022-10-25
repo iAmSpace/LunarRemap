@@ -11,9 +11,9 @@ import java.util.Random;
 public class class_1700
 extends class_2257 {
     private final Random llllllIlIllllIlIlIlIIIIlI = new Random();
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     public class_1700() {
         super(class_1855.lIllllIIlIIIlIllllllIIIll);
@@ -151,7 +151,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llIlllIIllIlllIlIlIlIIIll : this.lIlIIllllIlIIIIllIIIIlIIl;
     }
 
@@ -180,7 +180,7 @@ extends class_2257 {
         this.IIIIlIIlIIIllIIIIllIIIlII = class_08872.lllIIIllIIIIlllIlIIllIIll("hopper_inside");
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string.equals("hopper_outside") ? Blocks.llllIllllllIllIIIlIlIIllI.lIlIIllllIlIIIIllIIIIlIIl : (string.equals("hopper_inside") ? Blocks.llllIllllllIllIIIlIlIIllI.IIIIlIIlIIIllIIIIllIIIlII : null);
     }
 

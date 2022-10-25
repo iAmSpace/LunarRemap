@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.DefaultResourcePack;
@@ -145,7 +146,7 @@ implements class_0237 {
     @Override
     public final BufferedImage lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         try {
-            class_2102 class_21022 = ((Block) Block.blockRegistry.lllIIIllIIIIlllIlIIllIIll(n)).lllIIIllIIIIlllIlIIllIIll(3, n2);
+            IIcon class_21022 = ((Block) Block.blockRegistry.lllIIIllIIIIlllIlIIllIIll(n)).lllIIIllIIIIlllIlIIllIIll(3, n2);
             int n3 = (int)(class_21022.IlIllllllIIlIIllllIIlIIIl() * (float)this.lIllllIIlIIIlIllllllIIIll.getWidth());
             int n4 = (int)(class_21022.lIlllIlllIIIIlIIlllIllIII() * (float)this.lIllllIIlIIIlIllllllIIIll.getWidth());
             int n5 = (int)(class_21022.IlIIIIIllllllIIlllIllllll() * (float)this.lIllllIIlIIIlIllllllIIIll.getHeight());
@@ -373,7 +374,7 @@ implements class_0237 {
     private int lIllllIIlIIIlIllllllIIIll(int n, int n2) {
         try {
             int n3;
-            class_2102 class_21022 = null;
+            IIcon class_21022 = null;
             if (n == class_1498.IlIlIIlIlIllIIlIlIIllIIIl) {
                 return 0x19000000 | (30 + n2 * 15 & 0xFF) << 16 | 0 | 0;
             }
@@ -398,7 +399,7 @@ implements class_0237 {
         }
     }
 
-    private int lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022, BufferedImage bufferedImage) {
+    private int lllIIIllIIIIlllIlIIllIIll(IIcon class_21022, BufferedImage bufferedImage) {
         int n = 0;
         if (class_21022 != null) {
             int n2 = (int)(class_21022.IlIllllllIIlIIllllIIlIIIl() * (float)bufferedImage.getWidth());

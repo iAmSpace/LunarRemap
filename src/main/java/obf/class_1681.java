@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.client.settings.KeyBinding;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.GameSettings;
@@ -14,7 +15,7 @@ extends class_0229 {
     private class_0229 IlIIIIIllllllIIlllIllllll;
     protected String lllIIIllIIIIlllIlIIllIIll = "Controls";
     private GameSettings lIllllIIlIIIlIllllllIIIll;
-    public class_1335 lllIlIIlIIIlIlIIIllIlllIl = null;
+    public KeyBinding lllIlIIlIIIlIlIIIllIlllIl = null;
     public long IlIllllllIIlIIllllIIlIIIl;
     private class_2035 IIIllIIlIIIIIIlIlIIllIIlI;
     private class_1197 IllIIlllllllIIlIIlIIIIlIl;
@@ -47,10 +48,10 @@ extends class_0229 {
         if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 200) {
             this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(this.IlIIIIIllllllIIlllIllllll);
         } else if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 201) {
-            for (class_1335 class_13352 : this.lllllIlllIIllIlIIlIIIllII.gameSettings.llIlllllIIlIIlIIllllIllll) {
+            for (KeyBinding class_13352 : this.lllllIlllIIllIlIIlIIIllII.gameSettings.keyBindings) {
                 class_13352.lllIlIIlIIIlIlIIIllIlllIl(class_13352.IllIIlllllllIIlIIlIIIIlIl());
             }
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
         } else if (class_11972.IIIllIllIIlIlIlIlIllllIIl < 100 && class_11972 instanceof class_1249) {
             this.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll(((class_1249)class_11972).lllIIIllIIIIlllIlIIllIIll(), 1);
             class_11972.IllIIlllllllIIlIIlIIIIlIl = this.lIllllIIlIIIlIllllllIIIll.IlIllllllIIlIIllllIIlIIIl(Options.getEnumOptions(class_11972.IIIllIllIIlIlIlIlIllllIIl));
@@ -62,7 +63,7 @@ extends class_0229 {
         if (this.lllIlIIlIIIlIlIIIllIlllIl != null) {
             this.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, -100 + n3);
             this.lllIlIIlIIIlIlIIIllIlllIl = null;
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
         } else if (n3 != 0 || !this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(n, n2, n3)) {
             super.lllIIIllIIIIlllIlIIllIIll(n, n2, n3);
         }
@@ -84,8 +85,8 @@ extends class_0229 {
                 this.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, n);
             }
             this.lllIlIIlIIIlIlIIIllIlllIl = null;
-            this.IlIllllllIIlIIllllIIlIIIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            this.IlIllllllIIlIIllllIIlIIIl = Minecraft.getSystemTime();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
             LunarClient.getInstance().getModuleManager().IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll();
         } else {
             super.lllIIIllIIIIlllIlIIllIIll(c, n);
@@ -98,7 +99,7 @@ extends class_0229 {
         this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
         this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, this.lllIIIllIIIIlllIlIIllIIll, this.IlIlIIlllIIlIllIIIlllllIl / 2, 8, 0xFFFFFF);
         boolean bl = true;
-        for (class_1335 class_13352 : this.lIllllIIlIIIlIllllllIIIll.llIlllllIIlIIlIIllllIllll) {
+        for (KeyBinding class_13352 : this.lIllllIIlIIIlIllllllIIIll.keyBindings) {
             if (class_13352.IIIllIllIIlIlIlIlIllllIIl() == class_13352.IllIIlllllllIIlIIlIIIIlIl()) continue;
             bl = false;
             break;

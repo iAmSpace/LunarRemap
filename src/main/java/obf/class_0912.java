@@ -5,6 +5,7 @@ package obf;/*
  *  com.google.common.collect.ImmutableSet
  */
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.ResourceIndex;
 

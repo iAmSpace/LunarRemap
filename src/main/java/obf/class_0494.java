@@ -13,7 +13,7 @@ public class class_0494 {
     public class_0494(String string, String string2) {
         this.lllIIIllIIIIlllIlIIllIIll = string;
         this.lllIlIIlIIIlIlIIIllIlllIl = string2;
-        this.IlIllllllIIlIIllllIIlIIIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.IlIllllllIIlIIllllIIlIIIl = Minecraft.getSystemTime();
     }
 
     public String lllIIIllIIIIlllIlIIllIIll() {
@@ -25,7 +25,7 @@ public class class_0494 {
     }
 
     public void IlIllllllIIlIIllllIIlIIIl() {
-        this.IlIllllllIIlIIllllIIlIIIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.IlIllllllIIlIIllllIIlIIIl = Minecraft.getSystemTime();
     }
 }
 

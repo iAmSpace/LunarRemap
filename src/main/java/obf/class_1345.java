@@ -1,5 +1,8 @@
 package obf;
 
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -20,10 +23,10 @@ extends class_1774 {
     }
 
     @Override
-    public class_0703 IllIIlllllllIIlIIlIIIIlIl() {
+    public Packet IllIIlllllllIIlIIlIIIIlIl() {
         class_0775 class_07752 = new class_0775();
         this.lllIlIIlIIIlIlIIIllIlllIl(class_07752);
-        return new class_1180(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 2, class_07752);
+        return new S35PacketUpdateTileEntity(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII, 2, class_07752);
     }
 
     public class_0484 lllIIIllIIIIlllIlIIllIIll() {

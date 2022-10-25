@@ -2,6 +2,7 @@ package obf;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S23PacketBlockChange;
 
 /*
  * Decompiled with CFR 0.150.
@@ -165,7 +166,7 @@ public class class_0388 {
         this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, 2001, n, n2, n3, Block.lllIIIllIIIIlllIlIIllIIll(class_05492) + (this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3) << 12));
         boolean bl = this.lIlllIlllIIIIlIIlllIllIII(n, n2, n3);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, this.lllIIIllIIIIlllIlIIllIIll));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, this.lllIIIllIIIIlllIlIIllIIll));
         } else {
             ItemStack class_08972 = this.lllIlIIlIIIlIlIIIllIlllIl.IllIlIlIIIlIllIlIlIIlllII();
             boolean bl2 = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(class_05492);

@@ -29,8 +29,8 @@ public class class_1187
 implements class_0153 {
     class_2013 lllIIIllIIIIlllIlIIllIIll;
     public class_1835 lllIlIIlIIIlIlIIIllIlllIl = null;
-    private ArrayList IlIllllllIIlIIllllIIlIIIl = new ArrayList();
-    private ArrayList lIlllIlllIIIIlIIlllIllIII = new ArrayList();
+    private ArrayList<class_0368> IlIllllllIIlIIllllIIlIIIl = new ArrayList<>();
+    private ArrayList<class_0368> lIlllIlllIIIIlIIlllIllIII = new ArrayList<>();
     private ArrayList IlIIIIIllllllIIlllIllllll;
     private String lIllllIIlIIIlIllllllIIIll = "";
     private String IIIllIIlIIIIIIlIlIIllIIlI = "";
@@ -54,7 +54,7 @@ implements class_0153 {
     }
 
     @Override
-    public ArrayList lllIIIllIIIIlllIlIIllIIll() {
+    public ArrayList<class_0368> lllIIIllIIIIlllIlIIllIIll() {
         return this.IlIllllllIIlIIllllIIlIIIl;
     }
 
@@ -63,28 +63,28 @@ implements class_0153 {
         Object object;
         TreeSet<Integer> treeSet3;
         TreeSet<Integer> treeSet2 = new TreeSet<Integer>();
-        for (TreeSet<Integer> treeSet3 : this.IlIllllllIIlIIllllIIlIIIl) {
-            if (((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll.equals("Latest Death")) {
-                ((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll = "Previous Death";
+        for (class_0368 _0368 : this.IlIllllllIIlIIllllIIlIIIl) {
+            if (_0368.lllIIIllIIIIlllIlIIllIIll.equals("Latest Death")) {
+                _0368.lllIIIllIIIIlllIlIIllIIll = "Previous Death";
             }
-            if (!((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll.startsWith("Previous Death")) continue;
+            if (!_0368.lllIIIllIIIIlllIlIIllIIll.startsWith("Previous Death")) continue;
             if (this.lllIlIIlIIIlIlIIIllIlllIl.lIlIlIIlIIIIlIIIIIlllIIII > 1) {
                 int n = 0;
                 try {
-                    if (((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll.length() > 15) {
-                        n = Integer.parseInt(((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll.substring(15));
+                    if (_0368.lllIIIllIIIIlllIlIIllIIll.length() > 15) {
+                        n = Integer.parseInt(_0368.lllIIIllIIIIlllIlIIllIIll.substring(15));
                     }
                 }
                 catch (Exception exception) {
                     n = 0;
                 }
-                ((class_0368)treeSet3).IlIlIIlIlIllIIlIlIIllIIIl -= (((class_0368)treeSet3).IlIlIIlIlIllIIlIlIIllIIIl - 0.5f) / 8.0f;
-                ((class_0368)treeSet3).lllllIlllIIllIlIIlIIIllII -= (((class_0368)treeSet3).lllllIlllIIllIlIIlIIIllII - 0.5f) / 8.0f;
-                ((class_0368)treeSet3).IlIlIIlllIIlIllIIIlllllIl -= (((class_0368)treeSet3).IlIlIIlllIIlIllIIIlllllIl - 0.5f) / 8.0f;
-                ((class_0368)treeSet3).lllIIIllIIIIlllIlIIllIIll = "Previous Death " + (n + 1);
+                _0368.IlIlIIlIlIllIIlIlIIllIIIl -= (_0368.IlIlIIlIlIllIIlIlIIllIIIl - 0.5f) / 8.0f;
+                _0368.lllllIlllIIllIlIIlIIIllII -= (_0368.lllllIlllIIllIlIIlIIIllII - 0.5f) / 8.0f;
+                _0368.IlIlIIlllIIlIllIIIlllllIl -= (_0368.IlIlIIlllIIlIllIIIlllllIl - 0.5f) / 8.0f;
+                _0368.lllIIIllIIIIlllIlIIllIIll = "Previous Death " + (n + 1);
                 continue;
             }
-            treeSet2.add(this.IlIllllllIIlIIllllIIlIIIl.indexOf(treeSet3));
+            treeSet2.add(this.IlIllllllIIlIIllllIIlIIIl.indexOf(_0368));
         }
         if (this.lllIlIIlIIIlIlIIIllIlllIl.lIlIlIIlIIIIlIIIIIlllIIII < 2 && treeSet2.size() > 0) {
             object = (TreeSet)treeSet2.descendingSet();
@@ -169,7 +169,7 @@ implements class_0153 {
         File file2 = class_0501.lllIIIllIIIIlllIlIIllIIll("minecraft", true).getAbsoluteFile();
         if (!file2.equals(file = Minecraft.getMinecraft().mcDataDir.getAbsoluteFile())) {
             String string2 = "";
-            if (Minecraft.getMinecraft().IIIIlIllIlIIlIIlIllIlIlll()) {
+            if (Minecraft.getMinecraft().isIntegratedServerRunning()) {
                 string2 = file.getName();
                 if ((string2.equalsIgnoreCase("minecraft") || string2.equalsIgnoreCase(".")) && file.getParentFile() != null) {
                     string2 = file.getParentFile().getName();
@@ -210,7 +210,7 @@ implements class_0153 {
             printWriter.close();
         }
         catch (Exception exception) {
-            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "Error Saving Waypoints");
+            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.YELLOW) + "Error Saving Waypoints");
         }
     }
 
@@ -286,7 +286,7 @@ implements class_0153 {
             long l = -1L;
             long l2 = -1L;
             string2 = "";
-            if (Minecraft.getMinecraft().IIIIlIllIlIIlIIlIllIlIlll()) {
+            if (Minecraft.getMinecraft().isIntegratedServerRunning()) {
                 string2 = file.getName();
                 if ((string2.equalsIgnoreCase("minecraft") || string2.equalsIgnoreCase(".")) && file.getParentFile() != null) {
                     string2 = file.getParentFile().getName();
@@ -390,7 +390,7 @@ implements class_0153 {
                 bufferedReader.close();
             }
             catch (Exception exception) {
-                class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "Error Loading Waypoints");
+                class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.YELLOW) + "Error Loading Waypoints");
                 System.err.println("waypoint load error: " + exception.getLocalizedMessage());
                 return false;
             }
@@ -462,7 +462,7 @@ implements class_0153 {
             return false;
         }
         catch (Exception exception) {
-            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "Error Loading Waypoints");
+            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.YELLOW) + "Error Loading Waypoints");
             System.err.println("waypoint load error: " + exception.getLocalizedMessage());
             return false;
         }
@@ -517,7 +517,7 @@ implements class_0153 {
             }
         }
         catch (Exception exception) {
-            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "Error Loading Old Rei Waypoints");
+            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.YELLOW) + "Error Loading Old Rei Waypoints");
             System.err.println("waypoint load error: " + exception.getLocalizedMessage());
         }
     }

@@ -6,12 +6,12 @@ package obf;
 public interface class_1832 {
     public void lllIlIIlIIIlIlIIIllIlllIl(String var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(String var1);
+    public void resetProgressAndMessage(String var1);
 
-    public void lIlllIlllIIIIlIIlllIllIII(String var1);
+    public void resetProgresAndWorkingMessage(String var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(int var1);
+    public void setLoadingProgress(int var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll();
+    public void func_146586_a();
 }
 

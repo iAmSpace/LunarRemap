@@ -12,9 +12,9 @@ import java.util.Random;
 public class class_0736
 extends class_0143 {
     public static final int[][] llllllIlIllllIlIlIlIIIIlI = new int[][]{{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
-    private class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
-    private class_2102[] IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon[] IIIIlIIlIIIllIIIIllIIIlII;
 
     public class_0736() {
         super(class_1855.lllIIlIIIllllllIIIIlIlIlI);
@@ -77,7 +77,7 @@ extends class_0143 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3;
         if (n == 0) {
             return Blocks.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII(n);
@@ -90,9 +90,9 @@ extends class_0143 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.IIIIlIIlIIIllIIIIllIIIlII = new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_top"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_top")};
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_end"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_end")};
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_side"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_side")};
+        this.IIIIlIIlIIIllIIIIllIIIlII = new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_top"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_top")};
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_end"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_end")};
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[]{class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_feet_side"), class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_head_side")};
     }
 
     @Override

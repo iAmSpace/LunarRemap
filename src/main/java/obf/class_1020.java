@@ -11,7 +11,7 @@ public class class_1020
 extends Block {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"default", "mossy", "cracked", "chiseled"};
     public static final String[] lIlIIllllIlIIIIllIIIIlIIl = new String[]{null, "mossy", "cracked", "carved"};
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
 
     public class_1020() {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
@@ -19,7 +19,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n2 < 0 || n2 >= lIlIIllllIlIIIIllIIIIlIIl.length) {
             n2 = 0;
         }
@@ -40,7 +40,7 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[lIlIIllllIlIIIIllIIIIlIIl.length];
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[lIlIIllllIlIIIIllIIIIlIIl.length];
         for (int i = 0; i < this.llIlllIIllIlllIlIlIlIIIll.length; ++i) {
             String string = this.llllllIlIllllIlIlIlIIIIlI();
             if (lIlIIllllIlIIIIllIIIIlIIl[i] != null) {

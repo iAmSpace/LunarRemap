@@ -33,7 +33,7 @@ public class class_1868 {
     private static boolean IlIllllllIIlIIllllIIlIIIl;
     private static class_0445 lIlllIlllIIIIlIIlllIllIII;
 
-    public static List lllIIIllIIIIlllIlIIllIIll() {
+    public static List<class_1878> lllIIIllIIIIlllIlIIllIIll() {
         JavaLayerUtils.setHook((JavaLayerHook)new class_0037());
         ArrayList<class_1878> arrayList = new ArrayList<class_1878>();
         try {

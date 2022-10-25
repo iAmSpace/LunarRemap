@@ -11,6 +11,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

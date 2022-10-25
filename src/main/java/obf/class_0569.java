@@ -14,7 +14,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return Items.potionitem.IlIllllllIIlIIllllIIlIIIl(0);
     }
 

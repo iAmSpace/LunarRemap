@@ -112,7 +112,7 @@ public class class_0788 {
         return this.IlIIIIIllllllIIlllIllllll;
     }
 
-    public static void lllIIIllIIIIlllIlIIllIIll(List list, class_0181 class_01812) {
+    public static void lllIIIllIIIIlllIlIIllIIll(List list, PacketBuffer class_01812) {
         if (list != null) {
             for (class_0766 class_07662 : list) {
                 class_0788.lllIIIllIIIIlllIlIIllIIll(class_01812, class_07662);
@@ -139,7 +139,7 @@ public class class_0788 {
         return arrayList;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         this.lIllllIIlIIIlIllllllIIIll.readLock().lock();
         for (class_0766 class_07662 : this.lIlllIlllIIIIlIIlllIllIII.values()) {
             class_0788.lllIIIllIIIIlllIlIIllIIll(class_01812, class_07662);
@@ -161,7 +161,7 @@ public class class_0788 {
         return arrayList;
     }
 
-    private static void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812, class_0766 class_07662) {
+    private static void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812, class_0766 class_07662) {
         int n = (class_07662.IlIllllllIIlIIllllIIlIIIl() << 5 | class_07662.lllIIIllIIIIlllIlIIllIIll() & 0x1F) & 0xFF;
         class_01812.writeByte(n);
         switch (class_07662.IlIllllllIIlIIllllIIlIIIl()) {
@@ -182,7 +182,7 @@ public class class_0788 {
                 break;
             }
             case 4: {
-                class_01812.lllIIIllIIIIlllIlIIllIIll((String)class_07662.lllIlIIlIIIlIlIIIllIlllIl());
+                class_01812.writeStringToBuffer((String)class_07662.lllIlIIlIIIlIlIIIllIlllIl());
                 break;
             }
             case 5: {
@@ -199,7 +199,7 @@ public class class_0788 {
         }
     }
 
-    public static List lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public static List lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         ArrayList<class_0766> arrayList = null;
         byte by = class_01812.readByte();
         while (by != 127) {
@@ -227,7 +227,7 @@ public class class_0788 {
                     break;
                 }
                 case 4: {
-                    class_07662 = new class_0766(n, n2, class_01812.IlIllllllIIlIIllllIIlIIIl(32767));
+                    class_07662 = new class_0766(n, n2, class_01812.readStringFromBuffer(32767));
                     break;
                 }
                 case 5: {

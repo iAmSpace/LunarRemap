@@ -379,8 +379,8 @@ implements class_0850 {
     public int lIllllIIlIIIlIllllllIIIll() {
         int n = 0;
         for (int i = 0; i < this.lllIlIIlIIIlIlIIIllIlllIl.length; ++i) {
-            if (this.lllIlIIlIIIlIlIIIllIlllIl[i] == null || !(this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll() instanceof class_0981)) continue;
-            int n2 = ((class_0981)this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll()).lIIIIlIlIIlllllIIllIIlIII;
+            if (this.lllIlIIlIIIlIlIIIllIlllIl[i] == null || !(this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor)) continue;
+            int n2 = ((ItemArmor)this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll()).lIIIIlIlIIlllllIIllIIlIII;
             n += n2;
         }
         return n;
@@ -391,7 +391,7 @@ implements class_0850 {
             f = 1.0f;
         }
         for (int i = 0; i < this.lllIlIIlIIIlIlIIIllIlllIl.length; ++i) {
-            if (this.lllIlIIlIIIlIlIIIllIlllIl[i] == null || !(this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll() instanceof class_0981)) continue;
+            if (this.lllIlIIlIIIlIlIIIllIlllIl[i] == null || !(this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor)) continue;
             this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIIIllIIIIlllIlIIllIIll((int)f, (class_1965)this.lIlllIlllIIIIlIIlllIllIII);
             if (this.lllIlIIlIIIlIlIIIllIlllIl[i].lllIlIIlIIIlIlIIIllIlllIl != 0) continue;
             this.lllIlIIlIIIlIlIIIllIlllIl[i] = null;
@@ -399,7 +399,7 @@ implements class_0850 {
     }
 
     public void IIIllIIlIIIIIIlIlIIllIIlI() {
-        if (Minecraft.getMinecraft().IIIIlIllIlIIlIIlIllIlIlll()) {
+        if (Minecraft.getMinecraft().isIntegratedServerRunning()) {
             int n;
             for (n = 0; n < this.lllIIIllIIIIlllIlIIllIIll.length; ++n) {
                 if (this.lllIIIllIIIIlllIlIIllIIll[n] == null) continue;

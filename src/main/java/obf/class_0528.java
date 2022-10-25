@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.init.Items;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.item.Item;
@@ -411,14 +412,14 @@ extends class_1338 {
                 }
             }
             if (class_09312 != null) {
-                list.add(1, "" + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + (Object)((Object)class_1227.IllIIIllIIIIlIlIlIllIIlll) + class_0616.lllIIIllIIIIlllIlIIllIIll(class_09312.IlIllllllIIlIIllllIIlIIIl(), new Object[0]));
+                list.add(1, "" + (Object)((Object) EnumChatFormatting.BOLD) + (Object)((Object) EnumChatFormatting.BLUE) + class_0616.lllIIIllIIIIlllIlIIllIIll(class_09312.IlIllllllIIlIIllllIIlIIIl(), new Object[0]));
             }
             for (int i = 0; i < list.size(); ++i) {
                 if (i == 0) {
-                    list.set(i, (Object)((Object)class_08972.lIlIllIIlIIlIIlIIlIIlIIll().IlIIIIIllllllIIlllIllllll) + (String)list.get(i));
+                    list.set(i, (Object)((Object)class_08972.lIlIllIIlIIlIIlIIlIIlIIll().rarityColor) + (String)list.get(i));
                     continue;
                 }
-                list.set(i, (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + (String)list.get(i));
+                list.set(i, (Object)((Object) EnumChatFormatting.GRAY) + (String)list.get(i));
             }
             this.lllIIIllIIIIlllIlIIllIIll(list, n, n2);
         } else {

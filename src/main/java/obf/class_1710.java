@@ -217,7 +217,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return Blocks.llIllllIIIIIlIIlIlllIIlll.lIlllIlllIIIIlIIlllIllIII(n);
     }
 

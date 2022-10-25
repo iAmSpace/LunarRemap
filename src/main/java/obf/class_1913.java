@@ -8,6 +8,7 @@ package obf;/*
 import com.google.common.collect.Maps;
 import java.util.Map;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

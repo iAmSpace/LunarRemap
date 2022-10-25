@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
 public class class_0025 {
@@ -60,7 +62,7 @@ public class class_0025 {
     }
 
     public String IlIIIIIllllllIIlllIllllll() {
-        return this.lIlllIlllIIIIlIIlllIllIII == null ? (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Invalid pack.mcmeta (or missing 'pack' section)" : this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll().lIlllIlllIIIIlIIlllIllIII();
+        return this.lIlllIlllIIIIlIIlllIllIII == null ? (Object)((Object) EnumChatFormatting.RED) + "Invalid pack.mcmeta (or missing 'pack' section)" : this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll().lIlllIlllIIIIlIIlllIllIII();
     }
 
     public boolean equals(Object object) {

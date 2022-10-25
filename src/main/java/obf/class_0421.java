@@ -63,7 +63,7 @@ extends class_0579 {
         } else {
             string3 = class_2083.IllIIIllIIIIlIlIlIllIIlll(this.lllIIIllIIIIlllIlIIllIIll)[class_07482.lIllllIIlIIIlIllllllIIIll().lllIIIllIIIIlllIlIIllIIll()];
             if (class_07482.IIIllIIlIIIIIIlIlIIllIIlI()) {
-                string3 = (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + class_0616.lllIIIllIIIIlllIlIIllIIll("gameMode.hardcore", new Object[0]) + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl);
+                string3 = (Object)((Object) EnumChatFormatting.DARK_RED) + class_0616.lllIIIllIIIIlllIlIIllIIll("gameMode.hardcore", new Object[0]) + (Object)((Object) EnumChatFormatting.RESET);
             }
             if (class_07482.IllIIlllllllIIlIIlIIIIlIl()) {
                 string3 = string3 + ", " + class_0616.lllIIIllIIIIlllIlIIllIIll("selectWorld.cheats", new Object[0]);

@@ -1,6 +1,7 @@
 package obf;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S2BPacketChangeGameState;
 import net.minecraft.util.ChatComponentTranslation;
 
 /*
@@ -25,7 +26,7 @@ extends class_0388 {
         long l2 = l / 24000L + 1L;
         if (!this.IlIllllllIIlIIllllIIlIIIl && this.lIllllIIlIIIlIllllllIIIll > 20) {
             this.IlIllllllIIlIIllllIIlIIIl = true;
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(5, 0.0f));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(5, 0.0f));
         }
         boolean bl = this.lIlllIlllIIIIlIIlllIllIII = l > 120500L;
         if (this.lIlllIlllIIIIlIIlllIllIII) {
@@ -37,11 +38,11 @@ extends class_0388 {
             }
         } else if (l2 == 1L) {
             if (l == 100L) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(5, 101.0f));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(5, 101.0f));
             } else if (l == 175L) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(5, 102.0f));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(5, 102.0f));
             } else if (l == 250L) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(5, 103.0f));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(5, 103.0f));
             }
         } else if (l2 == 5L && l % 24000L == 22000L) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new ChatComponentTranslation("demo.day.warning", new Object[0]));

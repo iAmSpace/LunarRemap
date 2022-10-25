@@ -12,12 +12,12 @@ extends class_0688 {
     private byte[] lllIIIllIIIIlllIlIIllIIll;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         this.lllIIIllIIIIlllIlIIllIIll(class_01812, this.lllIIIllIIIIlllIlIIllIIll);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         this.lllIIIllIIIIlllIlIIllIIll = this.lllIIIllIIIIlllIlIIllIIll((ByteBuf)class_01812);
     }
 

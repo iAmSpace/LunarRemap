@@ -13,28 +13,28 @@ implements class_1832 {
 
     @Override
     public void lllIlIIlIIIlIlIIIllIlllIl(String string) {
-        this.lllIIIllIIIIlllIlIIllIIll(string);
+        this.resetProgressAndMessage(string);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(String string) {
+    public void resetProgressAndMessage(String string) {
         this.lllIIIllIIIIlllIlIIllIIll = string;
-        this.lIlllIlllIIIIlIIlllIllIII("Working...");
+        this.resetProgresAndWorkingMessage("Working...");
     }
 
     @Override
-    public void lIlllIlllIIIIlIIlllIllIII(String string) {
+    public void resetProgresAndWorkingMessage(String string) {
         this.lllIlIIlIIIlIlIIIllIlllIl = string;
-        this.lllIIIllIIIIlllIlIIllIIll(0);
+        this.setLoadingProgress(0);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(int n) {
+    public void setLoadingProgress(int n) {
         this.IlIllllllIIlIIllllIIlIIIl = n;
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void func_146586_a() {
         this.lIlllIlllIIIIlIIlllIllIII = true;
     }
 

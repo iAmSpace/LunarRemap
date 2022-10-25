@@ -4,6 +4,6 @@ package obf;/*
 import java.io.File;
 
 public interface class_1978 {
-    public void lllIIIllIIIIlllIlIIllIIll(File var1);
+    public void func_148522_a(File var1);
 }
 

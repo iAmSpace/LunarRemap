@@ -10,14 +10,14 @@ extends class_0688 {
     private int IlIllllllIIlIIllllIIlIIIl;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         class_01812.writeLong(this.lllIIIllIIIIlllIlIIllIIll.getMostSignificantBits());
         class_01812.writeLong(this.lllIIIllIIIIlllIlIIllIIll.getLeastSignificantBits());
         class_01812.writeInt(this.IlIllllllIIlIIllllIIlIIIl);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         this.lllIIIllIIIIlllIlIIllIIll = new UUID(class_01812.readLong(), class_01812.readLong());
         this.IlIllllllIIlIIllllIIlIIIl = class_01812.readInt();
     }

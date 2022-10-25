@@ -4,27 +4,28 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.input.Mouse
  */
+import com.moonsworth.lunar.client.config.Setting;
 import org.lwjgl.input.Mouse;
 
 public class class_1189
 extends class_0759 {
-    private final class_1609 IIIllIIlIIIIIIlIlIIllIIlI;
+    private final Setting IIIllIIlIIIIIIlIlIIllIIlI;
     private final class_0556 IllIIlllllllIIlIIlIIIIlIl;
     private Number IIIllIllIIlIlIlIlIllllIIl;
 
-    public class_1189(class_1609 class_16092) {
+    public class_1189(Setting class_16092) {
         this.IIIllIIlIIIIIIlIlIIllIIlI = class_16092;
         this.IllIIlllllllIIlIIlIIIIlIl = new class_0847(300L);
-        this.IIIllIllIIlIlIlIlIllllIIl = (Number)class_16092.lIlllIlllIIIIlIIlllIllIII();
+        this.IIIllIllIIlIlIlIlIllllIIl = (Number)class_16092.getValue();
     }
 
     @Override
     protected void lllIIIllIIIIlllIlIIllIIll(float f, float f2, boolean bl) {
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl, this.lllIIIllIIIIlllIlIIllIIll + this.IlIllllllIIlIIllllIIlIIIl, this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII, -13158601);
         if (!this.IllIIlllllllIIlIIlIIIIlIl.lIlllIlllIIIIlIIlllIllIII()) {
-            this.IIIllIllIIlIlIlIlIllllIIl = (Number)this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII();
+            this.IIIllIllIIlIlIlIlIllllIIl = (Number)this.IIIllIIlIIIIIIlIlIIllIIlI.getValue();
         }
-        float f3 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).floatValue();
+        float f3 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).floatValue();
         float f4 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl()).floatValue();
         float f5 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl()).floatValue();
         float f6 = f3 - this.IIIllIllIIlIlIlIlIllllIIl.floatValue();
@@ -39,7 +40,7 @@ extends class_0759 {
         }
         if (Mouse.isButtonDown((int)0) && this.lllIIIllIIIIlllIlIIllIIll(f, f2)) {
             this.IllIIlllllllIIlIIlIIIIlIl.lllIlIIlIIIlIlIIIllIlllIl();
-            this.IIIllIllIIlIlIlIlIllllIIl = (Number)this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII();
+            this.IIIllIllIIlIlIlIlIllllIIl = (Number)this.IIIllIIlIIIIIIlIlIIllIIlI.getValue();
             float f3 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl()).floatValue();
             float f4 = ((Number)this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl()).floatValue();
             if (f - this.lllIIIllIIIIlllIlIIllIIll > this.IlIllllllIIlIIllllIIlIIIl / 2.0f) {
@@ -48,15 +49,15 @@ extends class_0759 {
             float f5 = f3 + (f - this.lllIIIllIIIIlllIlIIllIIll) * ((f4 - f3) / this.IlIllllllIIlIIllllIIlIIIl);
             switch (this.IIIllIIlIIIIIIlIlIIllIIlI.IllIIIllIIIIlIlIlIllIIlll()) {
                 case lIlllIlllIIIIlIIlllIllIII: {
-                    this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll((Object)Integer.parseInt((int)f5 + "")));
+                    this.IIIllIIlIIIIIIlIlIIllIIlI.setValue(this.lllIIIllIIIIlllIlIIllIIll((Object)Integer.parseInt((int)f5 + "")));
                     break;
                 }
                 case IlIllllllIIlIIllllIIlIIIl: {
-                    this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll(Float.valueOf(f5)));
+                    this.IIIllIIlIIIIIIlIlIIllIIlI.setValue(this.lllIIIllIIIIlllIlIIllIIll(Float.valueOf(f5)));
                     break;
                 }
                 case IlIIIIIllllllIIlllIllllll: {
-                    this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll(Double.parseDouble((double)f5 + "")));
+                    this.IIIllIIlIIIIIIlIlIIllIIlI.setValue(this.lllIIIllIIIIlllIlIIllIIll(Double.parseDouble((double)f5 + "")));
                 }
             }
         }
@@ -72,7 +73,7 @@ extends class_0759 {
         }
     }
 
-    public class_1609 IllIIlllllllIIlIIlIIIIlIl() {
+    public Setting IllIIlllllllIIlIIlIIIIlIl() {
         return this.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 }

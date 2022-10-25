@@ -11,19 +11,19 @@ extends class_0688 {
     public static byte[] lllIIIllIIIIlllIlIIllIIll = new byte[]{36, -70, -63, 3, -116, 46, -121, -127, 117, 64, 58, 5, 75, 96, -63, 36};
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         class_01812.writeInt(this.IlIllllllIIlIIllllIIlIIIl.size());
         for (String string : this.IlIllllllIIlIIllllIIlIIIl) {
-            class_01812.lllIIIllIIIIlllIlIIllIIll(string);
+            class_01812.writeStringToBuffer(string);
         }
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         int n = class_01812.readInt();
         this.IlIllllllIIlIIllllIIlIIIl = new ArrayList();
         for (int i = 0; i < n; ++i) {
-            this.IlIllllllIIlIIllllIIlIIIl.add(class_01812.IlIllllllIIlIIllllIIlIIIl(512));
+            this.IlIllllllIIlIIllllIIlIIIl.add(class_01812.readStringFromBuffer(512));
         }
     }
 

@@ -6,6 +6,7 @@ package obf;/*
  */
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

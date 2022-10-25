@@ -5,6 +5,7 @@ package obf;/*
  *  org.apache.commons.lang3.StringUtils
  *  org.lwjgl.opengl.GL11
  */
+import com.moonsworth.lunar.client.font.LCFontRenderer;
 import org.apache.commons.lang3.StringUtils;
 import org.lwjgl.opengl.GL11;
 

@@ -13,7 +13,7 @@ import java.util.Random;
 public class class_1084
 extends class_0143
 implements class_0588 {
-    private class_2102[] llllllIlIllllIlIlIlIIIIlI;
+    private IIcon[] llllllIlIllllIlIlIlIIIIlI;
 
     public class_1084() {
         super(class_1855.lIIIIlIlIIlllllIIllIIlIII);
@@ -21,11 +21,11 @@ implements class_0588 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.llllllIlIllllIlIlIlIIIIlI[2];
     }
 
-    public class_2102 IllIIlllllllIIlIIlIIIIlIl(int n) {
+    public IIcon IllIIlllllllIIlIIlIIIIlIl(int n) {
         if (n < 0 || n >= this.llllllIlIllllIlIlIlIIIIlI.length) {
             n = this.llllllIlIllllIlIlIlIIIIlI.length - 1;
         }
@@ -155,7 +155,7 @@ implements class_0588 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llllllIlIllllIlIlIlIIIIlI = new class_2102[3];
+        this.llllllIlIllllIlIlIlIIIIlI = new IIcon[3];
         for (int i = 0; i < this.llllllIlIllllIlIlIlIIIIlI.length; ++i) {
             this.llllllIlIllllIlIlIlIIIIlI[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_stage_" + i);
         }

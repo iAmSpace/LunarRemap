@@ -56,7 +56,7 @@ extends class_1432 {
             }
         }
         class_14322.IIIllIllIIlIlIlIlIllllIIl = class_17512.lIIIIlIIIIllIlIIllllIlIII.lIlllIlllIIIIlIIlllIllIII();
-        if (((Boolean)class_1046.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIllllIIlIIIlIllllllIIIll()) {
+        if (((Boolean)class_1046.lllIlIIlIIIlIlIIIllIlllIl.getValue()).booleanValue() && LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIllllIIlIIIlIllllllIIIll()) {
             if (class_17512.lIIIlllllllIlllIIllllllll.lIlllIlllIIIIlIIlllIllIII() && !llIIllIllIlIIlIIllIllllll) {
                 if (class_01392.lIlIlIIllIIIlllIllIIlIllI() || class_01392.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl) {
                     class_14322.IllIIIllIIIIlIlIlIllIIlll = true;
@@ -84,8 +84,8 @@ extends class_1432 {
         }
         boolean bl = (float)class_01392.lIllIIlllIIIlIlIIIlllIlIl().lllIIIllIIIIlllIlIIllIIll() > 6.0f || class_01392.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl;
         boolean bl2 = !class_14322.IllIIIllIIIIlIlIlIllIIlll && !class_01392.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl && bl;
-        lllIIIllIIIIlllIlIIllIIll = (Boolean)class_1046.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() == false;
-        lllIlIIlIIIlIlIIIllIlllIl = (Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII();
+        lllIIIllIIIIlllIlIIllIIll = (Boolean)class_1046.lllIIIllIIIIlllIlIIllIIll.getValue() == false;
+        lllIlIIlIIIlIlIIIllIlllIl = (Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.getValue();
         if ((bl2 || lllIIIllIIIIlllIlIIllIIll) && class_17512.IIlIlIIIIlIlllIlIlIIIIIlI.lIlllIlllIIIIlIIlllIllIII() && !lllIIlIIIllllllIIIIlIlIlI && !class_01392.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl && !lllIIIllIIIIlllIlIIllIIll) {
             IlIllllllIIlIIllllIIlIIIl = !IlIllllllIIlIIllllIIlIIIl;
             llIIlllIllIllllIIIlIIIIII = System.currentTimeMillis();
@@ -108,7 +108,7 @@ extends class_1432 {
 
     private static void lllIIIllIIIIlllIlIIllIIll(class_1432 class_14322, class_0139 class_01392, GameSettings class_17512) {
         lIllllIIlIIIlIllllllIIIll = "";
-        if (((Boolean)class_1046.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean)class_1046.IlIllllllIIlIIllllIIlIIIl.getValue()).booleanValue()) {
             String string = "";
             boolean bl = class_01392.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl;
             boolean bl2 = class_01392.lIlIlIIllIIIlllIllIIlIllI();
@@ -116,17 +116,17 @@ extends class_1432 {
             boolean bl4 = class_17512.IIlIlIIIIlIlllIlIlIIIIIlI.lIlllIlllIIIIlIIlllIllIII();
             if (bl) {
                 DecimalFormat decimalFormat = new DecimalFormat("#.00");
-                string = (Boolean)class_1046.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII() != false && bl4 && class_01392.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII ? string + ((String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IllIIlllllllIIlIIlIIIIlIl.lIlllIlllIIIIlIIlllIllIII()).replaceAll("%BOOST%", decimalFormat.format(class_1046.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII())) : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII();
+                string = (Boolean)class_1046.IlIIIIIllllllIIlllIllllll.getValue() != false && bl4 && class_01392.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII ? string + ((String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IllIIlllllllIIlIIlIIIIlIl.getValue()).replaceAll("%BOOST%", decimalFormat.format(class_1046.IIIllIIlIIIIIIlIlIIllIIlI.getValue())) : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl.getValue();
             }
             if (bl2) {
-                string = string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IllIIIllIIIIlIlIlIllIIlll.lIlllIlllIIIIlIIlllIllIII();
+                string = string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IllIIIllIIIIlIlIlIllIIlll.getValue();
             }
             if (class_14322.IllIIIllIIIIlIlIlIllIIlll) {
-                string = bl ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII() : (bl2 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.llIIlllIllIllllIIIlIIIIII.lIlllIlllIIIIlIIlllIllIII() : (bl3 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.llIIllIllIlIIlIIllIllllll.lIlllIlllIIIIlIIlllIllIII() : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lllllIlllIIllIlIIlIIIllII.lIlllIlllIIIIlIIlllIllIII()));
+                string = bl ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIIIIlIlIIlllllIIllIIlIII.getValue() : (bl2 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.llIIlllIllIllllIIIlIIIIII.getValue() : (bl3 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.llIIllIllIlIIlIIllIllllll.getValue() : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lllllIlllIIllIlIIlIIIllII.getValue()));
             } else if (IlIllllllIIlIIllllIIlIIIl && !bl && !bl2) {
                 boolean bl5;
                 boolean bl6 = bl5 = lIlllIlllIIIIlIIlllIllIII || lllIIIllIIIIlllIlIIllIIll || IlIIIIIllllllIIlllIllllll;
-                string = bl4 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lllIIlIIIllllllIIIIlIlIlI.lIlllIlllIIIIlIIlllIllIII() : (bl5 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.lIlllIlllIIIIlIIlllIllIII() : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IlIlIIlIlIllIIlIlIIllIIIl.lIlllIlllIIIIlIIlllIllIII());
+                string = bl4 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lllIIlIIIllllllIIIIlIlIlI.getValue() : (bl5 ? string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IlIlllIIIIIIlIIllIIllIlll.getValue() : string + (String) LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IlIlIIlIlIllIIlIlIIllIIIl.getValue());
             }
             lIllllIIlIIIlIllllllIIIll = string;
         }

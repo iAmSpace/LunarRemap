@@ -14,7 +14,7 @@ extends Item {
     public static final String[] IIIllIllIIlIlIlIlIllllIIl = new String[]{"black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "lightBlue", "magenta", "orange", "white"};
     public static final String[] IllIIIllIIIIlIlIlIllIIlll = new String[]{"black", "red", "green", "brown", "blue", "purple", "cyan", "silver", "gray", "pink", "lime", "yellow", "light_blue", "magenta", "orange", "white"};
     public static final int[] lIIIIlIlIIlllllIIllIIlIII = new int[]{0x1E1B1B, 11743532, 3887386, 5320730, 2437522, 8073150, 2651799, 0xABABAB, 0x434343, 14188952, 4312372, 14602026, 6719955, 12801229, 15435844, 0xF0F0F0};
-    private class_2102[] llIIlllIllIllllIIIlIIIIII;
+    private IIcon[] llIIlllIllIllllIIIlIIIIII;
 
     public class_1908() {
         this.lllIIIllIIIIlllIlIIllIIll(true);
@@ -23,7 +23,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         int n2 = MathHelper.lllIIIllIIIIlllIlIIllIIll(n, 0, 15);
         return this.llIIlllIllIllllIIIlIIIIII[n2];
     }
@@ -135,7 +135,7 @@ extends Item {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIIlllIllIllllIIIlIIIIII = new class_2102[IllIIIllIIIIlIlIlIllIIlll.length];
+        this.llIIlllIllIllllIIIlIIIIII = new IIcon[IllIIIllIIIIlIlIlIllIIlll.length];
         for (int i = 0; i < IllIIIllIIIIlIlIlIllIIlll.length; ++i) {
             this.llIIlllIllIllllIIIlIIIIII[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_" + IllIIIllIIIIlIlIlIllIIlll[i]);
         }

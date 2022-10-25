@@ -1,19 +1,20 @@
 package obf;
 
-import com.moonsworth.lunar.client.Event;
+import com.moonsworth.lunar.client.events.Event;
+import net.minecraft.network.play.server.S02PacketChat;
 
 /*
  * Decompiled with CFR 0.150.
  */
 public class class_0140
 extends Event {
-    private final class_0710 lllIIIllIIIIlllIlIIllIIll;
+    private final S02PacketChat lllIIIllIIIIlllIlIIllIIll;
 
-    public class_0140(class_0710 class_07102) {
+    public class_0140(S02PacketChat class_07102) {
         this.lllIIIllIIIIlllIlIIllIIll = class_07102;
     }
 
-    public class_0710 lllIIIllIIIIlllIlIIllIIll() {
+    public S02PacketChat lllIIIllIIIIlllIlIIllIIll() {
         return this.lllIIIllIIIIlllIlIIllIIll;
     }
 }

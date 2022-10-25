@@ -1,12 +1,15 @@
 package obf;
 
+import net.minecraft.network.status.server.S00PacketServerInfo;
+import net.minecraft.network.status.server.S01PacketPong;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public interface class_0709
-extends class_2075 {
-    public void lllIIIllIIIIlllIlIIllIIll(class_0046 var1);
+extends INetHandler {
+    public void lllIIIllIIIIlllIlIIllIIll(S00PacketServerInfo var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1714 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(S01PacketPong var1);
 }
 

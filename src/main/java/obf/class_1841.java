@@ -8,8 +8,8 @@ import net.minecraft.init.Blocks;
  */
 public class class_1841
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_1841() {
         super(class_1855.lIlllIlllIIIIlIIlllIllIII);
@@ -17,7 +17,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI : (n == 0 ? Blocks.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII(n) : (n != 2 && n != 4 ? this.llIIIIllIIIIIIIlIIIlIIIIl : this.lIlIIllllIlIIIIllIIIIlIIl));
     }
 

@@ -9,24 +9,25 @@ import com.google.common.eventbus.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
 public class class_0063
-extends class_1665 {
+extends AbstractModule {
     private static List lllIlIIlIIIlIlIIIllIlllIl = new ArrayList();
-    public class_1609 lllIIIllIIIIlllIlIIllIIll;
-    private class_1609 IlIllllllIIlIIllllIIlIIIl;
-    private class_1609 lIlllIlllIIIIlIIlllIllIII;
+    public Setting lllIIIllIIIIlllIlIIllIIll;
+    private Setting IlIllllllIIlIIllllIIlIIIl;
+    private Setting lIlllIlllIIIIlIIlllIllIII;
     private List IlIIIIIllllllIIlllIllllll = new ArrayList();
 
     public class_0063() {
         super("Cooldowns");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.lIlllIlllIIIIlIIlllIllIII);
         this.lllIlIIlIIIlIlIIIllIlllIl(0.0f, 5.0f);
-        this.lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Color Theme").lllIlIIlIIIlIlIIIllIlllIl("Bright").lllIIIllIIIIlllIlIIllIIll("Bright", "Dark", "Colored");
-        this.IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "List Mode").lllIlIIlIIIlIlIIIllIlllIl("horizontal").lllIIIllIIIIlllIlIIllIIll(new String[]{"vertical", "horizontal"});
-        this.lIlllIlllIIIIlIIlllIllIII = new class_1609(this, "Colored color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Color Theme").setValue("Bright").setAcceptedValues("Bright", "Dark", "Colored");
+        this.IlIllllllIIlIIllllIIlIIIl = new Setting(this, "List Mode").setValue("horizontal").setAcceptedValues(new String[]{"vertical", "horizontal"});
+        this.lIlllIlllIIIIlIIlllIllIII = new Setting(this, "Colored color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
         this.lllIIIllIIIIlllIlIIllIIll(class_0312.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_1217.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_2201.class, this::lllIIIllIIIIlllIlIIllIIll);
@@ -56,7 +57,7 @@ extends class_1665 {
             this.lllIIIllIIIIlllIlIIllIIll(class_12172.lllIIIllIIIIlllIlIIllIIll());
             float f = 1.0f / LunarClient.IllIIIllIIIIlIlIlIllIIlll();
             GL11.glScalef((float)f, (float)f, (float)f);
-            boolean bl = ((String)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("vertical");
+            boolean bl = ((String)this.IlIllllllIIlIIllllIIlIIIl.getValue()).equalsIgnoreCase("vertical");
             int n = 36;
             int n2 = 36;
             int n3 = bl ? n : this.IlIIIIIllllllIIlllIllllll.size() * n;
@@ -64,7 +65,7 @@ extends class_1665 {
             this.IlIllllllIIlIIllllIIlIIIl((int)((float)n3 * f), (int)((float)n4 * f));
             for (int i = 0; i < this.IlIIIIIllllllIIlllIllllll.size(); ++i) {
                 class_0332 class_03322 = (class_0332)this.IlIIIIIllllllIIlllIllllll.get(i);
-                if (((String)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("vertical")) {
+                if (((String)this.IlIllllllIIlIIllllIIlIIIl.getValue()).equalsIgnoreCase("vertical")) {
                     class_03322.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, this.llIllllIlIllIIIlIllIIlIlI / 2.0f - (float)(n / 2), i * n2, this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll());
                     continue;
                 }
@@ -84,7 +85,7 @@ extends class_1665 {
             this.lllIIIllIIIIlllIlIIllIIll(class_22012.lllIIIllIIIIlllIlIIllIIll());
             float f = 1.0f / LunarClient.IllIIIllIIIIlIlIlIllIIlll();
             GL11.glScalef((float)f, (float)f, (float)f);
-            boolean bl = ((String)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("vertical");
+            boolean bl = ((String)this.IlIllllllIIlIIllllIIlIIIl.getValue()).equalsIgnoreCase("vertical");
             int n = 36;
             int n2 = 36;
             int n3 = bl ? n : lllIlIIlIIIlIlIIIllIlllIl.size() * n;
@@ -92,7 +93,7 @@ extends class_1665 {
             this.IlIllllllIIlIIllllIIlIIIl((int)((float)n3 * f), (int)((float)n4 * f));
             for (int i = 0; i < lllIlIIlIIIlIlIIIllIlllIl.size(); ++i) {
                 class_0332 class_03322 = (class_0332)lllIlIIlIIIlIlIIIllIlllIl.get(i);
-                if (((String)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("vertical")) {
+                if (((String)this.IlIllllllIIlIIllllIIlIIIl.getValue()).equalsIgnoreCase("vertical")) {
                     class_03322.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, this.llIllllIlIllIIIlIllIIlIlI / 2.0f - (float)(n / 2), i * n2, this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll());
                     continue;
                 }

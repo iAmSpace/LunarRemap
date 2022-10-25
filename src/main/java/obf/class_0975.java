@@ -5,6 +5,8 @@ package obf;/*
  *  com.google.common.collect.Maps
  */
 import com.google.common.collect.Maps;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Map;
 
 public class class_0975 {

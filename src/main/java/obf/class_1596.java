@@ -39,7 +39,7 @@ extends ArrayList {
         this.add(class_21872);
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         class_01812.writeByte((byte)(this.size() & 0xFF));
         for (int i = 0; i < this.size(); ++i) {
             class_2187 class_21872 = (class_2187)this.get(i);
@@ -54,7 +54,7 @@ extends ArrayList {
         }
     }
 
-    public static class_1596 lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public static class_1596 lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         class_1596 class_15962 = new class_1596();
         int n = class_01812.readByte() & 0xFF;
         for (int i = 0; i < n; ++i) {

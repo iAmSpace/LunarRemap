@@ -26,8 +26,8 @@ public class class_0064 {
         if (!this.lIlllIlllIIIIlIIlllIllIII.containsKey(string)) {
             this.lIlllIlllIIIIlIIlllIllIII.put(string, new ArrayList());
         }
-        String string3 = (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + LocalDateTime.now().format(this.lIllllIIlIIIlIllllllIIIll);
-        String string4 = (Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + class_01152.lIlllIlllIIIIlIIlllIllIII() + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl);
+        String string3 = (Object)((Object) EnumChatFormatting.GRAY) + LocalDateTime.now().format(this.lIllllIIlIIIlIllllllIIIll);
+        String string4 = (Object)((Object) EnumChatFormatting.GREEN) + class_01152.lIlllIlllIIIIlIIlllIllIII() + (Object)((Object) EnumChatFormatting.RESET);
         String string5 = string3 + " " + string4 + ": " + string2;
         ((List)this.lIlllIlllIIIIlIIlllIllIII.get(string)).add(string5);
     }
@@ -52,8 +52,8 @@ public class class_0064 {
             this.IlIIIIIllllllIIlllIllllll.put(string, new ArrayList());
         }
         ((List)this.IlIIIIIllllllIIlllIllllll.get(string)).add(class_01152.lIlllIlllIIIIlIIlllIllIII() + ": " + string2);
-        String string3 = (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + LocalDateTime.now().format(this.lIllllIIlIIIlIllllllIIIll);
-        String string4 = (Object)((Object)class_1227.llIIlllIllIllllIIIlIIIIII) + Minecraft.getMinecraft().getSession().getUsername() + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl);
+        String string3 = (Object)((Object) EnumChatFormatting.GRAY) + LocalDateTime.now().format(this.lIllllIIlIIIlIllllllIIIll);
+        String string4 = (Object)((Object) EnumChatFormatting.AQUA) + Minecraft.getMinecraft().getSession().getUsername() + (Object)((Object) EnumChatFormatting.RESET);
         String string5 = string3 + " " + string4 + ": " + string2;
         this.lllIlIIlIIIlIlIIIllIlllIl(string, string5);
     }

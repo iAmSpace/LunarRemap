@@ -5,15 +5,13 @@ package net.minecraft.client.resources;/*
  *  com.google.common.collect.ImmutableSet
  */
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.util.ResourceLocation;
 import obf.*;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import javax.imageio.ImageIO;
 
@@ -42,7 +40,7 @@ implements class_0449 {
         throw new FileNotFoundException(class_17732.lllIIIllIIIIlllIlIIllIIll());
     }
 
-    public InputStream IlIllllllIIlIIllllIIlIIIl(ResourceLocation class_17732) {
+    public InputStream IlIllllllIIlIIllllIIlIIIl(ResourceLocation class_17732) throws FileNotFoundException {
         File file = (File)this.lllIIIllIIIIlllIlIIllIIll.get(class_17732.toString());
         return file != null && file.isFile() ? new FileInputStream(file) : null;
     }
@@ -79,11 +77,11 @@ implements class_0449 {
     }
 
     @Override
-    public BufferedImage lllIlIIlIIIlIlIIIllIlllIl() {
+    public BufferedImage lllIlIIlIIIlIlIIIllIlllIl() throws IOException {
         if (class_0298.IlIllllllIIlIIllllIIlIIIl("pack.png")) {
             return ImageIO.read(new ByteArrayInputStream(class_0298.lllIIIllIIIIlllIlIIllIIll("pack.png")));
         }
-        return ImageIO.read(DefaultResourcePack.class.getResourceAsStream("/" + new ResourceLocation("pack.png").lllIIIllIIIIlllIlIIllIIll()));
+        return ImageIO.read(Objects.requireNonNull(DefaultResourcePack.class.getResourceAsStream("/" + new ResourceLocation("pack.png").lllIIIllIIIIlllIlIIllIIll())));
     }
 
     @Override

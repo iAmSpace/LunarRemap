@@ -75,7 +75,7 @@ extends StatBase {
     @Override
     public IChatComponent IlIIIIIllllllIIlllIllllll() {
         IChatComponent class_22552 = super.IlIIIIIllllllIIlllIllllll();
-        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI() ? class_1227.lIllllIIlIIIlIllllllIIIll : class_1227.lIIIIlIlIIlllllIIllIIlIII);
+        class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI() ? EnumChatFormatting.DARK_PURPLE : EnumChatFormatting.GREEN);
         return class_22552;
     }
 

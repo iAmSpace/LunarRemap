@@ -50,7 +50,7 @@ extends class_0143 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 0 ? (this.llllllIlIllllIlIlIlIIIIlI ? Blocks.lIIllllllllIlIllllllllIlI.lIlllIlllIIIIlIIlllIllIII(n) : Blocks.IlIIIlIIlllllIIIllIlIlIll.lIlllIlllIIIIlIIlllIllIII(n)) : (n == 1 ? this.llIIIIllIIIIIIIlIIIlIIIIl : Blocks.llllIlIIIIIIIIIlllIIlIIIl.lIlllIlllIIIIlIIlllIllIII(1));
     }
 

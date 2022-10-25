@@ -4,12 +4,12 @@ package obf;/*
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 
-final class class_1102
+public final class class_1102
 extends Authenticator {
     final /* synthetic */ String lllIIIllIIIIlllIlIIllIIll;
     final /* synthetic */ String lllIlIIlIIIlIlIIIllIlllIl;
 
-    class_1102(String string, String string2) {
+    public class_1102(String string, String string2) {
         this.lllIIIllIIIIlllIlIIllIIll = string;
         this.lllIlIIlIIIlIlIIIllIlllIl = string2;
     }

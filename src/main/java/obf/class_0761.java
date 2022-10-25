@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
  */
 public class class_0761
 extends class_2257 {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
 
     protected class_0761() {
         super(class_1855.lIlllIlllIIIIlIIlllIllIII);
@@ -18,7 +18,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI : this.llIIIIllIIIIIIIlIIIlIIIIl;
     }
 

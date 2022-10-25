@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.network.play.client.C0BPacketEntityAction;
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Items;
@@ -243,15 +245,15 @@ extends class_2174 {
             this.lllIlIIlIIIlIlIIIllIlllIl(this.IlIIlllllIIlIlIlllllIllll + (double)this.IIIIlIlIIlIIIIlIlllIlIIII * 0.35, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl + 0.5, this.IllIIIIllIIllIllIlllIlIIl - (double)this.IIIIlIlIIlIIIIlIlllIlIIII * 0.35);
             this.lllIlIIlIIIlIlIIIllIlllIl(this.IlIIlllllIIlIlIlllllIllll + (double)this.IIIIlIlIIlIIIIlIlllIlIIII * 0.35, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl + 0.5, this.IllIIIIllIIllIllIlllIlIIl + (double)this.IIIIlIlIIlIIIIlIlllIlIIII * 0.35);
             boolean bl3 = (float)this.lIllIIlllIIIlIlIIIlllIlIl().lllIIIllIIIIlllIlIIllIIll() > 6.0f || this.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl;
-            boolean bl4 = !LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIllllIIlIIIlIllllllIIIll() || (Boolean)class_1046.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() == false;
-            boolean bl5 = (Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII();
+            boolean bl4 = !LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.lIllllIIlIIIlIllllllIIIll() || (Boolean)class_1046.lllIIIllIIIIlllIlIIllIIll.getValue() == false;
+            boolean bl5 = (Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.getValue();
             if (class_1046.IlIlIIlllIIlIllIIIlllllIl) {
                 this.lllIlIIlIIIlIlIIIllIlllIl(false);
                 this.IlIllIIIIllllIIllIllIIIIl.lllIIIllIIIIlllIlIIllIIll(false, false);
                 class_1046.IlIlIIlllIIlIllIIIlllllIl = false;
             }
             if (bl4) {
-                if (((Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && this.llllllIlIllllIlIlIlIIIIlI && !bl2 && this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl >= f && !this.IlIIIIIllIlllIIIIlIIIllIl() && bl3 && !this.IIIlllIlIIllIIlIlIllIlIIl() && !this.lllIIIllIIIIlllIlIIllIIll(class_0700.lllllIlllIIllIlIIlIIIllII)) {
+                if (((Boolean)class_1046.lIlllIlllIIIIlIIlllIllIII.getValue()).booleanValue() && this.llllllIlIllllIlIlIlIIIIlI && !bl2 && this.lIlllIlllIIIIlIIlllIllIII.IllIIlllllllIIlIIlIIIIlIl >= f && !this.IlIIIIIllIlllIIIIlIIIllIl() && bl3 && !this.IIIlllIlIIllIIlIlIllIlIIl() && !this.lllIIIllIIIIlllIlIIllIIll(class_0700.lllllIlllIIllIlIIlIIIllII)) {
                     if (this.lIllllIIlIIIlIllllllIIIll <= 0 && !this.IlIIIIIllllllIIlllIllllll.gameSettings.IIlIlIIIIlIlllIlIlIIIIIlI.lIlllIlllIIIIlIIlllIllIII()) {
                         this.lIllllIIlIIIlIllllllIIIll = 7;
                     } else {
@@ -284,13 +286,13 @@ extends class_2174 {
                     this.IlIllIIIIllllIIllIllIIIIl.lllIIIllIIIIlllIlIIllIIll(false, false);
                 }
             }
-            if (((Boolean)class_1046.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && this.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl && this.IlIIIIIllllllIIlllIllllll.gameSettings.IIlIlIIIIlIlllIlIlIIIIIlI.lIlllIlllIIIIlIIlllIllIII() && this.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII) {
-                this.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll(0.05f * (float)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).intValue());
+            if (((Boolean)class_1046.IlIIIIIllllllIIlllIllllll.getValue()).booleanValue() && this.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl && this.IlIIIIIllllllIIlllIllllll.gameSettings.IIlIlIIIIlIlllIlIlIIIIIlI.lIlllIlllIIIIlIIlllIllIII() && this.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII) {
+                this.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll(0.05f * (float)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).intValue());
                 if (this.lIlllIlllIIIIlIIlllIllIII.IllIIIllIIIIlIlIlIllIIlll) {
-                    this.IIlIIlIlIlIllIIlIlIIIIlll -= 0.15 * (double)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).intValue();
+                    this.IIlIIlIlIlIllIIlIlIIIIlll -= 0.15 * (double)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).intValue();
                 }
                 if (this.lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl) {
-                    this.IIlIIlIlIlIllIIlIlIIIIlll += 0.15 * (double)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).intValue();
+                    this.IIlIIlIlIlIllIIlIlIIIIlll += 0.15 * (double)((Integer)class_1046.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).intValue();
                 }
             } else if (this.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll() != 0.05f) {
                 this.lIIlIlIlIlIllIIlIIllllIll.lllIIIllIIIIlllIlIIllIIll(0.05f);
@@ -322,7 +324,7 @@ extends class_2174 {
                 if (bl && !this.lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl) {
                     this.lllIlIIlIIIlIlIIIllIlllIl -= 10;
                     this.lllIlIIlIIIlIlIIIllIlllIl = -10;
-                    ((class_1389)this).lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 6, (int)(this.IlIlIIlllIllllllllIIIlIlI() * 100.0f)));
+                    ((class_1389)this).lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 6, (int)(this.IlIlIIlllIllllllllIIIlIlI() * 100.0f)));
                 } else if (!bl && this.lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl) {
                     this.lllIlIIlIIIlIlIIIllIlllIl = 0;
                     this.IlIllllllIIlIIllllIIlIIIl = 0.0f;
@@ -363,7 +365,7 @@ extends class_2174 {
     @Override
     public void IlIIIlIIIIllIIIllIIIIIIll() {
         super.IlIIIlIIIIllIIIllIIIIIIll();
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
             Minecraft.getMinecraft().lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
         }
         this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll((class_0229)null);

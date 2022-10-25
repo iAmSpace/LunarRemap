@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -136,7 +137,7 @@ implements class_0334 {
 
     public class_0817(Minecraft class_06672, class_0947 class_09472) {
         this.lIlIIllIllIIIIIlIllllIIIl = IlIIIIIllllllIIlllIllllll;
-        this.llIIIIIlIIlIIIIllIIIlIIII = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.llIIIIIlIIlIIIIllIIIlIIII = Minecraft.getSystemTime();
         this.lIIlIlIIllIIIlIIlIlIIIlII = new Random();
         this.llIIlllIllIllllIIIlIIIIII = class_0994.IlIIIIIllllllIIlllIllllll(16);
         this.llIIlIlIlllIIllIlIlllIllI = class_06672;
@@ -899,11 +900,11 @@ implements class_0334 {
         this.llIIlIlIlllIIllIlIlllIllI.mcProfiler.endSection();
         boolean bl = Display.isActive();
         if (!(bl || !this.llIIlIlIlllIIllIlIlllIllI.gameSettings.IIIIIlllIIllllIlllIlllIIl || this.llIIlIlIlllIIllIlIlllIllI.gameSettings.IllIlIlIIIlIllIlIlIIlllII && Mouse.isButtonDown((int)1))) {
-            if (Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.llIIIIIlIIlIIIIllIIIlIIII > 500L) {
+            if (Minecraft.getSystemTime() - this.llIIIIIlIIlIIIIllIIIlIIII > 500L) {
                 this.llIIlIlIlllIIllIlIlllIllI.IlIlIIlIlIllIIlIlIIllIIIl();
             }
         } else {
-            this.llIIIIIlIIlIIIIllIIIlIIII = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+            this.llIIIIIlIIlIIIIllIIIlIIII = Minecraft.getSystemTime();
         }
         this.llIIlIlIlllIIllIlIlllIllI.mcProfiler.startSection("mouse");
         if (this.llIIlIlIlllIIllIlIlllIllI.IIlIIlIlIlIllIIlIlIIIIlll && bl) {
@@ -1027,8 +1028,8 @@ implements class_0334 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(float f, long l) {
-        float f2 = ((Integer) LunarClient.getInstance().getSettingsManager().lIIlIIIIIlIlllIlIIlIlIlll.lIlllIlllIIIIlIIlllIllIII()).intValue();
-        if (f2 == 100.0f || !((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        float f2 = ((Integer) LunarClient.getInstance().getSettingsManager().fpsSlowChunkLoadingPercentage.getValue()).intValue();
+        if (f2 == 100.0f || !((Boolean) LunarClient.getInstance().getSettingsManager().fpsEnableFpsBoost.getValue()).booleanValue()) {
             this.lIIlIlllIllIlIlllIIIIIIII = 0.0f;
         }
         this.llIIlIlIlllIIllIlIlllIllI.mcProfiler.startSection("lightTex");
@@ -1681,8 +1682,8 @@ implements class_0334 {
         if (!Config.lIIllllIllIlllllIIllIllIl()) {
             this.IllIIllIlIlllIllIllIlIIIl = 0L;
             this.IIIlIllllIIIlllllIllIlIII = 0;
-        } else if (this.llIIlIlIlllIIllIlIlllIllI.llllIIIIlIIIlIIIIIIlIllll() != null) {
-            class_0519 class_05192 = this.llIIlIlIlllIIllIlIlllIllI.llllIIIIlIIIlIIIIIIlIllll();
+        } else if (this.llIIlIlIlllIIllIlIlllIllI.getIntegratedServer() != null) {
+            IntegratedServer class_05192 = this.llIIlIlIlllIIllIlIlllIllI.getIntegratedServer();
             boolean bl = this.llIIlIlIlllIIllIlIlllIllI.llIlIIlllIIIIIllIIlIlIIII();
             if (!bl && !(this.llIIlIlIlllIIllIlIlllIllI.lllllIlllIIllIlIIlIIIllII instanceof class_2224)) {
                 if (this.IIIIIllIlIllIlIlIIlIllIIl > 0) {

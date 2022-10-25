@@ -17,11 +17,11 @@ implements class_1832 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(String string) {
+    public void resetProgressAndMessage(String string) {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(int n) {
+    public void setLoadingProgress(int n) {
         if (System.currentTimeMillis() - this.lllIlIIlIIIlIlIIIllIlllIl >= 1000L) {
             this.lllIlIIlIIIlIlIIIllIlllIl = System.currentTimeMillis();
             class_0220.llIIIlIlIlIIlIllIIIllIlIl().info("Converting... " + n + "%");
@@ -29,11 +29,11 @@ implements class_1832 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void func_146586_a() {
     }
 
     @Override
-    public void lIlllIlllIIIIlIIlllIllIII(String string) {
+    public void resetProgresAndWorkingMessage(String string) {
     }
 }
 

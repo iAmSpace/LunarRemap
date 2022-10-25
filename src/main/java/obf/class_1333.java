@@ -6,6 +6,7 @@ package obf;/*
  */
 import java.util.Objects;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -18,7 +19,7 @@ import org.lwjgl.opengl.GL11;
 
 public class class_1333 {
     public class_1843 lllIIIllIIIIlllIlIIllIIll;
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl;
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl;
     public boolean IlIllllllIIlIIllllIIlIIIl;
     public boolean lIlllIlllIIIIlIIlllIllIII;
     public boolean IlIIIIIllllllIIlllIllllll;
@@ -116,7 +117,7 @@ public class class_1333 {
         this.IlIlIIlllIIlIllIIIlllllIl = Minecraft.getMinecraft();
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022) {
+    public void lllIIIllIIIIlllIlIIllIIll(IIcon class_21022) {
         this.lllIlIIlIIIlIlIIIllIlllIl = class_21022;
     }
 
@@ -175,7 +176,7 @@ public class class_1333 {
         this.IlIlIIlIlIllIIlIlIIllIIIl = false;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, int n2, int n3, class_2102 class_21022) {
+    public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, int n2, int n3, IIcon class_21022) {
         this.lllIIIllIIIIlllIlIIllIIll(class_21022);
         this.lllIlIIlIIIlIlIIIllIlllIl(class_05492, n, n2, n3);
         this.lllIIIllIIIIlllIlIIllIIll();
@@ -193,7 +194,7 @@ public class class_1333 {
             return false;
         }
         this.IlIIIIIllllllIIlllIllllll = LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(Block.lllIIIllIIIIlllIlIIllIIll(class_05492), this.IlIIIIIllllllIIlllIllllll);
-        String string = (String) LunarClient.getInstance().getSettingsManager().IIIIlIllIlIIlIIlIllIlIlll.lIlllIlllIIIIlIIlllIllIII();
+        String string = (String) LunarClient.getInstance().getSettingsManager().rsClearGlass.getValue();
         if (!Objects.equals(string, "NO") && (class_05492 instanceof class_0166 ? string.equals("REGULAR") || string.equals("ALL") : class_05492 instanceof class_2258 && string.equals("ALL"))) {
             return true;
         }
@@ -371,7 +372,7 @@ public class class_1333 {
         int n6 = class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3);
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(n6);
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(f, f, f);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl != null) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -511,7 +512,7 @@ public class class_1333 {
             f3 = f6;
         }
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(f, f2, f3);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_18702, 0, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_18702, 0, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -563,18 +564,18 @@ public class class_1333 {
             f4 = f6;
         }
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(f2, f3, f4);
-        class_2102 class_21022 = class_07062.lIlllIlllIIIIlIIlllIllIII(2);
+        IIcon class_21022 = class_07062.lIlllIlllIIIIlIIlllIllIII(2);
         f = 0.125f;
         this.lIllllIIlIIIlIllllllIIIll(class_07062, (float)n - 1.0f + f, n2, n3, class_21022);
         this.IlIIIIIllllllIIlllIllllll(class_07062, (float)n + 1.0f - f, n2, n3, class_21022);
         this.lIlllIlllIIIIlIIlllIllIII(class_07062, n, n2, (float)n3 - 1.0f + f, class_21022);
         this.IlIllllllIIlIIllllIIlIIIl((Block)class_07062, (double)n, (double)n2, (float)n3 + 1.0f - f, class_21022);
-        class_2102 class_21023 = class_0706.lIlllIlllIIIIlIIlllIllIII("inner");
+        IIcon class_21023 = class_0706.lIlllIlllIIIIlIIlllIllIII("inner");
         this.lllIlIIlIIIlIlIIIllIlllIl((Block)class_07062, (double)n, (float)n2 - 1.0f + 0.25f, (double)n3, class_21023);
         this.lllIIIllIIIIlllIlIIllIIll((Block)class_07062, (double)n, (double)((float)n2 + 1.0f - 0.75f), (double)n3, class_21023);
         int n5 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
         if (n5 > 0) {
-            class_2102 class_21024 = class_0816.lIlllIlllIIIIlIIlllIllIII("water_still");
+            IIcon class_21024 = class_0816.lIlllIlllIIIIlIIlllIllIII("water_still");
             int n6 = class_1689.lllIlIIlIIIlIlIIIllIlllIl(Blocks.IllIIIllIIIIlIlIlIllIIlll, this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3);
             float f7 = (float)(n6 >> 16 & 0xFF) / 255.0f;
             float f8 = (float)(n6 >> 8 & 0xFF) / 255.0f;
@@ -591,7 +592,7 @@ public class class_1333 {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_17092.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         int n4 = class_17092.lIlllIlllIIIIlIIlllIllIII(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_17092, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_17092, 0);
         float f2 = (float)(n4 >> 16 & 0xFF) / 255.0f;
         float f3 = (float)(n4 >> 8 & 0xFF) / 255.0f;
         float f4 = (float)(n4 & 0xFF) / 255.0f;
@@ -823,7 +824,7 @@ public class class_1333 {
         if (!bl) {
             this.lllIIIllIIIIlllIlIIllIIll((Block)class_13422, (double)n + d2, (double)n2 + d, (double)n3 + d3, 0.0, 0.0, 0);
         } else {
-            class_2102 class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl(Blocks.IllIIlllllllIIlIIlIIIIlIl);
+            IIcon class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl(Blocks.IllIIlllllllIIlIIlIIIIlIl);
             this.lllIIIllIIIIlllIlIIllIIll(class_21022);
             float f = 2.0f;
             float f2 = 14.0f;
@@ -859,7 +860,7 @@ public class class_1333 {
     }
 
     public boolean lllIIIllIIIIlllIlIIllIIll(class_1298 class_12982, int n, int n2, int n3) {
-        class_2102 class_21022;
+        IIcon class_21022;
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_12982.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(1.0f, 1.0f, 1.0f);
@@ -918,7 +919,7 @@ public class class_1333 {
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_01132.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(1.0f, 1.0f, 1.0f);
         int n5 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_01132, 1, n5);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_01132, 1, n5);
         double d = class_21022.IlIllllllIIlIIllllIIlIIIl();
         double d2 = class_21022.lIlllIlllIIIIlIIlllIllIII();
         double d3 = class_21022.IlIIIIIllllllIIlllIllllll();
@@ -1069,7 +1070,7 @@ public class class_1333 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(double d, double d2, double d3, double d4, double d5, double d6, float f, double d7) {
-        class_2102 class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
+        IIcon class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1086,7 +1087,7 @@ public class class_1333 {
     }
 
     public void lllIlIIlIIIlIlIIIllIlllIl(double d, double d2, double d3, double d4, double d5, double d6, float f, double d7) {
-        class_2102 class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
+        IIcon class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1103,7 +1104,7 @@ public class class_1333 {
     }
 
     public void IlIllllllIIlIIllllIIlIIIl(double d, double d2, double d3, double d4, double d5, double d6, float f, double d7) {
-        class_2102 class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
+        IIcon class_21022 = class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side");
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1251,7 +1252,7 @@ public class class_1333 {
         }
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(1.0f, 1.0f, 1.0f);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1405,7 +1406,7 @@ public class class_1333 {
         }
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(1.0f, 1.0f, 1.0f);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1651,14 +1652,14 @@ public class class_1333 {
     public boolean IllIIlllllllIIlIIlIIIIlIl(Block class_05492, int n, int n2, int n3) {
         boolean bl;
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
         boolean bl2 = (n4 & 4) == 4;
         boolean bl3 = bl = (n4 & 2) == 2;
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIllllllllIIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().rsRedString.getValue()).booleanValue()) {
             class_21022 = Block.IIllIllIIllIIlllIIIlIlllI;
             class_08682.lllIIIllIIIIlllIlIIllIIll(1.0f, 0.0f, 0.0f, 1.0f);
         } else {
@@ -1766,9 +1767,9 @@ public class class_1333 {
 
     public boolean lllIIIllIIIIlllIlIIllIIll(BlockFire class_16872, int n, int n2, int n3) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = class_16872.IllIIlllllllIIlIIlIIIIlIl(0);
-        class_2102 class_21023 = class_16872.IllIIlllllllIIlIIlIIIIlIl(1);
-        class_2102 class_21024 = class_21022;
+        IIcon class_21022 = class_16872.IllIIlllllllIIlIIlIIIIlIl(0);
+        IIcon class_21023 = class_16872.IllIIlllllllIIlIIlIIIIlIl(1);
+        IIcon class_21024 = class_21022;
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21024 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -1941,10 +1942,10 @@ public class class_1333 {
         boolean bl;
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
-        class_2102 class_21022 = class_1640.lIlllIlllIIIIlIIlllIllIII("cross");
-        class_2102 class_21023 = class_1640.lIlllIlllIIIIlIIlllIllIII("line");
-        class_2102 class_21024 = class_1640.lIlllIlllIIIIlIIlllIllIII("cross_overlay");
-        class_2102 class_21025 = class_1640.lIlllIlllIIIIlIIlllIllIII("line_overlay");
+        IIcon class_21022 = class_1640.lIlllIlllIIIIlIIlllIllIII("cross");
+        IIcon class_21023 = class_1640.lIlllIlllIIIIlIIlllIllIII("line");
+        IIcon class_21024 = class_1640.lIlllIlllIIIIlIIlllIllIII("cross_overlay");
+        IIcon class_21025 = class_1640.lIlllIlllIIIIlIIlllIllIII("line_overlay");
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
         float f = (float)n4 / 15.0f;
         float f2 = f * 0.6f + 0.4f;
@@ -2108,7 +2109,7 @@ public class class_1333 {
     public boolean lllIIIllIIIIlllIlIIllIIll(class_0609 class_06092, int n, int n2, int n3) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_06092, 0, n4);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_06092, 0, n4);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -2180,7 +2181,7 @@ public class class_1333 {
 
     public boolean IllIIIllIIIIlIlIlIllIIlll(Block class_05492, int n, int n2, int n3) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -2226,7 +2227,7 @@ public class class_1333 {
     public boolean lIIIIlIlIIlllllIIllIIlIII(Block class_05492, int n, int n2, int n3) {
         int n4;
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -2305,8 +2306,8 @@ public class class_1333 {
     }
 
     public boolean llIIlllIllIllllIIIlIIIIII(Block class_05492, int n, int n2, int n3) {
-        class_2102 class_21022;
-        class_2102 class_21023;
+        IIcon class_21022;
+        IIcon class_21023;
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII();
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
@@ -2333,12 +2334,12 @@ public class class_1333 {
             class_21023 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n6);
             class_21022 = bl ? ((class_0937)class_05492).IllIIlllllllIIlIIlIIIIlIl(n6) : ((class_2092)class_05492).llIlllIIllIlllIlIlIlIIIll();
         }
-        class_2102 class_21024 = class_21023;
+        IIcon class_21024 = class_21023;
         boolean bl2 = true;
         boolean bl3 = true;
         if (Config.llIllllIIIIIlIIlIlllIIlll() && this.lllIlIIlIIIlIlIIIllIlllIl == null) {
-            class_2102 class_21025 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05492, n, n2, n3, 4, class_21023);
-            class_2102 class_21026 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05492, n, n2, n3, 3, class_21023);
+            IIcon class_21025 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05492, n, n2, n3, 4, class_21023);
+            IIcon class_21026 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05492, n, n2, n3, 3, class_21023);
             if (class_21025 != class_21023 || class_21026 != class_21023) {
                 class_2092 class_20922 = (class_2092)class_05492;
                 bl2 = this.lllIIIllIIIIlllIlIIllIIll.a_(n, n2 + 1, n3) != class_05492 || this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2 + 1, n3) != n6;
@@ -2677,8 +2678,8 @@ public class class_1333 {
     }
 
     public boolean lllIIIllIIIIlllIlIIllIIll(class_2092 class_20922, int n, int n2, int n3) {
-        class_2102 class_21022;
-        class_2102 class_21023;
+        IIcon class_21022;
+        IIcon class_21023;
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII();
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(class_20922.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3));
@@ -2703,9 +2704,9 @@ public class class_1333 {
             class_21023 = this.lllIIIllIIIIlllIlIIllIIll((Block)class_20922, 0, n6);
             class_21022 = class_20922.llIlllIIllIlllIlIlIlIIIll();
         }
-        class_2102 class_21024 = class_21023;
-        class_2102 class_21025 = class_21023;
-        class_2102 class_21026 = class_21023;
+        IIcon class_21024 = class_21023;
+        IIcon class_21025 = class_21023;
+        IIcon class_21026 = class_21023;
         if (Config.llIllllIIIIIlIIlIlllIIlll() && this.lllIlIIlIIIlIlIIIllIlllIl == null) {
             class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_20922, n, n2, n3, 2, class_21023);
             class_21024 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_20922, n, n2, n3, 3, class_21024);
@@ -3096,7 +3097,7 @@ public class class_1333 {
             d += ((double)((float)(l >> 16 & 0xFL) / 15.0f) - 0.5) * 0.3;
             d3 += ((double)((float)(l >> 24 & 0xFL) / 15.0f) - 0.5) * 0.3;
         }
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3));
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3));
         if (Config.llIllllIIIIIlIIlIlllIIlll() && this.lllIlIIlIIIlIlIIIllIlllIl == null) {
             class_21022 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05492, n, n2, n3, 2, class_21022);
         }
@@ -3142,10 +3143,10 @@ public class class_1333 {
         } else {
             n4 = class_1487.IIIllIllIIlIlIlIlIllllIIl(n6);
         }
-        class_2102 class_21022 = class_14872.lllIIIllIIIIlllIlIIllIIll(bl2, n4);
+        IIcon class_21022 = class_14872.lllIIIllIIIIlllIlIIllIIll(bl2, n4);
         this.lllIIIllIIIIlllIlIIllIIll(class_21022, d, d2, d3, 1.0f);
         if (bl2 && n4 == 0) {
-            class_2102 class_21023 = class_14872.lIlIIllllIlIIIIllIIIIlIIl[0];
+            IIcon class_21023 = class_14872.lIlIIllllIlIIIIllIIIIlIIl[0];
             double d4 = Math.cos((double)l * 0.8) * Math.PI * 0.1;
             double d5 = Math.cos(d4);
             double d6 = Math.sin(d4);
@@ -3167,7 +3168,7 @@ public class class_1333 {
             class_08682.lllIIIllIIIIlllIlIIllIIll(d + d19, d2 + 1.0, d3 + d20, d9, d10);
             class_08682.lllIIIllIIIIlllIlIIllIIll(d + d13, d2 + 0.0, d3 + d14, d9, d8);
             class_08682.lllIIIllIIIIlllIlIIllIIll(d + d15, d2 + 0.0, d3 + d16, d7, d8);
-            class_2102 class_21024 = class_14872.lIlIIllllIlIIIIllIIIIlIIl[1];
+            IIcon class_21024 = class_14872.lIlIIllllIlIIIIllIIIIlIIl[1];
             d7 = class_21024.IlIllllllIIlIIllllIIlIIIl();
             d8 = class_21024.IlIIIIIllllllIIlllIllllll();
             d9 = class_21024.lIlllIlllIIIIlIIlllIllIII();
@@ -3221,7 +3222,7 @@ public class class_1333 {
 
     public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, double d, double d2, double d3, double d4, double d5, int n) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -3269,7 +3270,7 @@ public class class_1333 {
         class_08682.lllIIIllIIIIlllIlIIllIIll(d18, d2 + 1.0, d3 - d22, d8, d7);
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022, double d, double d2, double d3, float f) {
+    public void lllIIIllIIIIlllIlIIllIIll(IIcon class_21022, double d, double d2, double d3, float f) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
@@ -3303,7 +3304,7 @@ public class class_1333 {
 
     public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, double d, double d2, double d3, double d4) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -3335,7 +3336,7 @@ public class class_1333 {
 
     public boolean IlIlIIlIlIllIIlIlIIllIIIl(Block class_05492, int n, int n2, int n3) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 1);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 1);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -3371,7 +3372,7 @@ public class class_1333 {
 
     public void lllIIIllIIIIlllIlIIllIIll(class_0895 class_08952, int n, int n2, double d, double d2, double d3, double d4) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = class_08952.llIlllIIllIlllIlIlIlIIIll();
+        IIcon class_21022 = class_08952.llIlllIIllIlllIlIlIlIIIll();
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -3413,7 +3414,7 @@ public class class_1333 {
 
     public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, double d, double d2, double d3) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
             class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl;
         }
@@ -3502,7 +3503,7 @@ public class class_1333 {
             double d14;
             double d15;
             bl3 = true;
-            class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 1, n5);
+            IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 1, n5);
             float f11 = (float)class_0816.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, class_18552);
             if (f11 > -999.0f) {
                 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 2, n5);
@@ -3566,7 +3567,7 @@ public class class_1333 {
             if (i == 3) {
                 ++n6;
             }
-            class_2102 class_21023 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, i + 2, n5);
+            IIcon class_21023 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, i + 2, n5);
             if (!this.IlIIIIIllllllIIlllIllllll && !arrbl[i]) continue;
             if (i == 0) {
                 d5 = d9;
@@ -3734,7 +3735,7 @@ public class class_1333 {
     }
 
     public boolean lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, int n2, int n3, float f, float f2, float f3) {
-        class_2102 class_21022;
+        IIcon class_21022;
         float f4;
         int n4;
         boolean bl;
@@ -4491,7 +4492,7 @@ public class class_1333 {
     }
 
     public boolean lllIlIIlIIIlIlIIIllIlllIl(Block class_05492, int n, int n2, int n3, float f, float f2, float f3) {
-        class_2102 class_21022;
+        IIcon class_21022;
         int n4;
         int n5;
         int n6;
@@ -5220,7 +5221,7 @@ public class class_1333 {
     }
 
     public boolean IlIllllllIIlIIllllIIlIIIl(Block class_05492, int n, int n2, int n3, float f, float f2, float f3) {
-        class_2102 class_21022;
+        IIcon class_21022;
         float f4;
         float f5;
         float f6;
@@ -5392,7 +5393,7 @@ public class class_1333 {
         int n4 = this.lllIIIllIIIIlllIlIIllIIll.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
         int n5 = class_0143.IllIIIllIIIIlIlIlIllIIlll(n4);
         int n6 = class_1084.IIIllIllIIlIlIlIlIllllIIl(n4);
-        class_2102 class_21022 = class_10842.IllIIlllllllIIlIIlIIIIlIl(n6);
+        IIcon class_21022 = class_10842.IllIIlllllllIIlIIlIIIIlIl(n6);
         int n7 = 4 + n6 * 2;
         int n8 = 5 + n6 * 2;
         double d = 15.0 - (double)n7;
@@ -5536,7 +5537,7 @@ public class class_1333 {
         this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl(Blocks.obsidian));
         this.lllIIIllIIIIlllIlIIllIIll(0.125, 0.00625f, 0.125, 0.875, (double)f, 0.875);
         this.IlIlIIlllIIlIllIIIlllllIl(class_05872, n, n2, n3);
-        class_2102 class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl(Blocks.beacon);
+        IIcon class_21022 = this.lllIlIIlIIIlIlIIIllIlllIl(Blocks.beacon);
         if (Config.llIllllIIIIIlIIlIlllIIlll()) {
             class_21022 = class_1245.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_05872, n, n2, n3, -1, class_21022);
         }
@@ -6023,8 +6024,8 @@ public class class_1333 {
             }
             class_08682.lllIlIIlIIIlIlIIIllIlllIl(f2, f, f3);
         }
-        class_2102 class_21022 = class_1700.lIlllIlllIIIIlIIlllIllIII("hopper_outside");
-        class_2102 class_21023 = class_1700.lIlllIlllIIIIlIIlllIllIII("hopper_inside");
+        IIcon class_21022 = class_1700.lIlllIlllIIIIlIIlllIllIII("hopper_outside");
+        IIcon class_21023 = class_1700.lIlllIlllIIIIlIIlllIllIII("hopper_inside");
         f = 0.125f;
         if (bl) {
             class_08682.lllIlIIlIIIlIlIIIllIlllIl();
@@ -6153,7 +6154,7 @@ public class class_1333 {
         bl = true;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIlIIIllllllIIIIlIlIlI > 0.0 ? n5 : class_05492.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3 - 1));
         class_08682.lllIlIIlIIIlIlIIIllIlllIl(f3, f3, f3);
-        class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, 2);
+        IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, 2);
         this.IlIllllllIIlIIllllIIlIIIl(class_05492, (double)n, (double)n2, (double)n3, class_21022);
         bl = true;
         this.IlIllllllIIlIIllllIIlIIIl = false;
@@ -6178,7 +6179,7 @@ public class class_1333 {
         return bl;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void lllIIIllIIIIlllIlIIllIIll(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6305,7 +6306,7 @@ public class class_1333 {
         }
     }
 
-    public void lllIlIIlIIIlIlIIIllIlllIl(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6432,7 +6433,7 @@ public class class_1333 {
         }
     }
 
-    public void IlIllllllIIlIIllllIIlIIIl(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void IlIllllllIIlIIllllIIlIIIl(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6563,7 +6564,7 @@ public class class_1333 {
         }
     }
 
-    public void lIlllIlllIIIIlIIlllIllIII(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void lIlllIlllIIIIlIIlllIllIII(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6690,7 +6691,7 @@ public class class_1333 {
         }
     }
 
-    public void IlIIIIIllllllIIlllIllllll(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void IlIIIIIllllllIIlllIllllll(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6817,7 +6818,7 @@ public class class_1333 {
         }
     }
 
-    public void lIllllIIlIIIlIllllllIIIll(Block class_05492, double d, double d2, double d3, class_2102 class_21022) {
+    public void lIllllIIlIIIlIllllllIIIll(Block class_05492, double d, double d2, double d3, IIcon class_21022) {
         double d4;
         double d5;
         class_1363 class_13632;
@@ -6975,7 +6976,7 @@ public class class_1333 {
             if (n2 == 1) {
                 class_08682.lllIlIIlIIIlIlIIIllIlllIl();
                 class_08682.IlIllllllIIlIIllllIIlIIIl(0.0f, -1.0f, 0.0f);
-                class_2102 class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
+                IIcon class_21022 = this.lllIIIllIIIIlllIlIIllIIll(class_05492, 0, n);
                 this.lllIIIllIIIIlllIlIIllIIll(class_21022, -0.5, -0.5, -0.5, 1.0f);
                 class_08682.lllIIIllIIIIlllIlIIllIIll();
             } else if (n2 == 19) {
@@ -7373,23 +7374,23 @@ public class class_1333 {
         return false;
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(Block class_05492, class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(Block class_05492, class_1843 class_18432, int n, int n2, int n3, int n4) {
         return this.lllIlIIlIIIlIlIIIllIlllIl(class_05492.IlIllllllIIlIIllllIIlIIIl(class_18432, n, n2, n3, n4));
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n, int n2) {
         return this.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lllIIIllIIIIlllIlIIllIIll(n, n2));
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(Block class_05492, int n) {
         return this.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lIlllIlllIIIIlIIlllIllIII(n));
     }
 
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl(Block class_05492) {
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl(Block class_05492) {
         return this.lllIlIIlIIIlIlIIIllIlllIl(class_05492.lIlllIlllIIIIlIIlllIllIII(1));
     }
 
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl(class_2102 class_21022) {
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl(IIcon class_21022) {
         if (class_21022 == null) {
             class_21022 = ((class_1511) Minecraft.getMinecraft().llIIlIIllIIllIlIIllIIllII().lllIlIIlIIIlIlIIIllIlllIl(class_1511.lllIIIllIIIIlllIlIIllIIll)).lllIlIIlIIIlIlIIIllIlllIl("missingno");
         }
@@ -7401,7 +7402,7 @@ public class class_1333 {
         return class_05492.IllIIlllllllIIlIIlIIIIlIl() ? this.IIIlIllllIIIlllllIllIlIII : 1.0f;
     }
 
-    private class_2102 lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022, int n, int n2, int n3, int n4, float f, float f2, float f3) {
+    private IIcon lllIIIllIIIIlllIlIIllIIll(IIcon class_21022, int n, int n2, int n3, int n4, float f, float f2, float f3) {
         if ((class_21022 == class_1384.IllIlIlIIIlllIIllIIIIlIll || class_21022 == class_1384.IlllIIIllllIIllIllIlIIlIl) && (class_21022 = Config.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, n, n2, n3, n4, class_21022)) == class_1384.IllllIIlIIIllIlllIlllIllI) {
             this.llIIIlIlIlIIlIllIIIllIlIl *= f;
             this.lIIlIIlIllIlIIlIlIIlIlIlI *= f;

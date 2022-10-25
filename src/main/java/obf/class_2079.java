@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 
 /*

@@ -16,9 +16,9 @@ public class class_1487
 extends class_0854
 implements class_0588 {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"sunflower", "syringa", "grass", "fern", "rose", "paeonia"};
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
-    private class_2102[] IIIIlIIlIIIllIIIIllIIIlII;
-    public class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon[] IIIIlIIlIIIllIIIIllIIIlII;
+    public IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
 
     public class_1487() {
         super(class_1855.lIIIIlIlIIlllllIIllIIlIII);
@@ -90,11 +90,11 @@ implements class_0588 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return class_1487.IllIIlllllllIIlIIlIIIIlIl(n2) ? this.llIlllIIllIlllIlIlIlIIIll[0] : this.llIlllIIllIlllIlIlIlIIIll[n2 & 7];
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(boolean bl, int n) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(boolean bl, int n) {
         return bl ? this.IIIIlIIlIIIllIIIIllIIIlII[n] : this.llIlllIIllIlllIlIlIlIIIll[n];
     }
 
@@ -163,13 +163,13 @@ implements class_0588 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[llllllIlIllllIlIlIlIIIIlI.length];
-        this.IIIIlIIlIIIllIIIIllIIIlII = new class_2102[llllllIlIllllIlIlIlIIIIlI.length];
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[llllllIlIllllIlIlIlIIIIlI.length];
+        this.IIIIlIIlIIIllIIIIllIIIlII = new IIcon[llllllIlIllllIlIlIlIIIIlI.length];
         for (int i = 0; i < this.llIlllIIllIlllIlIlIlIIIll.length; ++i) {
             this.llIlllIIllIlllIlIlIlIIIll[i] = class_08872.lllIIIllIIIIlllIlIIllIIll("double_plant_" + llllllIlIllllIlIlIlIIIIlI[i] + "_bottom");
             this.IIIIlIIlIIIllIIIIllIIIlII[i] = class_08872.lllIIIllIIIIlllIlIIllIIll("double_plant_" + llllllIlIllllIlIlIlIIIIlI[i] + "_top");
         }
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[2];
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[2];
         this.lIlIIllllIlIIIIllIIIIlIIl[0] = class_08872.lllIIIllIIIIlllIlIIllIIll("double_plant_sunflower_front");
         this.lIlIIllllIlIIIIllIIIIlIIl[1] = class_08872.lllIIIllIIIIlllIlIIllIIll("double_plant_sunflower_back");
     }

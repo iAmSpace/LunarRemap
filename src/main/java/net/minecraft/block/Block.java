@@ -49,8 +49,8 @@ public class Block {
     protected final class_1855 IlIlIIlllIllllllllIIIlIlI;
     public float llllIIIIlIIIlIIIIIIlIllll = 0.6f;
     private String lIlIIllllIlIIIIllIIIIlIIl;
-    protected class_2102 llIIIIllIIIIIIIlIIIlIIIIl;
-    public static class_2102 IIllIllIIllIIlllIIIlIlllI;
+    protected IIcon llIIIIllIIIIIIIlIIIlIIIIl;
+    public static IIcon IIllIllIIllIIlllIIIlIlllI;
 
     public static int lllIIIllIIIIlllIlIIllIIll(Block class_05492) {
         return blockRegistry.IlIllllllIIlIIllllIIlIIIl(class_05492);
@@ -410,15 +410,15 @@ public class Block {
         return class_18432.a_(n, n2, n3).lIllllIIlIIIlIllllllIIIll().lllIlIIlIIIlIlIIIllIlllIl();
     }
 
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
         return this.lllIIIllIIIIlllIlIIllIIll(n4, class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3));
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.llIIIIllIIIIIIIlIIIlIIIIl;
     }
 
-    public final class_2102 lIlllIlllIIIIlIIlllIllIII(int n) {
+    public final IIcon lIlllIlllIIIIlIIlllIllIII(int n) {
         return this.lllIIIllIIIIlllIlIIllIIll(n, 0);
     }
 
@@ -853,7 +853,7 @@ public class Block {
         return this.lllIlIIlIIIlIlIIIllIlllIl == null ? "MISSING_ICON_BLOCK_" + Block.lllIIIllIIIIlllIlIIllIIll(this) + "_" + this.lIlIIllllIlIIIIllIIIIlIIl : this.lllIlIIlIIIlIlIIIllIlllIl;
     }
 
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl(int n, int n2) {
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl(int n, int n2) {
         return this.lllIIIllIIIIlllIlIIllIIll(n, n2);
     }
 

@@ -18,11 +18,11 @@ implements Runnable {
         }
         catch (UnknownHostException unknownHostException) {
             class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).IIIllIIlIIIIIIlIlIIllIIlI = -1L;
-            class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + "Can't resolve hostname";
+            class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.DARK_RED) + "Can't resolve hostname";
         }
         catch (Exception exception) {
             class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).IIIllIIlIIIIIIlIlIIllIIlI = -1L;
-            class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll = (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + "Can't connect to server.";
+            class_1303.lllIIIllIIIIlllIlIIllIIll((class_1303)this.lllIIIllIIIIlllIlIIllIIll).lIllllIIlIIIlIllllllIIIll = (Object)((Object) EnumChatFormatting.DARK_RED) + "Can't connect to server.";
         }
     }
 }

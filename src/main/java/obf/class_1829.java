@@ -1,50 +1,52 @@
 package obf;
 
+import net.minecraft.network.play.client.*;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public interface class_1829
-extends class_2075 {
-    public void lllIIIllIIIIlllIlIIllIIll(class_0012 var1);
+extends INetHandler {
+    public void lllIIIllIIIIlllIlIIllIIll(C0APacketAnimation var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1960 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C01PacketChatMessage var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0287 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C14PacketTabComplete var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0499 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C16PacketClientStatus var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0681 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C15PacketClientSettings var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0039 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C0FPacketConfirmTransaction var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1853 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C11PacketEnchantItem var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1454 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C0EPacketClickWindow var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2144 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C0DPacketCloseWindow var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0917 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C17PacketCustomPayload var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1680 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C02PacketUseEntity var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0062 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C00PacketKeepAlive var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0983 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C03PacketPlayer var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2065 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C13PacketPlayerAbilities var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1557 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C07PacketPlayerDigging var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1233 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C0BPacketEntityAction var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0836 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C0CPacketInput var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0361 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C09PacketHeldItemChange var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0286 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C10PacketCreativeInventoryAction var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0317 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C12PacketUpdateSign var1);
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2016 var1);
+    public void lllIIIllIIIIlllIlIIllIIll(C08PacketPlayerBlockPlacement var1);
 }
 

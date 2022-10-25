@@ -21,7 +21,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 == 1 ? Blocks.llIlllIlIIllIlIIIIllIIlIl.lIlllIlllIIIIlIIlllIllIII(n) : Blocks.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII(n);
     }
 

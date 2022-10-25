@@ -11,13 +11,13 @@ public class class_0124 {
     public int lllIIIllIIIIlllIlIIllIIll;
     public float lllIlIIlIIIlIlIIIllIlllIl;
     public float IlIllllllIIlIIllllIIlIIIl;
-    private long lIllllIIlIIIlIllllllIIIll = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+    private long lIllllIIlIIIlIllllllIIIll = Minecraft.getSystemTime();
     private long IIIllIIlIIIIIIlIlIIllIIlI = System.nanoTime() / 1000000L;
     private long IllIIlllllllIIlIIlIIIIlIl;
     private double IIIllIllIIlIlIlIlIllllIIl = 1.0;
 
     public void lllIIIllIIIIlllIlIIllIIll() {
-        long l = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        long l = Minecraft.getSystemTime();
         long l2 = l - this.lIllllIIlIIIlIllllllIIIll;
         long l3 = System.nanoTime() / 1000000L;
         double d = (double)l3 / 1000.0;

@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class class_1990
 extends class_0609 {
-    private class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
 
     public class_1990() {
         super(true);
@@ -104,13 +104,13 @@ extends class_0609 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[2];
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[2];
         this.lIlIIllllIlIIIIllIIIIlIIl[0] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI());
         this.lIlIIllllIlIIIIllIIIIlIIl[1] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_powered");
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return (n2 & 8) != 0 ? this.lIlIIllllIlIIIIllIIIIlIIl[1] : this.lIlIIllllIlIIIIllIIIIlIIl[0];
     }
 }

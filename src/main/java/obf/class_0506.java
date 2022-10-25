@@ -1,6 +1,8 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Arrays;
 
 class class_0506

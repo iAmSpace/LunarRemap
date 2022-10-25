@@ -67,7 +67,7 @@ extends class_0210 {
                 GL11.glPushMatrix();
                 GL11.glTranslatef((float)2.0f, (float)20.0f, (float)0.0f);
                 GL11.glScalef((float)f2, (float)f2, (float)1.0f);
-                if (Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_1056 || ((Boolean) LunarClient.getInstance().getSettingsManager().IIIIIIIIlIllIIllIIlllIllI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                if (Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_1056 || ((Boolean) LunarClient.getInstance().getSettingsManager().rsShowChatBg.getValue()).booleanValue()) {
                     n12 = 0;
                     for (n11 = 0; n11 + this.lIllllIIlIIIlIllllllIIIll < this.IlIIIIIllllllIIlllIllllll.size() && n11 < n4; ++n11) {
                         class_15502 = (class_1550)this.IlIIIIIllllllIIlllIllllll.get(n11 + this.lIllllIIlIIIlIllllllIIIll);
@@ -103,7 +103,7 @@ extends class_0210 {
                     if (n8 <= 3) continue;
                     n7 = 0;
                     int n14 = -n10 * 9;
-                    if ((Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_1056 || ((Boolean) LunarClient.getInstance().getSettingsManager().IIIIIIIIlIllIIllIIlllIllI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) && n8 < 255) {
+                    if ((Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_1056 || ((Boolean) LunarClient.getInstance().getSettingsManager().rsShowChatBg.getValue()).booleanValue()) && n8 < 255) {
                         class_1063.lllIIIllIIIIlllIlIIllIIll(n7, n14 - 9, n7 + n13 + 4, n14, n8 / 2 << 24);
                     }
                     String string = class_15503.lllIIIllIIIIlllIlIIllIIll().lIlllIlllIIIIlIIlllIllIII();
@@ -148,7 +148,7 @@ extends class_0210 {
     }
 
     private String lllIlIIlIIIlIlIIIllIlllIl(String string) {
-        return Minecraft.getMinecraft().gameSettings.IllIlllIIIlllllIllIIlIlIl ? string : class_1227.lllIIIllIIIIlllIlIIllIIll(string);
+        return Minecraft.getMinecraft().gameSettings.IllIlllIIIlllllIllIIlIlIl ? string : EnumChatFormatting.getTextWithoutFormattingCodes(string);
     }
 
     private void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552, int n, int n2, boolean bl) {
@@ -176,7 +176,7 @@ extends class_0210 {
             if (n5 + n6 > n4) {
                 String string = this.lllIlIIlIIIlIlIIIllIlllIl.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((String)object, n4 - n5, false);
                 String string2 = string.length() < ((String)object).length() ? ((String)object).substring(string.length()) : null;
-                boolean bl4 = bl3 = class_1227.lllIIIllIIIIlllIlIIllIIll(string).matches("^[-]+$") && class_1227.lllIIIllIIIIlllIlIIllIIll(string2).matches("^[-]+$");
+                boolean bl4 = bl3 = EnumChatFormatting.getTextWithoutFormattingCodes(string).matches("^[-]+$") && EnumChatFormatting.getTextWithoutFormattingCodes(string2).matches("^[-]+$");
                 if (!bl3 && string2 != null && string2.length() > 0) {
                     int n7 = string.lastIndexOf(" ");
                     if (n7 >= 0 && this.lllIlIIlIIIlIlIIIllIlllIl.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(((String)object).substring(0, n7)) > 0) {

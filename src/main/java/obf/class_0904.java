@@ -91,9 +91,9 @@ extends class_2256 {
             String string = class_21742.llllIIIIlIIIlIIIIIIlIllll() + ((double)f11 != 1.0 ? " | " + (Object)((Object)this.IlIllllllIIlIIllllIIlIIIl(f11)) + f11 : "");
             if (class_06932 != null) {
                 class_0678 class_06782 = class_01412.lllIIIllIIIIlllIlIIllIIll(class_21742.llllIIIIlIIIlIIIIIIlIllll(), class_06932);
-                string = string + (Object)((Object)class_1227.IlIlIIlIlIllIIlIlIIllIIIl) + " | " + (Object)((Object)this.IlIllllllIIlIIllllIIlIIIl(class_06782.lllIlIIlIIIlIlIIIllIlllIl())) + class_06782.lllIlIIlIIIlIlIIIllIlllIl();
+                string = string + (Object)((Object) EnumChatFormatting.WHITE) + " | " + (Object)((Object)this.IlIllllllIIlIIllllIIlIIIl(class_06782.lllIlIIlIIIlIlIIIllIlllIl())) + class_06782.lllIlIIlIIIlIlIIIllIlllIl();
             }
-            float f12 = class_06672.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(string));
+            float f12 = class_06672.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getTextWithoutFormattingCodes(string));
             class_06672.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(string, (float)((int)(-f12) / 2), (float)(-class_06672.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll), -1);
             if (bl && IlIllllllIIlIIllllIIlIIIl.containsKey(class_21742.lIIlIlllIIlIIIIlIlIIIIlll().getId().toString())) {
                 object = (List)IlIllllllIIlIIllllIIlIIIl.get(class_21742.lIIlIlllIIlIIIIlIlIIIIlll().getId().toString());
@@ -108,8 +108,8 @@ extends class_2256 {
         }
     }
 
-    private class_1227 IlIllllllIIlIIllllIIlIIIl(float f) {
-        class_1227 class_12272 = f > 15.0f ? class_1227.IlIllllllIIlIIllllIIlIIIl : (f > 10.0f ? class_1227.IlIlllIIIIIIlIIllIIllIlll : (f > 5.0f ? class_1227.llIIllIllIlIIlIIllIllllll : class_1227.IlIIIIIllllllIIlllIllllll));
+    private EnumChatFormatting IlIllllllIIlIIllllIIlIIIl(float f) {
+        EnumChatFormatting class_12272 = f > 15.0f ? EnumChatFormatting.DARK_GREEN : (f > 10.0f ? EnumChatFormatting.YELLOW : (f > 5.0f ? EnumChatFormatting.RED : EnumChatFormatting.DARK_RED));
         return class_12272;
     }
 

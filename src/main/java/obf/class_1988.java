@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
  */
 public abstract class class_1988
 extends Block {
-    protected class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    protected IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     protected class_1988(class_1855 class_18552) {
         super(class_18552);
@@ -44,15 +44,15 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3 = n2 & 0xC;
         int n4 = n2 & 3;
         return n3 == 0 && (n == 1 || n == 0) ? this.IllIIIllIIIIlIlIlIllIIlll(n4) : (n3 == 4 && (n == 5 || n == 4) ? this.IllIIIllIIIIlIlIlIllIIlll(n4) : (n3 == 8 && (n == 2 || n == 3) ? this.IllIIIllIIIIlIlIlIllIIlll(n4) : this.IllIIlllllllIIlIIlIIIIlIl(n4)));
     }
 
-    protected abstract class_2102 IllIIlllllllIIlIIlIIIIlIl(int var1);
+    protected abstract IIcon IllIIlllllllIIlIIlIIIIlIl(int var1);
 
-    protected class_2102 IllIIIllIIIIlIlIlIllIIlll(int n) {
+    protected IIcon IllIIIllIIIIlIlIlIllIIlll(int n) {
         return this.IIIIlIIlIIIllIIIIllIIIlII;
     }
 

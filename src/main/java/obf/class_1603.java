@@ -6,6 +6,7 @@ package obf;/*
  */
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -39,8 +40,8 @@ public abstract class class_1603 {
 
     private void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212, double d, double d2, double d3, float f) {
         GL11.glDisable((int)2896);
-        class_2102 class_21022 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(0);
-        class_2102 class_21023 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(1);
+        IIcon class_21022 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(0);
+        IIcon class_21023 = Blocks.lIIlIlllIllIlIlllIIIIIIII.IllIIlllllllIIlIIlIIIIlIl(1);
         GL11.glPushMatrix();
         GL11.glTranslatef((float)((float)d), (float)((float)d2), (float)((float)d3));
         float f2 = class_15212.IIIIlIlIIlIIIIlIlllIlIIII * 1.4f;
@@ -57,7 +58,7 @@ public abstract class class_1603 {
         int n = 0;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl();
         while (f5 > 0.0f) {
-            class_2102 class_21024 = n % 2 == 0 ? class_21022 : class_21023;
+            IIcon class_21024 = n % 2 == 0 ? class_21022 : class_21023;
             this.lllIIIllIIIIlllIlIIllIIll(class_1511.lllIIIllIIIIlllIlIIllIIll);
             float f8 = class_21024.IlIllllllIIlIIllllIIlIIIl();
             float f9 = class_21024.IlIIIIIllllllIIlllIllllll();

@@ -3,6 +3,7 @@ package obf;/*
  */
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.network.play.server.S1BPacketEntityAttach;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -291,12 +292,12 @@ extends class_1965 {
                         } else {
                             bl = false;
                         }
-                    } else if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 && !(class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981)) {
+                    } else if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor && !(class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor)) {
                         bl = true;
-                    } else if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 && class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981) {
-                        object = (class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll();
-                        class_06112 = (class_0981)class_08973.lllIIIllIIIIlllIlIIllIIll();
-                        bl = ((class_0981)object).lIIIIlIlIIlllllIIllIIlIII == ((class_0981)class_06112).lIIIIlIlIIlllllIIllIIlIII ? class_08972.IllIIIllIIIIlIlIlIllIIlll() > class_08973.IllIIIllIIIIlIlIlIllIIlll() || class_08972.IlIlIIlIlIllIIlIlIIllIIIl() && !class_08973.IlIlIIlIlIllIIlIlIIllIIIl() : ((class_0981)object).lIIIIlIlIIlllllIIllIIlIII > ((class_0981)class_06112).lIIIIlIlIIlllllIIllIIlIII;
+                    } else if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor && class_08973.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor) {
+                        object = (ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll();
+                        class_06112 = (ItemArmor)class_08973.lllIIIllIIIIlllIlIIllIIll();
+                        bl = ((ItemArmor)object).lIIIIlIlIIlllllIIllIIlIII == ((ItemArmor)class_06112).lIIIIlIlIIlllllIIllIIlIII ? class_08972.IllIIIllIIIIlIlIlIllIIlll() > class_08973.IllIIIllIIIIlIlIlIllIIlll() || class_08972.IlIlIIlIlIllIIlIlIIllIIIl() && !class_08973.IlIlIIlIlIllIIlIlIIllIIIl() : ((ItemArmor)object).lIIIIlIlIIlllllIIllIIlIII > ((ItemArmor)class_06112).lIIIIlIlIIlllllIIllIIlIII;
                     } else {
                         bl = false;
                     }
@@ -547,8 +548,8 @@ extends class_1965 {
 
     public static int a_(ItemStack class_08972) {
         if (class_08972.lllIIIllIIIIlllIlIIllIIll() != Item.getItemFromBlock(Blocks.lIlIIlllllIlllllIlIIIllll) && class_08972.lllIIIllIIIIlllIlIIllIIll() != Items.skull) {
-            if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981) {
-                switch (((class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll()).IllIIIllIIIIlIlIlIllIIlll) {
+            if (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor) {
+                switch (((ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll()).IllIIIllIIIIlIlIlIllIIlll) {
                     case 0: {
                         return 4;
                     }
@@ -755,7 +756,7 @@ extends class_1965 {
                 this.lllIIIllIIIIlllIlIIllIIll(Items.IIlIlIIIlIIllIlIlIlIlIIll, 1);
             }
             if (!this.lIlIllIIlIIlIIlIIlIIlIIll.IllIIIIllIIllIllIlllIlIIl && bl && this.lIlIllIIlIIlIIlIIlIIlIIll instanceof class_0976) {
-                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new class_2218(1, this, null));
+                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new S1BPacketEntityAttach(1, this, null));
             }
         }
     }
@@ -776,7 +777,7 @@ extends class_1965 {
         this.lIIIlllllllIlllIIllllllll = true;
         this.IIllllIIlIlIlIlllIIIllIIl = class_15212;
         if (!this.lIlIllIIlIIlIIlIIlIIlIIll.IllIIIIllIIllIllIlllIlIIl && bl && this.lIlIllIIlIIlIIlIIlIIlIIll instanceof class_0976) {
-            ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new class_2218(1, this, this.IIllllIIlIlIlIlllIIIllIIl));
+            ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new S1BPacketEntityAttach(1, this, this.IIllllIIlIlIlIlllIIIllIIl));
         }
     }
 

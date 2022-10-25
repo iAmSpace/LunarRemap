@@ -35,7 +35,7 @@ extends class_1517 {
          * org.benf.cfr.reader.CfrDriverImpl.analyse(CfrDriverImpl.java:65)
          * org.benf.cfr.reader.net.minecraft.unobf.Main.main(net.minecraft.unobf.Main.java:49)
          */
-        throw new IllegalStateException(Decompilation failed);
+        throw new IllegalStateException("Decompilation failed (class_0509)");
     }
 }
 

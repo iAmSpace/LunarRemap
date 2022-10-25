@@ -31,6 +31,7 @@ import java.util.Map;
 import java.util.UUID;
 import javax.sound.sampled.AudioFormat;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.util.MathHelper;
@@ -230,9 +231,9 @@ public class class_0885 {
                             boolean bl = class_03082.lllIlIIlIIIlIlIIIllIlllIl() && class_03082.IlIllllllIIlIIllllIIlIIIl() == 0;
                             String string = UUID.randomUUID().toString();
                             if (class_18832.lIlllIlllIIIIlIIlllIllIII()) {
-                                this.lllIIIllIIIIlllIlIIllIIll.newStreamingSource(false, string, class_0885.lllIIIllIIIIlllIlIIllIIll(class_17732), class_17732.toString(), bl, class_03082.lIllllIIlIIIlIllllllIIIll(), class_03082.IIIllIIlIIIIIIlIlIIllIIlI(), class_03082.IllIIlllllllIIlIIlIIIIlIl(), class_03082.IIIllIllIIlIlIlIlIllllIIl().lllIIIllIIIIlllIlIIllIIll(), f2);
+                                this.lllIIIllIIIIlllIlIIllIIll.newStreamingSource(false, string, class_0885.lllIIIllIIIIlllIlIIllIIll(class_17732), class_17732.toString(), bl, class_03082.lIllllIIlIIIlIllllllIIIll(), class_03082.IIIllIIlIIIIIIlIlIIllIIlI(), class_03082.IllIIlllllllIIlIIlIIIIlIl(), class_03082.IIIllIllIIlIlIlIlIllllIIl().func_148586_a(), f2);
                             } else {
-                                this.lllIIIllIIIIlllIlIIllIIll.newSource(false, string, class_0885.lllIIIllIIIIlllIlIIllIIll(class_17732), class_17732.toString(), bl, class_03082.lIllllIIlIIIlIllllllIIIll(), class_03082.IIIllIIlIIIIIIlIlIIllIIlI(), class_03082.IllIIlllllllIIlIIlIIIIlIl(), class_03082.IIIllIllIIlIlIlIlIllllIIl().lllIIIllIIIIlllIlIIllIIll(), f2);
+                                this.lllIIIllIIIIlllIlIIllIIll.newSource(false, string, class_0885.lllIIIllIIIIlllIlIIllIIll(class_17732), class_17732.toString(), bl, class_03082.lIllllIIlIIIlIllllllIIIll(), class_03082.IIIllIIlIIIIIIlIlIIllIIlI(), class_03082.IllIIlllllllIIlIIlIIIIlIl(), class_03082.IIIllIllIIlIlIlIlIllllIIl().func_148586_a(), f2);
                             }
                             IlIllllllIIlIIllllIIlIIIl.debug(lllIlIIlIIIlIlIIIllIlllIl, "Playing sound {} for event {} as channel {}", new Object[]{class_18832.lllIIIllIIIIlllIlIIllIIll(), class_13292.lIlllIlllIIIIlIIlllIllIII(), string});
                             this.lllIIIllIIIIlllIlIIllIIll.setPitch(string, (float)d);

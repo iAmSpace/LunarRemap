@@ -118,7 +118,7 @@ implements class_0945 {
                 this.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll(class_09232);
             }
             if (class_11972.IIIllIllIIlIlIlIlIllllIIl == -3) {
-                if (this.lllIIIllIIIIlllIlIIllIIll.llIIlIIllIIllIlIIllIIllII.IIIIlIllIlIIlIIlIllIlIlll()) {
+                if (this.lllIIIllIIIIlllIlIIllIIll.llIIlIIllIIllIlIIllIIllII.isIntegratedServerRunning()) {
                     this.lllIIIllIIIIlllIlIIllIIll.llIIlIIllIIllIlIIllIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl("/ztp " + this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll);
                     this.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll((class_0229)null);
                 } else {
@@ -242,7 +242,7 @@ implements class_0945 {
     }
 
     public boolean IllIIlllllllIIlIIlIIIIlIl() {
-        boolean bl = this.lllIIIllIIIIlllIlIIllIIll.llIIlIIllIIllIlIIllIIllII.IIIIlIllIlIIlIIlIllIlIlll();
+        boolean bl = this.lllIIIllIIIIlllIlIIllIIll.llIIlIIllIIllIlIIllIIllII.isIntegratedServerRunning();
         if (bl) {
             return class_0220.IlIIlllllIIlIlIlllllIllll().IlIllllllIIlIIllllIIlIIIl[0].lIlllIlllIlIIIIlllIlIlIIl().IIlllIlIlllIllIIIlllIIlIl();
         }

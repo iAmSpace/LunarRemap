@@ -7,6 +7,7 @@ package obf;/*
 import java.nio.FloatBuffer;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -64,7 +65,7 @@ extends class_2052 {
             GL11.glMatrixMode((int)5890);
             GL11.glPushMatrix();
             GL11.glLoadIdentity();
-            GL11.glTranslatef((float)0.0f, (float)((float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 700000L) / 700000.0f), (float)0.0f);
+            GL11.glTranslatef((float)0.0f, (float)((float)(Minecraft.getSystemTime() % 700000L) / 700000.0f), (float)0.0f);
             GL11.glScalef((float)f7, (float)f7, (float)f7);
             GL11.glTranslatef((float)0.5f, (float)0.5f, (float)0.0f);
             GL11.glRotatef((float)((float)(i * i * 4321 + i * 9) * 2.0f), (float)0.0f, (float)0.0f, (float)1.0f);

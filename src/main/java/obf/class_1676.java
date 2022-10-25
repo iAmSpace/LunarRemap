@@ -9,6 +9,7 @@ import java.util.List;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
@@ -66,7 +67,7 @@ extends class_1716 {
         LunarClient.getInstance().robotoLight16px.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII(), this.lllIIIllIIIIlllIlIIllIIll + 52.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 2.0f, -1);
         LunarClient.getInstance().robotoBold12px.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(), this.lllIIIllIIIIlllIlIIllIIll + 52.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 11.0f, -5460820);
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        ResourceLocation class_17732 = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()), this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl());
+        ResourceLocation class_17732 = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getTextWithoutFormattingCodes(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()), this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl());
         class_0857.lllIIIllIIIIlllIlIIllIIll(class_17732, 7.0f, this.lllIIIllIIIIlllIlIIllIIll + 28.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 4.0f);
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll + 27.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 22.0f, this.lllIIIllIIIIlllIlIIllIIll + this.IlIllllllIIlIIllllIIlIIIl - 2.0f, this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII - 17.0f, -1356783327);
         this.lIIIIlIlIIlllllIIllIIlIII.IlIllllllIIlIIllllIIlIIIl(f, f2, bl);
@@ -82,10 +83,10 @@ extends class_1716 {
             boolean bl2 = f > this.lllIIIllIIIIlllIlIIllIIll && f < this.lllIIIllIIIIlllIlIIllIIll + 25.0f && f2 > f3 - this.lIIIIlIlIIlllllIIllIIlIII.IllIIlllllllIIlIIlIIIIlIl() && f2 < f3 + 16.0f - this.lIIIIlIlIIlllllIIllIIlIII.IllIIlllllllIIlIIlIIIIlIl() && f2 > this.lllIlIIlIIIlIlIIIllIlllIl && f2 < this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII;
             class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll + 3.0f, f3, this.lllIIIllIIIIlllIlIIllIIll + 19.0f, f3 + 16.0f, class_01152.IIIllIIlIIIIIIlIlIIllIIlI() ? class_0115.lllIIIllIIIIlllIlIIllIIll(class_01152.IIIllIllIIlIlIlIlIllllIIl()) : -13158601);
             GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)(bl2 ? 1.0f : 0.85f));
-            arrstring = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(class_01152.lIlllIlllIIIIlIIlllIllIII()), class_01152.IlIllllllIIlIIllllIIlIIIl());
+            arrstring = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getTextWithoutFormattingCodes(class_01152.lIlllIlllIIIIlIIlllIllIII()), class_01152.IlIllllllIIlIIllllIIlIIIl());
             class_0857.lllIIIllIIIIlllIlIIllIIll((ResourceLocation)arrstring, 7.0f, this.lllIIIllIIIIlllIlIIllIIll + 4.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 4.0f + (float)n2);
             if (bl2) {
-                float f4 = this.lIllllIIlIIIlIllllllIIIll.robotoRegular13px.lllIlIIlIIIlIlIIIllIlllIl(class_1227.lllIIIllIIIIlllIlIIllIIll(class_01152.lIlllIlllIIIIlIIlllIllIII()));
+                float f4 = this.lIllllIIlIIIlIllllllIIIll.robotoRegular13px.lllIlIIlIIIlIlIIIllIlllIl(EnumChatFormatting.getTextWithoutFormattingCodes(class_01152.lIlllIlllIIIIlIIlllIllIII()));
                 class_0857.lllIIIllIIIIlllIlIIllIIll((double)(this.lllIIIllIIIIlllIlIIllIIll - 10.0f - f4), (double)(f3 + 2.0f), (double)(this.lllIIIllIIIIlllIlIIllIIll - 2.0f), (double)(f3 + 14.0f), 6.0, -1895825408);
                 this.lIllllIIlIIIlIllllllIIIll.robotoRegular13px.lllIIIllIIIIlllIlIIllIIll(class_01152.lIlllIlllIIIIlIIlllIllIII(), this.lllIIIllIIIIlllIlIIllIIll - 6.0f - f4, f3 + 4.0f, -1);
                 if (Mouse.isButtonDown((int)0) && this.IIIllIIlIIIIIIlIlIIllIIlI != class_01152) {

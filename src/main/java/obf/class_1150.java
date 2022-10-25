@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
@@ -82,10 +83,10 @@ public class class_1150 {
             this.IlIIIIIllllllIIlllIllllll = false;
             LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll("voice_up");
         }
-        if (!this.IlIIIIIllllllIIlllIllllll && this.lllIIIllIIIIlllIlIIllIIll.IIlIIlIlIlIllIIlIlIIIIlll && this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.getSettingsManager().lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl())) {
+        if (!this.IlIIIIIllllllIIlllIllllll && this.lllIIIllIIIIlllIlIIllIIll.IIlIIlIlIlIllIIlIlIIIIlll && this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.getSettingsManager().keyVoiceChat.IIIllIllIIlIlIlIlIllllIIl())) {
             this.IlIIIIIllllllIIlllIllllll = true;
             LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll("voice_down");
-        } else if (this.IlIIIIIllllllIIlllIllllll && this.lllIIIllIIIIlllIlIIllIIll.IIlIIlIlIlIllIIlIlIIIIlll && !this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.getSettingsManager().lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl())) {
+        } else if (this.IlIIIIIllllllIIlllIllllll && this.lllIIIllIIIIlllIlIIllIIll.IIlIIlIlIlIllIIlIlIIIIlll && !this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.getSettingsManager().keyVoiceChat.IIIllIllIIlIlIlIlIllllIIl())) {
             this.IlIIIIIllllllIIlllIllllll = false;
             LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll("voice_up");
         }

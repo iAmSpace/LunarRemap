@@ -7,14 +7,14 @@ import net.minecraft.block.Block;
  */
 public class class_1604
 extends class_0609 {
-    protected class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    protected IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_1604() {
         super(true);
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return (n2 & 8) == 0 ? this.llIIIIllIIIIIIIlIIIlIIIIl : this.lIlIIllllIlIIIIllIIIIlIIl;
     }
 

@@ -13,9 +13,9 @@ import io.netty.buffer.ByteBuf;
 public abstract class class_0688 {
     public static BiMap lllIlIIlIIIlIlIIIllIlllIl = HashBiMap.create();
 
-    public abstract void lllIIIllIIIIlllIlIIllIIll(class_0181 var1);
+    public abstract void lllIIIllIIIIlllIlIIllIIll(PacketBuffer var1);
 
-    public abstract void lllIlIIlIIIlIlIIIllIlllIl(class_0181 var1);
+    public abstract void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer var1);
 
     public abstract void lllIIIllIIIIlllIlIIllIIll(class_1982 var1);
 

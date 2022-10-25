@@ -15,6 +15,8 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S34PacketMaps;
 import net.minecraft.util.MathHelper;
 
 import java.util.List;
@@ -170,9 +172,9 @@ extends class_1747 {
     }
 
     @Override
-    public class_0703 lIlllIlllIIIIlIIlllIllIII(ItemStack class_08972, class_1334 class_13342, class_0814 class_08142) {
+    public Packet lIlllIlllIIIIlIIlllIllIII(ItemStack class_08972, class_1334 class_13342, class_0814 class_08142) {
         byte[] arrby = this.lllIIIllIIIIlllIlIIllIIll(class_08972, class_13342).lllIIIllIIIIlllIlIIllIIll(class_08972, class_13342, class_08142);
-        return arrby == null ? null : new class_1732(class_08972.IllIIIllIIIIlIlIlIllIIlll(), arrby);
+        return arrby == null ? null : new S34PacketMaps(class_08972.IllIIIllIIIIlIlIlIllIIlll(), arrby);
     }
 
     @Override

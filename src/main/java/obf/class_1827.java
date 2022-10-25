@@ -38,7 +38,7 @@ extends Item {
         class_0775 class_07752;
         String string;
         if (class_08972.IlIlIIlIlIllIIlIlIIllIIIl() && !class_1911.lllIlIIlIIIlIlIIIllIlllIl(string = (class_07752 = class_08972.lllllIlllIIllIlIIlIIIllII()).IllIIIllIIIIlIlIlIllIIlll("author"))) {
-            list.add((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + class_1586.lllIIIllIIIIlllIlIIllIIll("book.byAuthor", string));
+            list.add((Object)((Object) EnumChatFormatting.GRAY) + class_1586.lllIIIllIIIIlllIlIIllIIll("book.byAuthor", string));
         }
     }
 

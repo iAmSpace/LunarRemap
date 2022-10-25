@@ -5,6 +5,8 @@ package obf;/*
  *  com.mojang.authlib.minecraft.MinecraftProfileTexture$Type
  */
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
+import net.minecraft.util.ResourceLocation;
+
 import java.awt.image.BufferedImage;
 
 class class_1926

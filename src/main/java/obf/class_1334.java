@@ -1798,7 +1798,7 @@ implements class_1843 {
         int n11;
         int n12;
         int n13;
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().lIlIlIIlIIIIlIIIIIlllIIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().fpsEnableFpsBoost.getValue()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().fpsFullBright.getValue()).booleanValue()) {
             return true;
         }
         if (!this.IlIllllllIIlIIllllIIlIIIl(n, n2, n3, 17)) {

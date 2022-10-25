@@ -10,6 +10,7 @@ import java.util.Map;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -119,7 +120,7 @@ public class class_1774 {
         return this.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 
-    public class_0703 IllIIlllllllIIlIIlIIIIlIl() {
+    public Packet IllIIlllllllIIlIIlIIIIlIl() {
         return null;
     }
 

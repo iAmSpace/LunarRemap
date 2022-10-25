@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class class_1042
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
 
     public class_1042() {
         super(class_1855.IlIlIIlllIllllllllIIIlIlI);
@@ -19,7 +19,7 @@ extends Block {
         this.IlIllllllIIlIIllllIIlIIIl(0.5f);
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022) {
+    public void lllIIIllIIIIlllIlIIllIIll(IIcon class_21022) {
         this.llllllIlIllllIlIlIlIIIIlI = class_21022;
     }
 
@@ -49,7 +49,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3 = class_1042.IllIIlllllllIIlIIlIIIIlIl(n2);
         return n == n3 ? (this.llllllIlIllllIlIlIlIIIIlI != null ? this.llllllIlIllllIlIlIlIIIIlI : ((n2 & 8) != 0 ? class_1039.lIlllIlllIIIIlIIlllIllIII("piston_top_sticky") : class_1039.lIlllIlllIIIIlIIlllIllIII("piston_top_normal"))) : (n3 < 6 && n == class_0573.lllIIIllIIIIlllIlIIllIIll[n3] ? class_1039.lIlllIlllIIIIlIIlllIllIII("piston_top_normal") : class_1039.lIlllIlllIIIIlIIlllIllIII("piston_side"));
     }

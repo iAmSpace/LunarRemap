@@ -41,22 +41,22 @@ public class class_1966 {
     }
 
     private void IlIllllllIIlIIllllIIlIIIl() {
-        int n = this.lIllllIIlIIIlIllllllIIIll = (Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII() != false ? Math.max(Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll * 2, this.IlIllllllIIlIIllllIIlIIIl) : Math.max(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll, this.IlIllllllIIlIIllllIIlIIIl);
+        int n = this.lIllllIIlIIIlIllllllIIIll = (Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.getValue() != false ? Math.max(Minecraft.getMinecraft().IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll * 2, this.IlIllllllIIlIIllllIIlIIIl) : Math.max(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll, this.IlIllllllIIlIIllllIIlIIIl);
         if (this.lllIIIllIIIIlllIlIIllIIll != null) {
             int n2 = 1;
             int n3 = 1;
-            if ((this.lIIIIlIlIIlllllIIllIIlIII && ((Boolean)class_0283.IllIIlllllllIIlIIlIIIIlIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue() || !this.lIIIIlIlIIlllllIIllIIlIII && ((Boolean)class_0283.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) && this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll()) {
+            if ((this.lIIIIlIlIIlllllIIllIIlIII && ((Boolean)class_0283.IllIIlllllllIIlIIlIIIIlIl.getValue()).booleanValue() || !this.lIIIIlIlIIlllllIIllIIlIII && ((Boolean)class_0283.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).booleanValue()) && this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll()) {
                 n3 = this.lllIIIllIIIIlllIlIIllIIll.lIIIIlIlIIlllllIIllIIlIII() + 1;
                 n2 = n3 - this.lllIIIllIIIIlllIlIIllIIll.IIIllIllIIlIlIlIlIllllIIl();
-                if (((String)class_0283.IllIIIllIIIIlIlIlIllIIlll.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("value")) {
-                    this.IIIllIllIIlIlIlIlIllllIIl = "\u00a7" + class_1650.lllIIIllIIIIlllIlIIllIIll(class_0283.llIIllIllIlIIlIIllIllllll, ((String)class_0283.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("percent") ? n2 * 100 / n3 : n2) + n2 + ((Boolean)class_0283.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII() != false ? "/" + n3 : "");
-                } else if (((String)class_0283.IllIIIllIIIIlIlIlIllIIlll.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("percent")) {
-                    this.IIIllIllIIlIlIlIlIllllIIl = "\u00a7" + class_1650.lllIIIllIIIIlllIlIIllIIll(class_0283.llIIllIllIlIIlIIllIllllll, ((String)class_0283.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII()).equalsIgnoreCase("percent") ? n2 * 100 / n3 : n2) + n2 * 100 / n3 + "%";
+                if (((String)class_0283.IllIIIllIIIIlIlIlIllIIlll.getValue()).equalsIgnoreCase("value")) {
+                    this.IIIllIllIIlIlIlIlIllllIIl = "\u00a7" + class_1650.lllIIIllIIIIlllIlIIllIIll(class_0283.llIIllIllIlIIlIIllIllllll, ((String)class_0283.lIIIIlIlIIlllllIIllIIlIII.getValue()).equalsIgnoreCase("percent") ? n2 * 100 / n3 : n2) + n2 + ((Boolean)class_0283.IIIllIllIIlIlIlIlIllllIIl.getValue() != false ? "/" + n3 : "");
+                } else if (((String)class_0283.IllIIIllIIIIlIlIlIllIIlll.getValue()).equalsIgnoreCase("percent")) {
+                    this.IIIllIllIIlIlIlIlIllllIIl = "\u00a7" + class_1650.lllIIIllIIIIlllIlIIllIIll(class_0283.llIIllIllIlIIlIIllIllllll, ((String)class_0283.lIIIIlIlIIlllllIIllIIlIII.getValue()).equalsIgnoreCase("percent") ? n2 * 100 / n3 : n2) + n2 * 100 / n3 + "%";
                 }
             }
             this.IllIIIllIIIIlIlIlIllIIlll = this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(class_0574.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl));
             this.IlIIIIIllllllIIlllIllllll = this.lIlllIlllIIIIlIIlllIllIII + this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII + this.IllIIIllIIIIlIlIlIllIIlll;
-            if (((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.getValue()).booleanValue()) {
                 this.IIIllIIlIIIIIIlIlIIllIIlI = this.lllIIIllIIIIlllIlIIllIIll.lIIlIIIIIlIlllIlIIlIlIlll();
                 this.IlIIIIIllllllIIlllIllllll = this.lIlllIlllIIIIlIIlllIllIII + this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII + Math.max(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(class_0574.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI)), this.IllIIIllIIIIlIlIlIllIIlll);
             }
@@ -75,20 +75,20 @@ public class class_1966 {
         boolean bl2 = bl = class_1271.IlIllllllIIlIIllllIIlIIIl(class_07672) == class_1564.IlIIIIIllllllIIlllIllllll;
         if (bl) {
             class_0283.llIIlllIllIllllIIIlIIIIII.lllIlIIlIIIlIlIIIllIlllIl(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.llIIlllIllIllllIIIlIIIIII.llIIlIIllIIllIlIIllIIllII(), this.lllIIIllIIIIlllIlIIllIIll, (int)(f - (float)(this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII)), (int)f2);
-            class_0574.lllIIIllIIIIlllIlIIllIIll(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.lllIIIllIIIIlllIlIIllIIll, (int)(f - (float)(this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII)), (int)f2, (Boolean)class_0283.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII(), (Boolean)class_0283.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII());
+            class_0574.lllIIIllIIIIlllIlIIllIIll(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.lllIIIllIIIIlllIlIIllIIll, (int)(f - (float)(this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII)), (int)f2, (Boolean)class_0283.lIllllIIlIIIlIllllllIIIll.getValue(), (Boolean)class_0283.IlIllllllIIlIIllllIIlIIIl.getValue());
             class_0624.lllIIIllIIIIlllIlIIllIIll();
             GL11.glDisable((int)32826);
             GL11.glDisable((int)3042);
             this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI + "\u00a7r", f - (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII) - (float)this.IllIIlllllllIIlIIlIIIIlIl, f2, 0xFFFFFF);
-            this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl + "\u00a7r", f - (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII) - (float)this.IllIIIllIIIIlIlIlIllIIlll, f2 + (float)((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII() != false ? this.lIllllIIlIIIlIllllllIIIll / 2 : this.lIllllIIlIIIlIllllllIIIll / 4), 0xFFFFFF);
+            this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl + "\u00a7r", f - (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII) - (float)this.IllIIIllIIIIlIlIlIllIIlll, f2 + (float)((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.getValue() != false ? this.lIllllIIlIIIlIllllllIIIll / 2 : this.lIllllIIlIIIlIllllllIIIll / 4), 0xFFFFFF);
         } else {
             class_0283.llIIlllIllIllllIIIlIIIIII.lllIlIIlIIIlIlIIIllIlllIl(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.llIIlllIllIllllIIIlIIIIII.llIIlIIllIIllIlIIllIIllII(), this.lllIIIllIIIIlllIlIIllIIll, (int)f, (int)f2);
-            class_0574.lllIIIllIIIIlllIlIIllIIll(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.lllIIIllIIIIlllIlIIllIIll, (int)f, (int)f2, (Boolean)class_0283.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII(), (Boolean)class_0283.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII());
+            class_0574.lllIIIllIIIIlllIlIIllIIll(this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll, this.lllIIIllIIIIlllIlIIllIIll, (int)f, (int)f2, (Boolean)class_0283.lIllllIIlIIIlIllllllIIIll.getValue(), (Boolean)class_0283.IlIllllllIIlIIllllIIlIIIl.getValue());
             class_0624.lllIIIllIIIIlllIlIIllIIll();
             GL11.glDisable((int)32826);
             GL11.glDisable((int)3042);
             this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI + "\u00a7r", f + (float)this.lllIlIIlIIIlIlIIIllIlllIl + (float)this.lIlllIlllIIIIlIIlllIllIII, f2, 0xFFFFFF);
-            this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl + "\u00a7r", f + (float)this.lllIlIIlIIIlIlIIIllIlllIl + (float)this.lIlllIlllIIIIlIIlllIllIII, f2 + (float)((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII() != false ? this.lIllllIIlIIIlIllllllIIIll / 2 : this.lIllllIIlIIIlIllllllIIIll / 4), 0xFFFFFF);
+            this.llIIlllIllIllllIIIlIIIIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl + "\u00a7r", f + (float)this.lllIlIIlIIIlIlIIIllIlllIl + (float)this.lIlllIlllIIIIlIIlllIllIII, f2 + (float)((Boolean)class_0283.lllIlIIlIIIlIlIIIllIlllIl.getValue() != false ? this.lIllllIIlIIIlIllllllIIIll / 2 : this.lIllllIIlIIIlIllllllIIIll / 4), 0xFFFFFF);
         }
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
     }

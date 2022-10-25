@@ -12,7 +12,7 @@ import java.util.Random;
 public class class_1870
 extends class_2257 {
     private Random llllllIlIllllIlIlIlIIIIlI = new Random();
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     public class_1870() {
         super(class_1855.lIllllIIlIIIlIllllllIIIll);
@@ -133,7 +133,7 @@ extends class_2257 {
         this.lIlIIllllIlIIIIllIIIIlIIl = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_base");
     }
 
-    public class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public IIcon llIlllIIllIlllIlIlIlIIIll() {
         return this.lIlIIllllIlIIIIllIIIIlIIl;
     }
 }

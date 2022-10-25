@@ -42,7 +42,7 @@ public class class_0115 {
         String string;
         if (this.IlIIIIIllllllIIlllIllllll) {
             if (this.lIlllIlllIIIIlIIlllIllIII != null && !Objects.equals(this.lIlllIlllIIIIlIIlllIllIII, "")) {
-                string = "Playing" + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + " " + this.lIlllIlllIIIIlIIlllIllIII;
+                string = "Playing" + (Object)((Object) EnumChatFormatting.BOLD) + " " + this.lIlllIlllIIIIlIIlllIllIII;
             } else {
                 switch (this.IIIllIIlIIIIIIlIlIIllIIlI) {
                     case lllIlIIlIIIlIlIIIllIlllIl: {

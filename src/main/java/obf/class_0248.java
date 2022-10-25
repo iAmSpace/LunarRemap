@@ -1,50 +1,41 @@
-package obf;/*
- * Decompiled with CFR 0.150.
- * 
- * Could not load the following classes:
- *  com.google.common.collect.Maps
- */
+package obf;
+
 import com.google.common.collect.Maps;
 import java.util.Map;
 
 public enum class_0248 {
-    lllIIIllIIIIlllIlIIllIIll("SHOW_TEXT", 0, "show_text", true),
-    lllIlIIlIIIlIlIIIllIlllIl("SHOW_ACHIEVEMENT", 1, "show_achievement", true),
-    IlIllllllIIlIIllllIIlIIIl("SHOW_ITEM", 2, "show_item", true);
+    SHOW_TEXT("show_text", true),
+    SHOW_ACHIEVEMENT("show_achievement", true),
+    SHOW_ITEM("show_item", true);
 
-    private static final Map lIlllIlllIIIIlIIlllIllIII;
-    private final boolean IlIIIIIllllllIIlllIllllll;
-    private final String lIllllIIlIIIlIllllllIIIll;
-    private static final class_0248[] IIIllIIlIIIIIIlIlIIllIIlI;
+    private static final Map<String, class_0248> nameMapping = Maps.newHashMap();
+    private final boolean allowedInChat;
+    private final String canonicalName;
 
-    /*
-     * WARNING - Possible parameter corruption
-     * WARNING - void declaration
-     */
-    private class_0248(String string3, boolean bl) {
-        void var6_4;
-        void var5_3;
-        this.lIllllIIlIIIlIllllllIIIll = var5_3;
-        this.IlIIIIIllllllIIlllIllllll = var6_4;
+    class_0248(String p_i45157_3_, boolean p_i45157_4_) {
+        this.canonicalName = p_i45157_3_;
+        this.allowedInChat = p_i45157_4_;
     }
 
-    public boolean lllIIIllIIIIlllIlIIllIIll() {
-        return this.IlIIIIIllllllIIlllIllllll;
+    public boolean shouldAllowInChat() {
+        return this.allowedInChat;
     }
 
-    public String lllIlIIlIIIlIlIIIllIlllIl() {
-        return this.lIllllIIlIIIlIllllllIIIll;
+    public String getCanonicalName() {
+        return this.canonicalName;
     }
 
-    public static class_0248 lllIIIllIIIIlllIlIIllIIll(String string) {
-        return (class_0248)((Object)lIlllIlllIIIIlIIlllIllIII.get(string));
+    public static class_0248 getValueByCanonicalName(String p_150684_0_) {
+        return nameMapping.get(p_150684_0_);
     }
 
     static {
-        lIlllIlllIIIIlIIlllIllIII = Maps.newHashMap();
-        IIIllIIlIIIIIIlIlIIllIIlI = new class_0248[]{lllIIIllIIIIlllIlIIllIIll, lllIlIIlIIIlIlIIIllIlllIl, IlIllllllIIlIIllllIIlIIIl};
-        for (class_0248 class_02482 : class_0248.values()) {
-            lIlllIlllIIIIlIIlllIllIII.put(class_02482.lllIlIIlIIIlIlIIIllIlllIl(), class_02482);
+        class_0248[] var0 = values();
+        int var1 = var0.length;
+
+        for (int var2 = 0; var2 < var1; ++var2) {
+            class_0248 var3 = var0[var2];
+            nameMapping.put(var3.getCanonicalName(), var3);
         }
     }
 }

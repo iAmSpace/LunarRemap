@@ -1,6 +1,8 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.client.settings.KeyBinding;
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 
@@ -26,11 +28,10 @@ public class class_0576 {
                 LunarClient.getInstance().getModuleManager().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl().lllIlIIlIIIlIlIIIllIlllIl();
                 this.lllIlIIlIIIlIlIIIllIlllIl(this.lllIlIIlIIIlIlIIIllIlllIl);
                 this.lIlllIlllIIIIlIIlllIllIII(this.IlIllllllIIlIIllllIIlIIIl);
-                this.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+                this.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().activeProfile.getName());
             }
-        }
-        catch (IOException iOException) {
-            iOException.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -39,34 +40,33 @@ public class class_0576 {
             if (this.IlIllllllIIlIIllllIIlIIIl()) {
                 this.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl);
                 this.IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl);
-                if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl == null) {
-                    LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = (class_1165) LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.get(0);
+                if (LunarClient.getInstance().activeProfile == null) {
+                    LunarClient.getInstance().activeProfile = (Profile) LunarClient.getInstance().profiles.get(0);
                 } else {
-                    this.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+                    this.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().activeProfile.getName());
                 }
                 LunarClient.getInstance().getModuleManager().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll();
             }
-        }
-        catch (IOException iOException) {
-            iOException.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    private boolean IlIllllllIIlIIllllIIlIIIl() {
+    private boolean IlIllllllIIlIIllllIIlIIIl() throws IOException {
         return !(!lllIIIllIIIIlllIlIIllIIll.exists() && !lllIIIllIIIIlllIlIIllIIll.mkdirs() || !this.lIlllIlllIIIIlIIlllIllIII.exists() && !this.lIlllIlllIIIIlIIlllIllIII.createNewFile() || !this.lllIlIIlIIIlIlIIIllIlllIl.exists() && !this.lllIlIIlIIIlIlIIIllIlllIl.createNewFile());
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(String string) {
         if (string.equalsIgnoreCase("default")) {
-            LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = (class_1165) LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.get(0);
-            for (class_1665 class_16652 : LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll) {
+            LunarClient.getInstance().activeProfile = (Profile) LunarClient.getInstance().profiles.get(0);
+            for (AbstractModule class_16652 : LunarClient.getInstance().getModuleManager().modules) {
                 class_16652.lllIIIllIIIIlllIlIIllIIll(class_16652.lIlIlIIlIIIIlIIIIIlllIIII);
                 class_16652.lllIIIllIIIIlllIlIIllIIll(class_16652.IlIIIlIIIIllIIIllIIIIIIll);
                 class_16652.lllIIIllIIIIlllIlIIllIIll(class_16652.IIlllIlIlllIllIIIlllIIlIl, class_16652.lIlIllIIlIIlIIlIIlIIlIIll);
                 class_16652.IlIIIIIllllllIIlllIllllll(class_16652.llIIlIllIllllIlIIIIlIIlll);
                 for (int i = 0; i < class_16652.llIIlllIllIllllIIIlIIIIII().size(); ++i) {
                     try {
-                        ((class_1609)class_16652.llIIlllIllIllllIIIlIIIIII().get(i)).lllIIIllIIIIlllIlIIllIIll(class_16652.llIIllIllIlIIlIIllIllllll().get(i), false);
+                        ((Setting)class_16652.llIIlllIllIllllIIIlIIIIII().get(i)).lllIIIllIIIIlllIlIIllIIll(class_16652.llIIllIllIlIIlIIllIllllll().get(i), false);
                         continue;
                     }
                     catch (Exception exception) {
@@ -83,8 +83,8 @@ public class class_0576 {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.addAll(LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll);
-        arrayList.addAll(LunarClient.getInstance().getModuleManager().lllIlIIlIIIlIlIIIllIlllIl);
+        arrayList.addAll(LunarClient.getInstance().getModuleManager().modules);
+        arrayList.addAll(LunarClient.getInstance().getModuleManager().staffModules);
         try {
             String string2;
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file2));
@@ -95,9 +95,9 @@ public class class_0576 {
                     Object object222;
                     if (string2.startsWith("#") || string2.length() == 0) continue;
                     if (string2.startsWith("[")) {
-                        for (Object object222 : arrayList) {
-                            if (!("[" + ((class_1665)object222).IIIllIIlIIIIIIlIlIIllIIlI() + "]").equalsIgnoreCase(string2)) continue;
-                            object = object222;
+                        for (Object object2223 : arrayList) {
+                            if (!("[" + ((AbstractModule)object2223).IIIllIIlIIIIIIlIlIIllIIlI() + "]").equalsIgnoreCase(string2)) continue;
+                            object = object2223;
                             continue block34;
                         }
                         continue;
@@ -109,29 +109,29 @@ public class class_0576 {
                         try {
                             block12 : switch (arrstring[0]) {
                                 case "State": {
-                                    if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII()) break;
-                                    ((class_1665)object).lllIIIllIIIIlllIlIIllIIll(Boolean.parseBoolean(arrstring[1]));
+                                    if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII()) break;
+                                    ((AbstractModule)object).lllIIIllIIIIlllIlIIllIIll(Boolean.parseBoolean(arrstring[1]));
                                     break;
                                 }
                                 case "RenderHUD": {
-                                    ((class_1665)object).IlIIIIIllllllIIlllIllllll(Boolean.parseBoolean(arrstring[1]));
+                                    ((AbstractModule)object).IlIIIIIllllllIIlllIllllll(Boolean.parseBoolean(arrstring[1]));
                                     break;
                                 }
                                 case "Position": {
-                                    if (((class_1665)object).IlIlllIIIIIIlIIllIIllIlll() == null) break;
+                                    if (((AbstractModule)object).IlIlllIIIIIIlIIllIIllIlll() == null) break;
                                     for (class_0767 class_07672 : class_0767.values()) {
                                         if (!class_07672.lllIIIllIIIIlllIlIIllIIll().toLowerCase().equalsIgnoreCase(arrstring[1].toLowerCase())) continue;
-                                        ((class_1665)object).lllIIIllIIIIlllIlIIllIIll(class_07672);
+                                        ((AbstractModule)object).lllIIIllIIIIlllIlIIllIIll(class_07672);
                                         break block12;
                                     }
                                     continue block34;
                                 }
                                 case "xTranslation": {
-                                    ((class_1665)object).lllIlIIlIIIlIlIIIllIlllIl(Float.parseFloat(arrstring[1]));
+                                    ((AbstractModule)object).lllIlIIlIIIlIlIIIllIlllIl(Float.parseFloat(arrstring[1]));
                                     break;
                                 }
                                 case "yTranslation": {
-                                    ((class_1665)object).lllIIIllIIIIlllIlIIllIIll(Float.parseFloat(arrstring[1]));
+                                    ((AbstractModule)object).lllIIIllIIIIlllIlIIllIIll(Float.parseFloat(arrstring[1]));
                                 }
                             }
                         }
@@ -142,19 +142,19 @@ public class class_0576 {
                     }
                     arrstring = string2.split("=", 2);
                     if (arrstring.length != 2) continue;
-                    object222 = ((class_1665)object).llIIlllIllIllllIIIlIIIIII().iterator();
+                    object222 = ((AbstractModule)object).llIIlllIllIllllIIIlIIIIII().iterator();
                     while (object222.hasNext()) {
-                        class_1609 class_16092 = (class_1609)object222.next();
-                        if (class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label") || !class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().equalsIgnoreCase(arrstring[0].toLowerCase())) continue;
+                        Setting class_16092 = (Setting)object222.next();
+                        if (class_16092.getName().equalsIgnoreCase("label") || !class_16092.getName().toLowerCase().equalsIgnoreCase(arrstring[0].toLowerCase())) continue;
                         try {
                             switch (class_16092.IllIIIllIIIIlIlIlIllIIlll()) {
                                 case lIllllIIlIIIlIllllllIIIll: {
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(Boolean.parseBoolean(arrstring[1]));
+                                    class_16092.setValue(Boolean.parseBoolean(arrstring[1]));
                                     break;
                                 }
                                 case lIlllIlllIIIIlIIlllIllIII: {
-                                    if (((class_1665)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((class_2256)object).lllIIIllIIIIlllIlIIllIIll()) {
-                                        ((class_2256)object).lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl(Integer.parseInt(arrstring[1]));
+                                    if (((AbstractModule)object).lIlllIlllIIIIlIIlllIllIII() && class_16092 == ((class_2256)object).lllIIIllIIIIlllIlIIllIIll()) {
+                                        ((class_2256)object).lllIIIllIIIIlllIlIIllIIll().setValue(Integer.parseInt(arrstring[1]));
                                         break;
                                     }
                                     if (arrstring[1].contains("rainbow")) {
@@ -162,25 +162,25 @@ public class class_0576 {
                                         int n = Integer.parseInt(f[0]);
                                         class_16092.lllIIIllIIIIlllIlIIllIIll = true;
                                         if (n > (Integer)class_16092.IlIllllllIIlIIllllIIlIIIl() || n < (Integer)class_16092.lllIlIIlIIIlIlIIIllIlllIl()) continue block34;
-                                        class_16092.lllIlIIlIIIlIlIIIllIlllIl(n);
+                                        class_16092.setValue(n);
                                         break;
                                     }
                                     int exception = Integer.parseInt(arrstring[1]);
                                     class_16092.lllIIIllIIIIlllIlIIllIIll = false;
                                     if (exception > (Integer)class_16092.IlIllllllIIlIIllllIIlIIIl() || exception < (Integer)class_16092.lllIlIIlIIIlIlIIIllIlllIl()) continue block34;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(exception);
+                                    class_16092.setValue(exception);
                                     break;
                                 }
                                 case IlIllllllIIlIIllllIIlIIIl: {
                                     float f = Float.parseFloat(arrstring[1]);
                                     if (!(f <= ((Float)class_16092.IlIllllllIIlIIllllIIlIIIl()).floatValue()) || !(f >= ((Float)class_16092.lllIlIIlIIIlIlIIIllIlllIl()).floatValue())) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(f));
+                                    class_16092.setValue(Float.valueOf(f));
                                     break;
                                 }
                                 case IlIIIIIllllllIIlllIllllll: {
                                     double d = Double.parseDouble(arrstring[1]);
                                     if (!(d <= (Double)class_16092.IlIllllllIIlIIllllIIlIIIl()) || !(d >= (Double)class_16092.lllIlIIlIIIlIlIIIllIlllIl())) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(d);
+                                    class_16092.setValue(d);
                                     break;
                                 }
                                 case lllIlIIlIIIlIlIIIllIlllIl: {
@@ -190,15 +190,15 @@ public class class_0576 {
                                         bl = true;
                                     }
                                     if (!bl) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(arrstring[1]);
+                                    class_16092.setValue(arrstring[1]);
                                     break;
                                 }
                                 case lllIIIllIIIIlllIlIIllIIll: {
-                                    if (class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label")) break;
+                                    if (class_16092.getName().equalsIgnoreCase("label")) break;
                                     if (class_16092 == LunarClient.getInstance().getModuleManager().IlIIIIIllllllIIlllIllllll.IllIIlllllllIIlIIlIIIIlIl) {
                                         arrstring[1] = arrstring[1].replaceAll("%FPS%", "%BOOST%");
                                     }
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(arrstring[1].replaceAll("&([abcdefghijklmrABCDEFGHIJKLMNR0-9])|(&$)", "\u00a7$1"));
+                                    class_16092.setValue(arrstring[1].replaceAll("&([abcdefghijklmrABCDEFGHIJKLMNR0-9])|(&$)", "\u00a7$1"));
                                 }
                             }
                             continue block34;
@@ -276,7 +276,7 @@ public class class_0576 {
                         continue;
                     }
                     if (arrstring[0].startsWith("key_")) {
-                        for (class_1335 class_13352 : Minecraft.getMinecraft().gameSettings.llIlllllIIlIIlIIllllIllll) {
+                        for (KeyBinding class_13352 : Minecraft.getMinecraft().gameSettings.keyBindings) {
                             if (!class_13352.lllIIIllIIIIlllIlIIllIIll || !arrstring[0].equalsIgnoreCase("key_" + class_13352.IIIllIIlIIIIIIlIlIIllIIlI())) continue;
                             class_13352.lllIlIIlIIIlIlIIIllIlllIl(Integer.parseInt(arrstring[1]));
                         }
@@ -289,9 +289,9 @@ public class class_0576 {
                             String[] arrstring2 = ((String)object2).split(",", 2);
                             try {
                                 int n = Integer.parseInt(arrstring2[1]);
-                                for (class_1165 class_11652 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                                    if (n == 0 || !class_11652.lllIIIllIIIIlllIlIIllIIll().equalsIgnoreCase(arrstring2[0])) continue;
-                                    class_11652.lllIIIllIIIIlllIlIIllIIll = n;
+                                for (Profile class_11652 : LunarClient.getInstance().profiles) {
+                                    if (n == 0 || !class_11652.getName().equalsIgnoreCase(arrstring2[0])) continue;
+                                    class_11652.index = n;
                                 }
                             }
                             catch (NumberFormatException numberFormatException) {
@@ -307,21 +307,21 @@ public class class_0576 {
                             object = new File(file2 + File.separator + arrstring[1] + ".cfg");
                         }
                         if (object == null || !((File)object).exists()) continue;
-                        Object object3 = null;
-                        for (Object object2 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                            if (!arrstring[1].equalsIgnoreCase(((class_1165)object2).lllIIIllIIIIlllIlIIllIIll())) continue;
+                        Profile object3 = null;
+                        for (Profile object2 : LunarClient.getInstance().profiles) {
+                            if (!arrstring[1].equalsIgnoreCase(object2.getName())) continue;
                             object3 = object2;
                         }
-                        if (object3 == null || ((class_1165)object3).lllIIIllIIIIlllIlIIllIIll().toLowerCase().equalsIgnoreCase("default")) continue;
-                        LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = object3;
+                        if (object3 == null || object3.getName().equalsIgnoreCase("default")) continue;
+                        LunarClient.getInstance().activeProfile = object3;
                         continue;
                     }
-                    for (class_1609 class_16092 : LunarClient.getInstance().getSettingsManager().IIIllIIlIIIIIIlIlIIllIIlI) {
-                        if (class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label") || !class_16092.lIllllIIlIIIlIllllllIIIll().toLowerCase().equalsIgnoreCase(arrstring[0].toLowerCase())) continue;
+                    for (Setting class_16092 : LunarClient.getInstance().getSettingsManager().settingsList) {
+                        if (class_16092.getName().equalsIgnoreCase("label") || !class_16092.getName().toLowerCase().equalsIgnoreCase(arrstring[0].toLowerCase())) continue;
                         try {
                             switch (class_16092.IllIIIllIIIIlIlIlIllIIlll()) {
                                 case lIllllIIlIIIlIllllllIIIll: {
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(Boolean.parseBoolean(arrstring[1]));
+                                    class_16092.setValue(Boolean.parseBoolean(arrstring[1]));
                                     break;
                                 }
                                 case lIlllIlllIIIIlIIlllIllIII: {
@@ -330,25 +330,25 @@ public class class_0576 {
                                         int n = Integer.parseInt(arrstring3[0]);
                                         class_16092.lllIIIllIIIIlllIlIIllIIll = true;
                                         if (n > (Integer)class_16092.IlIllllllIIlIIllllIIlIIIl() || n < (Integer)class_16092.lllIlIIlIIIlIlIIIllIlllIl()) continue block21;
-                                        class_16092.lllIlIIlIIIlIlIIIllIlllIl(n);
+                                        class_16092.setValue(n);
                                         break;
                                     }
                                     int n = Integer.parseInt(arrstring[1]);
                                     class_16092.lllIIIllIIIIlllIlIIllIIll = false;
                                     if (n > (Integer)class_16092.IlIllllllIIlIIllllIIlIIIl() || n < (Integer)class_16092.lllIlIIlIIIlIlIIIllIlllIl()) continue block21;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(n);
+                                    class_16092.setValue(n);
                                     break;
                                 }
                                 case IlIllllllIIlIIllllIIlIIIl: {
                                     float f = Float.parseFloat(arrstring[1]);
                                     if (!(f <= ((Float)class_16092.IlIllllllIIlIIllllIIlIIIl()).floatValue()) || !(f >= ((Float)class_16092.lllIlIIlIIIlIlIIIllIlllIl()).floatValue())) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(f));
+                                    class_16092.setValue(Float.valueOf(f));
                                     break;
                                 }
                                 case IlIIIIIllllllIIlllIllllll: {
                                     double d = Double.parseDouble(arrstring[1]);
                                     if (!(d <= (Double)class_16092.IlIllllllIIlIIllllIIlIIIl()) || !(d >= (Double)class_16092.lllIlIIlIIIlIlIIIllIlllIl())) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(d);
+                                    class_16092.setValue(d);
                                     break;
                                 }
                                 case lllIlIIlIIIlIlIIIllIlllIl: {
@@ -358,7 +358,7 @@ public class class_0576 {
                                         bl = true;
                                     }
                                     if (!bl) break;
-                                    class_16092.lllIlIIlIIIlIlIIIllIlllIl(arrstring[1]);
+                                    class_16092.setValue(arrstring[1]);
                                 }
                             }
                             continue block21;
@@ -394,20 +394,21 @@ public class class_0576 {
             bufferedWriter.write("################################");
             bufferedWriter.newLine();
             bufferedWriter.newLine();
-            if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl != null && !LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll().equals("default")) {
-                bufferedWriter.write("ActiveProfile=" + LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+            if (LunarClient.getInstance().activeProfile != null && !LunarClient.getInstance().activeProfile.getName().equals("default")) {
+                bufferedWriter.write("ActiveProfile=" + LunarClient.getInstance().activeProfile.getName());
                 bufferedWriter.newLine();
             }
-            for (class_1609 class_16092 : LunarClient.getInstance().getSettingsManager().IIIllIIlIIIIIIlIlIIllIIlI) {
-                if (class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label")) continue;
+            for (Setting class_16092 : LunarClient.getInstance().getSettingsManager().settingsList) {
+                if (class_16092.getName().equalsIgnoreCase("label"))
+                    continue;
                 if (class_16092.lllIIIllIIIIlllIlIIllIIll) {
-                    bufferedWriter.write(class_16092.lIllllIIlIIIlIllllllIIIll() + "=" + class_16092.lIlllIlllIIIIlIIlllIllIII() + ";rainbow");
+                    bufferedWriter.write(class_16092.getName() + "=" + class_16092.getValue() + ";rainbow");
                 } else {
-                    bufferedWriter.write(class_16092.lIllllIIlIIIlIllllllIIIll() + "=" + class_16092.lIlllIlllIIIIlIIlllIllIII());
+                    bufferedWriter.write(class_16092.getName() + "=" + class_16092.getValue());
                 }
                 bufferedWriter.newLine();
             }
-            for (class_1335 class_13352 : Minecraft.getMinecraft().gameSettings.llIlllllIIlIIlIIllllIllll) {
+            for (KeyBinding class_13352 : Minecraft.getMinecraft().gameSettings.keyBindings) {
                 if (!class_13352.lllIIIllIIIIlllIlIIllIIll) continue;
                 bufferedWriter.write("key_" + class_13352.IIIllIIlIIIIIIlIlIIllIIlI() + "=" + class_13352.IIIllIllIIlIlIlIlIllllIIl());
                 bufferedWriter.newLine();
@@ -444,8 +445,8 @@ public class class_0576 {
             bufferedWriter.write("XrayBlocks=" + (String)object2);
             bufferedWriter.newLine();
             bufferedWriter.write("ProfileIndexes=");
-            for (class_1165 class_11652 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                bufferedWriter.write("[" + class_11652.lllIIIllIIIIlllIlIIllIIll() + "," + class_11652.lllIIIllIIIIlllIlIIllIIll + "]");
+            for (Profile class_11652 : LunarClient.getInstance().profiles) {
+                bufferedWriter.write("[" + class_11652.getName() + "," + class_11652.index + "]");
             }
             bufferedWriter.newLine();
             bufferedWriter.close();
@@ -508,8 +509,8 @@ public class class_0576 {
             iOException.printStackTrace();
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.addAll(LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll);
-        arrayList.addAll(LunarClient.getInstance().getModuleManager().lllIlIIlIIIlIlIIIllIlllIl);
+        arrayList.addAll(LunarClient.getInstance().getModuleManager().modules);
+        arrayList.addAll(LunarClient.getInstance().getModuleManager().staffModules);
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file2));
             bufferedWriter.write("################################");
@@ -519,7 +520,7 @@ public class class_0576 {
             bufferedWriter.write("################################");
             bufferedWriter.newLine();
             bufferedWriter.newLine();
-            for (class_1665 class_16652 : arrayList) {
+            for (AbstractModule class_16652 : arrayList) {
                 bufferedWriter.write("[" + class_16652.IIIllIIlIIIIIIlIlIIllIIlI() + "]");
                 bufferedWriter.newLine();
                 bufferedWriter.write("-State=" + class_16652.lIllllIIlIIIlIllllllIIIll());
@@ -534,7 +535,7 @@ public class class_0576 {
                 bufferedWriter.newLine();
                 bufferedWriter.write("-RenderHUD=" + class_16652.lllIIlIIIllllllIIIIlIlIlI());
                 bufferedWriter.newLine();
-                for (class_1609 class_16092 : class_16652.llIIlllIllIllllIIIlIIIIII()) {
+                for (Setting class_16092 : class_16652.llIIlllIllIllllIIIlIIIIII()) {
                     if (class_16092 == LunarClient.getInstance().getModuleManager().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll) {
                         bufferedWriter.write("# Customize your HUD info display string.");
                         bufferedWriter.newLine();
@@ -561,13 +562,13 @@ public class class_0576 {
                         bufferedWriter.write("# %NL% - Break into a new line.");
                         bufferedWriter.newLine();
                     }
-                    if (class_16092.lIllllIIlIIIlIllllllIIIll().equalsIgnoreCase("label")) continue;
+                    if (class_16092.getName().equalsIgnoreCase("label")) continue;
                     if (class_16092.IllIIIllIIIIlIlIlIllIIlll() == class_1318.lllIIIllIIIIlllIlIIllIIll) {
-                        bufferedWriter.write(class_16092.lIllllIIlIIIlIllllllIIIll() + "=" + (class_16092.lIlllIlllIIIIlIIlllIllIII() + "").replaceAll("\u00a7", "&"));
+                        bufferedWriter.write(class_16092.getName() + "=" + (class_16092.getValue() + "").replaceAll("\u00a7", "&"));
                     } else if (class_16092.lllIIIllIIIIlllIlIIllIIll) {
-                        bufferedWriter.write(class_16092.lIllllIIlIIIlIllllllIIIll() + "=" + class_16092.lIlllIlllIIIIlIIlllIllIII() + ";rainbow");
+                        bufferedWriter.write(class_16092.getName() + "=" + class_16092.getValue() + ";rainbow");
                     } else {
-                        bufferedWriter.write(class_16092.lIllllIIlIIIlIllllllIIIll() + "=" + class_16092.lIlllIlllIIIIlIIlllIllIII());
+                        bufferedWriter.write(class_16092.getName() + "=" + class_16092.getValue());
                     }
                     bufferedWriter.newLine();
                 }

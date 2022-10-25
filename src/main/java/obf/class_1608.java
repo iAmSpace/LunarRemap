@@ -14,8 +14,8 @@ extends class_2257 {
     private final Random llllllIlIllllIlIlIlIIIIlI = new Random();
     private final boolean lIlIIllllIlIIIIllIIIIlIIl;
     private static boolean llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    private class_2102 lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lllIIIIIIlIlllIIlIlIIIllI;
 
     protected class_1608(boolean bl) {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
@@ -57,7 +57,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.IIIIlIIlIIIllIIIIllIIIlII : (n == 0 ? this.IIIIlIIlIIIllIIIIllIIIlII : (n != n2 ? this.llIIIIllIIIIIIIlIIIlIIIIl : this.lllIIIIIIlIlllIIlIlIIIllI));
     }
 

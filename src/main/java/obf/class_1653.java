@@ -8,6 +8,8 @@ package obf;/*
  *  org.apache.logging.log4j.Logger
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.util.ResourceLocation;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.init.Items;
@@ -107,7 +109,7 @@ extends class_1522 {
             try {
                 byteBuf.writeInt(this.IlIllllllIIlIIllllIIlIIIl.lllIIlIIIllllllIIIIlIlIlI());
                 byteBuf.writeInt(this.IlIllllllIIlIIllllIIlIIIl.IlIlllIIIIIIlIIllIIllIlll());
-                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0917(string, byteBuf));
+                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload(string, byteBuf));
             }
             catch (Exception exception) {
                 lllIIIllIIIIlllIlIIllIIll.error("Couldn't send beacon info", (Throwable)exception);

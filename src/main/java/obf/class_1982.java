@@ -25,6 +25,7 @@ import com.mojang.authlib.exceptions.InvalidCredentialsException;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
 import io.netty.buffer.Unpooled;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -65,8 +66,8 @@ extends WebSocketClient {
         if (!this.isOpen()) {
             return;
         }
-        class_0181 class_01812 = new class_0181(Unpooled.buffer());
-        class_01812.lllIlIIlIIIlIlIIIllIlllIl((Integer)class_0688.lllIlIIlIIIlIlIIIllIlllIl.get(class_06882.getClass()));
+        PacketBuffer class_01812 = new PacketBuffer(Unpooled.buffer());
+        class_01812.writeVarIntToBuffer((Integer)class_0688.lllIlIIlIIIlIlIIIllIlllIl.get(class_06882.getClass()));
         try {
             class_06882.lllIIIllIIIIlllIlIIllIIll(class_01812);
             this.send(class_01812.array());
@@ -76,8 +77,8 @@ extends WebSocketClient {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
-        int n = class_01812.lllIIIllIIIIlllIlIIllIIll();
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
+        int n = class_01812.readVarIntFromBuffer();
         Class class_ = (Class)class_0688.lllIlIIlIIIlIlIIIllIlllIl.inverse().get((Object)n);
         try {
             class_0688 class_06882;
@@ -102,7 +103,7 @@ extends WebSocketClient {
     }
 
     public void onMessage(ByteBuffer byteBuffer) {
-        this.lllIIIllIIIIlllIlIIllIIll(new class_0181(Unpooled.wrappedBuffer((byte[])byteBuffer.array())));
+        this.lllIIIllIIIIlllIlIIllIIll(new PacketBuffer(Unpooled.wrappedBuffer((byte[])byteBuffer.array())));
     }
 
     public void onMessage(String string) {
@@ -130,7 +131,7 @@ extends WebSocketClient {
             LunarClient.getInstance().llIllllIlIllIIIlIllIIlIlI().lllIIIllIIIIlllIlIIllIIll(class_01152.IlIllllllIIlIIllllIIlIIIl(), string2);
             if (LunarClient.getInstance().getStatus() != class_0135.IlIllllllIIlIIllllIIlIIIl) {
                 LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll("message");
-                class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + class_01152.lIlllIlllIIIIlIIlllIllIII() + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + " says:", string2);
+                class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.GREEN) + class_01152.lIlllIlllIIIIlIIlllIllIII() + (Object)((Object) EnumChatFormatting.RESET) + " says:", string2);
             }
             for (class_0759 class_07592 : class_0713.IlIlllIIIIIIlIIllIIllIlll().lIIIIlIlIIlllllIIllIIlIII()) {
                 if (!(class_07592 instanceof class_1676) || ((class_1676)class_07592).IIIllIllIIlIlIlIlIllllIIl() != class_01152) continue;
@@ -190,7 +191,7 @@ extends WebSocketClient {
     private void lllIIIllIIIIlllIlIIllIIll(JsonObject jsonObject) {
         String string = jsonObject.get("result").getAsString();
         if (string.equals("SUCCESS")) {
-            class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + "Connected", "Welcome, " + this.lllIIIllIIIIlllIlIIllIIll.getSession().getUsername() + ".");
+            class_0078.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.GREEN) + "Connected", "Welcome, " + this.lllIIIllIIIIlllIlIIllIIll.getSession().getUsername() + ".");
         }
     }
 
@@ -311,14 +312,14 @@ extends WebSocketClient {
     public void lllIIIllIIIIlllIlIIllIIll(class_1048 class_10482) {
         String string = class_10482.lllIIIllIIIIlllIlIIllIIll();
         String string2 = class_10482.lllIlIIlIIIlIlIIIllIlllIl();
-        LunarClient.getInstance().lIlIllIIlIIlIIlIIlIIlIIll().add((Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + "[" + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + class_10482.lllIIIllIIIIlllIlIIllIIll() + (Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + "] " + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + class_10482.lllIlIIlIIIlIlIIIllIlllIl());
+        LunarClient.getInstance().lIlIllIIlIIlIIlIIlIIlIIll().add((Object)((Object) EnumChatFormatting.DARK_GRAY) + "[" + (Object)((Object) EnumChatFormatting.RESET) + class_10482.lllIIIllIIIIlllIlIIllIIll() + (Object)((Object) EnumChatFormatting.DARK_GRAY) + "] " + (Object)((Object) EnumChatFormatting.RESET) + class_10482.lllIlIIlIIIlIlIIIllIlllIl());
         class_0078.lllIIIllIIIIlllIlIIllIIll(string, string2);
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(class_0653 class_06532) {
-        SecretKey secretKey = class_0936.lllIIIllIIIIlllIlIIllIIll();
+        SecretKey secretKey = CryptManager.lllIIIllIIIIlllIlIIllIIll();
         PublicKey publicKey = class_06532.lllIIIllIIIIlllIlIIllIIll();
-        String string = new BigInteger(class_0936.lllIIIllIIIIlllIlIIllIIll("", publicKey, secretKey)).toString(16);
+        String string = new BigInteger(CryptManager.lllIIIllIIIIlllIlIIllIIll("", publicKey, secretKey)).toString(16);
         try {
             this.lIlllIlllIIIIlIIlllIllIII().joinServer(this.lllIIIllIIIIlllIlIIllIIll.getSession().func_148256_e(), this.lllIIIllIIIIlllIlIIllIIll.getSession().getToken(), string);
         }
@@ -338,7 +339,7 @@ extends WebSocketClient {
             this.close();
         }
         try {
-            class_0181 class_01812 = new class_0181(Unpooled.buffer());
+            PacketBuffer class_01812 = new PacketBuffer(Unpooled.buffer());
             class_0205 class_02052 = new class_0205(secretKey, publicKey, class_06532.lllIlIIlIIIlIlIIIllIlllIl());
             class_02052.lllIIIllIIIIlllIlIIllIIll(class_01812);
             this.lllIIIllIIIIlllIlIIllIIll(class_02052);
@@ -432,8 +433,8 @@ extends WebSocketClient {
                 bufferedWriter.newLine();
                 bufferedWriter.write("################################");
                 bufferedWriter.newLine();
-                for (class_1165 class_11652 : LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll) {
-                    bufferedWriter.write(class_11652.lllIIIllIIIIlllIlIIllIIll() + ":" + class_11652.lllIIIllIIIIlllIlIIllIIll);
+                for (Profile class_11652 : LunarClient.getInstance().profiles) {
+                    bufferedWriter.write(class_11652.getName() + ":" + class_11652.index);
                     bufferedWriter.newLine();
                 }
                 bufferedWriter.close();

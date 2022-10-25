@@ -13,16 +13,16 @@ import java.util.Random;
 
 public class class_0706
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
 
     public class_0706() {
         super(class_1855.lIllllIIlIIIlIllllllIIIll);
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.lIlIIllllIlIIIIllIIIIlIIl : (n == 0 ? this.llIlllIIllIlllIlIlIlIIIll : this.llIIIIllIIIIIIIlIIIlIIIIl);
     }
 
@@ -34,7 +34,7 @@ extends Block {
         this.llIIIIllIIIIIIIlIIIlIIIIl = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_side");
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string.equals("inner") ? Blocks.lllIlIIllllIIllIIIIllIlIl.llllllIlIllllIlIlIlIIIIlI : (string.equals("bottom") ? Blocks.lllIlIIllllIIllIIIIllIlIl.llIlllIIllIlllIlIlIlIIIll : null);
     }
 
@@ -120,8 +120,8 @@ extends Block {
                 }
                 this.IIIllIIlIIIIIIlIlIIllIIlI(class_13342, n, n2, n3, n6 - 1);
             }
-        } else if (n6 > 0 && class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 && ((class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll()).IlIIIlIIIIllIIIllIIIIIIll() == class_0557.lllIIIllIIIIlllIlIIllIIll) {
-            class_0981 class_09812 = (class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll();
+        } else if (n6 > 0 && class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor && ((ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll()).IlIIIlIIIIllIIIllIIIIIIll() == ArmorMaterial.CLOTH) {
+            ItemArmor class_09812 = (ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll();
             class_09812.IlIlllIIIIIIlIIllIIllIlll(class_08972);
             this.IIIllIIlIIIIIIlIlIIllIIlI(class_13342, n, n2, n3, n6 - 1);
             return true;

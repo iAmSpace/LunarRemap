@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 import net.minecraft.client.settings.GameSettings;
 

@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import net.minecraft.network.handshake.client.C00Handshake;
+import net.minecraft.network.status.client.C00PacketServerQuery;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,8 +42,8 @@ public class class_2245 {
         class_10922.lIIIIlIlIIlllllIIllIIlIII = null;
         class_08002.lllIIIllIIIIlllIlIIllIIll(new class_0756(this, class_10922, class_08002));
         try {
-            class_08002.lllIIIllIIIIlllIlIIllIIll(new class_0302(class_10922.IllIIlllllllIIlIIlIIIIlIl == -1332 ? -1332 : 5, class_14082.lllIIIllIIIIlllIlIIllIIll(), class_14082.lllIlIIlIIIlIlIIIllIlllIl(), class_0546.IlIllllllIIlIIllllIIlIIIl), new GenericFutureListener[0]);
-            class_08002.lllIIIllIIIIlllIlIIllIIll(new class_1723(), new GenericFutureListener[0]);
+            class_08002.lllIIIllIIIIlllIlIIllIIll(new C00Handshake(class_10922.IllIIlllllllIIlIIlIIIIlIl == -1332 ? -1332 : 5, class_14082.lllIIIllIIIIlllIlIIllIIll(), class_14082.lllIlIIlIIIlIlIIIllIlllIl(), EnumConnectionState.STATUS), new GenericFutureListener[0]);
+            class_08002.lllIIIllIIIIlllIlIIllIIll(new C00PacketServerQuery(), new GenericFutureListener[0]);
         }
         catch (Throwable throwable) {
             lllIlIIlIIIlIlIIIllIlllIl.error((Object)throwable);
@@ -68,7 +71,7 @@ public class class_2245 {
                 }
                 iterator.remove();
                 if (class_08002.lIllllIIlIIIlIllllllIIIll() == null) continue;
-                class_08002.IlIIIIIllllllIIlllIllllll().lllIIIllIIIIlllIlIIllIIll(class_08002.lIllllIIlIIIlIllllllIIIll());
+                class_08002.IlIIIIIllllllIIlllIllllll().onDisconnect(class_08002.lIllllIIlIIIlIllllllIIIll());
             }
         }
     }

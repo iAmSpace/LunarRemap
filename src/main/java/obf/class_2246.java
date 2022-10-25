@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class class_2246
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
 
     protected class_2246() {
         super(class_1855.IllIIIIllIIllIllIlllIlIIl);
@@ -17,7 +17,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n != 1 && n != 0 ? this.llIIIIllIIIIIIIlIIIlIIIIl : this.llllllIlIllllIlIlIlIIIIlI;
     }
 

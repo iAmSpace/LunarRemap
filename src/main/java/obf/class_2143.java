@@ -10,11 +10,11 @@ extends class_0688 {
     private List lllIIIllIIIIlllIlIIllIIll;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
         int n = class_01812.readInt();
         this.lllIIIllIIIIlllIlIIllIIll = new ArrayList();
         for (int i = 0; i < n; ++i) {

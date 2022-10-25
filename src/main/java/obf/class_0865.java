@@ -11,11 +11,11 @@ public class class_0865
 extends Block {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"default", "chiseled", "lines"};
     private static final String[] lIlIIllllIlIIIIllIIIIlIIl = new String[]{"side", "chiseled", "lines", null, null};
-    private class_2102[] llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    private class_2102 lllIIIIIIlIlllIIlIlIIIllI;
-    private class_2102 llIIlIIllIIllIlIIllIIllII;
-    private class_2102 lIlIlIIIIIIlIIllllIlIIllI;
+    private IIcon[] llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon llIIlIIllIIllIlIIllIIllII;
+    private IIcon lIlIlIIIIIIlIIllllIlIIllI;
 
     public class_0865() {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
@@ -23,7 +23,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n2 != 2 && n2 != 3 && n2 != 4) {
             if (n != 1 && (n != 0 || n2 != 1)) {
                 if (n == 0) {
@@ -86,7 +86,7 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlllIIllIlllIlIlIlIIIll = new class_2102[lIlIIllllIlIIIIllIIIIlIIl.length];
+        this.llIlllIIllIlllIlIlIlIIIll = new IIcon[lIlIIllllIlIIIIllIIIIlIIl.length];
         for (int i = 0; i < this.llIlllIIllIlllIlIlIlIIIll.length; ++i) {
             this.llIlllIIllIlllIlIlIlIIIll[i] = lIlIIllllIlIIIIllIIIIlIIl[i] == null ? this.llIlllIIllIlllIlIlIlIIIll[i - 1] : class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + lIlIIllllIlIIIIllIIIIlIIl[i]);
         }

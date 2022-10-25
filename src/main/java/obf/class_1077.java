@@ -23,13 +23,13 @@ extends class_0688 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
+        class_01812.writeStringToBuffer(this.lllIIIllIIIIlllIlIIllIIll);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
-        this.lllIIIllIIIIlllIlIIllIIll = class_01812.IlIllllllIIlIIllllIIlIIIl(32767);
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
+        this.lllIIIllIIIIlllIlIIllIIll = class_01812.readStringFromBuffer(32767);
         JsonObject jsonObject = new JsonParser().parse(this.lllIIIllIIIIlllIlIIllIIll).getAsJsonObject();
         this.IlIllllllIIlIIllllIIlIIIl = jsonObject.getAsJsonArray("bulk");
     }

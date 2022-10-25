@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 
@@ -7,7 +8,7 @@ import net.minecraft.client.Minecraft;
  * Decompiled with CFR 0.150.
  */
 public class class_1304
-extends class_1665 {
+extends AbstractModule {
     private final class_1398 lllIlIIlIIIlIlIIIllIlllIl;
     public static class_0561 lllIIIllIIIIlllIlIIllIIll = class_0561.IlIllllllIIlIIllllIIlIIIl;
 
@@ -26,8 +27,8 @@ extends class_1665 {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl() {
-        super.lllIlIIlIIIlIlIIIllIlllIl();
+    public void addAllEvents() {
+        super.addAllEvents();
         if (lllIIIllIIIIlllIlIIllIIll == class_0561.IlIllllllIIlIIllllIIlIIIl) {
             LunarClient.getInstance().getModuleManager().lIIIIlIlIIlllllIIllIIlIII.lllIIIllIIIIlllIlIIllIIll("Error", "&4Minimap &fis not allowed on this server. Some functions may not work.", 4000L);
         }

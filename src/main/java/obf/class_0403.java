@@ -1,6 +1,8 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
+
 import java.io.IOException;
 
 public class class_0403

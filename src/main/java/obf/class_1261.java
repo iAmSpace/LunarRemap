@@ -4,23 +4,24 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import com.moonsworth.lunar.client.config.Setting;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
 public class class_1261
-extends class_1665 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll;
-    private class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    private class_1609 IlIllllllIIlIIllllIIlIIIl;
+extends AbstractModule {
+    private Setting lllIIIllIIIIlllIlIIllIIll;
+    private Setting lllIlIIlIIIlIlIIIllIlllIl;
+    private Setting IlIllllllIIlIIllllIIlIIIl;
 
     public class_1261() {
         super("FPS");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.IllIIlllllllIIlIIlIIIIlIl);
         this.lllIlIIlIIIlIlIIIllIlllIl(0.0f, 0.0f);
         this.lllIIIllIIIIlllIlIIllIIll(false);
-        this.lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Show Background").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "Text Color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
-        this.IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Background Color").lllIlIIlIIIlIlIIIllIlllIl(0x6F000000).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Show Background").setValue(true);
+        this.lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "Text Color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Background Color").setValue(0x6F000000).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
         this.lllIIIllIIIIlllIlIIllIIll("[144 FPS]", 1.4f);
         this.lllIIIllIIIIlllIlIIllIIll(class_2201.class, this::lllIIIllIIIIlllIlIIllIIll);
     }
@@ -31,7 +32,7 @@ extends class_1665 {
         }
         GL11.glPushMatrix();
         this.lllIIIllIIIIlllIlIIllIIll(class_22012.lllIIIllIIIIlllIlIIllIIll());
-        if (((Boolean)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean)this.lllIIIllIIIIlllIlIIllIIll.getValue()).booleanValue()) {
             this.IlIllllllIIlIIllllIIlIIIl(56.0f, 18.0f);
             class_0210.lllIIIllIIIIlllIlIIllIIll(0.0f, 0.0f, 56.0f, 13.0f, this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
             String string = Minecraft.IlIIlllllIIlIlIlllllIllll + " FPS";

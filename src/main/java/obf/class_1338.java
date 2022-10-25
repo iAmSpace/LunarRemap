@@ -21,8 +21,8 @@ extends class_1522 {
     public void n_() {
         boolean bl;
         super.n_();
-        boolean bl2 = LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() != false;
-        boolean bl3 = bl = !LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getSettingsManager().llIIIlllIlllIlIllIIIIllIl.lIlllIlllIIIIlIIlllIllIII() != false;
+        boolean bl2 = LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll.getValue() != false;
+        boolean bl3 = bl = !LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getSettingsManager().rsShowPotsInfoInInv.getValue() != false;
         if (!this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.IIllIIIlIIllllIIIIIIIIlll().isEmpty() && (bl2 || bl)) {
             this.IlIIlllllIIlIlIlllllIllll = 160 + (this.IlIlIIlllIIlIllIIIlllllIl - this.IllIIIllIIIIlIlIlIllIIlll - 200) / 2;
             this.lllIIIllIIIIlllIlIIllIIll = true;
@@ -33,8 +33,8 @@ extends class_1522 {
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, float f) {
         boolean bl;
         super.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
-        boolean bl2 = LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() != false;
-        boolean bl3 = bl = !LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getSettingsManager().llIIIlllIlllIlIllIIIIllIl.lIlllIlllIIIIlIIlllIllIII() != false;
+        boolean bl2 = LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll.getValue() != false;
+        boolean bl3 = bl = !LunarClient.getInstance().getModuleManager().lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll() && (Boolean) LunarClient.getInstance().getSettingsManager().rsShowPotsInfoInInv.getValue() != false;
         if (this.lllIIIllIIIIlllIlIIllIIll && (bl2 || bl)) {
             this.lIllllIIlIIIlIllllllIIIll();
         }

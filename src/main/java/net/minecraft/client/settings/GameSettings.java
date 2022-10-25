@@ -29,6 +29,7 @@ import java.util.Objects;
 
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.C15PacketClientSettings;
 import net.minecraft.util.MathHelper;
 import obf.*;
 import optifine.Config;
@@ -138,7 +139,7 @@ public class GameSettings {
     public static final int lIIlllIIlIlIlIIIlIlllIIll = 1;
     public static final int IlIIlIIlllllIlIIlIlIlIlIl = 2;
     public static final String lIlIIIllIIllIIlIllllllIll = "Default";
-    public class_1335 lIlIIlllllIlllllIlIIIllll;
+    public KeyBinding lIlIIlllllIlllllIlIIIllll;
     public File lllllllIlIIlIlIIIlIlIIlll;
     public boolean llIllllIIIIIlIIlIlllIIlll = true;
     public List<String> resourcePacks = new ArrayList<>();
@@ -177,27 +178,27 @@ public class GameSettings {
     public int IlIIllIIIlIlIlIIlIlIllIIl = 0;
     public int IIllIIIlIIllllIIIIIIIIlll = 0;
     public int lIIIlIllllIlllIIIIIllIIIl = 0;
-    public class_1335 lllIIIlllIlllIIlIllllIIlI = new class_1335("key.forward", 17, "key.categories.movement");
-    public class_1335 lIIlIlllIIlllIIlllIIlIlII = new class_1335("key.left", 30, "key.categories.movement");
-    public class_1335 lIIlIIIlIlIIlllIlIllIllIl = new class_1335("key.back", 31, "key.categories.movement");
-    public class_1335 lIIlIlIIIIIllIIIIllIlIlII = new class_1335("key.right", 32, "key.categories.movement");
-    public class_1335 lIIIIlIIIIllIlIIllllIlIII = new class_1335("key.jump", 57, "key.categories.movement");
-    public class_1335 lIIIlllllllIlllIIllllllll = new class_1335("key.sneak", 42, "key.categories.movement");
-    public class_1335 IIllllIIlIlIlIlllIIIllIIl = new class_1335("key.inventory", 18, "key.categories.inventory");
-    public class_1335 IIIllIIIlIlllllllIIIlllll = new class_1335("key.use", -99, "key.categories.gameplay");
-    public class_1335 lIlIlllIllllIIlllIlllIIIl = new class_1335("key.drop", 16, "key.categories.gameplay");
-    public class_1335 lIlIllllIlIIIIIllIIIIlIlI = new class_1335("key.attack", -100, "key.categories.gameplay");
-    public class_1335 IIlllllIIlIIlIlIIlIIlIlII = new class_1335("key.pickItem", -98, "key.categories.gameplay");
-    public class_1335 IIlIlIIIIlIlllIlIlIIIIIlI = new class_1335("key.sprint", 29, "key.categories.gameplay");
-    public class_1335 IlIlIIllIlIlIIIIIlIlllllI = new class_1335("key.chat", 20, "key.categories.multiplayer");
-    public class_1335 lIlIIIlIlIllIlIlIIIlIlIII = new class_1335("key.playerlist", 15, "key.categories.multiplayer");
-    public class_1335 lIllIIlIlllIllIlIlIlIllII = new class_1335("key.command", 53, "key.categories.multiplayer");
-    public class_1335 IIIIIllIIlIlIlIIlIlIlIllI = new class_1335("key.screenshot", 60, "key.categories.misc");
-    public class_1335 lIlIIlIIlIIIIllIIlIllIlll = new class_1335("key.togglePerspective", 63, "key.categories.misc");
-    public class_1335 lIIlIlIlIlIllIIlIIllllIll = new class_1335("key.smoothCamera", 0, "key.categories.misc");
-    public class_1335 lllIlllllIllIlIIlIlIIIlll = new class_1335("key.fullscreen", 87, "key.categories.misc");
-    public class_1335[] llllIllIIIlIllIllllllIlIl = new class_1335[]{new class_1335("key.hotbar.1", 2, "key.categories.inventory"), new class_1335("key.hotbar.2", 3, "key.categories.inventory"), new class_1335("key.hotbar.3", 4, "key.categories.inventory"), new class_1335("key.hotbar.4", 5, "key.categories.inventory"), new class_1335("key.hotbar.5", 6, "key.categories.inventory"), new class_1335("key.hotbar.6", 7, "key.categories.inventory"), new class_1335("key.hotbar.7", 8, "key.categories.inventory"), new class_1335("key.hotbar.8", 9, "key.categories.inventory"), new class_1335("key.hotbar.9", 10, "key.categories.inventory")};
-    public class_1335[] llIlllllIIlIIlIIllllIllll = (class_1335[])ArrayUtils.addAll((Object[])new class_1335[]{this.lIlIllllIlIIIIIllIIIIlIlI, this.IIIllIIIlIlllllllIIIlllll, this.lllIIIlllIlllIIlIllllIIlI, this.lIIlIlllIIlllIIlllIIlIlII, this.lIIlIIIlIlIIlllIlIllIllIl, this.lIIlIlIIIIIllIIIIllIlIlII, this.lIIIIlIIIIllIlIIllllIlIII, this.lIIIlllllllIlllIIllllllll, this.lIlIlllIllllIIlllIlllIIIl, this.IIllllIIlIlIlIlllIIIllIIl, this.IlIlIIllIlIlIIIIIlIlllllI, this.lIlIIIlIlIllIlIlIIIlIlIII, this.IIlllllIIlIIlIlIIlIIlIlII, this.lIllIIlIlllIllIlIlIlIllII, this.IIIIIllIIlIlIlIIlIlIlIllI, this.lIlIIlIIlIIIIllIIlIllIlll, this.lIIlIlIlIlIllIIlIIllllIll, this.IIlIlIIIIlIlllIlIlIIIIIlI, this.lllIlllllIllIlIIlIlIIIlll}, (Object[])this.llllIllIIIlIllIllllllIlIl);
+    public KeyBinding lllIIIlllIlllIIlIllllIIlI = new KeyBinding("key.forward", 17, "key.categories.movement");
+    public KeyBinding lIIlIlllIIlllIIlllIIlIlII = new KeyBinding("key.left", 30, "key.categories.movement");
+    public KeyBinding lIIlIIIlIlIIlllIlIllIllIl = new KeyBinding("key.back", 31, "key.categories.movement");
+    public KeyBinding lIIlIlIIIIIllIIIIllIlIlII = new KeyBinding("key.right", 32, "key.categories.movement");
+    public KeyBinding lIIIIlIIIIllIlIIllllIlIII = new KeyBinding("key.jump", 57, "key.categories.movement");
+    public KeyBinding lIIIlllllllIlllIIllllllll = new KeyBinding("key.sneak", 42, "key.categories.movement");
+    public KeyBinding IIllllIIlIlIlIlllIIIllIIl = new KeyBinding("key.inventory", 18, "key.categories.inventory");
+    public KeyBinding IIIllIIIlIlllllllIIIlllll = new KeyBinding("key.use", -99, "key.categories.gameplay");
+    public KeyBinding lIlIlllIllllIIlllIlllIIIl = new KeyBinding("key.drop", 16, "key.categories.gameplay");
+    public KeyBinding lIlIllllIlIIIIIllIIIIlIlI = new KeyBinding("key.attack", -100, "key.categories.gameplay");
+    public KeyBinding IIlllllIIlIIlIlIIlIIlIlII = new KeyBinding("key.pickItem", -98, "key.categories.gameplay");
+    public KeyBinding IIlIlIIIIlIlllIlIlIIIIIlI = new KeyBinding("key.sprint", 29, "key.categories.gameplay");
+    public KeyBinding IlIlIIllIlIlIIIIIlIlllllI = new KeyBinding("key.chat", 20, "key.categories.multiplayer");
+    public KeyBinding lIlIIIlIlIllIlIlIIIlIlIII = new KeyBinding("key.playerlist", 15, "key.categories.multiplayer");
+    public KeyBinding lIllIIlIlllIllIlIlIlIllII = new KeyBinding("key.command", 53, "key.categories.multiplayer");
+    public KeyBinding IIIIIllIIlIlIlIIlIlIlIllI = new KeyBinding("key.screenshot", 60, "key.categories.misc");
+    public KeyBinding lIlIIlIIlIIIIllIIlIllIlll = new KeyBinding("key.togglePerspective", 63, "key.categories.misc");
+    public KeyBinding lIIlIlIlIlIllIIlIIllllIll = new KeyBinding("key.smoothCamera", 0, "key.categories.misc");
+    public KeyBinding lllIlllllIllIlIIlIlIIIlll = new KeyBinding("key.fullscreen", 87, "key.categories.misc");
+    public KeyBinding[] llllIllIIIlIllIllllllIlIl = new KeyBinding[]{new KeyBinding("key.hotbar.1", 2, "key.categories.inventory"), new KeyBinding("key.hotbar.2", 3, "key.categories.inventory"), new KeyBinding("key.hotbar.3", 4, "key.categories.inventory"), new KeyBinding("key.hotbar.4", 5, "key.categories.inventory"), new KeyBinding("key.hotbar.5", 6, "key.categories.inventory"), new KeyBinding("key.hotbar.6", 7, "key.categories.inventory"), new KeyBinding("key.hotbar.7", 8, "key.categories.inventory"), new KeyBinding("key.hotbar.8", 9, "key.categories.inventory"), new KeyBinding("key.hotbar.9", 10, "key.categories.inventory")};
+    public KeyBinding[] keyBindings = (KeyBinding[])ArrayUtils.addAll(new KeyBinding[]{this.lIlIllllIlIIIIIllIIIIlIlI, this.IIIllIIIlIlllllllIIIlllll, this.lllIIIlllIlllIIlIllllIIlI, this.lIIlIlllIIlllIIlllIIlIlII, this.lIIlIIIlIlIIlllIlIllIllIl, this.lIIlIlIIIIIllIIIIllIlIlII, this.lIIIIlIIIIllIlIIllllIlIII, this.lIIIlllllllIlllIIllllllll, this.lIlIlllIllllIIlllIlllIIIl, this.IIllllIIlIlIlIlllIIIllIIl, this.IlIlIIllIlIlIIIIIlIlllllI, this.lIlIIIlIlIllIlIlIIIlIlIII, this.IIlllllIIlIIlIlIIlIIlIlII, this.lIllIIlIlllIllIlIlIlIllII, this.IIIIIllIIlIlIlIIlIlIlIllI, this.lIlIIlIIlIIIIllIIlIllIlll, this.lIIlIlIlIlIllIIlIIllllIll, this.IIlIlIIIIlIlllIlIlIIIIIlI, this.lllIlllllIllIlIIlIlIIIlll}, (Object[])this.llllIllIIIlIllIllllllIlIl);
     protected Minecraft lIllIlIlIIIIlIlIIlIlIlllI;
     public File lllIIIlIllIlllIlIIllIllIl;
     public class_1999 IIlIlIIIIlIlllIIlIIlIIIII = class_1999.IlIllllllIIlIIllllIIlIIIl;
@@ -220,7 +221,7 @@ public class GameSettings {
     public boolean lllIlIlIIIlIllllIlllIlIlI = false;
 
     public float lllIIIllIIIIlllIlIIllIIll() {
-        return (Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII() != false && (Boolean) LunarClient.getInstance().getSettingsManager().lIlIlIIlIIIIlIIIIIlllIIII.lIlllIlllIIIIlIIlllIllIII() != false ? 100.0f : this.lIIIlIllIlIIlIIIllIIlIlll;
+        return (Boolean) LunarClient.getInstance().getSettingsManager().fpsEnableFpsBoost.getValue() != false && (Boolean) LunarClient.getInstance().getSettingsManager().fpsFullBright.getValue() != false ? 100.0f : this.lIIIlIllIlIIlIIIllIIlIlll;
     }
 
     public GameSettings(Minecraft class_06672, File file) {
@@ -228,8 +229,8 @@ public class GameSettings {
         this.lllIIIlIllIlllIlIIllIllIl = new File(file, "options.txt");
         this.lllllllIlIIlIlIIIlIlIIlll = new File(file, "optionsof.txt");
         this.IllIIlllllllIIlIIlIIIIlIl = (int) Options.IllIIIllIIIIlIlIlIllIIlll.getValueMax();
-        this.lIlIIlllllIlllllIlIIIllll = new class_1335("Zoom", 29, "key.categories.misc");
-        this.llIlllllIIlIIlIIllllIllll = (class_1335[])ArrayUtils.add((Object[])this.llIlllllIIlIIlIIllllIllll, (Object)this.lIlIIlllllIlllllIlIIIllll);
+        this.lIlIIlllllIlllllIlIIIllll = new KeyBinding("Zoom", 29, "key.categories.misc");
+        this.keyBindings = (KeyBinding[])ArrayUtils.add((Object[])this.keyBindings, (Object)this.lIlIIlllllIlllllIlIIIllll);
         Options.RENDER_DISTANCE.setValueMax(32.0f);
         this.IlIllllllIIlIIllllIIlIIIl = class_06672.lllIIIIlIlIIlIIlllIIIIIIl() ? 12 : 8;
         this.lllIlIIlIIIlIlIIIllIlllIl();
@@ -240,11 +241,11 @@ public class GameSettings {
         return n < 0 ? class_0616.lllIIIllIIIIlllIlIIllIIll("key.mouseButton", n + 101) : (Objects.equals(Keyboard.getKeyName((int)n), "LMENU") ? "ALT" : Keyboard.getKeyName((int)n));
     }
 
-    public static boolean lllIIIllIIIIlllIlIIllIIll(class_1335 class_13352) {
+    public static boolean lllIIIllIIIIlllIlIIllIIll(KeyBinding class_13352) {
         return class_13352.IIIllIllIIlIlIlIlIllllIIl() == 0 ? false : (class_13352.IIIllIllIIlIlIlIlIllllIIl() < 0 ? Mouse.isButtonDown((int)(class_13352.IIIllIllIIlIlIlIlIllllIIl() + 100)) : Keyboard.isKeyDown((int)class_13352.IIIllIllIIlIlIlIlIllllIIl()));
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1335 class_13352, int n) {
+    public void lllIIIllIIIIlllIlIIllIIll(KeyBinding class_13352, int n) {
         class_13352.lllIlIIlIIIlIlIIIllIlllIl(n);
         this.IlIllllllIIlIIllllIIlIIIl();
     }
@@ -1406,7 +1407,7 @@ public class GameSettings {
                     if (arrstring[0].equals("forceUnicodeFont")) {
                         this.lllIlIlIIIlIllllIlllIlIlI = arrstring[1].equals("true");
                     }
-                    for (class_1335 class_13352 : this.llIlllllIIlIIlIIllllIllll) {
+                    for (KeyBinding class_13352 : this.keyBindings) {
                         if (class_13352.lllIIIllIIIIlllIlIIllIIll || !arrstring[0].equals("key_" + class_13352.IIIllIIlIIIIIIlIlIIllIIlI())) continue;
                         int n = Integer.parseInt(arrstring[1]);
                         if (class_13352 == this.lIlIllllIlIIIIIllIIIIlIlI && n != -100 && n != -99) continue;
@@ -1422,7 +1423,7 @@ public class GameSettings {
                     exception.printStackTrace();
                 }
             }
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
             bufferedReader.close();
         }
         catch (Exception exception) {
@@ -1493,7 +1494,7 @@ public class GameSettings {
             printWriter.println("streamChatUserFilter:" + this.IIllIIIlIIllllIIIIIIIIlll);
             printWriter.println("streamMicToggleBehavior:" + this.lIIIlIllllIlllIIIIIllIIIl);
             printWriter.println("forceUnicodeFont:" + this.lllIlIlIIIlIllllIlllIlIlI);
-            for (class_1335 class_13352 : this.llIlllllIIlIIlIIllllIllll) {
+            for (KeyBinding class_13352 : this.keyBindings) {
                 if (class_13352.lllIIIllIIIIlllIlIIllIIll) continue;
                 printWriter.println("key_" + class_13352.IIIllIIlIIIIIIlIlIIllIIlI() + ":" + class_13352.IIIllIllIIlIlIlIlIllllIIl());
             }
@@ -1520,7 +1521,7 @@ public class GameSettings {
 
     public void lIlllIlllIIIIlIIlllIllIII() {
         if (this.lIllIlIlIIIIlIlIIlIlIlllI.lIIIIlIlIIlllllIIllIIlIII != null) {
-            this.lIllIlIlIIIIlIlIIlIlIlllI.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0681(this.IllIIlIIlIIIIlIlIlIIlIlIl, this.IlIllllllIIlIIllllIIlIIIl, this.IIIIIIlIIIIIIIIIIlIlIlIlI, this.IllIlllIIIlllllIllIIlIlIl, this.IIlIlIIIIlIlllIIlIIlIIIII, this.llllIIllllIllIlllllIIlIlI));
+            this.lIllIlIlIIIIlIlIIlIlIlllI.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C15PacketClientSettings(this.IllIIlIIlIIIIlIlIlIIlIlIl, this.IlIllllllIIlIIllllIIlIIIl, this.IIIIIIlIIIIIIIIIIlIlIlIlI, this.IllIlllIIIlllllIllIIlIlIl, this.IIlIlIIIIlIlllIIlIIlIIIII, this.llllIIllllIllIlllllIIlIlI));
         }
     }
 
@@ -1786,7 +1787,7 @@ public class GameSettings {
                     exception.printStackTrace();
                 }
             }
-            class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+            KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
             bufferedReader.close();
         }
         catch (Exception exception) {
@@ -1971,7 +1972,7 @@ public class GameSettings {
     }
 
     private void lIIIIlIlIIlllllIIllIIlIII() {
-        if (this.lIllIlIlIIIIlIlIIlIlIlllI.IIIIlIllIlIIlIIlIllIlIlll() && this.lIllIlIlIIIIlIlIIlIlIlllI.llllIIIIlIIIlIIIIIIlIllll() != null) {
+        if (this.lIllIlIlIIIIlIlIIlIlIlllI.isIntegratedServerRunning() && this.lIllIlIlIIIIlIlIIlIlIlllI.getIntegratedServer() != null) {
             Config.IllIIIllIIIIlIlIlIllIIlll = true;
         }
         class_2164.lllIIIllIIIIlllIlIIllIIll(this, this.lIllIlIlIIIIlIlIIlIlIlllI.theWorld);

@@ -10,9 +10,9 @@ public class BlockDispenser
 extends class_2257 {
     public static final class_1737 dispenseBehaviorRegistry = new class_0856(new class_0926());
     protected Random lIlIIllllIlIIIIllIIIIlIIl = new Random();
-    protected class_2102 llIlllIIllIlllIlIlIlIIIll;
-    protected class_2102 IIIIlIIlIIIllIIIIllIIIlII;
-    protected class_2102 lllIIIIIIlIlllIIlIlIIIllI;
+    protected IIcon llIlllIIllIlllIlIlIlIIIll;
+    protected IIcon IIIIlIIlIIIllIIIIllIIIlII;
+    protected IIcon lllIIIIIIlIlllIIlIlIIIllI;
 
     protected BlockDispenser() {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
@@ -54,7 +54,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3 = n2 & 7;
         return n == n3 ? (n3 != 1 && n3 != 0 ? this.IIIIlIIlIIIllIIIIllIIIlII : this.lllIIIIIIlIlllIIlIlIIIllI) : (n3 != 1 && n3 != 0 ? (n != 1 && n != 0 ? this.llIIIIllIIIIIIIlIIIlIIIIl : this.llIlllIIllIlllIlIlIlIIIll) : this.llIlllIIllIlllIlIlIlIIIll);
     }

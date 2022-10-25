@@ -15,6 +15,7 @@ package obf;/*
  */
 import com.google.common.base.Charsets;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import net.minecraft.util.ResourceLocation;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;
 import io.netty.buffer.Unpooled;
@@ -80,7 +81,7 @@ implements class_0677 {
         for (int i = 0; i < Math.min(list.size(), 2); ++i) {
             this.lIlllIlllIIIIlIIlllIllIII.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl((String)list.get(i), n2 + 32 + 3, n3 + 12 + this.lIlllIlllIIIIlIIlllIllIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll * i, 0x808080);
         }
-        String string2 = bl4 ? (Object)((Object)class_1227.IlIIIIIllllllIIlllIllllll) + this.IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl : this.IlIIIIIllllllIIlllIllllll.IlIllllllIIlIIllllIIlIIIl;
+        String string2 = bl4 ? (Object)((Object) EnumChatFormatting.DARK_RED) + this.IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl : this.IlIIIIIllllllIIlllIllllll.IlIllllllIIlIIllllIIlIIIl;
         int n9 = this.lIlllIlllIIIIlIIlllIllIII.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(string2);
         this.lIlllIlllIIIIlIIlllIllIII.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl(string2, n2 + n4 - n9 - 15 - 2, n3 + 1, 0x808080);
         int n10 = 0;
@@ -99,7 +100,7 @@ implements class_0677 {
             }
         } else {
             n10 = 1;
-            n8 = (int)(Minecraft.llllllIlIllllIlIlIlIIIIlI() / 100L + (long)(n * 2) & 7L);
+            n8 = (int)(Minecraft.getSystemTime() / 100L + (long)(n * 2) & 7L);
             if (n8 > 4) {
                 n8 = 8 - n8;
             }
@@ -183,10 +184,10 @@ implements class_0677 {
     @Override
     public boolean lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4, int n5, int n6) {
         this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(n);
-        if (Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.lIllllIIlIIIlIllllllIIIll < 250L) {
+        if (Minecraft.getSystemTime() - this.lIllllIIlIIIlIllllllIIIll < 250L) {
             this.IlIllllllIIlIIllllIIlIIIl.IIIllIIlIIIIIIlIlIIllIIlI();
         }
-        this.lIllllIIlIIIlIllllllIIIll = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.lIllllIIlIIIlIllllllIIIll = Minecraft.getSystemTime();
         if (n5 <= 32 && n5 < 32) {
             this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(this.IlIIIIIllllllIIlllIllllll);
             return true;

@@ -16,6 +16,8 @@ import com.google.common.cache.LoadingCache;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
+import net.minecraft.util.ResourceLocation;
+
 import java.io.File;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;

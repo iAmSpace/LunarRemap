@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.stats.StatBase;
 import org.lwjgl.input.Mouse;

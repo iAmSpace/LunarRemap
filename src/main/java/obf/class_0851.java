@@ -16,8 +16,8 @@ extends class_1194 {
         super(f, n2, n3, n4, n5);
         this.lllIIlIIIllllllIIIIlIlIlI = n;
         this.lllIIIllIIIIlllIlIIllIIll = new ArrayList();
-        for (int i = 0; i < LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll.size(); ++i) {
-            class_1665 class_16652 = (class_1665) LunarClient.getInstance().getModuleManager().lllIIIllIIIIlllIlIIllIIll.get(i);
+        for (int i = 0; i < LunarClient.getInstance().getModuleManager().modules.size(); ++i) {
+            AbstractModule class_16652 = (AbstractModule) LunarClient.getInstance().getModuleManager().modules.get(i);
             this.lllIIIllIIIIlllIlIIllIIll.add(new class_0129(this, n, class_16652, f));
         }
     }

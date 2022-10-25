@@ -19,7 +19,7 @@ public class class_1950 {
     public class_0754 lllIIIllIIIIlllIlIIllIIll(UUID uUID, String string) {
         class_0754 class_07542 = null;
         if (!this.lIlllIlllIIIIlIIlllIllIII(uUID)) {
-            class_07542 = new class_0754(uUID, class_1227.lllIIIllIIIIlllIlIIllIIll(string));
+            class_07542 = new class_0754(uUID, EnumChatFormatting.getTextWithoutFormattingCodes(string));
             this.IlIllllllIIlIIllllIIlIIIl.add(class_07542);
         }
         return class_07542;

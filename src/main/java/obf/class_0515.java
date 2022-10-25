@@ -53,7 +53,7 @@ implements class_0044 {
                         }
                         catch (class_1953 class_19532) {
                             ChatComponentTranslation class_17902 = new ChatComponentTranslation(class_19532.getMessage(), class_19532.lllIIIllIIIIlllIlIIllIIll());
-                            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+                            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
                             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
                         }
                     }
@@ -65,29 +65,29 @@ implements class_0044 {
                     }
                     catch (class_1953 class_19533) {
                         ChatComponentTranslation class_17903 = new ChatComponentTranslation(class_19533.getMessage(), class_19533.lllIIIllIIIIlllIlIIllIIll());
-                        class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+                        class_17903.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
                         class_19692.lllIIIllIIIIlllIlIIllIIll(class_17903);
                     }
                 }
             } else {
                 ChatComponentTranslation class_17904 = new ChatComponentTranslation("commands.generic.permission", new Object[0]);
-                class_17904.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+                class_17904.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
                 class_19692.lllIIIllIIIIlllIlIIllIIll(class_17904);
             }
         }
         catch (class_0932 class_09322) {
             ChatComponentTranslation class_17905 = new ChatComponentTranslation("commands.generic.usage", new ChatComponentTranslation(class_09322.getMessage(), class_09322.lllIIIllIIIIlllIlIIllIIll()));
-            class_17905.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+            class_17905.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17905);
         }
         catch (class_1953 class_19534) {
             ChatComponentTranslation class_17906 = new ChatComponentTranslation(class_19534.getMessage(), class_19534.lllIIIllIIIIlllIlIIllIIll());
-            class_17906.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+            class_17906.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17906);
         }
         catch (Throwable throwable) {
             ChatComponentTranslation class_17907 = new ChatComponentTranslation("commands.generic.exception", new Object[0]);
-            class_17907.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
+            class_17907.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17907);
             lllIIIllIIIIlllIlIIllIIll.error("Couldn't process command: '" + string + "'", throwable);
         }

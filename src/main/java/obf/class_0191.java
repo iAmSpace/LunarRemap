@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class class_0191
 extends class_2257 {
-    private class_2102[] llllllIlIllllIlIlIlIIIIlI = new class_2102[2];
+    private IIcon[] llllllIlIllllIlIlIlIIIIlI = new IIcon[2];
 
     public class_0191() {
         super(class_1855.lIlllIlllIIIIlIIlllIllIII);
@@ -78,7 +78,7 @@ extends class_2257 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI[0] : this.llllllIlIllllIlIlIlIIIIlI[1];
     }
 

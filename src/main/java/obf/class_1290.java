@@ -5,6 +5,8 @@ package obf;/*
  *  com.google.common.collect.Lists
  */
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
+
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;

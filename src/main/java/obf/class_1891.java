@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.init.Items;
 import optifine.Config;
 import net.minecraft.client.resources.DefaultResourcePack;
@@ -320,7 +321,7 @@ public class class_1891 {
         arrayList.add(class_06982);
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, class_2102 class_21022) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, IIcon class_21022) {
         class_0698[] arrclass_0698;
         if (lllIIIllIIIIlllIlIIllIIll == null) {
             return class_21022;
@@ -333,7 +334,7 @@ public class class_1891 {
         if (n >= 0 && n < lllIIIllIIIIlllIlIIllIIll.length && (arrclass_0698 = lllIIIllIIIIlllIlIIllIIll[n]) != null) {
             for (int i = 0; i < arrclass_0698.length; ++i) {
                 class_0698 class_06982 = arrclass_0698[i];
-                class_2102 class_21023 = class_1891.lllIIIllIIIIlllIlIIllIIll(class_06982, class_08972, class_21022);
+                IIcon class_21023 = class_1891.lllIIIllIIIIlllIlIIllIIll(class_06982, class_08972, class_21022);
                 if (class_21023 == null) continue;
                 return class_21023;
             }
@@ -341,7 +342,7 @@ public class class_1891 {
         return class_21022;
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_0483 class_04832, int n) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_0483 class_04832, int n) {
         class_0698[] arrclass_0698;
         if (lllIIIllIIIIlllIlIIllIIll == null) {
             return null;
@@ -350,7 +351,7 @@ public class class_1891 {
         if (n2 >= 0 && n2 < lllIIIllIIIIlllIlIIllIIll.length && (arrclass_0698 = lllIIIllIIIIlllIlIIllIIll[n2]) != null) {
             for (int i = 0; i < arrclass_0698.length; ++i) {
                 class_0698 class_06982 = arrclass_0698[i];
-                class_2102 class_21022 = class_1891.lllIIIllIIIIlllIlIIllIIll(class_06982, class_04832, n);
+                IIcon class_21022 = class_1891.lllIIIllIIIIlllIlIIllIIll(class_06982, class_04832, n);
                 if (class_21022 == null) continue;
                 return class_21022;
             }
@@ -358,7 +359,7 @@ public class class_1891 {
         return null;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_0698 class_06982, class_0483 class_04832, int n) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_0698 class_06982, class_0483 class_04832, int n) {
         if (class_06982.IIIllIIlIIIIIIlIlIIllIIlI != null) {
             if (class_06982.IIIllIllIIlIlIlIlIllllIIl != 0) {
                 n &= class_06982.IIIllIllIIlIlIlIlIllllIIl;
@@ -370,7 +371,7 @@ public class class_1891 {
         return class_06982.lIlIlIIlIIIIlIIIIIlllIIII;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_0698 class_06982, ItemStack class_08972, class_2102 class_21022) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_0698 class_06982, ItemStack class_08972, IIcon class_21022) {
         boolean bl;
         int[] arrn;
         int n;

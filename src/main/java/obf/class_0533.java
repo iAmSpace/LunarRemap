@@ -16,7 +16,7 @@ implements class_0945 {
     public void n_() {
         this.lIlIlIIlIIIIlIIIIIlllIIII.clear();
         if (this.lllllIlllIIllIlIIlIIIllII.theWorld.lIlllIlllIlIIIIlllIlIlIIl().lIlIlIIlIIIIlIIIIIlllIIII()) {
-            if (this.lllllIlllIIllIlIIlIIIllII.IIIIlIllIlIIlIIlIllIlIlll()) {
+            if (this.lllllIlllIIllIlIIlIIIllII.isIntegratedServerRunning()) {
                 this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(1, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 96, class_0616.lllIIIllIIIIlllIlIIllIIll("deathScreen.deleteWorld", new Object[0])));
             } else {
                 this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(1, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 100, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 96, class_0616.lllIIIllIIIIlllIlIIllIIll("deathScreen.leaveServer", new Object[0])));
@@ -77,7 +77,7 @@ implements class_0945 {
         if (bl) {
             this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("deathScreen.hardcoreInfo", new Object[0]), this.IlIlIIlllIIlIllIIIlllllIl / 2, 144, 0xFFFFFF);
         }
-        this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("deathScreen.score", new Object[0]) + ": " + (Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.IIIIIlllIIllllIlllIlllIIl(), this.IlIlIIlllIIlIllIIIlllllIl / 2, 100, 0xFFFFFF);
+        this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("deathScreen.score", new Object[0]) + ": " + (Object)((Object) EnumChatFormatting.YELLOW) + this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.IIIIIlllIIllllIlllIlllIIl(), this.IlIlIIlllIIlIllIIIlllllIl / 2, 100, 0xFFFFFF);
         super.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
     }
 

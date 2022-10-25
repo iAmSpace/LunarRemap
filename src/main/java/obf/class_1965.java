@@ -5,6 +5,9 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.server.S04PacketEntityEquipment;
+import net.minecraft.network.play.server.S0BPacketAnimation;
+import net.minecraft.network.play.server.S0DPacketCollectItem;
 import net.minecraft.util.MathHelper;
 
 import java.util.Collection;
@@ -694,8 +697,8 @@ extends class_1521 {
     public int lIIlIlIIIIIllIIIIllIlIlII() {
         int n = 0;
         for (ItemStack class_08972 : this.lIIlIIlIllIlIIlIlIIlIlIlI()) {
-            if (class_08972 == null || !(class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981)) continue;
-            int n2 = ((class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll()).lIIIIlIlIIlllllIIllIIlIII;
+            if (class_08972 == null || !(class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor)) continue;
+            int n2 = ((ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll()).lIIIIlIlIIlllllIIllIIlIII;
             n += n2;
         }
         return n;
@@ -789,7 +792,7 @@ extends class_1521 {
             this.lllllIlllIIllIlIIlIIIllII = -1;
             this.IlIlIIlIlIllIIlIlIIllIIIl = true;
             if (this.lIlIllIIlIIlIIlIIlIIlIIll instanceof class_0976) {
-                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new class_0842(this, 0));
+                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new S0BPacketAnimation(this, 0));
             }
         }
     }
@@ -914,7 +917,7 @@ extends class_1521 {
         return false;
     }
 
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, int n) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, int n) {
         return class_08972.lllIIIllIIIIlllIlIIllIIll().IlIlIIlIlIllIIlIlIIllIIIl() ? class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972.IllIIIllIIIIlIlIlIllIIlll(), n) : class_08972.lllIlIIlIIIlIlIIIllIlllIl();
     }
 
@@ -1051,7 +1054,7 @@ extends class_1521 {
                 ItemStack class_08972 = this.IIIllIIlIIIIIIlIlIIllIIlI[i];
                 ItemStack class_08973 = this.IlIllllllIIlIIllllIIlIIIl(i);
                 if (ItemStack.lllIlIIlIIIlIlIIIllIlllIl(class_08973, class_08972)) continue;
-                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new class_2225(this.llllllIlIllllIlIlIlIIIIlI(), i, class_08973));
+                ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI().lllIIIllIIIIlllIlIIllIIll(this, new S04PacketEntityEquipment(this.llllllIlIllllIlIlIlIIIIlI(), i, class_08973));
                 if (class_08972 != null) {
                     this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(class_08972.IIIIIIIIlIllIIllIIlllIllI());
                 }
@@ -1264,13 +1267,13 @@ extends class_1521 {
         if (!class_15212.IllllIIIIlIIlIIIIlllIIIIl && !this.lIlIllIIlIIlIIlIIlIIlIIll.IllIIIIllIIllIllIlllIlIIl) {
             class_1105 class_11052 = ((class_0976)this.lIlIllIIlIIlIIlIIlIIlIIll).lIlIlIIIIIIlIIllllIlIIllI();
             if (class_15212 instanceof class_1781) {
-                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new class_0781(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
+                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new S0DPacketCollectItem(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
             }
             if (class_15212 instanceof class_0369) {
-                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new class_0781(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
+                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new S0DPacketCollectItem(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
             }
             if (class_15212 instanceof class_1138) {
-                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new class_0781(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
+                class_11052.lllIIIllIIIIlllIlIIllIIll(class_15212, new S0DPacketCollectItem(class_15212.llllllIlIllllIlIlIlIIIIlI(), this.llllllIlIllllIlIlIlIIIIlI()));
             }
         }
     }

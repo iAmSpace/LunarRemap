@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.init.Items;
 import org.lwjgl.opengl.GL11;
 
@@ -22,7 +23,7 @@ extends class_1603 {
         GL11.glEnable((int)32826);
         float f3 = this.lllIIIllIIIIlllIlIIllIIll;
         GL11.glScalef((float)(f3 / 1.0f), (float)(f3 / 1.0f), (float)(f3 / 1.0f));
-        class_2102 class_21022 = Items.fire_charge.IlIllllllIIlIIllllIIlIIIl(0);
+        IIcon class_21022 = Items.fire_charge.IlIllllllIIlIIllllIIlIIIl(0);
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         float f4 = class_21022.IlIllllllIIlIIllllIIlIIIl();
         float f5 = class_21022.lIlllIlllIIIIlIIlllIllIII();

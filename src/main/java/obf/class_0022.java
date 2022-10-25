@@ -17,15 +17,15 @@ extends class_0688 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl);
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
+        class_01812.writeStringToBuffer(this.lllIIIllIIIIlllIlIIllIIll);
+        class_01812.writeStringToBuffer(this.IlIllllllIIlIIllllIIlIIIl);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
-        this.lllIIIllIIIIlllIlIIllIIll = class_01812.IlIllllllIIlIIllllIIlIIIl(52);
-        this.IlIllllllIIlIIllllIIlIIIl = class_01812.IlIllllllIIlIIllllIIlIIIl(32);
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
+        this.lllIIIllIIIIlllIlIIllIIll = class_01812.readStringFromBuffer(52);
+        this.IlIllllllIIlIIllllIIlIIIl = class_01812.readStringFromBuffer(32);
     }
 
     @Override

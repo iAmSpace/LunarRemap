@@ -5,6 +5,8 @@ package obf;/*
  *  org.lwjgl.opengl.GL11
  */
 import java.util.concurrent.ThreadLocalRandom;
+
+import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 public final class class_1727

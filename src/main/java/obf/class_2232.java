@@ -1,6 +1,8 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
+
 import java.util.List;
 
 public class class_2232
@@ -15,7 +17,7 @@ extends class_0688 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         class_01812.writeInt(this.lllIIIllIIIIlllIlIIllIIll.size());
         for (Cosmetic class_04332 : this.lllIIIllIIIIlllIlIIllIIll) {
             class_01812.writeLong(class_04332.lllIIIllIIIIlllIlIIllIIll());
@@ -24,7 +26,7 @@ extends class_0688 {
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
     }
 
     @Override

@@ -7,6 +7,7 @@ package obf;/*
  */
 import java.awt.Color;
 
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
@@ -14,16 +15,16 @@ import org.lwjgl.opengl.GL11;
 
 public class class_0330
 extends class_2117 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll;
+    private Setting lllIIIllIIIIlllIlIIllIIll;
     private float IllIIlllllllIIlIIlIIIIlIl = -1.0f;
     private float IIIllIllIIlIlIlIlIllllIIl;
     private boolean IllIIIllIIIIlIlIlIllIIlll = false;
 
-    public class_0330(class_1609 class_16092, float f) {
+    public class_0330(Setting class_16092, float f) {
         super(f);
         this.lllIIIllIIIIlllIlIIllIIll = class_16092;
         this.IIIllIIlIIIIIIlIlIIllIIlI = 14;
-        this.IllIIlllllllIIlIIlIIIIlIl = Float.parseFloat("" + class_16092.lIlllIlllIIIIlIIlllIllIII());
+        this.IllIIlllllllIIlIIlIIIIlIl = Float.parseFloat("" + class_16092.getValue());
     }
 
     @Override
@@ -42,7 +43,7 @@ extends class_2117 {
         float f3;
         int n3 = 148;
         float f4 = n3 - 18;
-        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 10, (float)(this.IlIIIIIllllllIIlllIllllll + 2), -1895825408);
+        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 10, (float)(this.IlIIIIIllllllIIlllIllllll + 2), -1895825408);
         if (this.IllIIIllIIIIlIlIlIllIIlll && !Mouse.isButtonDown((int)0)) {
             this.IllIIIllIIIIlIlIlIllIIlll = false;
         }
@@ -67,24 +68,24 @@ extends class_2117 {
             }
             switch (this.lllIIIllIIIIlllIlIIllIIll.IllIIIllIIIIlIlIlIllIIlll()) {
                 case lIlllIlllIIIIlIIlllIllIII: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Integer.parseInt((int)this.IIIllIllIIlIlIlIlIllllIIl + ""));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Integer.parseInt((int)this.IIIllIllIIlIlIlIlIllllIIl + ""));
                     break;
                 }
                 case IlIllllllIIlIIllllIIlIIIl: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(this.IIIllIllIIlIlIlIlIllllIIl));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Float.valueOf(this.IIIllIllIIlIlIlIlIllllIIl));
                     break;
                 }
                 case IlIIIIIllllllIIlllIllllll: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Double.parseDouble(this.IIIllIllIIlIlIlIlIllllIIl + ""));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Double.parseDouble(this.IIIllIllIIlIlIlIlIllllIIl + ""));
                 }
             }
         }
-        f3 = (f3 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() + "")) < this.IllIIlllllllIIlIIlIIIIlIl ? this.IllIIlllllllIIlIIlIIIIlIl - f3 : (f3 -= this.IllIIlllllllIIlIIlIIIIlIl);
+        f3 = (f3 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.getValue() + "")) < this.IllIIlllllllIIlIIlIIIIlIl ? this.IllIIlllllllIIlIIlIIIIlIl - f3 : (f3 -= this.IllIIlllllllIIlIIlIIIIlIl);
         float f7 = ((f6 - f5) / 20.0f + f3 * 8.0f) / (float)(Minecraft.IlIIlllllIIlIlIlllllIllll + 1);
         if ((double)f7 < 1.0E-4) {
             f7 = 1.0E-4f;
         }
-        if (this.IllIIlllllllIIlIIlIIIIlIl < (f2 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() + ""))) {
+        if (this.IllIIlllllllIIlIIlIIIIlIl < (f2 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.getValue() + ""))) {
             this.IllIIlllllllIIlIIlIIIIlIl = this.IllIIlllllllIIlIIlIIIIlIl + f7 <= f2 ? (this.IllIIlllllllIIlIIlIIIIlIl += f7) : f2;
         } else if (this.IllIIlllllllIIlIIlIIIIlIl > f2) {
             this.IllIIlllllllIIlIIlIIIIlIl = this.IllIIlllllllIIlIIlIIIIlIl - f7 >= f2 ? (this.IllIIlllllllIIlIIlIIIIlIl -= f7) : f2;
@@ -92,7 +93,7 @@ extends class_2117 {
         double d = 100.0f * ((this.IllIIlllllllIIlIIlIIIIlIl - f5) / (f6 - f5));
         GL11.glColor4f((float)0.25f, (float)0.45f, (float)1.0f, (float)1.0f);
         class_0857.lllIIIllIIIIlllIlIIllIIll((double)((float)this.lIlllIlllIIIIlIIlllIllIII + 181.25f) + (double)f4 * d / 100.0, (float)this.IlIIIIIllllllIIlllIllllll + 7.25f, 4.5);
-        float f8 = ((Float)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).floatValue();
+        float f8 = ((Float)this.lllIIIllIIIIlllIlIIllIIll.getValue()).floatValue();
         int n6 = f8 == 0.0f ? -1 : Color.HSBtoRGB(f8, 1.0f, 1.0f);
         GL11.glColor4f((float)((float)(n6 >> 16 & 0xFF) / 255.0f), (float)((float)(n6 >> 8 & 0xFF) / 255.0f), (float)((float)(n6 & 0xFF) / 255.0f), (float)1.0f);
         class_0857.lllIIIllIIIIlllIlIIllIIll((double)((float)this.lIlllIlllIIIIlIIlllIllIII + 181.25f) + (double)f4 * d / 100.0, (float)this.IlIIIIIllllllIIlllIllllll + 7.25f, 2.7f);

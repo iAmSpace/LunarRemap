@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.realms.RealmsBridge;
@@ -507,7 +508,7 @@ implements class_0945 {
         IlIIlllllIIlIlIlllllIllll = new ResourceLocation("texts/splashes.txt");
         llIIlIlIlllIIllIlIlllIllI = new ResourceLocation("textures/gui/title/minecraft.png");
         IllIIIIllIIllIllIlllIlIIl = new ResourceLocation[]{new ResourceLocation("textures/gui/title/background/panorama_0.png"), new ResourceLocation("textures/gui/title/background/panorama_1.png"), new ResourceLocation("textures/gui/title/background/panorama_2.png"), new ResourceLocation("textures/gui/title/background/panorama_3.png"), new ResourceLocation("textures/gui/title/background/panorama_4.png"), new ResourceLocation("textures/gui/title/background/panorama_5.png")};
-        lllIIIllIIIIlllIlIIllIIll = "Please click " + (Object)((Object)class_1227.lIlIlIIlIIIIlIIIIIlllIIII) + "here" + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + " for more information.";
+        lllIIIllIIIIlllIlIIllIIll = "Please click " + (Object)((Object) EnumChatFormatting.UNDERLINE) + "here" + (Object)((Object) EnumChatFormatting.RESET) + " for more information.";
     }
 }
 

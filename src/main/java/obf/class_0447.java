@@ -9,11 +9,11 @@ import java.util.List;
 public class class_0447
 extends class_0351 {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"default", "red"};
-    private static class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private static class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    private static IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private static IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 == 1 ? IIIIlIIlIIIllIIIIllIIIlII : lIlIIllllIlIIIIllIIIIlIIl;
     }
 

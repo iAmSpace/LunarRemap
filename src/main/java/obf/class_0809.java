@@ -10,6 +10,7 @@ package obf;/*
 import com.moonsworth.lunar.client.LunarClient;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Keyboard;
@@ -66,17 +67,17 @@ extends class_0229 {
     protected void lllIIIllIIIIlllIlIIllIIll(class_1197 class_11972) {
         if (class_11972.IllIIIllIIIIlIlIlIllIIlll) {
             if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 1) {
-                if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                     Minecraft.getMinecraft().lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
                 }
                 this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);
             } else if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 0) {
-                class_0181 class_01812 = new class_0181(Unpooled.buffer());
+                PacketBuffer class_01812 = new PacketBuffer(Unpooled.buffer());
                 try {
                     class_01812.writeByte(this.lIlllIlllIIIIlIIlllIllIII.IlIIIIIllllllIIlllIllllll());
                     this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_01812);
-                    class_01812.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl());
-                    this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0917("MC|AdvCdm", class_01812));
+                    class_01812.writeStringToBuffer(this.lllIlIIlIIIlIlIIIllIlllIl.lllIlIIlIIIlIlIIIllIlllIl());
+                    this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload("MC|AdvCdm", class_01812));
                 }
                 catch (Exception exception) {
                     lllIIIllIIIIlllIlIIllIIll.error("Couldn't send command block info", (Throwable)exception);
@@ -84,7 +85,7 @@ extends class_0229 {
                 finally {
                     class_01812.release();
                 }
-                if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                     Minecraft.getMinecraft().lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
                 }
                 this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);

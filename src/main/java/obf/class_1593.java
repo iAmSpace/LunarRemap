@@ -14,7 +14,7 @@ implements class_1978 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(File file) {
+    public void func_148522_a(File file) {
         if (class_1605.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll)) {
             class_1605.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, false);
             class_1605.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, new class_0513(file));

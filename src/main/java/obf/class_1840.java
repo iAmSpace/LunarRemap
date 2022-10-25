@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class class_1840
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_1840() {
         super(class_1855.IlIIlllllIIlIlIlllllIllll);
@@ -50,7 +50,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI : (n == 0 ? this.lIlIIllllIlIIIIllIIIIlIIl : this.llIIIIllIIIIIIIlIIIlIIIIl);
     }
 

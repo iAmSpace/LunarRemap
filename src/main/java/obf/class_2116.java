@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.*;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.stats.StatList;
@@ -79,17 +81,17 @@ public abstract class class_2116 {
         class_2208 class_22082 = class_09762.lIlIllIIlIIlIIlIIlIIlIIll();
         this.lllIIIllIIIIlllIlIIllIIll(class_18222, null, class_09762);
         class_0634 class_06342 = new class_0634(this.IIIllIllIIlIlIlIlIllllIIl, class_08002, class_18222);
-        class_06342.lllIIIllIIIIlllIlIIllIIll(new class_0597(class_18222.llllllIlIllllIlIlIlIIIIlI(), class_18222.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(), class_09762.lIlllIlllIlIIIIlllIlIlIIl().lIlIlIIlIIIIlIIIIIlllIIII(), class_09762.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, class_09762.IlIlIIlIlIllIIlIlIIllIIIl, this.lllllIlllIIllIlIIlIIIllII(), class_09762.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll()));
-        class_06342.lllIIIllIIIIlllIlIIllIIll(new class_1147("MC|Brand", this.IlIllllllIIlIIllllIIlIIIl().lIlllIlllIlIIIIlllIlIlIIl().getBytes(Charsets.UTF_8)));
-        class_06342.lllIIIllIIIIlllIlIIllIIll(new class_1444(class_22082.lllIIIllIIIIlllIlIIllIIll, class_22082.lllIlIIlIIIlIlIIIllIlllIl, class_22082.IlIllllllIIlIIllllIIlIIIl));
-        class_06342.lllIIIllIIIIlllIlIIllIIll(new class_1170(class_18222.lIIlIlIlIlIllIIlIIllllIll));
-        class_06342.lllIIIllIIIIlllIlIIllIIll(new class_0805(class_18222.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl));
+        class_06342.lllIIIllIIIIlllIlIIllIIll(new S01PacketJoinGame(class_18222.llllllIlIllllIlIlIlIIIIlI(), class_18222.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(), class_09762.lIlllIlllIlIIIIlllIlIlIIl().lIlIlIIlIIIIlIIIIIlllIIII(), class_09762.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, class_09762.IlIlIIlIlIllIIlIlIIllIIIl, this.lllllIlllIIllIlIIlIIIllII(), class_09762.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll()));
+        class_06342.lllIIIllIIIIlllIlIIllIIll(new S3FPacketCustomPayload("MC|Brand", this.IlIllllllIIlIIllllIIlIIIl().lIlllIlllIlIIIIlllIlIlIIl().getBytes(Charsets.UTF_8)));
+        class_06342.lllIIIllIIIIlllIlIIllIIll(new S05PacketSpawnPosition(class_22082.lllIIIllIIIIlllIlIIllIIll, class_22082.lllIlIIlIIIlIlIIIllIlllIl, class_22082.IlIllllllIIlIIllllIIlIIIl));
+        class_06342.lllIIIllIIIIlllIlIIllIIll(new S39PacketPlayerAbilities(class_18222.lIIlIlIlIlIllIIlIIllllIll));
+        class_06342.lllIIIllIIIIlllIlIIllIIll(new S09PacketHeldItemChange(class_18222.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl));
         class_18222.IllIIIIllIIllIllIlllIlIIl().lIlllIlllIIIIlIIlllIllIII();
         class_18222.IllIIIIllIIllIllIlllIlIIl().lllIlIIlIIIlIlIIIllIlllIl(class_18222);
         this.lllIIIllIIIIlllIlIIllIIll((class_2183)class_09762.IlIlIIlllIllllllllIIIlIlI(), class_18222);
         this.IIIllIllIIlIlIlIlIllllIIl.lIlllIIllIIIIIIlIlIIlIllI();
         ChatComponentTranslation class_17902 = !class_18222.llllIIIIlIIIlIIIIIIlIllll().equalsIgnoreCase(string) ? new ChatComponentTranslation("multiplayer.player.joined.renamed", class_18222.llIIIIllIIIIIIIlIIIlIIIIl(), string) : new ChatComponentTranslation("multiplayer.player.joined", class_18222.llIIIIllIIIIIIIlIIIlIIIIl());
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIlllIIIIIIlIIllIIllIlll);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.YELLOW);
         this.lllIIIllIIIIlllIlIIllIIll(class_17902);
         this.IlIllllllIIlIIllllIIlIIIl(class_18222);
         class_06342.lllIIIllIIIIlllIlIIllIIll(class_18222.IlIIlllllIIlIlIlllllIllll, class_18222.llIIlIlIlllIIllIlIlllIllI, class_18222.IllIIIIllIIllIllIlllIlIIl, class_18222.IIIIlIllIlIIlIIlIllIlIlll, class_18222.IlIlIIlllIllllllllIIIlIlI);
@@ -98,7 +100,7 @@ public abstract class class_2116 {
             class_18222.lllIIIllIIIIlllIlIIllIIll(this.IIIllIllIIlIlIlIlIllllIIl.lllIIIIIIlIlllIIlIlIIIllI());
         }
         for (Object object2 : class_18222.IIllIIIlIIllllIIIIIIIIlll()) {
-            class_06342.lllIIIllIIIIlllIlIIllIIll(new class_0570(class_18222.llllllIlIllllIlIlIlIIIIlI(), (class_1852)object2));
+            class_06342.lllIIIllIIIIlllIlIIllIIll(new S1DPacketEntityEffect(class_18222.llllllIlIllllIlIlIlIIIIlI(), (class_1852)object2));
         }
         class_18222.IlIIIIIllllllIIlllIllllll();
         if (class_07752 != null && class_07752.lllIlIIlIIIlIlIIIllIlllIl("Riding", 10) && (object2 = class_0054.lllIIIllIIIIlllIlIIllIIll(class_07752.llIIllIllIlIIlIIllIllllll("Riding"), (class_1334)class_09762)) != null) {
@@ -112,13 +114,13 @@ public abstract class class_2116 {
     protected void lllIIIllIIIIlllIlIIllIIll(class_2183 class_21832, class_1822 class_18222) {
         HashSet<class_0693> hashSet = new HashSet<class_0693>();
         for (class_0531 class_05312 : class_21832.IlIIIIIllllllIIlllIllllll()) {
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0232(class_05312, 0));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S3EPacketTeams(class_05312, 0));
         }
         for (int i = 0; i < 3; ++i) {
             class_0693 class_06932 = class_21832.lllIIIllIIIIlllIlIIllIIll(i);
             if (class_06932 == null || hashSet.contains(class_06932)) continue;
             List list = class_21832.lIllllIIlIIIlIllllllIIIll(class_06932);
-            for (class_0703 class_07032 : list) {
+            for (Packet class_07032 : list) {
                 class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_07032);
             }
             hashSet.add(class_06932);
@@ -164,14 +166,14 @@ public abstract class class_2116 {
     }
 
     public void IlIllllllIIlIIllllIIlIIIl(class_1822 class_18222) {
-        this.lllIIIllIIIIlllIlIIllIIll(new class_0999(class_18222.llllIIIIlIIIlIIIIIIlIllll(), true, 1000));
+        this.lllIIIllIIIIlllIlIIllIIll(new S38PacketPlayerListItem(class_18222.llllIIIIlIIIlIIIIIIlIllll(), true, 1000));
         this.IlIIIIIllllllIIlllIllllll.add(class_18222);
         class_0976 class_09762 = this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(class_18222.lIIllllllllIlIllllllllIlI);
         class_09762.lllIIIllIIIIlllIlIIllIIll(class_18222);
         this.lllIIIllIIIIlllIlIIllIIll(class_18222, (class_0976)null);
         for (int i = 0; i < this.IlIIIIIllllllIIlllIllllll.size(); ++i) {
             class_1822 class_18223 = (class_1822)this.IlIIIIIllllllIIlllIllllll.get(i);
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0999(class_18223.llllIIIIlIIIlIIIIIIlIllll(), true, class_18223.IllIIlllllllIIlIIlIIIIlIl));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S38PacketPlayerListItem(class_18223.llllIIIIlIIIlIIIIIIlIllll(), true, class_18223.IllIIlllllllIIlIIlIIIIlIl));
         }
     }
 
@@ -191,7 +193,7 @@ public abstract class class_2116 {
         class_09762.IllllIIIIlIIlIIIIlllIIIIl().IlIllllllIIlIIllllIIlIIIl(class_18222);
         this.IlIIIIIllllllIIlllIllllll.remove(class_18222);
         this.lllIIlIIIllllllIIIIlIlIlI.remove(class_18222.lIIlllIIlIlIlIIIlIlllIIll());
-        this.lllIIIllIIIIlllIlIIllIIll(new class_0999(class_18222.llllIIIIlIIIlIIIIIIlIllll(), false, 9999));
+        this.lllIIIllIIIIlllIlIIllIIll(new S38PacketPlayerListItem(class_18222.llllIIIIlIIIlIIIIIIlIllll(), false, 9999));
     }
 
     public String lllIIIllIIIIlllIlIIllIIll(SocketAddress socketAddress, GameProfile gameProfile) {
@@ -255,18 +257,18 @@ public abstract class class_2116 {
                 class_18223.lllIlIIlIIIlIlIIIllIlllIl((float)class_22082.lllIIIllIIIIlllIlIIllIIll + 0.5f, (float)class_22082.lllIlIIlIIIlIlIIIllIlllIl + 0.1f, (float)class_22082.IlIllllllIIlIIllllIIlIIIl + 0.5f, 0.0f, 0.0f);
                 class_18223.lllIIIllIIIIlllIlIIllIIll(class_22083, bl2);
             } else {
-                class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(0, 0.0f));
+                class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(0, 0.0f));
             }
         }
         class_09762.IlIlIIlllIllllllllIIIlIlI.IlIllllllIIlIIllllIIlIIIl((int)class_18223.IlIIlllllIIlIlIlllllIllll >> 4, (int)class_18223.IllIIIIllIIllIllIlllIlIIl >> 4);
         while (!class_09762.lllIIIllIIIIlllIlIIllIIll((class_1521)class_18223, class_18223.IIllIllIIllIIlllIIIlIlllI).isEmpty()) {
             class_18223.IlIllllllIIlIIllllIIlIIIl(class_18223.IlIIlllllIIlIlIlllllIllll, class_18223.llIIlIlIlllIIllIlIlllIllI + 1.0, class_18223.IllIIIIllIIllIllIlllIlIIl);
         }
-        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0271(class_18223.lIIllllllllIlIllllllllIlI, class_18223.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlIlIllIIlIlIIllIIIl, class_18223.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll(), class_18223.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll()));
+        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S07PacketRespawn(class_18223.lIIllllllllIlIllllllllIlI, class_18223.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlIlIllIIlIlIIllIIIl, class_18223.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll(), class_18223.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll()));
         class_22082 = class_09762.lIlIllIIlIIlIIlIIlIIlIIll();
         class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_18223.IlIIlllllIIlIlIlllllIllll, class_18223.llIIlIlIlllIIllIlIlllIllI, class_18223.IllIIIIllIIllIllIlllIlIIl, class_18223.IIIIlIllIlIIlIIlIllIlIlll, class_18223.IlIlIIlllIllllllllIIIlIlI);
-        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1444(class_22082.lllIIIllIIIIlllIlIIllIIll, class_22082.lllIlIIlIIIlIlIIIllIlllIl, class_22082.IlIllllllIIlIIllllIIlIIIl));
-        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1134(class_18223.llIlllllIIlIIlIIllllIllll, class_18223.llllIllIIIlIllIllllllIlIl, class_18223.lllIlllllIllIlIIlIlIIIlll));
+        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S05PacketSpawnPosition(class_22082.lllIIIllIIIIlllIlIIllIIll, class_22082.lllIlIIlIIIlIlIIIllIlllIl, class_22082.IlIllllllIIlIIllllIIlIIIl));
+        class_18223.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1FPacketSetExperience(class_18223.llIlllllIIlIIlIIllllIllll, class_18223.llllIllIIIlIllIllllllIlIl, class_18223.lllIlllllIllIlIIlIlIIIlll));
         this.lllIlIIlIIIlIlIIIllIlllIl(class_18223, class_09762);
         class_09762.IllllIIIIlIIlIIIIlllIIIIl().lllIIIllIIIIlllIlIIllIIll(class_18223);
         class_09762.lllIIIllIIIIlllIlIIllIIll(class_18223);
@@ -281,7 +283,7 @@ public abstract class class_2116 {
         class_0976 class_09762 = this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(class_18222.lIIllllllllIlIllllllllIlI);
         class_18222.lIIllllllllIlIllllllllIlI = n;
         class_0976 class_09763 = this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(class_18222.lIIllllllllIlIllllllllIlI);
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0271(class_18222.lIIllllllllIlIllllllllIlI, class_18222.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlIlIllIIlIlIIllIIIl, class_18222.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll(), class_18222.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll()));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S07PacketRespawn(class_18222.lIIllllllllIlIllllllllIlI, class_18222.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlIlIllIIlIlIIllIIIl, class_18222.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIlIIIIlllIlIlIIl().IlIIIlIIIIllIIIllIIIIIIll(), class_18222.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll()));
         class_09762.IIIllIIlIIIIIIlIlIIllIIlI(class_18222);
         class_18222.IllllIIIIlIIlIIIIlllIIIIl = false;
         this.lllIIIllIIIIlllIlIIllIIll(class_18222, n2, class_09762, class_09763);
@@ -291,7 +293,7 @@ public abstract class class_2116 {
         this.lllIlIIlIIIlIlIIIllIlllIl(class_18222, class_09763);
         this.lIllllIIlIIIlIllllllIIIll(class_18222);
         for (class_1852 class_18522 : class_18222.IIllIIIlIIllllIIIIIIIIlll()) {
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0570(class_18222.llllllIlIllllIlIlIlIIIIlI(), class_18522));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S1DPacketEntityEffect(class_18222.llllllIlIllllIlIlIlIIIIlI(), class_18522));
         }
     }
 
@@ -346,17 +348,17 @@ public abstract class class_2116 {
         }
         if (this.lIlIlIIlIIIIlIIIIIlllIIII < this.IlIIIIIllllllIIlllIllllll.size()) {
             class_1822 class_18222 = (class_1822)this.IlIIIIIllllllIIlllIllllll.get(this.lIlIlIIlIIIIlIIIIIlllIIII);
-            this.lllIIIllIIIIlllIlIIllIIll(new class_0999(class_18222.llllIIIIlIIIlIIIIIIlIllll(), true, class_18222.IllIIlllllllIIlIIlIIIIlIl));
+            this.lllIIIllIIIIlllIlIIllIIll(new S38PacketPlayerListItem(class_18222.llllIIIIlIIIlIIIIIIlIllll(), true, class_18222.IllIIlllllllIIlIIlIIIIlIl));
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032) {
         for (int i = 0; i < this.IlIIIIIllllllIIlllIllllll.size(); ++i) {
             ((class_1822)this.IlIIIIIllllllIIlllIllllll.get((int)i)).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(class_07032);
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032, int n) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032, int n) {
         for (int i = 0; i < this.IlIIIIIllllllIIlllIllllll.size(); ++i) {
             class_1822 class_18222 = (class_1822)this.IlIIIIIllllllIIlllIllllll.get(i);
             if (class_18222.lIIllllllllIlIllllllllIlI != n) continue;
@@ -505,11 +507,11 @@ public abstract class class_2116 {
         return true;
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(double d, double d2, double d3, double d4, int n, class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(double d, double d2, double d3, double d4, int n, Packet class_07032) {
         this.lllIIIllIIIIlllIlIIllIIll(null, d, d2, d3, d4, n, class_07032);
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0814 class_08142, double d, double d2, double d3, double d4, int n, class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(class_0814 class_08142, double d, double d2, double d3, double d4, int n, Packet class_07032) {
         for (int i = 0; i < this.IlIIIIIllllllIIlllIllllll.size(); ++i) {
             double d5;
             double d6;
@@ -554,18 +556,18 @@ public abstract class class_2116 {
     }
 
     public void lllIlIIlIIIlIlIIIllIlllIl(class_1822 class_18222, class_0976 class_09762) {
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1916(class_09762.IlIIIlIIIIllIIIllIIIIIIll(), class_09762.IIlllIlIlllIllIIIlllIIlIl(), class_09762.IlIIlllllIIlIlIlllllIllll().lllIlIIlIIIlIlIIIllIlllIl("doDaylightCycle")));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S03PacketTimeUpdate(class_09762.IlIIIlIIIIllIIIllIIIIIIll(), class_09762.IIlllIlIlllIllIIIlllIIlIl(), class_09762.IlIIlllllIIlIlIlllllIllll().lllIlIIlIIIlIlIIIllIlllIl("doDaylightCycle")));
         if (class_09762.IIIIIIIIlIllIIllIIlllIllI()) {
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(1, 0.0f));
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(7, class_09762.IllIIIllIIIIlIlIlIllIIlll(1.0f)));
-            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0742(8, class_09762.IllIIlllllllIIlIIlIIIIlIl(1.0f)));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(1, 0.0f));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(7, class_09762.IllIIIllIIIIlIlIlIllIIlll(1.0f)));
+            class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(8, class_09762.IllIIlllllllIIlIIlIIIIlIl(1.0f)));
         }
     }
 
     public void lIllllIIlIIIlIllllllIIIll(class_1822 class_18222) {
         class_18222.lllIIIllIIIIlllIlIIllIIll(class_18222.IlIlllIIIIIIlIIllIIllIlll);
         class_18222.IlIlIIlllIIlIllIIIlllllIl();
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0805(class_18222.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S09PacketHeldItemChange(class_18222.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl));
     }
 
     public int IlIlIIlIlIllIIlIlIIllIIIl() {
@@ -630,7 +632,7 @@ public abstract class class_2116 {
 
     public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552, boolean bl) {
         this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(class_22552);
-        this.lllIIIllIIIIlllIlIIllIIll(new class_0710(class_22552, bl));
+        this.lllIIIllIIIIlllIlIIllIIll(new S02PacketChat(class_22552, bl));
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {

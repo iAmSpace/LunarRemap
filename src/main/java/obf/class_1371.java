@@ -26,12 +26,12 @@ extends class_1291 {
 
     @Override
     public boolean lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972) {
-        return class_08972 == null ? false : (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 ? ((class_0981)class_08972.lllIIIllIIIIlllIlIIllIIll()).IllIIIllIIIIlIlIlIllIIlll == this.lllIIIllIIIIlllIlIIllIIll : (class_08972.lllIIIllIIIIlllIlIIllIIll() != Item.getItemFromBlock(Blocks.lIlIIlllllIlllllIlIIIllll) && class_08972.lllIIIllIIIIlllIlIIllIIll() != Items.skull ? false : this.lllIIIllIIIIlllIlIIllIIll == 0));
+        return class_08972 == null ? false : (class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor ? ((ItemArmor)class_08972.lllIIIllIIIIlllIlIIllIIll()).IllIIIllIIIIlIlIlIllIIlll == this.lllIIIllIIIIlllIlIIllIIll : (class_08972.lllIIIllIIIIlllIlIIllIIll() != Item.getItemFromBlock(Blocks.lIlIIlllllIlllllIlIIIllll) && class_08972.lllIIIllIIIIlllIlIIllIIll() != Items.skull ? false : this.lllIIIllIIIIlllIlIIllIIll == 0));
     }
 
     @Override
-    public class_2102 IlIIIIIllllllIIlllIllllll() {
-        return class_0981.lIllllIIlIIIlIllllllIIIll(this.lllIIIllIIIIlllIlIIllIIll);
+    public IIcon IlIIIIIllllllIIlllIllllll() {
+        return ItemArmor.lIllllIIlIIIlIllllllIIIll(this.lllIIIllIIIIlllIlIIllIIll);
     }
 }
 

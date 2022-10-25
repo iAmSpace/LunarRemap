@@ -205,7 +205,7 @@ public class class_0868 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3) {
-        this.lllIIIllIIIIlllIlIIllIIll(n, n2, n3, LunarClient.getInstance() != null && LunarClient.getInstance().getModuleManager() != null && LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.lIllllIIlIIIlIllllllIIIll() ? (Integer) LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() : 255);
+        this.lllIIIllIIIIlllIlIIllIIll(n, n2, n3, LunarClient.getInstance() != null && LunarClient.getInstance().getModuleManager() != null && LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.lIllllIIlIIIlIllllllIIIll() ? (Integer) LunarClient.getInstance().getModuleManager().lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll.getValue() : 255);
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4) {

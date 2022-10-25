@@ -20,9 +20,9 @@ public class class_0483
 extends Item {
     private HashMap IIIllIllIIlIlIlIlIllllIIl = new HashMap();
     private static final Map IllIIIllIIIIlIlIlIllIIlll = new LinkedHashMap();
-    private class_2102 lIIIIlIlIIlllllIIllIIlIII;
-    private class_2102 llIIlllIllIllllIIIlIIIIII;
-    private class_2102 llIIllIllIlIIlIIllIllllll;
+    private IIcon lIIIIlIlIIlllllIIllIIlIII;
+    private IIcon llIIlllIllIllllIIIlIIIIII;
+    private IIcon llIIllIllIlIIlIIllIllllll;
 
     public class_0483() {
         this.lllIlIIlIIIlIlIIIllIlllIl(1);
@@ -112,12 +112,12 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return class_0483.IIIllIIlIIIIIIlIlIIllIIlI(n) ? this.lIIIIlIlIIlllllIIllIIlIII : this.llIIlllIllIllllIIIlIIIIII;
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n2 == 0 ? this.llIIllIllIlIIlIIllIllllll : super.lllIIIllIIIIlllIlIIllIIll(n, n2);
     }
 
@@ -197,29 +197,29 @@ extends Item {
                         object = (String)object + " (" + class_0700.lllIIIllIIIIlllIlIIllIIll((class_1852)object2) + ")";
                     }
                     if (class_07002.lIllllIIlIIIlIllllllIIIll()) {
-                        list.add((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + (String)object);
+                        list.add((Object)((Object) EnumChatFormatting.RED) + (String)object);
                         continue;
                     }
-                    list.add((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + (String)object);
+                    list.add((Object)((Object) EnumChatFormatting.GRAY) + (String)object);
                 }
             } else {
                 Object object2;
                 object2 = class_1586.lllIIIllIIIIlllIlIIllIIll("potion.empty").trim();
-                list.add((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + (String)object2);
+                list.add((Object)((Object) EnumChatFormatting.GRAY) + (String)object2);
             }
             if (!hashMultimap.isEmpty()) {
                 list.add("");
-                list.add((Object)((Object)class_1227.lIllllIIlIIIlIllllllIIIll) + class_1586.lllIIIllIIIIlllIlIIllIIll("potion.effects.whenDrank"));
+                list.add((Object)((Object) EnumChatFormatting.DARK_PURPLE) + class_1586.lllIIIllIIIIlllIlIIllIIll("potion.effects.whenDrank"));
                 for (Object object2 : hashMultimap.entries()) {
                     object = (class_1256)object2.getValue();
                     double d = ((class_1256)object).lIlllIlllIIIIlIIlllIllIII();
                     double d2 = ((class_1256)object).IlIllllllIIlIIllllIIlIIIl() != 1 && ((class_1256)object).IlIllllllIIlIIllllIIlIIIl() != 2 ? ((class_1256)object).lIlllIlllIIIIlIIlllIllIII() : ((class_1256)object).lIlllIlllIIIIlIIlllIllIII() * 100.0;
                     if (d > 0.0) {
-                        list.add((Object)((Object)class_1227.IllIIIllIIIIlIlIlIllIIlll) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.plus." + ((class_1256)object).IlIllllllIIlIIllllIIlIIIl(), ItemStack.lllIIIllIIIIlllIlIIllIIll.format(d2), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)object2.getKey())));
+                        list.add((Object)((Object) EnumChatFormatting.BLUE) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.plus." + ((class_1256)object).IlIllllllIIlIIllllIIlIIIl(), ItemStack.lllIIIllIIIIlllIlIIllIIll.format(d2), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)object2.getKey())));
                         continue;
                     }
                     if (!(d < 0.0)) continue;
-                    list.add((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.take." + ((class_1256)object).IlIllllllIIlIIllllIIlIIIl(), ItemStack.lllIIIllIIIIlllIlIIllIIll.format(d2 *= -1.0), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)object2.getKey())));
+                    list.add((Object)((Object) EnumChatFormatting.RED) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.take." + ((class_1256)object).IlIllllllIIlIIllllIIlIIIl(), ItemStack.lllIIIllIIIIlllIlIIllIIll.format(d2 *= -1.0), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)object2.getKey())));
                 }
             }
         }
@@ -269,7 +269,7 @@ extends Item {
         this.llIIllIllIlIIlIIllIllllll = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_overlay");
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string.equals("bottle_drinkable") ? Items.potionitem.llIIlllIllIllllIIIlIIIIII : (string.equals("bottle_splash") ? Items.potionitem.lIIIIlIlIIlllllIIllIIlIII : (string.equals("overlay") ? Items.potionitem.llIIllIllIlIIlIIllIllllll : null));
     }
 }

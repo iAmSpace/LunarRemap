@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.stats.Achievement;
 import org.lwjgl.opengl.GL11;
@@ -29,7 +30,7 @@ extends class_0210 {
     public void lllIIIllIIIIlllIlIIllIIll(Achievement class_07472) {
         this.IlIIIIIllllllIIlllIllllll = class_0616.lllIIIllIIIIlllIlIIllIIll("achievement.get", new Object[0]);
         this.lIllllIIlIIIlIllllllIIIll = class_07472.IlIIIIIllllllIIlllIllllll().IlIllllllIIlIIllllIIlIIIl();
-        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.getSystemTime();
         this.IIIllIIlIIIIIIlIlIIllIIlI = class_07472;
         this.IllIIIllIIIIlIlIlIllIIlll = false;
     }
@@ -37,7 +38,7 @@ extends class_0210 {
     public void lllIlIIlIIIlIlIIIllIlllIl(Achievement class_07472) {
         this.IlIIIIIllllllIIlllIllllll = class_07472.IlIIIIIllllllIIlllIllllll().IlIllllllIIlIIllllIIlIIIl();
         this.lIllllIIlIIIlIllllllIIIll = class_07472.lIllllIIlIIIlIllllllIIIll();
-        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.llllllIlIllllIlIlIlIIIIlI() + 2500L;
+        this.IllIIlllllllIIlIIlIIIIlIl = Minecraft.getSystemTime() + 2500L;
         this.IIIllIIlIIIIIIlIlIIllIIlI = class_07472;
         this.IllIIIllIIIIlIlIlIllIIlll = true;
     }
@@ -64,7 +65,7 @@ extends class_0210 {
 
     public void lllIIIllIIIIlllIlIIllIIll() {
         if (this.IIIllIIlIIIIIIlIlIIllIIlI != null && this.IllIIlllllllIIlIIlIIIIlIl != 0L && Minecraft.getMinecraft().lIIIIlIlIIlllllIIllIIlIII != null) {
-            double d = (double)(Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.IllIIlllllllIIlIIlIIIIlIl) / 3000.0;
+            double d = (double)(Minecraft.getSystemTime() - this.IllIIlllllllIIlIIlIIIIlIl) / 3000.0;
             if (!this.IllIIIllIIIIlIlIlIllIIlll) {
                 if (d < 0.0 || d > 1.0) {
                     this.IllIIlllllllIIlIIlIIIIlIl = 0L;

@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class class_1930
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_1930() {
         super(class_1855.lllIlIIlIIIlIlIIIllIlllIl);
@@ -19,12 +19,12 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI : (n == 0 ? Blocks.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII(n) : this.llIIIIllIIIIIIIlIIIlIIIIl);
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
         if (n4 == 1) {
             return this.llllllIlIllllIlIlIlIIIIlI;
         }

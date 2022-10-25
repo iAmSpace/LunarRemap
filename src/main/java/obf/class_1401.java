@@ -5,7 +5,7 @@ package obf;
  */
 public class class_1401 {
     private class_1401 lllIIIllIIIIlllIlIIllIIll;
-    private class_1227 lllIlIIlIIIlIlIIIllIlllIl;
+    private EnumChatFormatting lllIlIIlIIIlIlIIIllIlllIl;
     private Boolean IlIllllllIIlIIllllIIlIIIl;
     private Boolean lIlllIlllIIIIlIIlllIllIII;
     private Boolean IlIIIIIllllllIIlllIllllll;
@@ -15,7 +15,7 @@ public class class_1401 {
     private class_0015 IIIllIllIIlIlIlIlIllllIIl;
     private static final class_1401 IllIIIllIIIIlIlIlIllIIlll = new class_1459();
 
-    public class_1227 lllIIIllIIIIlllIlIIllIIll() {
+    public EnumChatFormatting lllIIIllIIIIlllIlIIllIIll() {
         return this.lllIlIIlIIIlIlIIIllIlllIl == null ? this.llIIllIllIlIIlIIllIllllll().lllIIIllIIIIlllIlIIllIIll() : this.lllIlIIlIIIlIlIIIllIlllIl;
     }
 
@@ -51,7 +51,7 @@ public class class_1401 {
         return this.IIIllIllIIlIlIlIlIllllIIl == null ? this.llIIllIllIlIIlIIllIllllll().IIIllIllIIlIlIlIlIllllIIl() : this.IIIllIllIIlIlIlIlIllllIIl;
     }
 
-    public class_1401 lllIIIllIIIIlllIlIIllIIll(class_1227 class_12272) {
+    public class_1401 lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting class_12272) {
         this.lllIlIIlIIIlIlIIIllIlllIl = class_12272;
         return this;
     }
@@ -105,19 +105,19 @@ public class class_1401 {
             stringBuilder.append((Object)this.lllIIIllIIIIlllIlIIllIIll());
         }
         if (this.lllIlIIlIIIlIlIIIllIlllIl()) {
-            stringBuilder.append((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl);
+            stringBuilder.append((Object) EnumChatFormatting.BOLD);
         }
         if (this.IlIllllllIIlIIllllIIlIIIl()) {
-            stringBuilder.append((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll);
+            stringBuilder.append((Object) EnumChatFormatting.ITALIC);
         }
         if (this.IlIIIIIllllllIIlllIllllll()) {
-            stringBuilder.append((Object)class_1227.lIlIlIIlIIIIlIIIIIlllIIII);
+            stringBuilder.append((Object) EnumChatFormatting.UNDERLINE);
         }
         if (this.lIllllIIlIIIlIllllllIIIll()) {
-            stringBuilder.append((Object)class_1227.lllllIlllIIllIlIIlIIIllII);
+            stringBuilder.append((Object) EnumChatFormatting.OBFUSCATED);
         }
         if (this.lIlllIlllIIIIlIIlllIllIII()) {
-            stringBuilder.append((Object)class_1227.lIIlIIIIIlIlllIlIIlIlIlll);
+            stringBuilder.append((Object) EnumChatFormatting.STRIKETHROUGH);
         }
         return stringBuilder.toString();
     }
@@ -210,7 +210,7 @@ public class class_1401 {
         return class_14012.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 
-    static /* synthetic */ class_1227 lllIIIllIIIIlllIlIIllIIll(class_1401 class_14012, class_1227 class_12272) {
+    static /* synthetic */ EnumChatFormatting lllIIIllIIIIlllIlIIllIIll(class_1401 class_14012, EnumChatFormatting class_12272) {
         class_14012.lllIlIIlIIIlIlIIIllIlllIl = class_12272;
         return class_14012.lllIlIIlIIIlIlIIIllIlllIl;
     }
@@ -245,7 +245,7 @@ public class class_1401 {
         return class_14012.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 
-    static /* synthetic */ class_1227 IIIllIIlIIIIIIlIlIIllIIlI(class_1401 class_14012) {
+    static /* synthetic */ EnumChatFormatting IIIllIIlIIIIIIlIlIIllIIlI(class_1401 class_14012) {
         return class_14012.lllIlIIlIIIlIlIIIllIlllIl;
     }
 

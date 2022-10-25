@@ -25,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.init.Blocks;
@@ -630,11 +631,11 @@ public class Config {
         return 64;
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, int n, int n2, int n3, int n4, class_2102 class_21022) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, int n, int n2, int n3, int n4, IIcon class_21022) {
         if (!Config.llllIIllIlIlllllllIIlIIlI()) {
             return class_21022;
         }
-        class_2102 class_21023 = class_1384.IllllIIlIIIllIlllIlllIllI;
+        IIcon class_21023 = class_1384.IllllIIlIIIllIlllIlllIllI;
         Block class_05492 = Blocks.IlIllllllIIlIIllllIIlIIIl;
         if (class_21022 == class_1384.IlllIIIllllIIllIllIlIIlIl) {
             class_21023 = class_1384.lllIIIlIIlIlIllIIIIIlIIll;
@@ -667,7 +668,7 @@ public class Config {
         return class_21023;
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, int n, int n2, int n3, int n4) {
         if (!Config.llllIIllIlIlllllllIIlIIlI()) {
             return class_1384.IlllIIlllllllIIllIlIllllI;
         }
@@ -1094,10 +1095,10 @@ public class Config {
         if (class_05642 == null) {
             return null;
         }
-        if (!lIlllIlllIlIIIIlllIlIlIIl.IIIIlIllIlIIlIIlIllIlIlll()) {
+        if (!lIlllIlllIlIIIIlllIlIlIIl.isIntegratedServerRunning()) {
             return null;
         }
-        class_0519 class_05192 = lIlllIlllIlIIIIlllIlIlIIl.llllIIIIlIIIlIIIIIIlIllll();
+        IntegratedServer class_05192 = lIlllIlllIlIIIIlllIlIlIIl.getIntegratedServer();
         if (class_05192 == null) {
             return null;
         }

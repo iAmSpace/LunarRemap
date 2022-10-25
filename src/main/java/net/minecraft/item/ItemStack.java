@@ -80,7 +80,7 @@ public final class ItemStack {
         return this.IlIIIIIllllllIIlllIllllll;
     }
 
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl() {
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl() {
         return this.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(this);
     }
 
@@ -349,7 +349,7 @@ public final class ItemStack {
         if (this.lllIIIllIIIIlllIlIIllIIll(class_0541.lllIIIllIIIIlllIlIIllIIll)) {
             object2 = this.lIIlIIIIIlIlllIlIIlIlIlll();
             if (this.IlIIIlIIIIllIIIllIIIIIIll()) {
-                object2 = (Object)((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll) + (String)object2 + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl);
+                object2 = (Object)((Object) EnumChatFormatting.ITALIC) + (String)object2 + (Object)((Object) EnumChatFormatting.RESET);
             }
             if (bl) {
                 object = "";
@@ -383,12 +383,12 @@ public final class ItemStack {
                     if (bl) {
                         arrayList.add("Color: #" + Integer.toHexString(((class_0775)object2).lIllllIIlIIIlIllllllIIIll("color")).toUpperCase());
                     } else {
-                        arrayList.add((Object)((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll) + class_1586.lllIIIllIIIIlllIlIIllIIll("item.dyed"));
+                        arrayList.add((Object)((Object) EnumChatFormatting.ITALIC) + class_1586.lllIIIllIIIIlllIlIIllIIll("item.dyed"));
                     }
                 }
                 if (this.lllIIIllIIIIlllIlIIllIIll(class_0541.IlIIIIIllllllIIlllIllllll) && ((class_0775)object2).lllIlIIlIIIlIlIIIllIlllIl("Lore") == 9 && ((class_2145)(object = ((class_0775)object2).IlIllllllIIlIIllllIIlIIIl("Lore", 8))).lIlllIlllIIIIlIIlllIllIII() > 0) {
                     for (n2 = 0; n2 < ((class_2145)object).lIlllIlllIIIIlIIlllIllIII(); ++n2) {
-                        arrayList.add((Object)((Object)class_1227.lIllllIIlIIIlIllllllIIIll) + "" + (Object)((Object)class_1227.IlIIIlIIIIllIIIllIIIIIIll) + ((class_2145)object).lIllllIIlIIIlIllllllIIIll(n2));
+                        arrayList.add((Object)((Object) EnumChatFormatting.DARK_PURPLE) + "" + (Object)((Object) EnumChatFormatting.ITALIC) + ((class_2145)object).lIllllIIlIIIlIllllllIIIll(n2));
                     }
                 }
             }
@@ -403,15 +403,15 @@ public final class ItemStack {
                 }
                 double d2 = class_12562.IlIllllllIIlIIllllIIlIIIl() != 1 && class_12562.IlIllllllIIlIIllllIIlIIIl() != 2 ? d : d * 100.0;
                 if (d > 0.0) {
-                    arrayList.add((Object)((Object)class_1227.IllIIIllIIIIlIlIlIllIIlll) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.plus." + class_12562.IlIllllllIIlIIllllIIlIIIl(), lllIIIllIIIIlllIlIIllIIll.format(d2), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)entry.getKey())));
+                    arrayList.add((Object)((Object) EnumChatFormatting.BLUE) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.plus." + class_12562.IlIllllllIIlIIllllIIlIIIl(), lllIIIllIIIIlllIlIIllIIll.format(d2), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)entry.getKey())));
                     continue;
                 }
                 if (!(d < 0.0)) continue;
-                arrayList.add((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.take." + class_12562.IlIllllllIIlIIllllIIlIIIl(), lllIIIllIIIIlllIlIIllIIll.format(d2 *= -1.0), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)entry.getKey())));
+                arrayList.add((Object)((Object) EnumChatFormatting.RED) + class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.modifier.take." + class_12562.IlIllllllIIlIIllllIIlIIIl(), lllIIIllIIIIlllIlIIllIIll.format(d2 *= -1.0), class_1586.lllIIIllIIIIlllIlIIllIIll("attribute.name." + (String)entry.getKey())));
             }
         }
         if (this.lllIIIllIIIIlllIlIIllIIll(class_0541.IIIllIIlIIIIIIlIlIIllIIlI) && this.IlIlIIlIlIllIIlIlIIllIIIl() && this.lllllIlllIIllIlIIlIIIllII().lllIIlIIIllllllIIIIlIlIlI("Unbreakable")) {
-            arrayList.add((Object)((Object)class_1227.IllIIIllIIIIlIlIlIllIIlll) + class_1586.lllIIIllIIIIlllIlIIllIIll("item.unbreakable"));
+            arrayList.add((Object)((Object) EnumChatFormatting.BLUE) + class_1586.lllIIIllIIIIlllIlIIllIIll("item.unbreakable"));
         }
         if (this.lllIIIllIIIIlllIlIIllIIll(class_0541.IllIIlllllllIIlIIlIIIIlIl) && bl && this.IllIIlllllllIIlIIlIIIIlIl()) {
             arrayList.add("Durability: " + (this.lIIIIlIlIIlllllIIllIIlIII() - this.IIIllIllIIlIlIlIlIllllIIl()) + " / " + this.lIIIIlIlIIlllllIIllIIlIII());
@@ -434,7 +434,7 @@ public final class ItemStack {
         return this.lllIIIllIIIIlllIlIIllIIll().IllIIIllIIIIlIlIlIllIIlll(this);
     }
 
-    public class_0552 lIlIllIIlIIlIIlIIlIIlIIll() {
+    public EnumRarity lIlIllIIlIIlIIlIIlIIlIIll() {
         return this.lllIIIllIIIIlllIlIIllIIll().lIIIIlIlIIlllllIIllIIlIII(this);
     }
 
@@ -520,8 +520,8 @@ public final class ItemStack {
         if (this.IlIIIIIllllllIIlllIllllll != null) {
             class_0775 class_07752 = new class_0775();
             this.lllIlIIlIIIlIlIIIllIlllIl(class_07752);
-            class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.IlIllllllIIlIIllllIIlIIIl, new class_0722(class_07752.toString())));
-            class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll().IlIIIIIllllllIIlllIllllll);
+            class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.SHOW_ITEM, new class_0722(class_07752.toString())));
+            class_22552.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll().rarityColor);
         }
         return class_22552;
     }

@@ -131,12 +131,12 @@ public class class_0641 {
         GL11.glPushMatrix();
         GL11.glTranslatef((float)f4, (float)((float)class_03212.lllIlIIlIIIlIlIIIllIlllIl() - f5), (float)0.0f);
         if (class_13922 != null) {
-            if (((Boolean) LunarClient.getInstance().getSettingsManager().llIIlIllIllllIlIIIIlIIlll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (((Boolean) LunarClient.getInstance().getSettingsManager().tvShowOffscreenMarker.getValue()).booleanValue()) {
                 this.lllIIIllIIIIlllIlIIllIIll(class_07262, class_13922, 0.0f, 0.0f);
             }
         } else {
             this.lllIIIllIIIIlllIlIIllIIll(class_07262, n2, (float)n4, (float)n3);
-            if (n > 40 && ((Boolean) LunarClient.getInstance().getSettingsManager().lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (n > 40 && ((Boolean) LunarClient.getInstance().getSettingsManager().tvShowDistance.getValue()).booleanValue()) {
                 this.lIllllIIlIIIlIllllllIIIll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("(" + n + "m)", 0, 10, -1);
             }
         }

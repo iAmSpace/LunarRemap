@@ -6,14 +6,16 @@ package obf;/*
  */
 import java.util.ArrayList;
 import java.util.List;
+
+import com.moonsworth.lunar.client.config.Setting;
 import org.lwjgl.opengl.GL11;
 
 public class class_0757
-extends class_1665 {
+extends AbstractModule {
     private final List lllIIIllIIIIlllIlIIllIIll;
-    private final class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    private class_1609 IlIllllllIIlIIllllIIlIIIl;
-    private class_1609 lIlllIlllIIIIlIIlllIllIII;
+    private final Setting lllIlIIlIIIlIlIIIllIlllIl;
+    private Setting IlIllllllIIlIIllllIIlIIIl;
+    private Setting lIlllIlllIIIIlIIlllIllIII;
 
     public class_0757() {
         super("CPS");
@@ -21,9 +23,9 @@ extends class_1665 {
         this.lllIlIIlIIIlIlIIIllIlllIl(0.0f, 0.0f);
         this.lllIIIllIIIIlllIlIIllIIll(false);
         this.lllIIIllIIIIlllIlIIllIIll = new ArrayList();
-        this.lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "Show Background").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Text Color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
-        this.lIlllIlllIIIIlIIlllIllIII = new class_1609(this, "Background Color").lllIlIIlIIIlIlIIIllIlllIl(0x6F000000).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "Show Background").setValue(true);
+        this.IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Text Color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lIlllIlllIIIIlIIlllIllIII = new Setting(this, "Background Color").setValue(0x6F000000).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
         this.lllIIIllIIIIlllIlIIllIIll("[9 CPS]", 1.4f);
         this.lllIIIllIIIIlllIlIIllIIll(class_2201.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_0312.class, this::lllIIIllIIIIlllIlIIllIIll);
@@ -36,7 +38,7 @@ extends class_1665 {
         }
         GL11.glPushMatrix();
         this.lllIIIllIIIIlllIlIIllIIll(class_22012.lllIIIllIIIIlllIlIIllIIll());
-        if (((Boolean)this.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean)this.lllIlIIlIIIlIlIIIllIlllIl.getValue()).booleanValue()) {
             this.IlIllllllIIlIIllllIIlIIIl(56.0f, 18.0f);
             class_0210.lllIIIllIIIIlllIlIIllIIll(0.0f, 0.0f, 56.0f, 13.0f, this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll());
             String string = this.lllIIIllIIIIlllIlIIllIIll.size() + " CPS";

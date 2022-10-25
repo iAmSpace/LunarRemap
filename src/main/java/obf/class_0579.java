@@ -160,7 +160,7 @@ public abstract class class_0579 {
         int n8;
         this.IIIllIllIIlIlIlIlIllllIIl = n;
         this.IllIIIllIIIIlIlIlIllIIlll = n2;
-        boolean bl = (Boolean) LunarClient.getInstance().getSettingsManager().llllIIIIlIIIlIIIIIIlIllll.lIlllIlllIIIIlIIlllIllIII() == false || !(Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_2018);
+        boolean bl = (Boolean) LunarClient.getInstance().getSettingsManager().rsTransparentBg.getValue() == false || !(Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII instanceof class_2018);
         this.IlIllllllIIlIIllllIIlIIIl();
         int n9 = this.lllIIIllIIIIlllIlIIllIIll();
         int n10 = this.lIlllIlllIIIIlIIlllIllIII();
@@ -176,10 +176,10 @@ public abstract class class_0579 {
                         n7 = n2 - this.lIlllIlllIIIIlIIlllIllIII - this.llIIlllIllIllllIIIlIIIIII + (int)this.lllllIlllIIllIlIIlIIIllII - 4;
                         n6 = n7 / this.IllIIlllllllIIlIIlIIIIlIl;
                         if (n >= n13 && n <= n8 && n6 >= 0 && n7 >= 0 && n6 < n9) {
-                            n5 = n6 == this.IlIlIIlllIIlIllIIIlllllIl && Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.lIIlIIIIIlIlllIlIIlIlIlll < 250L ? 1 : 0;
+                            n5 = n6 == this.IlIlIIlllIIlIllIIIlllllIl && Minecraft.getSystemTime() - this.lIIlIIIIIlIlllIlIIlIlIlll < 250L ? 1 : 0;
                             this.lllIIIllIIIIlllIlIIllIIll(n6, n5 != 0, n, n2);
                             this.IlIlIIlllIIlIllIIIlllllIl = n6;
-                            this.lIIlIIIIIlIlllIlIIlIlIlll = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                            this.lIIlIIIIIlIlllIlIIlIlIlll = Minecraft.getSystemTime();
                         } else if (n >= n13 && n <= n8 && n7 < 0) {
                             this.lllIIIllIIIIlllIlIIllIIll(n - n13, n2 - this.lIlllIlllIIIIlIIlllIllIII + (int)this.lllllIlllIIllIlIIlIIIllII - 4);
                             n12 = 0;

@@ -7,7 +7,7 @@ package obf;/*
 import org.lwjgl.opengl.GL11;
 
 public class class_1917
-extends class_1665 {
+extends AbstractModule {
     public class_1917() {
         super("Boss bar");
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.lIlllIlllIIIIlIIlllIllIII);

@@ -19,7 +19,7 @@ extends class_1521 {
     protected float lIIIIlIlIIlllllIIllIIlIII;
     protected float llIIlllIllIllllIIIlIIIIII;
     protected float llIIllIllIlIIlIIllIllllll = 1.0f;
-    protected class_2102 lllIIlIIIllllllIIIIlIlIlI;
+    protected IIcon lllIIlIIIllllllIIIIlIlIlI;
     public static double IlIlllIIIIIIlIIllIIllIlll;
     public static double IlIlIIlIlIllIIlIlIIllIIIl;
     public static double lllllIlllIIllIlIIlIIIllII;
@@ -153,7 +153,7 @@ extends class_1521 {
     public void lllIIIllIIIIlllIlIIllIIll(class_0775 class_07752) {
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022) {
+    public void lllIIIllIIIIlllIlIIllIIll(IIcon class_21022) {
         if (this.IlIllllllIIlIIllllIIlIIIl() == 1) {
             this.lllIIlIIIllllllIIIIlIlIlI = class_21022;
         } else {

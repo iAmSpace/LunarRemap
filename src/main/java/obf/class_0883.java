@@ -7,6 +7,7 @@ package obf;/*
 import java.io.File;
 import java.util.Collections;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -14,7 +15,7 @@ import org.lwjgl.opengl.GL11;
 public class class_0883
 extends class_2117 {
     private final int IllIIlllllllIIlIIlIIIIlIl;
-    public final class_1165 lllIIIllIIIIlllIlIIllIIll;
+    public final Profile lllIIIllIIIIlllIlIIllIIll;
     private final class_1194 IIIllIllIIlIlIlIlIllllIIl;
     private final class_0730 IllIIIllIIIIlIlIlIllIIlll;
     private final class_0730 lIIIIlIlIIlllllIIllIIlIII;
@@ -25,7 +26,7 @@ extends class_2117 {
     private ResourceLocation IlIlIIlIlIllIIlIlIIllIIIl = new ResourceLocation("client/icons/right.png");
     private ResourceLocation lllllIlllIIllIlIIlIIIllII = new ResourceLocation("client/icons/pencil-64.png");
 
-    public class_0883(class_1194 class_11942, int n, class_1165 class_11652, float f) {
+    public class_0883(class_1194 class_11942, int n, Profile class_11652, float f) {
         super(f);
         this.IIIllIllIIlIlIlIlIllllIIl = class_11942;
         this.IllIIlllllllIIlIIlIIIIlIl = n;
@@ -61,7 +62,7 @@ extends class_2117 {
         boolean bl6 = (float)n > (float)this.lIlllIlllIIIIlIIlllIllIII * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + 12) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 > (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 < (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)0.35f);
         float f3 = 2.5f;
-        if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl()) {
+        if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable()) {
             bl2 = false;
             bl = false;
             class_1319 class_13192 = (class_1319)this.IIIllIllIIlIlIlIlIllllIIl;
@@ -94,15 +95,15 @@ extends class_2117 {
         } else {
             class_0857.lllIIIllIIIIlllIlIIllIIll(this.IlIlIIlIlIllIIlIlIIllIIIl, 2.5f, (float)(this.lIlllIlllIIIIlIIlllIllIII + 4), (float)this.IlIIIIIllllllIIlllIllllll + 6.0f);
         }
-        if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl == this.lllIIIllIIIIlllIlIIllIIll) {
-            LunarClient.getInstance().robotoLight18px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll().toUpperCase(), (float)this.lIlllIlllIIIIlIIlllIllIII + 16.0f, (float)(this.IlIIIIIllllllIIlllIllllll + 3), -419430401);
+        if (LunarClient.getInstance().activeProfile == this.lllIIIllIIIIlllIlIIllIIll) {
+            LunarClient.getInstance().robotoLight18px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase(), (float)this.lIlllIlllIIIIlIIlllIllIII + 16.0f, (float)(this.IlIIIIIllllllIIlllIllllll + 3), -419430401);
         } else {
-            LunarClient.getInstance().robotoLight16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll().toUpperCase(), (float)this.lIlllIlllIIIIlIIlllIllIII + 16.0f, (float)this.IlIIIIIllllllIIlllIllllll + 3.5f, -419430401);
+            LunarClient.getInstance().robotoLight16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase(), (float)this.lIlllIlllIIIIlIIlllIllIII + 16.0f, (float)this.IlIIIIIllllllIIlllIllllll + 3.5f, -419430401);
         }
-        if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl == this.lllIIIllIIIIlllIlIIllIIll) {
-            LunarClient.getInstance().robotoMedium13px.lllIIIllIIIIlllIlIIllIIll(" (Active)", (float)this.lIlllIlllIIIIlIIlllIllIII + 17.0f + (float) LunarClient.getInstance().robotoLight18px.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll().toUpperCase()), (float)this.IlIIIIIllllllIIlllIllllll + 4.0f, -419430401);
+        if (LunarClient.getInstance().activeProfile == this.lllIIIllIIIIlllIlIIllIIll) {
+            LunarClient.getInstance().robotoMedium13px.lllIIIllIIIIlllIlIIllIIll(" (Active)", (float)this.lIlllIlllIIIIlIIlllIllIII + 17.0f + (float) LunarClient.getInstance().robotoLight18px.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase()), (float)this.IlIIIIIllllllIIlllIllllll + 4.0f, -419430401);
         }
-        if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl()) {
+        if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable()) {
             bl2 = (float)n > (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 30) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 13) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 > (float)(this.IlIIIIIllllllIIlllIllllll + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 < (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
             GL11.glColor4f((float)(bl2 ? 0.0f : 0.75f), (float)(bl2 ? 0.0f : 0.75f), (float)(bl2 ? 0.5f : 0.75f), (float)0.65f);
             class_0857.lllIIIllIIIIlllIlIIllIIll(this.lllllIlllIIllIlIIlIIIllII, 5.0f, (float)(this.lIlllIlllIIIIlIIlllIllIII + this.lIllllIIlIIIlIllllllIIIll - 26), (float)this.IlIIIIIllllllIIlllIllllll + 3.5f);
@@ -119,40 +120,40 @@ extends class_2117 {
         boolean bl3 = (float)n > (float)this.lIlllIlllIIIIlIIlllIllIII * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + 12) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 >= (float)(this.IlIIIIIllllllIIlllIllllll + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 <= (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
         boolean bl4 = (float)n > (float)this.lIlllIlllIIIIlIIlllIllIII * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n < (float)(this.lIlllIlllIIIIlIIlllIllIII + 12) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 > (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI / 2 + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl && (float)n2 < (float)(this.IlIIIIIllllllIIlllIllllll + this.IIIllIIlIIIIIIlIlIIllIIlI + this.IlIllllllIIlIIllllIIlIIIl) * this.lllIlIIlIIIlIlIIIllIlllIl;
         class_1319 class_13192 = (class_1319)this.IIIllIllIIlIlIlIlIllllIIl;
-        if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl() && (bl3 || bl4)) {
+        if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable() && (bl3 || bl4)) {
             if (bl3 && ((class_1319)this.IIIllIllIIlIlIlIlIllllIIl).lllIIIllIIIIlllIlIIllIIll.indexOf(this) != 0 && ((class_1319)this.IIIllIllIIlIlIlIlIllllIIl).lllIIIllIIIIlllIlIIllIIll.indexOf(this) > 1) {
                 Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) - 1;
-                ((class_0883)class_13192.lllIIIllIIIIlllIlIIllIIll.get((int)(class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf((Object)this) - 1))).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this);
+                this.lllIIIllIIIIlllIlIIllIIll.index = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) - 1;
+                ((class_0883)class_13192.lllIIIllIIIIlllIlIIllIIll.get((int)(class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf((Object)this) - 1))).lllIIIllIIIIlllIlIIllIIll.index = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this);
                 Collections.swap(class_13192.lllIIIllIIIIlllIlIIllIIll, class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this), class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) - 1);
             }
             if (bl4 && class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) != class_13192.lllIIIllIIIIlllIlIIllIIll.size() - 1) {
                 Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-                this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) + 1;
-                ((class_0883)class_13192.lllIIIllIIIIlllIlIIllIIll.get((int)(class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf((Object)this) + 1))).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this);
+                this.lllIIIllIIIIlllIlIIllIIll.index = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) + 1;
+                ((class_0883)class_13192.lllIIIllIIIIlllIlIIllIIll.get((int)(class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf((Object)this) + 1))).lllIIIllIIIIlllIlIIllIIll.index = class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this);
                 Collections.swap(class_13192.lllIIIllIIIIlllIlIIllIIll, class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this), class_13192.lllIIIllIIIIlllIlIIllIIll.indexOf(this) + 1);
             }
-        } else if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl() && bl) {
+        } else if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable() && bl) {
             File file;
             File file2;
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-            if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl == this.lllIIIllIIIIlllIlIIllIIll) {
-                LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = (class_1165) LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.get(0);
-                LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+            if (LunarClient.getInstance().activeProfile == this.lllIIIllIIIIlllIlIIllIIll) {
+                LunarClient.getInstance().activeProfile = (Profile) LunarClient.getInstance().profiles.get(0);
+                LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().activeProfile.getName());
                 LunarClient.getInstance().getModuleManager().IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll();
             }
-            if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl() && (file2 = (file = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles")).exists() || file.mkdirs() ? new File(file + File.separator + this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll().toLowerCase() + ".cfg") : null).exists() && file2.delete()) {
-                LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll.removeIf(class_11652 -> class_11652 == this.lllIIIllIIIIlllIlIIllIIll);
+            if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable() && (file2 = (file = new File(class_0576.lllIIIllIIIIlllIlIIllIIll + File.separator + "profiles")).exists() || file.mkdirs() ? new File(file + File.separator + this.lllIIIllIIIIlllIlIIllIIll.getName().toLowerCase() + ".cfg") : null).exists() && file2.delete()) {
+                LunarClient.getInstance().profiles.removeIf(class_11652 -> class_11652 == this.lllIIIllIIIIlllIlIIllIIll);
                 class_13192.lllIIIllIIIIlllIlIIllIIll.removeIf(class_08832 -> class_08832 == this);
             }
-        } else if (!this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl() && bl2) {
+        } else if (!this.lllIIIllIIIIlllIlIIllIIll.isEditable() && bl2) {
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
             Minecraft.getMinecraft().lllIIIllIIIIlllIlIIllIIll(new class_1151(this.lllIIIllIIIIlllIlIIllIIll, class_0822.lllIIIllIIIIlllIlIIllIIll, (class_1319)this.IIIllIllIIlIlIlIlIllllIIl, this.IllIIlllllllIIlIIlIIIIlIl, this.lllIlIIlIIIlIlIIIllIlllIl));
-        } else if (LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl != this.lllIIIllIIIIlllIlIIllIIll) {
+        } else if (LunarClient.getInstance().activeProfile != this.lllIIIllIIIIlllIlIIllIIll) {
             Minecraft.getMinecraft().IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(class_0132.lllIIIllIIIIlllIlIIllIIll(new ResourceLocation("gui.button.press"), 1.0f));
-            LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
-            LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl = this.lllIIIllIIIIlllIlIIllIIll;
-            LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll());
+            LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl(LunarClient.getInstance().activeProfile.getName());
+            LunarClient.getInstance().activeProfile = this.lllIIIllIIIIlllIlIIllIIll;
+            LunarClient.getInstance().lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(LunarClient.getInstance().activeProfile.getName());
             LunarClient.getInstance().getModuleManager().IllIIlllllllIIlIIlIIIIlIl.lllIIIllIIIIlllIlIIllIIll();
         }
     }

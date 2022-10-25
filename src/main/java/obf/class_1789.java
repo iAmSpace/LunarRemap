@@ -20,7 +20,7 @@ extends class_0079 {
 
     @Override
     protected void lllIIIllIIIIlllIlIIllIIll(int n, int n2, class_0868 class_08682) {
-        String string = (Object)((Object)class_1227.lIlIlIIlIIIIlIIIIIlllIIII) + "" + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + this.lIllllIIlIIIlIllllllIIIll();
+        String string = (Object)((Object) EnumChatFormatting.UNDERLINE) + "" + (Object)((Object) EnumChatFormatting.BOLD) + this.lIllllIIlIIIlIllllllIIIll();
         this.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl(string, n + this.IlIllllllIIlIIllllIIlIIIl / 2 - this.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(string) / 2, Math.min(this.lIlllIlllIIIIlIIlllIllIII + 3, n2), 0xFFFFFF);
     }
 

@@ -55,7 +55,7 @@ extends class_0210 {
             this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll(class_0713.lllIIIllIIIIlllIlIIllIIll(this.lllllIlllIIllIlIIlIIIllII.lllllIlllIIllIlIIlIIIllII));
         }
         if (n == 1) {
-            if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                 this.lllllIlllIIllIlIIlIIIllII.lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
             }
             this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);
@@ -90,10 +90,10 @@ extends class_0210 {
         List list = class_08972.lllIIIllIIIIlllIlIIllIIll((class_0814)this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII, this.lllllIlllIIllIlIIlIIIllII.gameSettings.lIIllllIllIlllllIIllIllIl);
         for (int i = 0; i < list.size(); ++i) {
             if (i == 0) {
-                list.set(i, (Object)((Object)class_08972.lIlIllIIlIIlIIlIIlIIlIIll().IlIIIIIllllllIIlllIllllll) + (String)list.get(i));
+                list.set(i, (Object)((Object)class_08972.lIlIllIIlIIlIIlIIlIIlIIll().rarityColor) + (String)list.get(i));
                 continue;
             }
-            list.set(i, (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + (String)list.get(i));
+            list.set(i, (Object)((Object) EnumChatFormatting.GRAY) + (String)list.get(i));
         }
         this.lllIIIllIIIIlllIlIIllIIll(list, n, n2);
     }
@@ -197,7 +197,7 @@ extends class_0210 {
     }
 
     public void lIlIlIIlIIIIlIIIIIlllIIII() {
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && !(this instanceof class_1522) && this.lllllIlllIIllIlIIlIIIllII.theWorld != null && this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII != null) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue() && !(this instanceof class_1522) && this.lllllIlllIIllIlIIlIIIllII.theWorld != null && this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII != null) {
             this.lllllIlllIIllIlIIlIIIllII.lIIlIIIIIlIlllIlIIlIlIlll.IlIIIIIllllllIIlllIllllll();
         }
         if (this.lllllIlllIIllIlIIlIIIllII.llIlllIIllIlllIlIlIlIIIll == null) {
@@ -228,7 +228,7 @@ extends class_0210 {
                 return;
             }
             this.lllIlIIlIIIlIlIIIllIlllIl = n3;
-            this.IlIllllllIIlIIllllIIlIIIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+            this.IlIllllllIIlIIllllIIlIIIl = Minecraft.getSystemTime();
             this.lllIIIllIIIIlllIlIIllIIll(n, n2, this.lllIlIIlIIIlIlIIIllIlllIl);
         } else if (n3 != -1) {
             if (this.lllllIlllIIllIlIIlIIIllII.gameSettings.IllIlIlIIIlIllIlIlIIlllII && --this.lIlllIlllIIIIlIIlllIllIII > 0) {
@@ -237,7 +237,7 @@ extends class_0210 {
             this.lllIlIIlIIIlIlIIIllIlllIl = -1;
             this.lllIlIIlIIIlIlIIIllIlllIl(n, n2, n3);
         } else if (this.lllIlIIlIIIlIlIIIllIlllIl != -1 && this.IlIllllllIIlIIllllIIlIIIl > 0L) {
-            long l = Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.IlIllllllIIlIIllllIIlIIIl;
+            long l = Minecraft.getSystemTime() - this.IlIllllllIIlIIllllIIlIIIl;
             this.lllIIIllIIIIlllIlIIllIIll(n, n2, this.lllIlIIlIIIlIlIIIllIlllIl, l);
         }
     }
@@ -256,7 +256,7 @@ extends class_0210 {
     }
 
     public void lIlIllIIlIIlIIlIIlIIlIIll() {
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && !(this instanceof class_1522)) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue() && !(this instanceof class_1522)) {
             try {
                 if (this.lllllIlllIIllIlIIlIIIllII.lIIlIIIIIlIlllIlIIlIlIlll.lllIIIllIIIIlllIlIIllIIll()) {
                     class_1711 class_17112 = Minecraft.getMinecraft().lIIlIIIIIlIlllIlIIlIlIlll.IllIIlllllllIIlIIlIIIIlIl();

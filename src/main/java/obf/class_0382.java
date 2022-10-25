@@ -39,13 +39,13 @@ extends class_0229 {
         this.IllIIlllllllIIlIIlIIIIlIl = new class_1197(1, this.IlIlIIlllIIlIllIIIlllllIl / 2 - 152, this.lIIlIIIIIlIlllIlIIlIlIlll - 30, 150, 20, this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl(Options.SNOOPER_ENABLED));
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(this.IllIIlllllllIIlIIlIIIIlIl);
         this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(2, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 2, this.lIIlIIIIIlIlllIlIIlIlIlll - 30, 150, 20, class_0616.lllIIIllIIIIlllIlIIllIIll("gui.done", new Object[0])));
-        boolean bl = this.lllllIlllIIllIlIIlIIIllII.llllIIIIlIIIlIIIIIIlIllll() != null && this.lllllIlllIIllIlIIlIIIllII.llllIIIIlIIIlIIIIIIlIllll().IlIIIlIllIIIllIIIIlIIlIll() != null;
+        boolean bl = this.lllllIlllIIllIlIIlIIIllII.getIntegratedServer() != null && this.lllllIlllIIllIlIIlIIIllII.getIntegratedServer().IlIIIlIllIIIllIIIIlIIlIll() != null;
         for (Map.Entry entry : new TreeMap(this.lllllIlllIIllIlIIlIIIllII.IIllIllIIllIIlllIIIlIlllI().IlIllllllIIlIIllllIIlIIIl()).entrySet()) {
             this.IlIllllllIIlIIllllIIlIIIl.add((bl ? "C " : "") + (String)entry.getKey());
             this.lIlllIlllIIIIlIIlllIllIII.add(this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll((String)entry.getValue(), this.IlIlIIlllIIlIllIIIlllllIl - 220));
         }
         if (bl) {
-            for (Map.Entry entry : new TreeMap(this.lllllIlllIIllIlIIlIIIllII.llllIIIIlIIIlIIIIIIlIllll().IlIIIlIllIIIllIIIIlIIlIll().IlIllllllIIlIIllllIIlIIIl()).entrySet()) {
+            for (Map.Entry entry : new TreeMap(this.lllllIlllIIllIlIIlIIIllII.getIntegratedServer().IlIIIlIllIIIllIIIIlIIlIll().IlIllllllIIlIIllllIIlIIIl()).entrySet()) {
                 this.IlIllllllIIlIIllllIIlIIIl.add("S " + (String)entry.getKey());
                 this.lIlllIlllIIIIlIIlllIllIII.add(this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll((String)entry.getValue(), this.IlIlIIlllIIlIllIIIlllllIl - 220));
             }

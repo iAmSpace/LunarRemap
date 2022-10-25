@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MathHelper;
@@ -64,7 +65,7 @@ public class class_1130 {
             GL11.glAlphaFunc((int)516, (float)0.1f);
             GL11.glEnable((int)3008);
             GL11.glDisable((int)2884);
-            float f7 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 3000L) / 3000.0f;
+            float f7 = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0f;
             class_08682.lllIlIIlIIIlIlIIIllIlllIl();
             GL11.glTranslated((double)(-d5), (double)(-d6), (double)(-d7));
             class_08682.lllIIIllIIIIlllIlIIllIIll(f4, f5, f6, 1.0f);

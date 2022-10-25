@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.network.play.client.C0BPacketEntityAction;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -38,7 +40,7 @@ extends class_1056 {
 
     private void IIIllIIlIIIIIIlIlIIllIIlI() {
         class_1764 class_17642 = this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII.lllIlIIlIIIlIlIIIllIlllIl;
-        class_17642.lllIIIllIIIIlllIlIIllIIll(new class_1233(this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII, 3));
+        class_17642.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this.lllllIlllIIllIlIIlIIIllII.lIIIIlIlIIlllllIIllIIlIII, 3));
     }
 }
 

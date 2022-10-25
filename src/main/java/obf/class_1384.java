@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.nio.IntBuffer;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 import org.apache.commons.io.IOUtils;
 
@@ -70,24 +71,24 @@ public class class_1384 {
     public static final String lIIIlIIIlIlllIllIIIlIIIlI = "glass_pane_top";
     public static final String lIIlIlllIllIlIlllIIIIIIII = "compass";
     public static final String IIlIllIIlllllIIlIIllllIIl = "clock";
-    public static class_2102 IllllIIlIIIllIlllIlllIllI;
-    public static class_2102 IllIlIlIIIlllIIllIIIIlIll;
-    public static class_2102 IlIIIlIllIIIllIIIIlIIlIll;
-    public static class_2102 llllIIllIlIlllllllIIlIIlI;
-    public static class_2102 IlllIIlllllllIIllIlIllllI;
-    public static class_2102 IlllIIIllllIIllIllIlIIlIl;
-    public static class_2102 lllIIIlIIlIlIllIIIIIlIIll;
-    public static class_2102 IIIlIlIllIlllllIlIllllllI;
-    public static class_2102 IIIIlIllIlIIIIIllllIIlllI;
-    public static class_2102 llllIlIIllIIlllllIIllIIll;
-    public static class_2102 IlIlIllIIlIIIIlllIlIllIlI;
-    public static class_2102 IlIIllIlIlIllIIIlIIlIlIIl;
-    public static class_2102 lIlIIllIllIIIIIlIllllIIIl;
-    public static class_2102 lIlllIIllIIIIIIlIlIIlIllI;
-    public static class_2102 llIIIlIlIlIIlIllIIIllIlIl;
-    public static class_2102 lIIlIIlIllIlIIlIlIIlIlIlI;
-    public static class_2102 llIIIIIlIIlIIIIllIIIlIIII;
-    public static class_2102 lIlIlIIllIIIlllIllIIlIllI;
+    public static IIcon IllllIIlIIIllIlllIlllIllI;
+    public static IIcon IllIlIlIIIlllIIllIIIIlIll;
+    public static IIcon IlIIIlIllIIIllIIIIlIIlIll;
+    public static IIcon llllIIllIlIlllllllIIlIIlI;
+    public static IIcon IlllIIlllllllIIllIlIllllI;
+    public static IIcon IlllIIIllllIIllIllIlIIlIl;
+    public static IIcon lllIIIlIIlIlIllIIIIIlIIll;
+    public static IIcon IIIlIlIllIlllllIlIllllllI;
+    public static IIcon IIIIlIllIlIIIIIllllIIlllI;
+    public static IIcon llllIlIIllIIlllllIIllIIll;
+    public static IIcon IlIlIllIIlIIIIlllIlIllIlI;
+    public static IIcon IlIIllIlIlIllIIIlIIlIlIIl;
+    public static IIcon lIlIIllIllIIIIIlIllllIIIl;
+    public static IIcon lIlllIIllIIIIIIlIlIIlIllI;
+    public static IIcon llIIIlIlIlIIlIllIIIllIlIl;
+    public static IIcon lIIlIIlIllIlIIlIlIIlIlIlI;
+    public static IIcon llIIIIIlIIlIIIIllIIIlIIII;
+    public static IIcon lIlIlIIllIIIlllIllIIlIllI;
     private static IntBuffer IlIIIIIllIlllIIIIlIIIllIl;
 
     public static void lllIIIllIIIIlllIlIIllIIll() {
@@ -130,7 +131,7 @@ public class class_1384 {
         return bufferedImage;
     }
 
-    public static class_1585 lllIIIllIIIIlllIlIIllIIll(class_2102 class_21022) {
+    public static class_1585 lllIIIllIIIIlllIlIIllIIll(IIcon class_21022) {
         return class_21022 instanceof class_1585 ? (class_1585)class_21022 : null;
     }
 

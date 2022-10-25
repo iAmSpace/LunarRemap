@@ -83,12 +83,12 @@ public class class_1889 {
                 File file2 = class_1889.lllIIIllIIIIlllIlIIllIIll(file2);
                 try {
                     ImageIO.write((RenderedImage)bufferedImage, "png", file2);
-                    class_0722 class_07222 = new class_0722((Object)((Object)class_1227.IIIllIIlIIIIIIlIlIIllIIlI) + "" + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + " [Open]");
+                    class_0722 class_07222 = new class_0722((Object)((Object) EnumChatFormatting.GOLD) + "" + (Object)((Object) EnumChatFormatting.BOLD) + " [Open]");
                     class_07222.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0203(class_1936.lllIlIIlIIIlIlIIIllIlllIl, file2.getCanonicalPath()));
-                    class_07222.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.lllIIIllIIIIlllIlIIllIIll, new class_0722(file2.getName())));
-                    class_0722 class_07223 = new class_0722((Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + "" + (Object)((Object)class_1227.IlIlIIlllIIlIllIIIlllllIl) + " [Upload]");
+                    class_07222.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.SHOW_TEXT, new class_0722(file2.getName())));
+                    class_0722 class_07223 = new class_0722((Object)((Object) EnumChatFormatting.GREEN) + "" + (Object)((Object) EnumChatFormatting.BOLD) + " [Upload]");
                     class_07223.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0203(class_1936.lIllllIIlIIIlIllllllIIIll, file2.getName()));
-                    class_07223.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.lllIIIllIIIIlllIlIIllIIll, new class_0722("Upload to " + (Object)((Object)class_1227.lIIIIlIlIIlllllIIllIIlIII) + "imgur.com & open")));
+                    class_07223.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(new class_0015(class_0248.SHOW_TEXT, new class_0722("Upload to " + (Object)((Object) EnumChatFormatting.GREEN) + "imgur.com & open")));
                     class_0722 class_07224 = new class_0722("Saved screenshot");
                     class_07224.lllIlIIlIIIlIlIIIllIlllIl().lIlllIlllIIIIlIIlllIllIII(true);
                     class_07224.lllIIIllIIIIlllIlIIllIIll(class_07222);

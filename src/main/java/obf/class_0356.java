@@ -21,17 +21,17 @@ implements class_1923 {
     public void lIIIIlIlIIlllllIIllIIlIII() {
         class_0260 class_02602 = this.lllIlIIlIIIlIlIIIllIlllIl.llIlllIlIIllIlIIIIllIIlIl();
         if (this.IlIllllllIIlIIllllIIlIIIl != null) {
-            if (!class_02602.lllIIIllIIIIlllIlIIllIIll().equals(this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll())) {
+            if (!class_02602.getMusicTickerLocation().equals(this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll())) {
                 this.lllIlIIlIIIlIlIIIllIlllIl.IllIIIlllllIlIlllIlllllII().lllIlIIlIIIlIlIIIllIlllIl(this.IlIllllllIIlIIllllIIlIIIl);
-                this.lIlllIlllIIIIlIIlllIllIII = MathHelper.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, 0, class_02602.lllIlIIlIIIlIlIIIllIlllIl() / 2);
+                this.lIlllIlllIIIIlIIlllIllIII = MathHelper.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, 0, class_02602.func_148634_b() / 2);
             }
             if (!this.lllIlIIlIIIlIlIIIllIlllIl.IllIIIlllllIlIlllIlllllII().IlIllllllIIlIIllllIIlIIIl(this.IlIllllllIIlIIllllIIlIIIl)) {
                 this.IlIllllllIIlIIllllIIlIIIl = null;
-                this.lIlllIlllIIIIlIIlllIllIII = Math.min(MathHelper.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_02602.lllIlIIlIIIlIlIIIllIlllIl(), class_02602.IlIllllllIIlIIllllIIlIIIl()), this.lIlllIlllIIIIlIIlllIllIII);
+                this.lIlllIlllIIIIlIIlllIllIII = Math.min(MathHelper.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_02602.func_148634_b(), class_02602.func_148633_c()), this.lIlllIlllIIIIlIIlllIllIII);
             }
         }
         if (this.IlIllllllIIlIIllllIIlIIIl == null && this.lIlllIlllIIIIlIIlllIllIII-- <= 0) {
-            this.IlIllllllIIlIIllllIIlIIIl = class_0132.lllIIIllIIIIlllIlIIllIIll(class_02602.lllIIIllIIIIlllIlIIllIIll());
+            this.IlIllllllIIlIIllllIIlIIIl = class_0132.lllIIIllIIIIlllIlIIllIIll(class_02602.getMusicTickerLocation());
             this.lllIlIIlIIIlIlIIIllIlllIl.IllIIIlllllIlIlllIlllllII().lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl);
             this.lIlllIlllIIIIlIIlllIllIII = Integer.MAX_VALUE;
         }

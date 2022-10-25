@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import optifine.Config;
 import net.minecraft.client.resources.DefaultResourcePack;
@@ -40,34 +41,34 @@ public class class_1245 {
     private static final String[] lIIlIIIIIlIlllIlIIlIlIlll = new String[]{"", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     private static final int[] lIlIlIIlIIIIlIIIIIlllIIII = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 0, 0, 0, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 0, 0, 0, 0, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 0, 0, 0, 0, 0};
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022) {
-        class_2102 class_21023 = class_1245.IlIllllllIIlIIllllIIlIIIl(class_18432, class_05492, n, n2, n3, n4, class_21022);
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022) {
+        IIcon class_21023 = class_1245.IlIllllllIIlIIllllIIlIIIl(class_18432, class_05492, n, n2, n3, n4, class_21022);
         if (class_05492.IlIlllIIIIIIlIIllIIllIlll() && ((class_1585)class_21023).IIlllIlIlllIllIIIlllIIlIl()) {
             return class_21022;
         }
         return class_21023;
     }
 
-    private static class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022) {
-        class_2102 class_21023;
+    private static IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022) {
+        IIcon class_21023;
         if (class_18432 == null) {
             return class_21022;
         }
-        class_2102 class_21024 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_18432, class_05492, n, n2, n3, n4, class_21022, true);
+        IIcon class_21024 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_18432, class_05492, n, n2, n3, n4, class_21022, true);
         if (!IlIllllllIIlIIllllIIlIIIl) {
             return class_21024;
         }
         if (class_21024 == class_21022) {
             return class_21024;
         }
-        class_2102 class_21025 = class_21024;
+        IIcon class_21025 = class_21024;
         for (int i = 0; i < 3 && (class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_18432, class_05492, n, n2, n3, n4, class_21025, false)) != class_21025; ++i) {
             class_21025 = class_21023;
         }
         return class_21025;
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, boolean bl) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, boolean bl) {
         int n5;
         Object object;
         class_1301[] arrclass_1301;
@@ -81,23 +82,23 @@ public class class_1245 {
             if (n7 < 0) {
                 n7 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
             }
-            if ((object = class_1245.lllIIIllIIIIlllIlIIllIIll(arrclass_1301, class_18432, class_05492, n, n2, n3, n4, (class_2102)class_15852, n7)) != null) {
+            if ((object = class_1245.lllIIIllIIIIlllIlIIllIIll(arrclass_1301, class_18432, class_05492, n, n2, n3, n4, (IIcon)class_15852, n7)) != null) {
                 return object;
             }
         }
         if (lllIIIllIIIIlllIlIIllIIll != null && bl && (n5 = Block.lllIIIllIIIIlllIlIIllIIll(class_05492)) >= 0 && n5 < lllIIIllIIIIlllIlIIllIIll.length && (object = lllIIIllIIIIlllIlIIllIIll[n5]) != null) {
-            class_2102 class_21023;
+            IIcon class_21023;
             if (n7 < 0) {
                 n7 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
             }
-            if ((class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(object, class_18432, class_05492, n, n2, n3, n4, (class_2102)class_15852, n7)) != null) {
+            if ((class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(object, class_18432, class_05492, n, n2, n3, n4, (IIcon)class_15852, n7)) != null) {
                 return class_21023;
             }
         }
         return class_21022;
     }
 
-    public static class_1301 lllIlIIlIIIlIlIIIllIlllIl(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022) {
+    public static class_1301 lllIlIIlIIIlIlIIIllIlllIl(class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022) {
         int n5;
         Object object;
         class_1301[] arrclass_1301;
@@ -114,7 +115,7 @@ public class class_1245 {
             if (n7 < 0) {
                 n7 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
             }
-            if ((object = class_1245.lllIlIIlIIIlIlIIIllIlllIl(arrclass_1301, class_18432, class_05492, n, n2, n3, n4, (class_2102)class_15852, n7)) != null) {
+            if ((object = class_1245.lllIlIIlIIIlIlIIIllIlllIl(arrclass_1301, class_18432, class_05492, n, n2, n3, n4, (IIcon)class_15852, n7)) != null) {
                 return object;
             }
         }
@@ -123,16 +124,16 @@ public class class_1245 {
             if (n7 < 0) {
                 n7 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
             }
-            if ((class_13012 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(object, class_18432, class_05492, n, n2, n3, n4, (class_2102)class_15852, n7)) != null) {
+            if ((class_13012 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(object, class_18432, class_05492, n, n2, n3, n4, (IIcon)class_15852, n7)) != null) {
                 return class_13012;
             }
         }
         return null;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301[] arrclass_1301, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, int n5) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301[] arrclass_1301, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, int n5) {
         for (int i = 0; i < arrclass_1301.length; ++i) {
-            class_2102 class_21023;
+            IIcon class_21023;
             class_1301 class_13012 = arrclass_1301[i];
             if (class_13012 == null || (class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, class_21022, n5)) == null) continue;
             return class_21023;
@@ -140,9 +141,9 @@ public class class_1245 {
         return null;
     }
 
-    private static class_1301 lllIlIIlIIIlIlIIIllIlllIl(class_1301[] arrclass_1301, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, int n5) {
+    private static class_1301 lllIlIIlIIIlIlIIIllIlllIl(class_1301[] arrclass_1301, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, int n5) {
         for (int i = 0; i < arrclass_1301.length; ++i) {
-            class_2102 class_21023;
+            IIcon class_21023;
             class_1301 class_13012 = arrclass_1301[i];
             if (class_13012 == null || (class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, class_21022, n5)) == null) continue;
             return class_13012;
@@ -150,7 +151,7 @@ public class class_1245 {
         return null;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, int n5) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, int n5) {
         int n6;
         int n7;
         if (n2 < class_13012.lIIIIlIlIIlllllIIllIIlIII || n2 > class_13012.llIIlllIllIllllIIIlIIIIII) {
@@ -302,7 +303,7 @@ public class class_1245 {
         return 0;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, int n, int n2, int n3, int n4) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, int n, int n2, int n3, int n4) {
         if (class_13012.IIlllIlIlllIllIIIlllIIlIl.length == 1) {
             return class_13012.IIlllIlIlllIllIIIlllIIlIl[0];
         }
@@ -323,11 +324,11 @@ public class class_1245 {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[n7];
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012) {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[0];
     }
 
-    private static class_2102 lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, int n, int n2, int n3, int n4) {
+    private static IIcon lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, int n, int n2, int n3, int n4) {
         if (class_13012.IIlllIlIlllIllIIIlllIIlIl.length == 1) {
             return class_13012.IIlllIlIlllIllIIIlllIIlIl[0];
         }
@@ -375,7 +376,7 @@ public class class_1245 {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[n7];
     }
 
-    private static class_2102 lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, int n5) {
+    private static IIcon lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, int n5) {
         boolean[] arrbl = new boolean[6];
         switch (n4) {
             case 0: 
@@ -556,14 +557,14 @@ public class class_1245 {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[n6];
     }
 
-    private static boolean IlIllllllIIlIIllllIIlIIIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, class_2102 class_21022, int n5) {
+    private static boolean IlIllllllIIlIIllllIIlIIIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, IIcon class_21022, int n5) {
         Block class_05493 = class_18432.a_(n, n2, n3);
         if (class_13012.IIIllIIlIIIIIIlIlIIllIIlI == 2) {
             if (class_05493 == null) {
                 return false;
             }
             int n6 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
-            class_2102 class_21023 = n4 >= 0 ? class_05493.lllIIIllIIIIlllIlIIllIIll(n4, n6) : class_05493.lllIIIllIIIIlllIlIIllIIll(1, n6);
+            IIcon class_21023 = n4 >= 0 ? class_05493.lllIIIllIIIIlllIlIIllIIll(n4, n6) : class_05493.lllIIIllIIIIlllIlIIllIIll(1, n6);
             return class_21023 == class_21022;
         }
         if (class_13012.IIIllIIlIIIIIIlIlIIllIIlI == 3) {
@@ -575,7 +576,7 @@ public class class_1245 {
         return class_05493 == class_05492 && class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3) == n5;
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, class_2102 class_21022, int n6) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, IIcon class_21022, int n6) {
         boolean bl = false;
         boolean bl2 = false;
         block0 : switch (n4) {
@@ -668,7 +669,7 @@ public class class_1245 {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[n7];
     }
 
-    private static class_2102 lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, class_2102 class_21022, int n6) {
+    private static IIcon lllIlIIlIIIlIlIIIllIlllIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, IIcon class_21022, int n6) {
         boolean bl = false;
         boolean bl2 = false;
         switch (n4) {
@@ -701,13 +702,13 @@ public class class_1245 {
         return class_13012.IIlllIlIlllIllIIIlllIIlIl[n7];
     }
 
-    private static class_2102 IlIllllllIIlIIllllIIlIIIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, class_2102 class_21022, int n6) {
-        class_2102[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
-        class_2102 class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
+    private static IIcon IlIllllllIIlIIllllIIlIIIl(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, IIcon class_21022, int n6) {
+        IIcon[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
+        IIcon class_21023 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
         if (class_21023 != null && class_21023 != class_21022 && class_21023 != arrclass_2102[3]) {
             return class_21023;
         }
-        class_2102 class_21024 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
+        IIcon class_21024 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
         if (class_21024 == arrclass_2102[0]) {
             return arrclass_2102[4];
         }
@@ -720,13 +721,13 @@ public class class_1245 {
         return class_21024;
     }
 
-    private static class_2102 lIlllIlllIIIIlIIlllIllIII(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, class_2102 class_21022, int n6) {
-        class_2102[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
-        class_2102 class_21023 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
+    private static IIcon lIlllIlllIIIIlIIlllIllIII(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, IIcon class_21022, int n6) {
+        IIcon[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
+        IIcon class_21023 = class_1245.lllIlIIlIIIlIlIIIllIlllIl(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
         if (class_21023 != null && class_21023 != class_21022 && class_21023 != arrclass_2102[3]) {
             return class_21023;
         }
-        class_2102 class_21024 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
+        IIcon class_21024 = class_1245.lllIIIllIIIIlllIlIIllIIll(class_13012, class_18432, class_05492, n, n2, n3, n4, n5, class_21022, n6);
         if (class_21024 == arrclass_2102[0]) {
             return arrclass_2102[4];
         }
@@ -739,7 +740,7 @@ public class class_1245 {
         return class_21024;
     }
 
-    private static class_2102 IlIIIIIllllllIIlllIllllll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, class_2102 class_21022, int n6) {
+    private static IIcon IlIIIIIllllllIIlllIllllll(class_1301 class_13012, class_1843 class_18432, Block class_05492, int n, int n2, int n3, int n4, int n5, IIcon class_21022, int n6) {
         boolean bl = false;
         switch (n4) {
             case 0: {
@@ -849,7 +850,7 @@ public class class_1245 {
         }
         class_1301[] arrclass_1301 = arrayList.toArray(new class_1301[arrayList.size()]);
         object = new HashSet();
-        HashSet<class_2102> hashSet = new HashSet<class_2102>();
+        HashSet<IIcon> hashSet = new HashSet<IIcon>();
         for (int i = 0; i < arrclass_1301.length; ++i) {
             class_1301 class_13012 = arrclass_1301[i];
             if (class_13012.IlIIIlIIIIllIIIllIIIIIIll != null) {
@@ -878,7 +879,7 @@ public class class_1245 {
             return;
         }
         for (int i = 0; i < class_13012.IlIIIlIIIIllIIIllIIIIIIll.length; ++i) {
-            class_2102 class_21022 = class_13012.IlIIIlIIIIllIIIllIIIIIIll[i];
+            IIcon class_21022 = class_13012.IlIIIlIIIIllIIIllIIIIIIll[i];
             if (!(class_21022 instanceof class_1585)) {
                 Config.lllIlIIlIIIlIlIIIllIlllIl("IIcon is not TextureAtlasSprite: " + class_21022 + ", name: " + class_21022.IIIllIIlIIIIIIlIlIIllIIlI());
                 continue;
@@ -1086,7 +1087,7 @@ public class class_1245 {
         return n;
     }
 
-    public static class_2102 lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, int n, class_2102 class_21022) {
+    public static IIcon lllIIIllIIIIlllIlIIllIIll(class_1301 class_13012, int n, IIcon class_21022) {
         if (class_13012.IlIIIIIllllllIIlllIllllll != 1) {
             return class_21022;
         }
@@ -1094,7 +1095,7 @@ public class class_1245 {
             return class_21022;
         }
         int n2 = lIlIlIIlIIIIlIIIIIlllIIII[n];
-        class_2102[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
+        IIcon[] arrclass_2102 = class_13012.IIlllIlIlllIllIIIlllIIlIl;
         if (n2 < 0 || n2 >= arrclass_2102.length) {
             return class_21022;
         }

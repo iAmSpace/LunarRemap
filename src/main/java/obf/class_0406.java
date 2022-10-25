@@ -14,13 +14,13 @@ public class class_0406
 extends MessageToByteEncoder {
     protected void lllIIIllIIIIlllIlIIllIIll(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf, ByteBuf byteBuf2) {
         int n = byteBuf.readableBytes();
-        int n2 = class_0181.lllIIIllIIIIlllIlIIllIIll(n);
+        int n2 = PacketBuffer.lllIIIllIIIIlllIlIIllIIll(n);
         if (n2 > 3) {
             throw new IllegalArgumentException("unable to fit " + n + " into " + 3);
         }
-        class_0181 class_01812 = new class_0181(byteBuf2);
+        PacketBuffer class_01812 = new PacketBuffer(byteBuf2);
         class_01812.ensureWritable(n2 + n);
-        class_01812.lllIlIIlIIIlIlIIIllIlllIl(n);
+        class_01812.writeVarIntToBuffer(n);
         class_01812.writeBytes(byteBuf, byteBuf.readerIndex(), n);
     }
 

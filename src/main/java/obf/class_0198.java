@@ -33,7 +33,7 @@ extends class_1246 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1969 class_19692, String[] arrstring) {
         if (arrstring.length >= 2) {
-            StatBase class_03192 = StatList.lllIIIllIIIIlllIlIIllIIll(arrstring[1]);
+            StatBase class_03192 = StatList.func_151177_a(arrstring[1]);
             if (class_03192 == null && !arrstring[1].equals("*")) {
                 throw new class_1953("commands.achievement.unknownAchievement", arrstring[1]);
             }

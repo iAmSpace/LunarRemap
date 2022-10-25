@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 public class class_1964
 extends Item {
     public static final String[] IIIllIllIIlIlIlIlIllllIIl = new String[]{"pulling_0", "pulling_1", "pulling_2"};
-    private class_2102[] IllIIIllIIIIlIlIlIllIIlll;
+    private IIcon[] IllIIIllIIIIlIlIlIllIIlll;
 
     public class_1964() {
         this.lIlllIlllIIIIlIIlllIllIII = 1;
@@ -90,13 +90,13 @@ extends Item {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
         this.IIIllIIlIIIIIIlIlIIllIIlI = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_standby");
-        this.IllIIIllIIIIlIlIlIllIIlll = new class_2102[IIIllIllIIlIlIlIlIllllIIl.length];
+        this.IllIIIllIIIIlIlIlIllIIlll = new IIcon[IIIllIllIIlIlIlIlIllllIIl.length];
         for (int i = 0; i < this.IllIIIllIIIIlIlIlIllIIlll.length; ++i) {
             this.IllIIIllIIIIlIlIlIllIIlll[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_" + IIIllIllIIlIlIlIlIllllIIl[i]);
         }
     }
 
-    public class_2102 lIllllIIlIIIlIllllllIIIll(int n) {
+    public IIcon lIllllIIlIIIlIllllllIIIll(int n) {
         return this.IllIIIllIIIIlIlIlIllIIlll[n];
     }
 }

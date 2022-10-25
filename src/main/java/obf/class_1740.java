@@ -36,7 +36,7 @@ public final class class_1740 {
             }
         });
         LunarClient.getInstance().getEventBus().addEvent(class_0288.class, class_02882 -> {
-            if (Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII == null && !this.IlIIIIIllllllIIlllIllllll.isEmpty() && class_02882.lllIIIllIIIIlllIlIIllIIll() == LunarClient.getInstance().getSettingsManager().IlIllllllIIlIIllllIIlIIIl.IIIllIllIIlIlIlIlIllllIIl()) {
+            if (Minecraft.getMinecraft().lllllIlllIIllIlIIlIIIllII == null && !this.IlIIIIIllllllIIlllIllllll.isEmpty() && class_02882.lllIIIllIIIIlllIlIIllIIll() == LunarClient.getInstance().getSettingsManager().keyEmoteWheel.IIIllIllIIlIlIlIlIllllIIl()) {
                 Minecraft.getMinecraft().lllIIIllIIIIlllIlIIllIIll(new class_0784(class_02882.lllIIIllIIIIlllIlIIllIIll()));
             }
         });

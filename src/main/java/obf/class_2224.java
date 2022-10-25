@@ -1,5 +1,7 @@
 package obf;
 
+import net.minecraft.network.play.client.C00PacketKeepAlive;
+
 /*
  * Decompiled with CFR 0.150.
  */
@@ -48,10 +50,10 @@ extends class_0229 {
             this.lIlIlIIlIIIIlIIIIIlllIIII.add(new class_1197(2, this.IlIlIIlllIIlIllIIIlllllIl / 2 + 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 4 + 120 + 36, 99, 20, "Disconnect"));
         }
         if (this.lllIlIIlIIIlIlIIIllIlllIl % 20 == 0) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0062());
+            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new C00PacketKeepAlive());
         }
         if (this.lllIIIllIIIIlllIlIIllIIll != null) {
-            this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll();
+            this.lllIIIllIIIIlllIlIIllIIll.onNetworkTick();
         }
     }
 

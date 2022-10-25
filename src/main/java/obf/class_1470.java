@@ -9,6 +9,7 @@ package obf;/*
  *  org.lwjgl.opengl.GL11
  */
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.client.nethandler.LCPacket;
 import com.moonsworth.client.nethandler.client.LCPacketVoiceChannelSwitch;
 import com.moonsworth.client.nethandler.client.LCPacketVoiceMute;
@@ -210,7 +211,7 @@ extends class_0935 {
     public void lllIIIllIIIIlllIlIIllIIll(char c, int n) {
         super.lllIIIllIIIIlllIlIIllIIll(c, n);
         if (n == 25 && llIIlIllIllllIlIIIIlIIlll.IlIIIIIllllllIIlllIllllll()) {
-            if (((Boolean) LunarClient.getInstance().getSettingsManager().llIllllIlIllIIIlIllIIlIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (((Boolean) LunarClient.getInstance().getSettingsManager().gsGuiBlur.getValue()).booleanValue()) {
                 this.lllllIlllIIllIlIIlIIIllII.lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl();
             }
             this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);

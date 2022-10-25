@@ -7,22 +7,23 @@ package obf;/*
 import java.util.ArrayList;
 import java.util.List;
 
+import com.moonsworth.lunar.client.config.Setting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class class_1879
-extends class_1665 {
-    private class_1609 lllIlIIlIIIlIlIIIllIlllIl;
-    private class_1609 IlIllllllIIlIIllllIIlIIIl;
-    private class_1609 lIlllIlllIIIIlIIlllIllIII;
-    private class_1609 IlIIIIIllllllIIlllIllllll;
-    private class_1609 lIllllIIlIIIlIllllllIIIll;
-    private class_1609 IIIllIIlIIIIIIlIlIIllIIlI;
-    public class_1609 lllIIIllIIIIlllIlIIllIIll;
-    private class_1609 IllIIlllllllIIlIIlIIIIlIl;
-    private class_1609 IIIllIllIIlIlIlIlIllllIIl;
-    private class_1609 IllIIIllIIIIlIlIlIllIIlll;
+extends AbstractModule {
+    private Setting lllIlIIlIIIlIlIIIllIlllIl;
+    private Setting IlIllllllIIlIIllllIIlIIIl;
+    private Setting lIlllIlllIIIIlIIlllIllIII;
+    private Setting IlIIIIIllllllIIlllIllllll;
+    private Setting lIllllIIlIIIlIllllllIIIll;
+    private Setting IIIllIIlIIIIIIlIlIIllIIlI;
+    public Setting lllIIIllIIIIlllIlIIllIIll;
+    private Setting IllIIlllllllIIlIIlIIIIlIl;
+    private Setting IIIllIllIIlIlIlIlIllllIIl;
+    private Setting IllIIIllIIIIlIlIlIllIIlll;
     private final List lIIIIlIlIIlllllIIllIIlIII = new ArrayList();
 
     public class_1879() {
@@ -30,16 +31,16 @@ extends class_1665 {
         this.lllIlIIlIIIlIlIIIllIlllIl(class_0767.lllIIIllIIIIlllIlIIllIIll);
         this.lllIlIIlIIIlIlIIIllIlllIl(-1.0f, 0.0f);
         this.lllIlIIlIIIlIlIIIllIlllIl(false);
-        this.lllIlIIlIIIlIlIIIllIlllIl = new class_1609(this, "label").lllIlIIlIIIlIlIIIllIlllIl("General Options");
-        this.IlIllllllIIlIIllllIIlIIIl = new class_1609(this, "Show While Typing").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.lIlllIlllIIIIlIIlllIllIII = new class_1609(this, "Mode").lllIlIIlIIIlIlIIIllIlllIl("Horizontal").lllIIIllIIIIlllIlIIllIIll(new String[]{"Horizontal", "Vertical"});
-        this.IlIIIIIllllllIIlllIllllll = new class_1609(this, "Coordinates").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.lIllllIIlIIIlIllllllIIIll = new class_1609(this, "Hide Y Coordinate").lllIlIIlIIIlIlIIIllIlllIl(false);
-        this.IIIllIIlIIIIIIlIlIIllIIlI = new class_1609(this, "Direction").lllIlIIlIIIlIlIIIllIlllIl(true);
-        this.lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Custom Line").lllIlIIlIIIlIlIIIllIlllIl("");
-        this.IllIIlllllllIIlIIlIIIIlIl = new class_1609(this, "label").lllIlIIlIIIlIlIIIllIlllIl("Color Settings");
-        this.IIIllIllIIlIlIlIlIllllIIl = new class_1609(this, "Coordinates Color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
-        this.IllIIIllIIIIlIlIlIllIIlll = new class_1609(this, "Direction Color").lllIlIIlIIIlIlIIIllIlllIl(-1).lllIIIllIIIIlllIlIIllIIll((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.lllIlIIlIIIlIlIIIllIlllIl = new Setting(this, "label").setValue("General Options");
+        this.IlIllllllIIlIIllllIIlIIIl = new Setting(this, "Show While Typing").setValue(true);
+        this.lIlllIlllIIIIlIIlllIllIII = new Setting(this, "Mode").setValue("Horizontal").setAcceptedValues(new String[]{"Horizontal", "Vertical"});
+        this.IlIIIIIllllllIIlllIllllll = new Setting(this, "Coordinates").setValue(true);
+        this.lIllllIIlIIIlIllllllIIIll = new Setting(this, "Hide Y Coordinate").setValue(false);
+        this.IIIllIIlIIIIIIlIlIIllIIlI = new Setting(this, "Direction").setValue(true);
+        this.lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Custom Line").setValue("");
+        this.IllIIlllllllIIlIIlIIIIlIl = new Setting(this, "label").setValue("Color Settings");
+        this.IIIllIllIIlIlIlIlIllllIIl = new Setting(this, "Coordinates Color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
+        this.IllIIIllIIIIlIlIlIllIIlll = new Setting(this, "Direction Color").setValue(-1).setMinMax((Object)Integer.MIN_VALUE, (Object)Integer.MAX_VALUE);
         this.lllIIIllIIIIlllIlIIllIIll("(16, 65, 120) NW", 1.0f);
         this.lllIIIllIIIIlllIlIIllIIll(class_2201.class, this::lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_0312.class, this::lllIIIllIIIIlllIlIIllIIll);
@@ -55,24 +56,24 @@ extends class_1665 {
         int n = MathHelper.IlIllllllIIlIIllllIIlIIIl(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IlIIlllllIIlIlIlllllIllll);
         int n2 = (int)this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl;
         int n3 = MathHelper.IlIllllllIIlIIllllIIlIIIl(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IllIIIIllIIllIllIlllIlIIl);
-        if (!this.lIIlIIIIIlIlllIlIIlIlIlll.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().IlIIIIIllllllIIlllIllllll() || ((Boolean)this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
-            if (((String)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).equals("")) {
+        if (!this.lIIlIIIIIlIlllIlIIlIlIlll.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().IlIIIIIllllllIIlllIllllll() || ((Boolean)this.IlIllllllIIlIIllllIIlIIIl.getValue()).booleanValue()) {
+            if (((String)this.lllIIIllIIIIlllIlIIllIIll.getValue()).equals("")) {
                 int n4;
                 Object object;
                 float f = 4.0f;
-                if (((String)this.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII()).equals("Horizontal")) {
-                    object = ((Boolean)this.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() ? (((Boolean)this.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() ? String.format("(%1$d, %2$d) ", n, n3) : "") : (((Boolean)this.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() ? String.format("(%1$d, %2$d, %3$d) ", n, n2, n3) : "");
+                if (((String)this.lIlllIlllIIIIlIIlllIllIII.getValue()).equals("Horizontal")) {
+                    object = ((Boolean)this.lIllllIIlIIIlIllllllIIIll.getValue()).booleanValue() ? (((Boolean)this.IlIIIIIllllllIIlllIllllll.getValue()).booleanValue() ? String.format("(%1$d, %2$d) ", n, n3) : "") : (((Boolean)this.IlIIIIIllllllIIlllIllllll.getValue()).booleanValue() ? String.format("(%1$d, %2$d, %3$d) ", n, n2, n3) : "");
                     n4 = this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll((String)object, 0.0f, 0.0f, this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll());
                 } else {
                     n4 = 50;
-                    f = (Boolean)this.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII() != false ? 9.5f : 16.0f;
+                    f = (Boolean)this.lIllllIIlIIIlIllllllIIIll.getValue() != false ? 9.5f : 16.0f;
                     this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("X: " + n, 0.0f, 0.0f, this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll());
-                    if (!((Boolean)this.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                    if (!((Boolean)this.lIllllIIlIIIlIllllllIIIll.getValue()).booleanValue()) {
                         this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Y: " + n2, 0.0f, 12.0f, this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll());
                     }
-                    this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Z: " + n3, 0.0f, (Boolean)this.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII() != false ? 12.0f : 24.0f, this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll());
+                    this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll("Z: " + n3, 0.0f, (Boolean)this.lIllllIIlIIIlIllllllIIIll.getValue() != false ? 12.0f : 24.0f, this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll());
                 }
-                if (((Boolean)this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+                if (((Boolean)this.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).booleanValue()) {
                     object = new String[]{"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
                     double d = (double) MathHelper.IIIllIIlIIIIIIlIlIIllIIlI(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IIIIlIllIlIIlIIlIllIlIlll) + 180.0;
                     d += 22.5;
@@ -83,7 +84,7 @@ extends class_1665 {
                 }
                 this.IlIllllllIIlIIllllIIlIIIl(n4, 18.0f + f);
             } else {
-                String[] arrstring = ((String)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).split("%NL%");
+                String[] arrstring = ((String)this.lllIIIllIIIIlllIlIIllIIll.getValue()).split("%NL%");
                 float f = -1.0f;
                 float f2 = arrstring.length * (this.lIIlIIIIIlIlllIlIIlIlIlll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll + 1);
                 int n5 = 0;
@@ -109,18 +110,18 @@ extends class_1665 {
         int n = MathHelper.IlIllllllIIlIIllllIIlIIIl(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IlIIlllllIIlIlIlllllIllll);
         int n2 = (int)this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl;
         int n3 = MathHelper.IlIllllllIIlIIllllIIlIIIl(this.lIIlIIIIIlIlllIlIIlIlIlll.lIIIIlIlIIlllllIIllIIlIII.IllIIIIllIIllIllIlllIlIIl);
-        string = !this.lIIlIIIIIlIlllIlIIlIlIlll.IIIIlIllIlIIlIIlIllIlIlll() && this.lIIlIIIIIlIlllIlIIlIlIlll.theWorld != null ? string.replaceAll("%IP%", this.lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl) : string.replaceAll("%IP%", "?");
+        string = !this.lIIlIIIIIlIlllIlIIlIlIlll.isIntegratedServerRunning() && this.lIIlIIIIIlIlllIlIIlIlIlll.theWorld != null ? string.replaceAll("%IP%", this.lIIlIIIIIlIlllIlIIlIlIlll.IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl) : string.replaceAll("%IP%", "?");
         return string.replaceAll("%FPS%", Minecraft.IlIIlllllIIlIlIlllllIllll + "").replaceAll("%DIR%", string2).replaceAll("%CPS%", this.lIIIIlIlIIlllllIIllIIlIII.size() + "").replaceAll("%COORDS%", String.format("%1$d, %2$d, %3$d", n, n2, n3)).replaceAll("%X%", n + "").replaceAll("%Y%", n2 + "").replaceAll("%Z%", n3 + "");
     }
 
     private void lllIIIllIIIIlllIlIIllIIll(class_0312 class_03122) {
-        if (((String)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).contains("%CPS%")) {
+        if (((String)this.lllIIIllIIIIlllIlIIllIIll.getValue()).contains("%CPS%")) {
             this.lIIIIlIlIIlllllIIllIIlIII.removeIf(l -> l < System.currentTimeMillis() - 1000L);
         }
     }
 
     private void lllIIIllIIIIlllIlIIllIIll(class_0773 class_07732) {
-        if (class_07732.lllIIIllIIIIlllIlIIllIIll() == 0 && ((String)this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).contains("%CPS%")) {
+        if (class_07732.lllIIIllIIIIlllIlIIllIIll() == 0 && ((String)this.lllIIIllIIIIlllIlIIllIIll.getValue()).contains("%CPS%")) {
             this.lIIIIlIlIIlllllIIllIIlIII.add(System.currentTimeMillis());
         }
     }

@@ -75,7 +75,7 @@ implements IChatComponent {
         for (IChatComponent class_22552 : this) {
             stringBuilder.append(class_22552.lllIlIIlIIIlIlIIIllIlllIl().IllIIIllIIIIlIlIlIllIIlll());
             stringBuilder.append(class_22552.lIllllIIlIIIlIllllllIIIll());
-            stringBuilder.append((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl);
+            stringBuilder.append((Object) EnumChatFormatting.RESET);
         }
         return stringBuilder.toString();
     }

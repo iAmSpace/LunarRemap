@@ -47,7 +47,7 @@ extends class_0229 {
             this.lIllllIIlIIIlIllllllIIIll();
         } else if (class_11972.IIIllIllIIlIlIlIlIllllIIl == 101) {
             this.lllllIlllIIllIlIIlIIIllII.lllIIIllIIIIlllIlIIllIIll((class_0229)null);
-            String string = this.lllllIlllIIllIlIIlIIIllII.llllIIIIlIIIlIIIIIIlIllll().lllIIIllIIIIlllIlIIllIIll(class_2243.lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII), this.IlIIIIIllllllIIlllIllllll);
+            String string = this.lllllIlllIIllIlIIlIIIllII.getIntegratedServer().lllIIIllIIIIlllIlIIllIIll(class_2243.lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII), this.IlIIIIIllllllIIlllIllllll);
             class_1014 class_10142 = string != null ? new ChatComponentTranslation("commands.publish.started", string) : new class_0722("commands.publish.failed");
             this.lllllIlllIIllIlIIlIIIllII.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_10142);
         }

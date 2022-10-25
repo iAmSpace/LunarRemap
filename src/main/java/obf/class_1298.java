@@ -47,7 +47,7 @@ implements class_1770 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         boolean bl;
         boolean bl2 = bl = this.llllllIlIllllIlIlIlIIIIlI || (n2 & 8) != 0;
         return n == 0 ? (bl ? Blocks.lIIllllllllIlIllllllllIlI.lIlllIlllIIIIlIIlllIllIII(n) : Blocks.IlIIIlIIlllllIIIllIlIlIll.lIlllIlllIIIIlIIlllIllIII(n)) : (n == 1 ? (bl ? Blocks.IIlIlIlIIlllIIIlIIIIlIIIl.llIIIIllIIIIIIIlIIIlIIIIl : this.llIIIIllIIIIIIIlIIIlIIIIl) : Blocks.llllIlIIIIIIIIIlllIIlIIIl.lIlllIlllIIIIlIIlllIllIII(1));

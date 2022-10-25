@@ -51,7 +51,7 @@ JsonSerializer {
                 class_1401.IlIIIIIllllllIIlllIllllll(class_14012, jsonObject2.get("obfuscated").getAsBoolean());
             }
             if (jsonObject2.has("color")) {
-                class_1401.lllIIIllIIIIlllIlIIllIIll(class_14012, (class_1227)((Object)jsonDeserializationContext.deserialize(jsonObject2.get("color"), class_1227.class)));
+                class_1401.lllIIIllIIIIlllIlIIllIIll(class_14012, (EnumChatFormatting)((Object)jsonDeserializationContext.deserialize(jsonObject2.get("color"), EnumChatFormatting.class)));
             }
             if (jsonObject2.has("clickEvent") && (jsonObject = jsonObject2.getAsJsonObject("clickEvent")) != null) {
                 String string;
@@ -65,9 +65,9 @@ JsonSerializer {
             }
             if (jsonObject2.has("hoverEvent") && (jsonObject = jsonObject2.getAsJsonObject("hoverEvent")) != null) {
                 jsonPrimitive = jsonObject.getAsJsonPrimitive("action");
-                class_19362 = jsonPrimitive == null ? null : class_0248.lllIIIllIIIIlllIlIIllIIll(jsonPrimitive.getAsString());
+                class_19362 = jsonPrimitive == null ? null : class_0248.getValueByCanonicalName(jsonPrimitive.getAsString());
                 object = (IChatComponent)jsonDeserializationContext.deserialize(jsonObject.get("value"), IChatComponent.class);
-                if (class_19362 != null && object != null && ((class_0248)((Object)class_19362)).lllIIIllIIIIlllIlIIllIIll()) {
+                if (class_19362 != null && object != null && ((class_0248)((Object)class_19362)).shouldAllowInChat()) {
                     class_1401.lllIIIllIIIIlllIlIIllIIll(class_14012, new class_0015((class_0248)((Object)class_19362), (IChatComponent)object));
                 }
             }
@@ -108,7 +108,7 @@ JsonSerializer {
         }
         if (class_1401.IIIllIllIIlIlIlIlIllllIIl(class_14012) != null) {
             jsonObject = new JsonObject();
-            jsonObject.addProperty("action", class_1401.IIIllIllIIlIlIlIlIllllIIl(class_14012).lllIIIllIIIIlllIlIIllIIll().lllIlIIlIIIlIlIIIllIlllIl());
+            jsonObject.addProperty("action", class_1401.IIIllIllIIlIlIlIlIllllIIl(class_14012).lllIIIllIIIIlllIlIIllIIll().getCanonicalName());
             jsonObject.add("value", jsonSerializationContext.serialize((Object)class_1401.IIIllIllIIlIlIlIlIllllIIl(class_14012).lllIlIIlIIIlIlIIIllIlllIl()));
             jsonObject2.add("hoverEvent", (JsonElement)jsonObject);
         }

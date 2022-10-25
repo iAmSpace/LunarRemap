@@ -11,8 +11,8 @@ import java.util.List;
 public class class_0741
 extends Block {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"default", "default", "podzol"};
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
 
     protected class_0741() {
         super(class_1855.IlIllllllIIlIIllllIIlIIIl);
@@ -20,7 +20,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n2 == 2) {
             if (n == 1) {
                 return this.lIlIIllllIlIIIIllIIIIlIIl;
@@ -33,7 +33,7 @@ extends Block {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
         int n5 = class_18432.IlIllllllIIlIIllllIIlIIIl(n, n2, n3);
         if (n5 == 2) {
             if (n4 == 1) {

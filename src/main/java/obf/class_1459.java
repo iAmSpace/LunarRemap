@@ -9,7 +9,7 @@ extends class_1401 {
     }
 
     @Override
-    public class_1227 lllIIIllIIIIlllIlIIllIIll() {
+    public EnumChatFormatting lllIIIllIIIIlllIlIIllIIll() {
         return null;
     }
 
@@ -49,7 +49,7 @@ extends class_1401 {
     }
 
     @Override
-    public class_1401 lllIIIllIIIIlllIlIIllIIll(class_1227 class_12272) {
+    public class_1401 lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting class_12272) {
         throw new UnsupportedOperationException();
     }
 

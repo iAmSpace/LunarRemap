@@ -12,21 +12,21 @@ extends class_0688 {
     private String lIllllIIlIIIlIllllllIIIll;
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl);
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII);
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.IlIIIIIllllllIIlllIllllll);
-        class_01812.lllIIIllIIIIlllIlIIllIIll(this.lIllllIIlIIIlIllllllIIIll);
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
+        class_01812.writeStringToBuffer(this.lllIIIllIIIIlllIlIIllIIll);
+        class_01812.writeStringToBuffer(this.IlIllllllIIlIIllllIIlIIIl);
+        class_01812.writeStringToBuffer(this.lIlllIlllIIIIlIIlllIllIII);
+        class_01812.writeStringToBuffer(this.IlIIIIIllllllIIlllIllllll);
+        class_01812.writeStringToBuffer(this.lIllllIIlIIIlIllllllIIIll);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
-        this.lllIIIllIIIIlllIlIIllIIll = class_01812.IlIllllllIIlIIllllIIlIIIl(100);
-        this.IlIllllllIIlIIllllIIlIIIl = class_01812.IlIllllllIIlIIllllIIlIIIl(100);
-        this.lIlllIlllIIIIlIIlllIllIII = class_01812.IlIllllllIIlIIllllIIlIIIl(500);
-        this.IlIIIIIllllllIIlllIllllll = class_01812.IlIllllllIIlIIllllIIlIIIl(500);
-        this.lIllllIIlIIIlIllllllIIIll = class_01812.IlIllllllIIlIIllllIIlIIIl(10000);
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
+        this.lllIIIllIIIIlllIlIIllIIll = class_01812.readStringFromBuffer(100);
+        this.IlIllllllIIlIIllllIIlIIIl = class_01812.readStringFromBuffer(100);
+        this.lIlllIlllIIIIlIIlllIllIII = class_01812.readStringFromBuffer(500);
+        this.IlIIIIIllllllIIlllIllllll = class_01812.readStringFromBuffer(500);
+        this.lIllllIIlIIIlIllllllIIIll = class_01812.readStringFromBuffer(10000);
     }
 
     @Override

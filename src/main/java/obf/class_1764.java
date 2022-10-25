@@ -12,6 +12,7 @@ package obf;/*
  */
 import com.google.common.base.Charsets;
 import com.mojang.authlib.GameProfile;
+import com.moonsworth.lunar.client.events.type.PluginMessageEvent;
 import com.moonsworth.lunar.client.LunarClient;
 import io.netty.buffer.Unpooled;
 import io.netty.util.concurrent.GenericFutureListener;
@@ -30,6 +31,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.C00PacketKeepAlive;
+import net.minecraft.network.play.client.C03PacketPlayer_C06PacketPlayerPosLook;
+import net.minecraft.network.play.client.C0FPacketConfirmTransaction;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.network.play.server.*;
 import net.minecraft.realms.DisconnectedOnlineScreen;
 import net.minecraft.scoreboard.IScoreObjectiveCriteria;
 import net.minecraft.stats.Achievement;
@@ -42,7 +49,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class class_1764
-implements class_0596 {
+implements INetHandlerPlayClient {
     private static final Logger lIlllIlllIIIIlIIlllIllIII = LogManager.getLogger();
     private final class_0800 IlIIIIIllllllIIlllIllllll;
     private Minecraft lIllllIIlIIIlIllllllIIIll;
@@ -68,11 +75,11 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0597 class_05972) {
+    public void lllIIIllIIIIlllIlIIllIIll(S01PacketJoinGame class_05972) {
         this.lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll = new class_0376(this.lIllllIIlIIIlIllllllIIIll, this);
         this.IIIllIIlIIIIIIlIlIIllIIlI = new class_0564(this, new class_1078(0L, class_05972.IlIIIIIllllllIIlllIllllll(), false, class_05972.lIlllIlllIIIIlIIlllIllIII(), class_05972.IIIllIllIIlIlIlIlIllllIIl()), class_05972.lIllllIIlIIIlIllllllIIIll(), class_05972.IIIllIIlIIIIIIlIlIIllIIlI(), this.lIllllIIlIIIlIllllllIIIll.mcProfiler);
         this.IIIllIIlIIIIIIlIlIIllIIlI.IllIIIIllIIllIllIlllIlIIl = true;
@@ -83,7 +90,7 @@ implements class_0596 {
         this.IlIllllllIIlIIllllIIlIIIl = class_05972.IllIIlllllllIIlIIlIIIIlIl();
         this.lIllllIIlIIIlIllllllIIIll.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll(class_05972.IlIIIIIllllllIIlllIllllll());
         this.lIllllIIlIIIlIllllllIIIll.gameSettings.lIlllIlllIIIIlIIlllIllIII();
-        this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(new class_0917("MC|Brand", ClientBrandRetriever.getClientModName().getBytes(Charsets.UTF_8)), new GenericFutureListener[0]);
+        this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload("MC|Brand", ClientBrandRetriever.getClientModName().getBytes(Charsets.UTF_8)), new GenericFutureListener[0]);
         class_1092 class_10922 = Minecraft.getMinecraft().IlIllllllIIlIIllllIIlIIIl;
         if (class_10922 != null) {
             LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(class_10922.lllIlIIlIIIlIlIIIllIlllIl, class_10922.lIlllIlllIIIIlIIlllIllIII, class_10922.IlIIIIIllllllIIlllIllllll);
@@ -91,7 +98,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1631 class_16312) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0EPacketSpawnObject class_16312) {
         class_1521[] arrclass_1521;
         double d = (double)class_16312.lIlllIlllIIIIlIIlllIllIII() / 32.0;
         double d2 = (double)class_16312.IlIIIIIllllllIIlllIllllll() / 32.0;
@@ -177,7 +184,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1720 class_17202) {
+    public void lllIIIllIIIIlllIlIIllIIll(S11PacketSpawnExperienceOrb class_17202) {
         class_1138 class_11382 = new class_1138(this.IIIllIIlIIIIIIlIlIIllIIlI, class_17202.lIlllIlllIIIIlIIlllIllIII(), class_17202.IlIIIIIllllllIIlllIllllll(), class_17202.lIllllIIlIIIlIllllllIIIll(), class_17202.IIIllIIlIIIIIIlIlIIllIIlI());
         class_11382.lIIlIIlIllIlIIlIlIIlIlIlI = class_17202.lIlllIlllIIIIlIIlllIllIII();
         class_11382.llIIIIIlIIlIIIIllIIIlIIII = class_17202.IlIIIIIllllllIIlllIllllll();
@@ -189,7 +196,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0575 class_05752) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2CPacketSpawnGlobalEntity class_05752) {
         double d = (double)class_05752.lIlllIlllIIIIlIIlllIllIII() / 32.0;
         double d2 = (double)class_05752.IlIIIIIllllllIIlllIllllll() / 32.0;
         double d3 = (double)class_05752.lIllllIIlIIIlIllllllIIIll() / 32.0;
@@ -209,13 +216,13 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1364 class_13642) {
+    public void lllIIIllIIIIlllIlIIllIIll(S10PacketSpawnPainting class_13642) {
         class_0146 class_01462 = new class_0146(this.IIIllIIlIIIIIIlIlIIllIIlI, class_13642.lIlllIlllIIIIlIIlllIllIII(), class_13642.IlIIIIIllllllIIlllIllllll(), class_13642.lIllllIIlIIIlIllllllIIIll(), class_13642.IIIllIIlIIIIIIlIlIIllIIlI(), class_13642.IllIIlllllllIIlIIlIIIIlIl());
         this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_13642.IlIllllllIIlIIllllIIlIIIl(), (class_1521)class_01462);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0852 class_08522) {
+    public void lllIIIllIIIIlllIlIIllIIll(S12PacketEntityVelocity class_08522) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_08522.IlIllllllIIlIIllllIIlIIIl());
         if (class_15212 != null) {
             class_15212.IIIllIllIIlIlIlIlIllllIIl((double)class_08522.lIlllIlllIIIIlIIlllIllIII() / (double)(llIIllIllIlIIlIIllIllllll * 2), (double)class_08522.IlIIIIIllllllIIlllIllllll() / (double)(llIIllIllIlIIlIIllIllllll * 2), (double)class_08522.lIllllIIlIIIlIllllllIIIll() / (double)(llIIllIllIlIIlIIllIllllll * 2));
@@ -223,7 +230,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0292 class_02922) {
+    public void lllIIIllIIIIlllIlIIllIIll(S1CPacketEntityMetadata class_02922) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_02922.lIlllIlllIIIIlIIlllIllIII());
         if (class_15212 != null && class_02922.IlIllllllIIlIIllllIIlIIIl() != null) {
             class_15212.lIlIIllllIlIIIIllIIIIlIIl().lllIIIllIIIIlllIlIIllIIll(class_02922.IlIllllllIIlIIllllIIlIIIl());
@@ -231,7 +238,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1179 class_11792) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0CPacketSpawnPlayer class_11792) {
         double d = (double)class_11792.lIllllIIlIIIlIllllllIIIll() / 32.0;
         double d2 = (double)class_11792.IIIllIIlIIIIIIlIlIIllIIlI() / 32.0;
         double d3 = (double)class_11792.IllIIlllllllIIlIIlIIIIlIl() / 32.0;
@@ -256,7 +263,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1353 class_13532) {
+    public void lllIIIllIIIIlllIlIIllIIll(S18PacketEntityTeleport class_13532) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_13532.IlIllllllIIlIIllllIIlIIIl());
         if (class_15212 != null) {
             class_15212.lIIlIIlIllIlIIlIlIIlIlIlI = class_13532.lIlllIlllIIIIlIIlllIllIII();
@@ -272,14 +279,14 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0805 class_08052) {
+    public void lllIIIllIIIIlllIlIIllIIll(S09PacketHeldItemChange class_08052) {
         if (class_08052.IlIllllllIIlIIllllIIlIIIl() >= 0 && class_08052.IlIllllllIIlIIllllIIlIIIl() < class_0503.lllIlIIlIIIlIlIIIllIlllIl()) {
             this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl = class_08052.IlIllllllIIlIIllllIIlIIIl();
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2038 class_20382) {
+    public void lllIIIllIIIIlllIlIIllIIll(S14PacketEntity class_20382) {
         class_1521 class_15212 = class_20382.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI);
         if (class_15212 != null) {
             class_15212.lIIlIIlIllIlIIlIlIIlIlIlI += class_20382.IlIllllllIIlIIllllIIlIIIl();
@@ -295,7 +302,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0423 class_04232) {
+    public void lllIIIllIIIIlllIlIIllIIll(S19PacketEntityHeadLook class_04232) {
         class_1521 class_15212 = class_04232.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI);
         if (class_15212 != null) {
             float f = (float)(class_04232.IlIllllllIIlIIllllIIlIIIl() * 360) / 256.0f;
@@ -304,14 +311,14 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0175 class_01752) {
+    public void lllIIIllIIIIlllIlIIllIIll(S13PacketDestroyEntities class_01752) {
         for (int i = 0; i < class_01752.IlIllllllIIlIIllllIIlIIIl().length; ++i) {
             this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl(class_01752.IlIllllllIIlIIllllIIlIIIl()[i]);
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0717 class_07172) {
+    public void lllIIIllIIIIlllIlIIllIIll(S08PacketPlayerPosLook class_07172) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         double d = class_07172.IlIllllllIIlIIllllIIlIIIl();
         double d2 = class_07172.lIlllIlllIIIIlIIlllIllIII();
@@ -323,7 +330,7 @@ implements class_0596 {
         class_13892.IIlIIlIlIlIllIIlIlIIIIlll = 0.0;
         class_13892.IIIIIIIIlIllIIllIIlllIllI = 0.0;
         class_13892.lllIIIllIIIIlllIlIIllIIll(d, d2, d3, f, f2);
-        this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(new class_1023(class_13892.IlIIlllllIIlIlIlllllIllll, class_13892.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, class_13892.llIIlIlIlllIIllIlIlllIllI, class_13892.IllIIIIllIIllIllIlllIlIIl, class_07172.lIllllIIlIIIlIllllllIIIll(), class_07172.IIIllIIlIIIIIIlIlIIllIIlI(), class_07172.IllIIlllllllIIlIIlIIIIlIl()), new GenericFutureListener[0]);
+        this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C06PacketPlayerPosLook(class_13892.IlIIlllllIIlIlIlllllIllll, class_13892.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, class_13892.llIIlIlIlllIIllIlIlllIllI, class_13892.IllIIIIllIIllIllIlllIlIIl, class_07172.lIllllIIlIIIlIllllllIIIll(), class_07172.IIIllIIlIIIIIIlIlIIllIIlI(), class_07172.IllIIlllllllIIlIIlIIIIlIl()), new GenericFutureListener[0]);
         if (!this.IllIIlllllllIIlIIlIIIIlIl) {
             this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.llIIlIllIllllIlIIIIlIIlll = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.IlIIlllllIIlIlIlllllIllll;
             this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.llIllllIlIllIIIlIllIIlIlI = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.llIIlIlIlllIIllIlIlllIllI;
@@ -336,7 +343,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1656 class_16562) {
+    public void lllIIIllIIIIlllIlIIllIIll(S22PacketMultiBlockChange class_16562) {
         int n = class_16562.IlIllllllIIlIIllllIIlIIIl().lllIIIllIIIIlllIlIIllIIll * 16;
         int n2 = class_16562.IlIllllllIIlIIllllIIlIIIl().lllIlIIlIIIlIlIIIllIlllIl * 16;
         if (class_16562.lIlllIlllIIIIlIIlllIllIII() != null) {
@@ -360,7 +367,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0150 class_01502) {
+    public void lllIIIllIIIIlllIlIIllIIll(S21PacketChunkData class_01502) {
         if (class_01502.IIIllIllIIlIlIlIlIllllIIl()) {
             if (class_01502.IIIllIIlIIIIIIlIlIIllIIlI() == 0) {
                 this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_01502.IlIIIIIllllllIIlllIllllll(), class_01502.lIllllIIlIIIlIllllllIIIll(), false);
@@ -378,17 +385,17 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2088 class_20882) {
+    public void lllIIIllIIIIlllIlIIllIIll(S23PacketBlockChange class_20882) {
         this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_20882.lIlllIlllIIIIlIIlllIllIII(), class_20882.IlIIIIIllllllIIlllIllllll(), class_20882.lIllllIIlIIIlIllllllIIIll(), class_20882.IlIllllllIIlIIllllIIlIIIl(), class_20882.IIIllIIlIIIIIIlIlIIllIIlI());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0542 class_05422) {
+    public void lllIIIllIIIIlllIlIIllIIll(S40PacketDisconnect class_05422) {
         this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(class_05422.IlIllllllIIlIIllllIIlIIIl());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
         this.lIllllIIlIIIlIllllllIIIll.lllIIIllIIIIlllIlIIllIIll((class_0564)null);
         LunarClient.getInstance().getEventBus().callEvent(new class_0780());
         if (this.IllIIIllIIIIlIlIlIllIIlll != null) {
@@ -402,12 +409,12 @@ implements class_0596 {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032) {
         this.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(class_07032, new GenericFutureListener[0]);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0781 class_07812) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0DPacketCollectItem class_07812) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_07812.IlIllllllIIlIIllllIIlIIIl());
         class_1965 class_19652 = (class_1965)this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_07812.lIlllIlllIIIIlIIlllIllIII());
         if (class_19652 == null) {
@@ -425,13 +432,13 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0710 class_07102) {
+    public void lllIIIllIIIIlllIlIIllIIll(S02PacketChat class_07102) {
         LunarClient.getInstance().getEventBus().callEvent(new class_0140(class_07102));
         this.lIllllIIlIIIlIllllllIIIll.IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_07102.IlIllllllIIlIIllllIIlIIIl());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0842 class_08422) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0BPacketAnimation class_08422) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_08422.IlIllllllIIlIIllllIIlIIIl());
         if (class_15212 != null) {
             if (class_08422.lIlllIlllIIIIlIIlllIllIII() == 0) {
@@ -452,12 +459,12 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1089 class_10892) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0APacketUseBed class_10892) {
         class_10892.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI).IlIllllllIIlIIllllIIlIIIl(class_10892.IlIllllllIIlIIllllIIlIIIl(), class_10892.lIlllIlllIIIIlIIlllIllIII(), class_10892.IlIIIIIllllllIIlllIllllll());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2192 class_21922) {
+    public void lllIIIllIIIIlllIlIIllIIll(S0FPacketSpawnMob class_21922) {
         double d = (double)class_21922.lIllllIIlIIIlIllllllIIIll() / 32.0;
         double d2 = (double)class_21922.IIIllIIlIIIIIIlIlIIllIIlI() / 32.0;
         double d3 = (double)class_21922.IllIIlllllllIIlIIlIIIIlIl() / 32.0;
@@ -488,21 +495,21 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1916 class_19162) {
+    public void lllIIIllIIIIlllIlIIllIIll(S03PacketTimeUpdate class_19162) {
         this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIlIIlIIIlIlIIIllIlllIl(class_19162.IlIllllllIIlIIllllIIlIIIl());
-        if ((Integer) LunarClient.getInstance().getSettingsManager().lIlllIlllIlIIIIlllIlIlIIl.lIlllIlllIIIIlIIlllIllIII() == -14490) {
+        if ((Integer) LunarClient.getInstance().getSettingsManager().gsWorldTime.getValue() == -14490) {
             this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIIIllIIIIlllIlIIllIIll(class_19162.lIlllIlllIIIIlIIlllIllIII());
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1444 class_14442) {
+    public void lllIIIllIIIIlllIlIIllIIll(S05PacketSpawnPosition class_14442) {
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lllIIIllIIIIlllIlIIllIIll(new class_2208(class_14442.IlIllllllIIlIIllllIIlIIIl(), class_14442.lIlllIlllIIIIlIIlllIllIII(), class_14442.IlIIIIIllllllIIlllIllllll()), true);
         this.lIllllIIlIIIlIllllllIIIll.theWorld.lIlllIlllIlIIIIlllIlIlIIl().lllIIIllIIIIlllIlIIllIIll(class_14442.IlIllllllIIlIIllllIIlIIIl(), class_14442.lIlllIlllIIIIlIIlllIllIII(), class_14442.IlIIIIIllllllIIlllIllllll());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2218 class_22182) {
+    public void lllIIIllIIIIlllIlIIllIIll(S1BPacketEntityAttach class_22182) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_22182.lIlllIlllIIIIlIIlllIllIII());
         class_1521 class_15213 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_22182.IlIIIIIllllllIIlllIllllll());
         if (class_22182.IlIllllllIIlIIllllIIlIIIl() == 0) {
@@ -534,7 +541,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0514 class_05142) {
+    public void lllIIIllIIIIlllIlIIllIIll(S19PacketEntityStatus class_05142) {
         class_1521 class_15212 = class_05142.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI);
         if (class_15212 != null) {
             class_15212.lllIIIllIIIIlllIlIIllIIll(class_05142.IlIllllllIIlIIllllIIlIIIl());
@@ -542,19 +549,19 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1160 class_11602) {
+    public void lllIIIllIIIIlllIlIIllIIll(S06PacketUpdateHealth class_11602) {
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII(class_11602.IlIllllllIIlIIllllIIlIIIl());
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lIllIIlllIIIlIlIIIlllIlIl().lllIIIllIIIIlllIlIIllIIll(class_11602.lIlllIlllIIIIlIIlllIllIII());
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lIllIIlllIIIlIlIIIlllIlIl().lllIlIIlIIIlIlIIIllIlllIl(class_11602.IlIIIIIllllllIIlllIllllll());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1134 class_11342) {
+    public void lllIIIllIIIIlllIlIIllIIll(S1FPacketSetExperience class_11342) {
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lllIIIllIIIIlllIlIIllIIll(class_11342.IlIllllllIIlIIllllIIlIIIl(), class_11342.lIlllIlllIIIIlIIlllIllIII(), class_11342.IlIIIIIllllllIIlllIllllll());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0271 class_02712) {
+    public void lllIIIllIIIIlllIlIIllIIll(S07PacketRespawn class_02712) {
         if (class_02712.IlIllllllIIlIIllllIIlIIIl() != this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lIIllllllllIlIllllllllIlI) {
             this.IllIIlllllllIIlIIlIIIIlIl = false;
             class_0141 class_01412 = this.IIIllIIlIIIIIIlIlIIllIIlI.IlIlIIlllIllllllllIIIlIlI();
@@ -570,7 +577,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0404 class_04042) {
+    public void lllIIIllIIIIlllIlIIllIIll(S27PacketExplosion class_04042) {
         class_1013 class_10132 = new class_1013(this.lIllllIIlIIIlIllllllIIIll.theWorld, null, class_04042.lIllllIIlIIIlIllllllIIIll(), class_04042.IIIllIIlIIIIIIlIlIIllIIlI(), class_04042.IllIIlllllllIIlIIlIIIIlIl(), class_04042.IIIllIllIIlIlIlIlIllllIIl());
         class_10132.IllIIlllllllIIlIIlIIIIlIl = class_04042.IllIIIllIIIIlIlIlIllIIlll();
         class_10132.lllIIIllIIIIlllIlIIllIIll(true);
@@ -580,7 +587,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2247 class_22472) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2DPacketOpenWindow class_22472) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         switch (class_22472.lIlllIlllIIIIlIIlllIllIII()) {
             case 0: {
@@ -672,7 +679,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1480 class_14802) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2FPacketSetSlot class_14802) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         if (class_14802.IlIllllllIIlIIllllIIlIIIl() == -1) {
             class_13892.lllIIlIIIllllllIIIIlIlIlI.lllIlIIlIIIlIlIIIllIlllIl(class_14802.IlIIIIIllllllIIlllIllllll());
@@ -696,7 +703,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1434 class_14342) {
+    public void lllIIIllIIIIlllIlIIllIIll(S32PacketConfirmTransaction class_14342) {
         class_1071 class_10712 = null;
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         if (class_14342.IlIllllllIIlIIllllIIlIIIl() == 0) {
@@ -705,12 +712,12 @@ implements class_0596 {
             class_10712 = class_13892.lIIIlIllllIlllIIIIIllIIIl;
         }
         if (class_10712 != null && !class_14342.IlIIIIIllllllIIlllIllllll()) {
-            this.lllIIIllIIIIlllIlIIllIIll(new class_0039(class_14342.IlIllllllIIlIIllllIIlIIIl(), class_14342.lIlllIlllIIIIlIIlllIllIII(), true));
+            this.lllIIIllIIIIlllIlIIllIIll(new C0FPacketConfirmTransaction(class_14342.IlIllllllIIlIIllllIIlIIIl(), class_14342.lIlllIlllIIIIlIIlllIllIII(), true));
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1804 class_18042) {
+    public void lllIIIllIIIIlllIlIIllIIll(S30PacketWindowItems class_18042) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         if (class_18042.IlIllllllIIlIIllllIIlIIIl() == 0) {
             class_13892.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(class_18042.lIlllIlllIIIIlIIlllIllIII());
@@ -720,7 +727,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1504 class_15042) {
+    public void lllIIIllIIIIlllIlIIllIIll(S36PacketSignEditorOpen class_15042) {
         class_1774 class_17742 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIlIIlIIIlIlIIIllIlllIl(class_15042.IlIllllllIIlIIllllIIlIIIl(), class_15042.lIlllIlllIIIIlIIlllIllIII(), class_15042.IlIIIIIllllllIIlllIllllll());
         if (class_17742 == null) {
             class_17742 = new class_2219();
@@ -733,7 +740,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0136 class_01362) {
+    public void lllIIIllIIIIlllIlIIllIIll(S33PacketUpdateSign class_01362) {
         class_1774 class_17742;
         boolean bl = false;
         if (this.lIllllIIlIIIlIllllllIIIll.theWorld.IlIIIIIllllllIIlllIllllll(class_01362.IlIllllllIIlIIllllIIlIIIl(), class_01362.lIlllIlllIIIIlIIlllIllIII(), class_01362.IlIIIIIllllllIIlllIllllll()) && (class_17742 = this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIlIIlIIIlIlIIIllIlllIl(class_01362.IlIllllllIIlIIllllIIlIIIl(), class_01362.lIlllIlllIIIIlIIlllIllIII(), class_01362.IlIIIIIllllllIIlllIllllll())) instanceof class_2219) {
@@ -752,7 +759,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1180 class_11802) {
+    public void lllIIIllIIIIlllIlIIllIIll(S35PacketUpdateTileEntity class_11802) {
         class_1774 class_17742;
         if (this.lIllllIIlIIIlIllllllIIIll.theWorld.IlIIIIIllllllIIlllIllllll(class_11802.IlIllllllIIlIIllllIIlIIIl(), class_11802.lIlllIlllIIIIlIIlllIllIII(), class_11802.IlIIIIIllllllIIlllIllllll()) && (class_17742 = this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIlIIlIIIlIlIIIllIlllIl(class_11802.IlIllllllIIlIIllllIIlIIIl(), class_11802.lIlllIlllIIIIlIIlllIllIII(), class_11802.IlIIIIIllllllIIlllIllllll())) != null) {
             if (class_11802.lIllllIIlIIIlIllllllIIIll() == 1 && class_17742 instanceof class_0933) {
@@ -770,7 +777,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1236 class_12362) {
+    public void lllIIIllIIIIlllIlIIllIIll(S31PacketWindowProperty class_12362) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         if (class_13892.lIIIlIllllIlllIIIIIllIIIl != null && class_13892.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII == class_12362.IlIllllllIIlIIllllIIlIIIl()) {
             class_13892.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(class_12362.lIlllIlllIIIIlIIlllIllIII(), class_12362.IlIIIIIllllllIIlllIllllll());
@@ -778,7 +785,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2225 class_22252) {
+    public void lllIIIllIIIIlllIlIIllIIll(S04PacketEntityEquipment class_22252) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_22252.lIlllIlllIIIIlIIlllIllIII());
         if (class_15212 != null) {
             class_15212.lllIIIllIIIIlllIlIIllIIll(class_22252.IlIIIIIllllllIIlllIllllll(), class_22252.IlIllllllIIlIIllllIIlIIIl());
@@ -786,22 +793,22 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1009 class_10092) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2EPacketCloseWindow class_10092) {
         this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.IIlllIlIlllIllIIIlllIIlIl();
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1267 class_12672) {
+    public void lllIIIllIIIIlllIlIIllIIll(S24PacketBlockAction class_12672) {
         this.lIllllIIlIIIlIllllllIIIll.theWorld.lIlllIlllIIIIlIIlllIllIII(class_12672.lIlllIlllIIIIlIIlllIllIII(), class_12672.IlIIIIIllllllIIlllIllllll(), class_12672.lIllllIIlIIIlIllllllIIIll(), class_12672.IlIllllllIIlIIllllIIlIIIl(), class_12672.IIIllIIlIIIIIIlIlIIllIIlI(), class_12672.IllIIlllllllIIlIIlIIIIlIl());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2103 class_21032) {
+    public void lllIIIllIIIIlllIlIIllIIll(S25PacketBlockBreakAnim class_21032) {
         this.lIllllIIlIIIlIllllllIIIll.theWorld.lIlllIlllIIIIlIIlllIllIII(class_21032.IlIllllllIIlIIllllIIlIIIl(), class_21032.lIlllIlllIIIIlIIlllIllIII(), class_21032.IlIIIIIllllllIIlllIllllll(), class_21032.lIllllIIlIIIlIllllllIIIll(), class_21032.IIIllIIlIIIIIIlIlIIllIIlI());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2053 class_20532) {
+    public void lllIIIllIIIIlllIlIIllIIll(S26PacketMapChunkBulk class_20532) {
         for (int i = 0; i < class_20532.lIlllIlllIIIIlIIlllIllIII(); ++i) {
             int n = class_20532.lllIIIllIIIIlllIlIIllIIll(i);
             int n2 = class_20532.lllIlIIlIIIlIlIIIllIlllIl(i);
@@ -816,13 +823,13 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0742 class_07422) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2BPacketChangeGameState class_07422) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         int n = class_07422.IlIllllllIIlIIllllIIlIIIl();
         float f = class_07422.lIlllIlllIIIIlIIlllIllIII();
         int n2 = MathHelper.lIlllIlllIIIIlIIlllIllIII(f + 0.5f);
-        if (n >= 0 && n < class_0742.lllIIIllIIIIlllIlIIllIIll.length && class_0742.lllIIIllIIIIlllIlIIllIIll[n] != null && n != 3) {
-            class_13892.lllIlIIlIIIlIlIIIllIlllIl(new ChatComponentTranslation(class_0742.lllIIIllIIIIlllIlIIllIIll[n], new Object[0]));
+        if (n >= 0 && n < S2BPacketChangeGameState.lllIIIllIIIIlllIlIIllIIll.length && S2BPacketChangeGameState.lllIIIllIIIIlllIlIIllIIll[n] != null && n != 3) {
+            class_13892.lllIlIIlIIIlIlIIIllIlllIl(new ChatComponentTranslation(S2BPacketChangeGameState.lllIIIllIIIIlllIlIIllIIll[n], new Object[0]));
         }
         if (n == 1) {
             this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIlIIIIlllIlIlIIl().lllIlIIlIIIlIlIIIllIlllIl(true);
@@ -855,14 +862,14 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1732 class_17322) {
+    public void lllIIIllIIIIlllIlIIllIIll(S34PacketMaps class_17322) {
         class_0963 class_09632 = class_0746.lllIIIllIIIIlllIlIIllIIll(class_17322.IlIllllllIIlIIllllIIlIIIl(), this.lIllllIIlIIIlIllllllIIIll.theWorld);
         class_09632.lllIIIllIIIIlllIlIIllIIll(class_17322.lIlllIlllIIIIlIIlllIllIII());
         this.lIllllIIlIIIlIllllllIIIll.lIIlIIIIIlIlllIlIIlIlIlll.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll(class_09632);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2186 class_21862) {
+    public void lllIIIllIIIIlllIlIIllIIll(S28PacketEffect class_21862) {
         if (class_21862.IlIllllllIIlIIllllIIlIIIl()) {
             this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIlIIlIIIlIlIIIllIlllIl(class_21862.lIlllIlllIIIIlIIlllIllIII(), class_21862.lIllllIIlIIIlIllllllIIIll(), class_21862.IIIllIIlIIIIIIlIlIIllIIlI(), class_21862.IllIIlllllllIIlIIlIIIIlIl(), class_21862.IlIIIIIllllllIIlllIllllll());
         } else {
@@ -871,9 +878,9 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1095 class_10952) {
+    public void handleStatistics(S37PacketStatistics class_10952) {
         boolean bl = false;
-        for (Map.Entry entry : class_10952.IlIllllllIIlIIllllIIlIIIl().entrySet()) {
+        for (Map.Entry entry : class_10952.func_148974_c().entrySet()) {
             StatBase class_03192 = (StatBase)entry.getKey();
             int n = (Integer)entry.getValue();
             if (class_03192.lIlllIlllIIIIlIIlllIllIII() && n > 0) {
@@ -899,7 +906,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0570 class_05702) {
+    public void lllIIIllIIIIlllIlIIllIIll(S1DPacketEntityEffect class_05702) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_05702.lIlllIlllIIIIlIIlllIllIII());
         if (class_15212 instanceof class_1965) {
             class_1852 class_18522 = new class_1852(class_05702.IlIIIIIllllllIIlllIllllll(), class_05702.IIIllIIlIIIIIIlIlIIllIIlI(), class_05702.lIllllIIlIIIlIllllllIIIll());
@@ -909,7 +916,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1027 class_10272) {
+    public void lllIIIllIIIIlllIlIIllIIll(S1EPacketRemoveEntityEffect class_10272) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_10272.IlIllllllIIlIIllllIIlIIIl());
         if (class_15212 instanceof class_1965) {
             ((class_1965)class_15212).lllIIlIIIllllllIIIIlIlIlI(class_10272.lIlllIlllIIIIlIIlllIllIII());
@@ -917,7 +924,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0999 class_09992) {
+    public void lllIIIllIIIIlllIlIIllIIll(S38PacketPlayerListItem class_09992) {
         class_0958 class_09582 = (class_0958)this.IIIllIllIIlIlIlIlIllllIIl.get(class_09992.IlIllllllIIlIIllllIIlIIIl());
         if (class_09582 == null && class_09992.lIlllIlllIIIIlIIlllIllIII()) {
             class_09582 = new class_0958(class_09992.IlIllllllIIlIIllllIIlIIIl());
@@ -934,18 +941,18 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1080 class_10802) {
+    public void lllIIIllIIIIlllIlIIllIIll(S00PacketKeepAlive class_10802) {
         LunarClient.getInstance().getEventBus().callEvent(new class_1211());
-        this.lllIIIllIIIIlllIlIIllIIll(new class_0062(class_10802.IlIllllllIIlIIllllIIlIIIl()));
+        this.lllIIIllIIIIlllIlIIllIIll(new C00PacketKeepAlive(class_10802.IlIllllllIIlIIllllIIlIIIl()));
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
         throw new IllegalStateException("Unexpected protocol change!");
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1170 class_11702) {
+    public void lllIIIllIIIIlllIlIIllIIll(S39PacketPlayerAbilities class_11702) {
         class_1389 class_13892 = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII;
         class_13892.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl = class_11702.lIlllIlllIIIIlIIlllIllIII();
         class_13892.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII = class_11702.lIllllIIlIIIlIllllllIIIll();
@@ -956,7 +963,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1719 class_17192) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3APacketTabComplete class_17192) {
         String[] arrstring = class_17192.IlIllllllIIlIIllllIIlIIIl();
         if (this.lIllllIIlIIIlIllllllIIIll.lllllIlllIIllIlIIlIIIllII instanceof class_1056) {
             class_1056 class_10562 = (class_1056)this.lIllllIIlIIIlIllllllIIIll.lllllIlllIIllIlIIlIIIllII;
@@ -965,7 +972,7 @@ implements class_0596 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0633 class_06332) {
+    public void lllIIIllIIIIlllIlIIllIIll(S29PacketSoundEffect class_06332) {
         this.lIllllIIlIIIlIllllllIIIll.theWorld.lllIIIllIIIIlllIlIIllIIll(class_06332.lIlllIlllIIIIlIIlllIllIII(), class_06332.IlIIIIIllllllIIlllIllllll(), class_06332.lIllllIIlIIIlIllllllIIIll(), class_06332.IlIllllllIIlIIllllIIlIIIl(), class_06332.IIIllIIlIIIIIIlIlIIllIIlI(), class_06332.IllIIlllllllIIlIIlIIIIlIl(), false);
     }
 
@@ -978,7 +985,7 @@ implements class_0596 {
      * Lifted jumps to return sites
      */
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1147 var1_1) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3FPacketCustomPayload var1_1) {
         if ("MC|TrList".equals(var1_1.IlIllllllIIlIIllllIIlIIIl())) {
             var2_2 = Unpooled.wrappedBuffer((byte[])var1_1.lIlllIlllIIIIlIIlllIllIII());
             try {
@@ -986,7 +993,7 @@ implements class_0596 {
                 var4_7 = this.lIllllIIlIIIlIllllllIIIll.lllllIlllIIllIlIIlIIIllII;
                 if (var4_7 == null || !(var4_7 instanceof class_1669) || var3_5 != this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII) ** GOTO lbl28
                 var5_8 = ((class_1669)var4_7).lIllllIIlIIIlIllllllIIIll();
-                var6_9 = class_1596.lllIlIIlIIIlIlIIIllIlllIl(new class_0181(var2_2));
+                var6_9 = class_1596.lllIlIIlIIIlIlIIIllIlllIl(new PacketBuffer(var2_2));
                 var5_8.lllIIIllIIIIlllIlIIllIIll(var6_9);
             }
             catch (IOException var3_6) {
@@ -1009,7 +1016,7 @@ lbl28:
         // 10 sources
 
         try {
-            LunarClient.getInstance().getEventBus().callEvent(new class_0026(var1_1.IlIllllllIIlIIllllIIlIIIl(), var1_1.lIlllIlllIIIIlIIlllIllIII()));
+            LunarClient.getInstance().getEventBus().callEvent(new PluginMessageEvent(var1_1.IlIllllllIIlIIllllIIlIIIl(), var1_1.lIlllIlllIIIIlIIlllIllIII()));
             return;
         }
         catch (Exception var2_4) {
@@ -1018,7 +1025,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1015 class_10152) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3BPacketScoreboardObjective class_10152) {
         class_0141 class_01412 = this.IIIllIIlIIIIIIlIlIIllIIlI.IlIlIIlllIllllllllIIIlIlI();
         if (class_10152.IlIIIIIllllllIIlllIllllll() == 0) {
             class_0693 class_06932 = class_01412.lllIIIllIIIIlllIlIIllIIll(class_10152.IlIllllllIIlIIllllIIlIIIl(), IScoreObjectiveCriteria.lllIlIIlIIIlIlIIIllIlllIl);
@@ -1034,7 +1041,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1588 class_15882) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3CPacketUpdateScore class_15882) {
         class_0141 class_01412 = this.IIIllIIlIIIIIIlIlIIllIIlI.IlIlIIlllIllllllllIIIlIlI();
         class_0693 class_06932 = class_01412.lllIIIllIIIIlllIlIIllIIll(class_15882.lIlllIlllIIIIlIIlllIllIII());
         if (class_15882.lIllllIIlIIIlIllllllIIIll() == 0) {
@@ -1046,7 +1053,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2139 class_21392) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3DPacketDisplayScoreboard class_21392) {
         class_0141 class_01412 = this.IIIllIIlIIIIIIlIlIIllIIlI.IlIlIIlllIllllllllIIIlIlI();
         if (class_21392.lIlllIlllIIIIlIIlllIllIII().length() == 0) {
             class_01412.lllIIIllIIIIlllIlIIllIIll(class_21392.IlIllllllIIlIIllllIIlIIIl(), (class_0693)null);
@@ -1057,7 +1064,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0232 class_02322) {
+    public void lllIIIllIIIIlllIlIIllIIll(S3EPacketTeams class_02322) {
         class_0141 class_01412 = this.IIIllIIlIIIIIIlIlIIllIIlI.IlIlIIlllIllllllllIIIlIlI();
         class_0531 class_05312 = class_02322.IllIIlllllllIIlIIlIIIIlIl() == 0 ? class_01412.IlIIIIIllllllIIlllIllllll(class_02322.IlIllllllIIlIIllllIIlIIIl()) : class_01412.lIlllIlllIIIIlIIlllIllIII(class_02322.IlIllllllIIlIIllllIIlIIIl());
         if (class_02322.IllIIlllllllIIlIIlIIIIlIl() == 0 || class_02322.IllIIlllllllIIlIIlIIIIlIl() == 2) {
@@ -1082,7 +1089,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1178 class_11782) {
+    public void lllIIIllIIIIlllIlIIllIIll(S2APacketParticles class_11782) {
         if (class_11782.lIIIIlIlIIlllllIIllIIlIII() == 0) {
             double d = class_11782.IllIIIllIIIIlIlIlIllIIlll() * class_11782.IIIllIIlIIIIIIlIlIIllIIlI();
             double d2 = class_11782.IllIIIllIIIIlIlIlIllIIlll() * class_11782.IllIIlllllllIIlIIlIIIIlIl();
@@ -1102,7 +1109,7 @@ lbl28:
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1922 class_19222) {
+    public void lllIIIllIIIIlllIlIIllIIll(S20PacketEntityProperties class_19222) {
         class_1521 class_15212 = this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(class_19222.IlIllllllIIlIIllllIIlIIIl());
         if (class_15212 != null) {
             if (!(class_15212 instanceof class_1965)) {

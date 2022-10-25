@@ -18,8 +18,8 @@ extends class_1975 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llllllIlIllllIlIlIlIIIIlI = new class_2102[llIlllIIllIlllIlIlIlIIIll.length];
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[llIlllIIllIlllIlIlIlIIIll.length];
+        this.llllllIlIllllIlIlIlIIIIlI = new IIcon[llIlllIIllIlllIlIlIlIIIll.length];
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[llIlllIIllIlllIlIlIlIIIll.length];
         for (int i = 0; i < this.llllllIlIllllIlIlIlIIIIlI.length; ++i) {
             this.llllllIlIllllIlIlIlIIIIlI[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + llIlllIIllIlllIlIlIlIIIll[i]);
             this.lIlIIllllIlIIIIllIIIIlIIl[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_" + llIlllIIllIlllIlIlIlIIIll[i] + "_top");

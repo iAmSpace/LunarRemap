@@ -147,7 +147,7 @@ public class StatList {
         return string == null ? null : new StatBase("stat.entityKilledBy." + string, new ChatComponentTranslation("stat.entityKilledBy", new ChatComponentTranslation("entity." + string + ".name", new Object[0]))).IllIIlllllllIIlIIlIIIIlIl();
     }
 
-    public static StatBase lllIIIllIIIIlllIlIIllIIll(String string) {
+    public static StatBase func_151177_a(String string) {
         return (StatBase) oneShotStats.get(string);
     }
 }

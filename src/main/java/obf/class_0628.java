@@ -12,7 +12,7 @@ extends class_0351 {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"intact", "slightlyDamaged", "veryDamaged"};
     private static final String[] IIIIlIIlIIIllIIIIllIIIlII = new String[]{"anvil_top_damaged_0", "anvil_top_damaged_1", "anvil_top_damaged_2"};
     public int lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102[] lllIIIIIIlIlllIIlIlIIIllI;
+    private IIcon[] lllIIIIIIlIlllIIlIlIIIllI;
 
     protected class_0628() {
         super(class_1855.IIIllIIlIIIIIIlIlIIllIIlI);
@@ -31,7 +31,7 @@ extends class_0351 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (this.lIlIIllllIlIIIIllIIIIlIIl == 3 && n == 1) {
             int n3 = (n2 >> 2) % this.lllIIIIIIlIlllIIlIlIIIllI.length;
             return this.lllIIIIIIlIlllIIlIlIIIllI[n3];
@@ -42,7 +42,7 @@ extends class_0351 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
         this.llIIIIllIIIIIIIlIIIlIIIIl = class_08872.lllIIIllIIIIlllIlIIllIIll("anvil_base");
-        this.lllIIIIIIlIlllIIlIlIIIllI = new class_2102[IIIIlIIlIIIllIIIIllIIIlII.length];
+        this.lllIIIIIIlIlllIIlIlIIIllI = new IIcon[IIIIlIIlIIIllIIIIllIIIlII.length];
         for (int i = 0; i < this.lllIIIIIIlIlllIIlIlIIIllI.length; ++i) {
             this.lllIIIIIIlIlllIIlIlIIIllI[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(IIIIlIIlIIIllIIIIllIIIlII[i]);
         }

@@ -16,6 +16,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 import java.io.IOException;
+
+import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Marker;
@@ -31,22 +33,22 @@ extends MessageToByteEncoder {
         this.IlIllllllIIlIIllllIIlIIIl = class_06702;
     }
 
-    protected void lllIIIllIIIIlllIlIIllIIll(ChannelHandlerContext channelHandlerContext, class_0703 class_07032, ByteBuf byteBuf) {
+    protected void lllIIIllIIIIlllIlIIllIIll(ChannelHandlerContext channelHandlerContext, Packet class_07032, ByteBuf byteBuf) {
         Integer n = (Integer)((BiMap)channelHandlerContext.channel().attr(class_0800.lIllllIIlIIIlIllllllIIIll).get()).inverse().get(class_07032.getClass());
         if (lllIIIllIIIIlllIlIIllIIll.isDebugEnabled()) {
-            lllIIIllIIIIlllIlIIllIIll.debug(lllIlIIlIIIlIlIIIllIlllIl, "OUT: [{}:{}] {}[{}]", new Object[]{channelHandlerContext.channel().attr(class_0800.lIlllIlllIIIIlIIlllIllIII).get(), n, class_07032.getClass().getName(), class_07032.lllIlIIlIIIlIlIIIllIlllIl()});
+            lllIIIllIIIIlllIlIIllIIll.debug(lllIlIIlIIIlIlIIIllIlllIl, "OUT: [{}:{}] {}[{}]", new Object[]{channelHandlerContext.channel().attr(class_0800.lIlllIlllIIIIlIIlllIllIII).get(), n, class_07032.getClass().getName(), class_07032.serialize()});
         }
         if (n == null) {
             throw new IOException("Can't serialize unregistered packet");
         }
-        class_0181 class_01812 = new class_0181(byteBuf);
-        class_01812.lllIlIIlIIIlIlIIIllIlllIl(n);
-        class_07032.lllIlIIlIIIlIlIIIllIlllIl(class_01812);
+        PacketBuffer class_01812 = new PacketBuffer(byteBuf);
+        class_01812.writeVarIntToBuffer(n);
+        class_07032.writePacketData(class_01812);
         this.IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl(n, class_01812.readableBytes());
     }
 
     protected void encode(ChannelHandlerContext channelHandlerContext, Object object, ByteBuf byteBuf) {
-        this.lllIIIllIIIIlllIlIIllIIll(channelHandlerContext, (class_0703)object, byteBuf);
+        this.lllIIIllIIIIlllIlIIllIIll(channelHandlerContext, (Packet)object, byteBuf);
     }
 }
 

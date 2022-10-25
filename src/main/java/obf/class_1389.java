@@ -5,6 +5,7 @@ import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.client.*;
 import net.minecraft.util.MathHelper;
 import net.minecraft.stats.StatBase;
 
@@ -258,7 +259,7 @@ extends class_0139 {
             return;
         }
         if (this.llIlllIlIIllIlIIIIllIIlIl() && !this.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl) {
-            if (!((Boolean)class_1664.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+            if (!((Boolean)class_1664.lIllllIIlIIIlIllllllIIIll.getValue()).booleanValue()) {
                 super.lllIIIllIIIIlllIlIIllIIll(f, f2);
                 return;
             }
@@ -270,7 +271,7 @@ extends class_0139 {
             float f4 = this.k_();
             if (bl) {
                 this.IllIIlllllllIIlIIlIIIIlIl(f4);
-                double d = (Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII();
+                double d = (Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.getValue();
                 if (f3 != 0.0f) {
                     this.lllIIIllIIIIlllIlIIllIIll(f3, (double)arrf[0], (double)arrf[1], d *= (double)(this.IlIlllIIIIIIlIIllIIllIlll() * 2.15f / f3));
                 }
@@ -284,10 +285,10 @@ extends class_0139 {
             } else {
                 class_1974 class_19742;
                 boolean bl2;
-                double d = (Double)class_1664.IllIIIllIIIIlIlIlIllIIlll.lIlllIlllIIIIlIIlllIllIII();
+                double d = (Double)class_1664.IllIIIllIIIIlIlIlIllIIlll.getValue();
                 this.lllIlIIlIIIlIlIIIllIlllIl(f3, arrf[0], arrf[1], d);
-                if (((Boolean)class_1664.lIllllIIlIIIlIllllllIIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && (Double)class_1664.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII() > 0.0 && this.llIllIlllIllIlIIIIlIIlIII && this.IIlIIlIlIlIllIIlIlIIIIlll < 0.0 && (bl2 = this.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIIIIlIIlllIllIII(class_19742 = this.IIllIllIIllIIlllIIIlIlllI.IlIllllllIIlIIllllIIlIIIl(this.IIIIIIIIlIllIIllIIlllIllI, this.IIlIIlIlIlIllIIlIlIIIIlll, this.llIIIlllIlllIlIllIIIIllIl)))) {
-                    this.IIlIIlIlIlIllIIlIlIIIIlll *= ((Double)class_1664.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()).doubleValue();
+                if (((Boolean)class_1664.lIllllIIlIIIlIllllllIIIll.getValue()).booleanValue() && (Double)class_1664.IIIllIIlIIIIIIlIlIIllIIlI.getValue() > 0.0 && this.llIllIlllIllIlIIIIlIIlIII && this.IIlIIlIlIlIllIIlIlIIIIlll < 0.0 && (bl2 = this.lIlIllIIlIIlIIlIIlIIlIIll.lIlllIlllIIIIlIIlllIllIII(class_19742 = this.IIllIllIIllIIlllIIIlIlllI.IlIllllllIIlIIllllIIlIIIl(this.IIIIIIIIlIllIIllIIlllIllI, this.IIlIIlIlIlIllIIlIlIIIIlll, this.llIIIlllIlllIlIllIIIIllIl)))) {
+                    this.IIlIIlIlIlIllIIlIlIIIIlll *= ((Double)class_1664.IIIllIIlIIIIIIlIlIIllIIlI.getValue()).doubleValue();
                 }
             }
             this.IIlIlIIIlIIllIlIlIlIlIIll();
@@ -309,14 +310,14 @@ extends class_0139 {
     private boolean llllIIIllIllIIIllIlIIIIIl() {
         float f;
         double d;
-        if (((Boolean)class_1664.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && this.IIlIIlIlIlIllIIlIlIIIIlll() && (d = this.i_()) > (double)(f = this.lllllIlllIIllIlIIlIIIllII())) {
+        if (((Boolean)class_1664.lllIIIllIIIIlllIlIIllIIll.getValue()).booleanValue() && this.IIlIIlIlIlIllIIlIlIIIIlll() && (d = this.i_()) > (double)(f = this.lllllIlllIIllIlIIlIIIllII())) {
             double d2 = d / (double)f * 0.5;
             if (d2 > 1.0) {
                 d2 = 1.0;
             }
-            this.IIlIIlIlIlIllIIlIlIIIIlll += d2 * d * (double)((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-            if (((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).floatValue() > 0.0f) {
-                float f2 = 1.0f / ((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII()).floatValue();
+            this.IIlIIlIlIlIllIIlIlIIIIlll += d2 * d * (double)((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.getValue()).floatValue();
+            if (((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.getValue()).floatValue() > 0.0f) {
+                float f2 = 1.0f / ((Float)class_1664.lllIlIIlIIIlIlIIIllIlllIl.getValue()).floatValue();
                 this.IIIIIIIIlIllIIllIIlllIllI *= (double)f2;
                 this.llIIIlllIlllIlIllIIIIllIl *= (double)f2;
             }
@@ -354,12 +355,12 @@ extends class_0139 {
             this.IllIIlllllllIIlIIlIIIIlIl(f, f2);
         } else {
             if (d2 > 0.09) {
-                this.lllIlIIlIIIlIlIIIllIlllIl((Double)class_1664.IllIIlllllllIIlIIlIIIIlIl.lIlllIlllIIIIlIIlllIllIII());
+                this.lllIlIIlIIIlIlIIIllIlllIl((Double)class_1664.IllIIlllllllIIlIIlIIIIlIl.getValue());
             }
             if (d2 > 0.098) {
-                this.lllIlIIlIIIlIlIIIllIlllIl(f3, arrf[0], arrf[1], (Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII());
+                this.lllIlIIlIIIlIlIIIllIlllIl(f3, arrf[0], arrf[1], (Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.getValue());
             } else {
-                this.lllIIIllIIIIlllIlIIllIIll(0.098f, (double)arrf[0], (double)arrf[1], (double)((Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.lIlllIlllIIIIlIIlllIllIII()));
+                this.lllIIIllIIIIlllIlIIllIIll(0.098f, (double)arrf[0], (double)arrf[1], (double)((Double)class_1664.IIIllIllIIlIlIlIlIllllIIl.getValue()));
             }
             this.IlIIIIIllllllIIlllIllllll(this.IIIIIIIIlIllIIllIIlllIllI, this.IIlIIlIlIlIllIIlIlIIIIlll, this.llIIIlllIlllIlIllIIIIllIl);
             this.IIlIIlIlIlIllIIlIlIIIIlll = 0.0;
@@ -394,7 +395,7 @@ extends class_0139 {
         double d4;
         double d5;
         float f2 = f;
-        float f3 = (float)((Double)class_1664.llIIllIllIlIIlIIllIllllll.lIlllIlllIIIIlIIlllIllIII()).doubleValue();
+        float f3 = (float)((Double)class_1664.llIIllIllIlIIlIIllIllllll.getValue()).doubleValue();
         if (f2 > f3) {
             f2 = f3;
         }
@@ -433,9 +434,9 @@ extends class_0139 {
     private void IlIlIIlIlIllIIlIlIIllIIIl(float f) {
         float f2;
         float f3;
-        float f4 = ((Float)class_1664.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        float f5 = ((Float)class_1664.IlIIIIIllllllIIlllIllllll.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        if (((Boolean)class_1664.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        float f4 = ((Float)class_1664.lIlllIlllIIIIlIIlllIllIII.getValue()).floatValue();
+        float f5 = ((Float)class_1664.IlIIIIIllllllIIlllIllllll.getValue()).floatValue();
+        if (((Boolean)class_1664.lIIIIlIlIIlllllIIllIIlIII.getValue()).booleanValue()) {
             f4 = 1.0f;
             f5 = 1.0f;
         }
@@ -452,10 +453,10 @@ extends class_0139 {
 
     private void lllllIlllIIllIlIIlIIIllII(float f) {
         float f2;
-        if (((Boolean)class_1664.lIIIIlIlIIlllllIIllIIlIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean)class_1664.lIIIIlIlIIlllllIIllIIlIII.getValue()).booleanValue()) {
             return;
         }
-        float f3 = ((Float)class_1664.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()).floatValue();
+        float f3 = ((Float)class_1664.IlIllllllIIlIIllllIIlIIIl.getValue()).floatValue();
         float f4 = (float)this.i_();
         if (f4 > (f2 = f * f3) && f2 != 0.0f) {
             float f5 = f2 / f4;
@@ -491,8 +492,8 @@ extends class_0139 {
         if (this.lIlIllIIlIIlIIlIIlIIlIIll.IlIIIIIllllllIIlllIllllll(MathHelper.IlIllllllIIlIIllllIIlIIIl(this.IlIIlllllIIlIlIlllllIllll), 0, MathHelper.IlIllllllIIlIIllllIIlIIIl(this.IllIIIIllIIllIllIlllIlIIl))) {
             super.s_();
             if (this.lIlIlIIllIIIlllIllIIlIllI()) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1540(this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0836(this.IlllIIIlIIlIIIIllllIllllI, this.llIlIIIlllIIIllIllllIIIll, this.lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl, this.lIlllIlllIIIIlIIlllIllIII.IllIIIllIIIIlIlIlIllIIlll));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C05PacketPlayerLook(this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0CPacketInput(this.IlllIIIlIIlIIIIllllIllllI, this.llIlIIIlllIIIllIllllIIIll, this.lIlllIlllIIIIlIIlllIllIII.IIIllIllIIlIlIlIlIllllIIl, this.lIlllIlllIIIIlIIlllIllIII.IllIIIllIIIIlIlIlIllIIlll));
             } else {
                 this.IlIlIIlllIIlIllIIIlllllIl();
             }
@@ -505,17 +506,17 @@ extends class_0139 {
         boolean bl3 = this.IlIIIIIllIlllIIIIlIIIllIl();
         if (bl3 != this.IIllllllIIllIlIllllIIIlll) {
             if (bl3) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 4));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 4));
             } else {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 5));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 5));
             }
             this.IIllllllIIllIlIllllIIIlll = bl3;
         }
         if ((bl2 = this.IIlIIlIlIlIllIIlIlIIIIlll()) != this.IlIlIIlllIIlIlllllIlIIIIl) {
             if (bl2) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 1));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 1));
             } else {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 2));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 2));
             }
             this.IlIlIIlllIIlIlllllIlIIIIl = bl2;
         }
@@ -527,16 +528,16 @@ extends class_0139 {
         boolean bl4 = d * d + d2 * d2 + d3 * d3 > 9.0E-4 || this.llllIIIllIllIIIllIlIIIIIl >= 20;
         boolean bl5 = bl = d4 != 0.0 || d5 != 0.0;
         if (this.IlIIIlIIIIllIIIllIIIIIIll != null) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1023(this.IIIIIIIIlIllIIllIIlllIllI, -999.0, -999.0, this.llIIIlllIlllIlIllIIIIllIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C06PacketPlayerPosLook(this.IIIIIIIIlIllIIllIIlllIllI, -999.0, -999.0, this.llIIIlllIlllIlIllIIIIllIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
             bl4 = false;
         } else if (bl4 && bl) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1023(this.IlIIlllllIIlIlIlllllIllll, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C06PacketPlayerPosLook(this.IlIIlllllIIlIlIlllllIllll, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
         } else if (bl4) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1230(this.IlIIlllllIIlIlIlllllIllll, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.llllllIlIllllIlIlIlIIIIlI));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C04PacketPlayerPosition(this.IlIIlllllIIlIlIlllllIllll, this.IIllIllIIllIIlllIIIlIlllI.lllIlIIlIIIlIlIIIllIlllIl, this.llIIlIlIlllIIllIlIlllIllI, this.IllIIIIllIIllIllIlllIlIIl, this.llllllIlIllllIlIlIlIIIIlI));
         } else if (bl) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1540(this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer_C05PacketPlayerLook(this.IIIIlIllIlIIlIIlIllIlIlll, this.IlIlIIlllIllllllllIIIlIlI, this.llllllIlIllllIlIlIlIIIIlI));
         } else {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0983(this.llllllIlIllllIlIlIlIIIIlI));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C03PacketPlayer(this.llllllIlIllllIlIlIlIIIIlI));
         }
         ++this.llllIIIllIllIIIllIlIIIIIl;
         this.IIIIlllllIlllIIllIIIlIllI = this.llllllIlIllllIlIlIlIIIIlI;
@@ -556,7 +557,7 @@ extends class_0139 {
     @Override
     public class_1781 lllIIIllIIIIlllIlIIllIIll(boolean bl) {
         int n = bl ? 3 : 4;
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1557(n, 0, 0, 0, 0));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C07PacketPlayerDigging(n, 0, 0, 0, 0));
         return null;
     }
 
@@ -567,26 +568,26 @@ extends class_0139 {
     public void lllIlIIlIIIlIlIIIllIlllIl(String string) {
         if (string.equals("/debug")) {
             LunarClient.getInstance().getSettingsManager().IllIIlllllllIIlIIlIIIIlIl = !LunarClient.getInstance().getSettingsManager().IllIIlllllllIIlIIlIIIIlIl;
-            class_0722 class_07222 = new class_0722((Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "   [LC] " + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl));
-            class_0722 class_07223 = new class_0722((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "Debug: " + LunarClient.getInstance().getSettingsManager().IllIIlllllllIIlIIlIIIIlIl);
+            class_0722 class_07222 = new class_0722((Object)((Object) EnumChatFormatting.RED) + "   [LC] " + (Object)((Object) EnumChatFormatting.RESET));
+            class_0722 class_07223 = new class_0722((Object)((Object) EnumChatFormatting.GRAY) + "Debug: " + LunarClient.getInstance().getSettingsManager().IllIIlllllllIIlIIlIIIIlIl);
             class_07223.lllIIIllIIIIlllIlIIllIIll(true);
             class_07222.lllIIIllIIIIlllIlIIllIIll(class_07223);
             class_07222.lllIIIllIIIIlllIlIIllIIll(true);
             Minecraft.getMinecraft().IlIIIlIIIIllIIIllIIIIIIll.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_07222);
         } else {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1960(string));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C01PacketChatMessage(string));
         }
     }
 
     @Override
     public void lIIlIIIIIlIlllIlIIlIlIlll() {
         super.lIIlIIIIIlIlllIlIIlIlIlll();
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0012(this, 1));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0APacketAnimation(this, 1));
     }
 
     @Override
     public void lIlIlIIlIIIIlIIIIIlllIIII() {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0499(class_1297.lllIIIllIIIIlllIlIIllIIll));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C16PacketClientStatus(class_1297.lllIIIllIIIIlllIlIIllIIll));
     }
 
     @Override
@@ -598,7 +599,7 @@ extends class_0139 {
 
     @Override
     public void IlIIIlIIIIllIIIllIIIIIIll() {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_2144(this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0DPacketCloseWindow(this.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII));
         this.IIlllIlIlllIllIIIlllIIlIl();
     }
 
@@ -626,16 +627,16 @@ extends class_0139 {
 
     @Override
     public void lIlIllIIlIIlIIlIIlIIlIIll() {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_2065(this.lIIlIlIlIlIllIIlIIllllIll));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C13PacketPlayerAbilities(this.lIIlIlIlIlIllIIlIIllllIll));
     }
 
     @Override
     protected void l_() {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 6, (int)(this.IlIlIIlllIllllllllIIIlIlI() * 100.0f)));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 6, (int)(this.IlIlIIlllIllllllllIIIlIlI() * 100.0f)));
     }
 
     public void llIllllIlIllIIIlIllIIlIlI() {
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_1233(this, 7));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new C0BPacketEntityAction(this, 7));
     }
 
     public void IlIllllllIIlIIllllIIlIIIl(String string) {

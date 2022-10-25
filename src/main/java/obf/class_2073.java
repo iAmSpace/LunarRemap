@@ -5,9 +5,9 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-final class class_2073
+public final class class_2073
 implements ParameterizedType {
-    class_2073() {
+    public class_2073() {
     }
 
     @Override

@@ -17,9 +17,9 @@ public class class_0876
 extends Block
 implements class_0588 {
     private static final Logger llllllIlIllllIlIlIlIIIIlI = LogManager.getLogger();
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     protected class_0876() {
         super(class_1855.lllIlIIlIIIlIlIIIllIlllIl);
@@ -28,12 +28,12 @@ implements class_0588 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.lIlIIllllIlIIIIllIIIIlIIl : (n == 0 ? Blocks.lIlllIlllIIIIlIIlllIllIII.lIlllIlllIIIIlIIlllIllIII(n) : this.llIIIIllIIIIIIIlIIIlIIIIl);
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
         if (n4 == 1) {
             return this.lIlIIllllIlIIIIllIIIIlIIl;
         }
@@ -103,7 +103,7 @@ implements class_0588 {
         return Blocks.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(0, random, n2);
     }
 
-    public static class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public static IIcon llIlllIIllIlllIlIlIlIIIll() {
         return Blocks.IlIllllllIIlIIllllIIlIIIl.IIIIlIIlIIIllIIIIllIIIlII;
     }
 

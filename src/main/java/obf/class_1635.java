@@ -4,6 +4,7 @@ package obf;/*
  * Could not load the following classes:
  *  org.apache.commons.lang3.Validate
  */
+import net.minecraft.network.handshake.client.C00Handshake;
 import net.minecraft.util.IChatComponent;
 import org.apache.commons.lang3.Validate;
 
@@ -18,17 +19,17 @@ implements class_2128 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0302 class_03022) {
+    public void lllIIIllIIIIlllIlIIllIIll(C00Handshake class_03022) {
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(class_03022.IlIllllllIIlIIllllIIlIIIl());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
-        Validate.validState((class_05463 == class_0546.lIlllIlllIIIIlIIlllIllIII || class_05463 == class_0546.IlIllllllIIlIIllllIIlIIIl ? 1 : 0) != 0, (String)("Unexpected protocol " + (Object)((Object)class_05463)), (Object[])new Object[0]);
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
+        Validate.validState((class_05463 == EnumConnectionState.LOGIN || class_05463 == EnumConnectionState.STATUS ? 1 : 0) != 0, (String)("Unexpected protocol " + (Object)((Object)class_05463)), (Object[])new Object[0]);
         switch (class_05463) {
             case lIlllIlllIIIIlIIlllIllIII: {
                 this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new class_0296(this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl));
@@ -41,7 +42,7 @@ implements class_2128 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
     }
 }
 

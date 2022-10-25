@@ -19,7 +19,7 @@ public class class_1488 {
 
     public class_1488() {
         LunarClient.getInstance().getEventBus().addEvent(class_0312.class, class_03122 -> {
-            if (this.lllIIIllIIIIlllIlIIllIIll && !Keyboard.isKeyDown((int) LunarClient.getInstance().getSettingsManager().IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl())) {
+            if (this.lllIIIllIIIIlllIlIIllIIll && !Keyboard.isKeyDown((int) LunarClient.getInstance().getSettingsManager().keyDragToLook.IIIllIllIIlIlIlIlIllllIIl())) {
                 this.lllIlIIlIIIlIlIIIllIlllIl();
             }
         });
@@ -31,7 +31,7 @@ public class class_1488 {
         this.IlIllllllIIlIIllllIIlIIIl = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.llllIIIIlIIIlIIIIIIlIllll;
         this.IlIIIIIllllllIIlllIllllll = this.lIllllIIlIIIlIllllllIIIll.lIIIIlIlIIlllllIIllIIlIII.llIIIIllIIIIIIIlIIIlIIIIl;
         this.IIIllIIlIIIIIIlIlIIllIIlI = this.lIllllIIlIIIlIllllllIIIll.gameSettings.IIlIlIlIIlllIIIlIIIIlIIIl;
-        switch ((String) LunarClient.getInstance().getSettingsManager().IlIIlllllIIlIlIlllllIllll.lIlllIlllIIIIlIIlllIllIII()) {
+        switch ((String) LunarClient.getInstance().getSettingsManager().gsLookView.getValue()) {
             case "Third": {
                 this.lIllllIIlIIIlIllllllIIIll.gameSettings.IIlIlIlIIlllIIIlIIIIlIIIl = 1;
                 break;

@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
@@ -51,13 +52,13 @@ public class class_1835 {
     public int IIIIlIllIlIIlIIlIllIlIlll = 1;
     public boolean IlIlIIlllIllllllllIIIlIlI = false;
     protected boolean llllIIIIlIIIlIIIIIIlIllll = false;
-    public class_1335 llIIIIllIIIIIIIlIIIlIIIIl = new class_1335("key.minimap.zoom", 44, "controls.minimap.title", true);
-    public class_1335 IIllIllIIllIIlllIIIlIlllI = new class_1335("key.minimap.togglefullscreen", 45, "controls.minimap.title", true);
-    public class_1335 llllllIlIllllIlIlIlIIIIlI = new class_1335("key.minimap.voxelmapmenu", 50, "controls.minimap.title", true);
-    public class_1335 lIlIIllllIlIIIIllIIIIlIIl = new class_1335("key.minimap.waypointmenu", 0, "controls.minimap.title", true);
-    public class_1335 llIlllIIllIlllIlIlIlIIIll = new class_1335("key.minimap.waypointhotkey", 0, "controls.minimap.title", true);
-    public class_1335 IIIIlIIlIIIllIIIIllIIIlII = new class_1335("key.minimap.togglemobs", 0, "controls.minimap.title", true);
-    public class_1335[] lllIIIIIIlIlllIIlIlIIIllI;
+    public KeyBinding llIIIIllIIIIIIIlIIIlIIIIl = new KeyBinding("key.minimap.zoom", 44, "controls.minimap.title", true);
+    public KeyBinding IIllIllIIllIIlllIIIlIlllI = new KeyBinding("key.minimap.togglefullscreen", 45, "controls.minimap.title", true);
+    public KeyBinding llllllIlIllllIlIlIlIIIIlI = new KeyBinding("key.minimap.voxelmapmenu", 50, "controls.minimap.title", true);
+    public KeyBinding lIlIIllllIlIIIIllIIIIlIIl = new KeyBinding("key.minimap.waypointmenu", 0, "controls.minimap.title", true);
+    public KeyBinding llIlllIIllIlllIlIlIlIIIll = new KeyBinding("key.minimap.waypointhotkey", 0, "controls.minimap.title", true);
+    public KeyBinding IIIIlIIlIIIllIIIIllIIIlII = new KeyBinding("key.minimap.togglemobs", 0, "controls.minimap.title", true);
+    public KeyBinding[] lllIIIIIIlIlllIIlIlIIIllI;
     public Minecraft llIIlIIllIIllIlIIllIIllII = null;
     private boolean IIIIlIlIIlIIIIlIlllIlIIII;
     public static class_1835 lIlIlIIIIIIlIIllllIlIIllI;
@@ -65,7 +66,7 @@ public class class_1835 {
     public class_1835() {
         lIlIlIIIIIIlIIllllIlIIllI = this;
         this.llIIlIIllIIllIlIIllIIllII = Minecraft.getMinecraft();
-        this.lllIIIIIIlIlllIIlIlIIIllI = new class_1335[]{this.llllllIlIllllIlIlIlIIIIlI, this.llIlllIIllIlllIlIlIlIIIll, this.llIIIIllIIIIIIIlIIIlIIIIl, this.IIllIllIIllIIlllIIIlIlllI, this.IIIIlIIlIIIllIIIIllIIIlII};
+        this.lllIIIIIIlIlllIIlIlIIIllI = new KeyBinding[]{this.llllllIlIllllIlIlIlIIIIlI, this.llIlllIIllIlllIlIlIlIIIll, this.llIIIIllIIIIIIIlIIIlIIIIl, this.IIllIllIIllIIlllIIIlIlllI, this.IIIIlIIlIIIllIIIIllIIIlII};
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(class_1203 class_12032) {
@@ -141,7 +142,7 @@ public class class_1835 {
                     } else if (arrstring[0].equals("Mob Key")) {
                         this.IIIIlIIlIIIllIIIIllIIIlII.lllIlIIlIIIlIlIIIllIlllIl(Keyboard.getKeyIndex((String)arrstring[1]));
                     }
-                    class_1335.lllIlIIlIIIlIlIIIllIlllIl();
+                    KeyBinding.lllIlIIlIIIlIlIIIllIlllIl();
                 }
                 if (this.lllIIIllIIIIlllIlIIllIIll != null) {
                     this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.IllllIIIIlIIlIIIIlllIIIIl);
@@ -197,7 +198,7 @@ public class class_1835 {
             printWriter.close();
         }
         catch (Exception exception) {
-            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object)class_1227.IlIlllIIIIIIlIIllIIllIlll) + "Error Saving Settings " + exception.getLocalizedMessage());
+            class_1315.lllIIIllIIIIlllIlIIllIIll((Object)((Object) EnumChatFormatting.YELLOW) + "Error Saving Settings " + exception.getLocalizedMessage());
         }
     }
 

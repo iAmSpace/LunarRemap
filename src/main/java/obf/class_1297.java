@@ -21,11 +21,11 @@ public enum class_1297 {
         this.lIlllIlllIIIIlIIlllIllIII = var5_-1;
     }
 
-    static /* synthetic */ class_1297[] lllIIIllIIIIlllIlIIllIIll() {
+    public static /* synthetic */ class_1297[] lllIIIllIIIIlllIlIIllIIll() {
         return IlIIIIIllllllIIlllIllllll;
     }
 
-    static /* synthetic */ int lllIIIllIIIIlllIlIIllIIll(class_1297 class_12972) {
+    public static /* synthetic */ int lllIIIllIIIIlllIlIIllIIll(class_1297 class_12972) {
         return class_12972.lIlllIlllIIIIlIIlllIllIII;
     }
 

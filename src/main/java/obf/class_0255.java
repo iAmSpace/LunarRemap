@@ -19,8 +19,8 @@ extends class_1949 {
     }
 
     @Override
-    public class_0552 lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
-        return class_08972.IllIIIllIIIIlIlIlIllIIlll() == 0 ? class_0552.IlIllllllIIlIIllllIIlIIIl : class_0552.lIlllIlllIIIIlIIlllIllIII;
+    public EnumRarity lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
+        return class_08972.IllIIIllIIIIlIlIlIllIIlll() == 0 ? EnumRarity.rare : EnumRarity.epic;
     }
 
     @Override

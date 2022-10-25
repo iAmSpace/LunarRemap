@@ -4,7 +4,7 @@ package obf;/*
 import java.util.ArrayList;
 
 public interface class_0153 {
-    public ArrayList lllIIIllIIIIlllIlIIllIIll();
+    public ArrayList<class_0368> lllIIIllIIIIlllIlIIllIIll();
 
     public void lllIIIllIIIIlllIlIIllIIll(class_0368 var1);
 

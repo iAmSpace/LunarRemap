@@ -11,7 +11,7 @@ import java.util.Random;
 public class class_0989
 extends class_2209 {
     public static final String[] lIlIIllllIlIIIIllIIIIlIIl = new String[]{"stone", "sand", "wood", "cobble", "brick", "smoothStoneBrick", "netherBrick", "quartz"};
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
 
     public class_0989(boolean bl) {
         super(bl, class_1855.IlIIIIIllllllIIlllIllllll);
@@ -19,7 +19,7 @@ extends class_2209 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3 = n2 & 7;
         if (this.llllllIlIllllIlIlIlIIIIlI && (n2 & 8) != 0) {
             n = 1;

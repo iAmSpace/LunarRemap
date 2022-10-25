@@ -7,6 +7,8 @@ package obf;/*
  */
 import java.awt.Color;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.config.Setting;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Mouse;
@@ -14,18 +16,18 @@ import org.lwjgl.opengl.GL11;
 
 public class class_0195
 extends class_2117 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll;
+    private Setting lllIIIllIIIIlllIlIIllIIll;
     private float IllIIlllllllIIlIIlIIIIlIl = -1.0f;
     private float IIIllIllIIlIlIlIlIllllIIl;
     private boolean IllIIIllIIIIlIlIlIllIIlll = false;
     private ResourceLocation lIIIIlIlIIlllllIIllIIlIII = new ResourceLocation("client/icons/sun-64.png");
     private ResourceLocation llIIlllIllIllllIIIlIIIIII = new ResourceLocation("client/icons/moon-64.png");
 
-    public class_0195(class_1609 class_16092, float f) {
+    public class_0195(Setting class_16092, float f) {
         super(f);
         this.lllIIIllIIIIlllIlIIllIIll = class_16092;
         this.IIIllIIlIIIIIIlIlIIllIIlI = 22;
-        this.IllIIlllllllIIlIIlIIIIlIl = Float.parseFloat("" + class_16092.lIlllIlllIIIIlIIlllIllIII());
+        this.IllIIlllllllIIlIIlIIIIlIl = Float.parseFloat("" + class_16092.getValue());
     }
 
     @Override
@@ -43,7 +45,7 @@ extends class_2117 {
         float f2;
         float f3;
         int n3 = 148;
-        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lIllllIIlIIIlIllllllIIIll().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 8, (float)(this.IlIIIIIllllllIIlllIllllll + 8), Color.LIGHT_GRAY.getRGB());
+        LunarClient.getInstance().ubuntuMedium16px.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.getName().toUpperCase(), this.lIlllIlllIIIIlIIlllIllIII + 8, (float)(this.IlIIIIIllllllIIlllIllllll + 8), Color.LIGHT_GRAY.getRGB());
         if (this.IllIIIllIIIIlIlIlIllIIlll && !Mouse.isButtonDown((int)0)) {
             this.IllIIIllIIIIlIlIlIllIIlll = false;
         }
@@ -73,27 +75,27 @@ extends class_2117 {
             } else if (this.IIIllIllIIlIlIlIlIllllIIl > f5) {
                 this.IIIllIllIIlIlIlIlIllllIIl = f5;
             }
-            Minecraft.getMinecraft().theWorld.lllIIIllIIIIlllIlIIllIIll((long)((Integer) LunarClient.getInstance().getSettingsManager().lIlllIlllIlIIIIlllIlIlIIl.lIlllIlllIIIIlIIlllIllIII()).intValue());
+            Minecraft.getMinecraft().theWorld.lllIIIllIIIIlllIlIIllIIll((long)((Integer) LunarClient.getInstance().getSettingsManager().gsWorldTime.getValue()).intValue());
             switch (this.lllIIIllIIIIlllIlIIllIIll.IllIIIllIIIIlIlIlIllIIlll()) {
                 case lIlllIlllIIIIlIIlllIllIII: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Integer.parseInt((int)this.IIIllIllIIlIlIlIlIllllIIl + ""));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Integer.parseInt((int)this.IIIllIllIIlIlIlIlIllllIIl + ""));
                     break;
                 }
                 case IlIllllllIIlIIllllIIlIIIl: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Float.valueOf(this.IIIllIllIIlIlIlIlIllllIIl));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Float.valueOf(this.IIIllIllIIlIlIlIlIllllIIl));
                     break;
                 }
                 case IlIIIIIllllllIIlllIllllll: {
-                    this.lllIIIllIIIIlllIlIIllIIll.lllIlIIlIIIlIlIIIllIlllIl(Double.parseDouble(this.IIIllIllIIlIlIlIlIllllIIl + ""));
+                    this.lllIIIllIIIIlllIlIIllIIll.setValue(Double.parseDouble(this.IIIllIllIIlIlIlIlIllllIIl + ""));
                 }
             }
         }
-        f3 = (f3 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() + "")) < this.IllIIlllllllIIlIIlIIIIlIl ? this.IllIIlllllllIIlIIlIIIIlIl - f3 : (f3 -= this.IllIIlllllllIIlIIlIIIIlIl);
+        f3 = (f3 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.getValue() + "")) < this.IllIIlllllllIIlIIlIIIIlIl ? this.IllIIlllllllIIlIIlIIIIlIl - f3 : (f3 -= this.IllIIlllllllIIlIIlIIIIlIl);
         float f6 = ((f5 - f4) / 20.0f + f3 * 8.0f) / (float)(Minecraft.IlIIlllllIIlIlIlllllIllll + 1);
         if ((double)f6 < 1.0E-4) {
             f6 = 1.0E-4f;
         }
-        if (this.IllIIlllllllIIlIIlIIIIlIl < (f2 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII() + ""))) {
+        if (this.IllIIlllllllIIlIIlIIIIlIl < (f2 = Float.parseFloat(this.lllIIIllIIIIlllIlIIllIIll.getValue() + ""))) {
             this.IllIIlllllllIIlIIlIIIIlIl = this.IllIIlllllllIIlIIlIIIIlIl + f6 <= f2 ? (this.IllIIlllllllIIlIIlIIIIlIl += f6) : f2;
         } else if (this.IllIIlllllllIIlIIlIIIIlIl > f2) {
             this.IllIIlllllllIIlIIlIIIIlIl = this.IllIIlllllllIIlIIlIIIIlIl - f6 >= f2 ? (this.IllIIlllllllIIlIIlIIIIlIl -= f6) : f2;

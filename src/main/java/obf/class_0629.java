@@ -66,7 +66,7 @@ extends class_0579 {
         class_0368 class_03682 = (class_0368)this.lllIlIIlIIIlIlIIIllIlllIl.get(n);
         String string = "";
         string = class_03682.llIIllIllIlIIlIIllIllllll ? "(Forced) " : "(Server) ";
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lllIIlIIIllllllIIIIlIlIlI(), class_03682.lIlllIlllIIIIlIIlllIllIII ? (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + string + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + class_03682.lllIIIllIIIIlllIlIIllIIll : class_03682.lllIIIllIIIIlllIlIIllIIll, this.lllIIIllIIIIlllIlIIllIIll.lIIIIlIlIIlllllIIllIIlIII() / 2, n3 + 3, class_03682.lllIIIllIIIIlllIlIIllIIll());
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll.lllIIlIIIllllllIIIIlIlIlI(), class_03682.lIlllIlllIIIIlIIlllIllIII ? (Object)((Object) EnumChatFormatting.GRAY) + string + (Object)((Object) EnumChatFormatting.RESET) + class_03682.lllIIIllIIIIlllIlIIllIIll : class_03682.lllIIIllIIIIlllIlIIllIIll, this.lllIIIllIIIIlllIlIIllIIll.lIIIIlIlIIlllllIIllIIlIII() / 2, n3 + 3, class_03682.lllIIIllIIIIlllIlIIllIIll());
         int n7 = 3;
         if (this.IIIllIllIIlIlIlIlIllllIIl >= n2 - n7 && this.IllIIIllIIIIlIlIlIllIIlll >= n3 && this.IIIllIllIIlIlIlIlIllllIIl <= n2 + 215 + n7 && this.IllIIIllIIIIlIlIlIllIIlll <= n3 + this.IllIIlllllllIIlIIlIIIIlIl) {
             String string2;

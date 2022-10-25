@@ -22,6 +22,10 @@ import javax.crypto.SecretKey;
 
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.login.client.C01PacketEncryptionResponse;
+import net.minecraft.network.login.server.S00PacketDisconnect;
+import net.minecraft.network.login.server.S01PacketEncryptionRequest;
+import net.minecraft.network.login.server.S02PacketLoginSuccess;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.ChatComponentTranslation;
 import org.apache.logging.log4j.LogManager;
@@ -41,14 +45,14 @@ implements class_0774 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0201 class_02012) {
+    public void lllIIIllIIIIlllIlIIllIIll(S01PacketEncryptionRequest class_02012) {
         PublicKey publicKey;
         SecretKey secretKey;
         block6: {
-            secretKey = class_0936.lllIIIllIIIIlllIlIIllIIll();
+            secretKey = CryptManager.lllIIIllIIIIlllIlIIllIIll();
             String string = class_02012.IlIllllllIIlIIllllIIlIIIl();
             publicKey = class_02012.lIlllIlllIIIIlIIlllIllIII();
-            String string2 = new BigInteger(class_0936.lllIIIllIIIIlllIlIIllIIll(string, publicKey, secretKey)).toString(16);
+            String string2 = new BigInteger(CryptManager.lllIIIllIIIIlllIlIIllIIll(string, publicKey, secretKey)).toString(16);
             boolean bl = this.lllIlIIlIIIlIlIIIllIlllIl.llIIIlllIlllIlIllIIIIllIl() == null || !this.lllIlIIlIIIlIlIIIllIlllIl.llIIIlllIlllIlIllIIIIllIl().lIlllIlllIIIIlIIlllIllIII();
             try {
                 this.lllIlIIlIIIlIlIIIllIlllIl().joinServer(this.lllIlIIlIIIlIlIIIllIlllIl.getSession().func_148256_e(), this.lllIlIIlIIIlIlIIIllIlllIl.getSession().getToken(), string2);
@@ -71,7 +75,7 @@ implements class_0774 {
                 return;
             }
         }
-        this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(new class_2042(secretKey, publicKey, class_02012.IlIIIIIllllllIIlllIllllll()), new class_1028(this, secretKey));
+        this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(new C01PacketEncryptionResponse(secretKey, publicKey, class_02012.IlIIIIIllllllIIlllIllllll()), new class_1028(this, secretKey));
     }
 
     private MinecraftSessionService lllIlIIlIIIlIlIIIllIlllIl() {
@@ -79,12 +83,12 @@ implements class_0774 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0336 class_03362) {
-        this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_0546.lllIlIIlIIIlIlIIIllIlllIl);
+    public void lllIIIllIIIIlllIlIIllIIll(S02PacketLoginSuccess class_03362) {
+        this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(EnumConnectionState.PLAY);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
         if (class_22552.IlIllllllIIlIIllllIIlIIIl().endsWith("Invalid session (Try restarting your game)")) {
             LunarClient.getInstance().IlIIlllllIIlIlIlllllIllll().IllIIIllIIIIlIlIlIllIIlll().IlIIIIIllllllIIlllIllllll().IlIllllllIIlIIllllIIlIIIl(null);
             LunarClient.getInstance().IlIIlllllIIlIlIlllllIllll().lIllllIIlIIIlIllllllIIIll();
@@ -96,19 +100,19 @@ implements class_0774 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
         lllIIIllIIIIlllIlIIllIIll.debug("Switching protocol from " + (Object)((Object)class_05462) + " to " + (Object)((Object)class_05463));
-        if (class_05463 == class_0546.lllIlIIlIIIlIlIIIllIlllIl) {
+        if (class_05463 == EnumConnectionState.PLAY) {
             this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(new class_1764(this.lllIlIIlIIIlIlIIIllIlllIl, this.IlIllllllIIlIIllllIIlIIIl, this.lIlllIlllIIIIlIIlllIllIII));
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0116 class_01162) {
+    public void lllIIIllIIIIlllIlIIllIIll(S00PacketDisconnect class_01162) {
         this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_01162.IlIllllllIIlIIllllIIlIIIl());
     }
 

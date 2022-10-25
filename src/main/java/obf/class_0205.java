@@ -10,18 +10,18 @@ extends class_0688 {
     private byte[] IlIllllllIIlIIllllIIlIIIl = new byte[0];
 
     public class_0205(SecretKey secretKey, PublicKey publicKey, byte[] arrby) {
-        this.lllIIIllIIIIlllIlIIllIIll = class_0936.lllIIIllIIIIlllIlIIllIIll(publicKey, secretKey.getEncoded());
-        this.IlIllllllIIlIIllllIIlIIIl = class_0936.lllIIIllIIIIlllIlIIllIIll(publicKey, arrby);
+        this.lllIIIllIIIIlllIlIIllIIll = CryptManager.encryptData(publicKey, secretKey.getEncoded());
+        this.IlIllllllIIlIIllllIIlIIIl = CryptManager.encryptData(publicKey, arrby);
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0181 class_01812) {
+    public void lllIIIllIIIIlllIlIIllIIll(PacketBuffer class_01812) {
         this.lllIIIllIIIIlllIlIIllIIll(class_01812, this.lllIIIllIIIIlllIlIIllIIll);
         this.lllIIIllIIIIlllIlIIllIIll(class_01812, this.IlIllllllIIlIIllllIIlIIIl);
     }
 
     @Override
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_0181 class_01812) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(PacketBuffer class_01812) {
     }
 
     @Override

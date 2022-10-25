@@ -22,7 +22,7 @@ extends Item {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return this.IIIllIIlIIIIIIlIlIIllIIlI;
     }
 
@@ -50,8 +50,8 @@ extends Item {
     }
 
     @Override
-    public class_0552 lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
-        return class_0552.IlIllllllIIlIIllllIIlIIIl;
+    public EnumRarity lIIIIlIlIIlllllIIllIIlIII(ItemStack class_08972) {
+        return EnumRarity.rare;
     }
 
     public static class_0306 lIlllIlllIIIIlIIlllIllIII(String string) {

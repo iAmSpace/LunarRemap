@@ -23,7 +23,7 @@ extends Thread {
     public void run() {
         GameProfile gameProfile = class_0296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll);
         try {
-            String string = new BigInteger(class_0936.lllIIIllIIIIlllIlIIllIIll(class_0296.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll), class_0296.IlIllllllIIlIIllllIIlIIIl(this.lllIIIllIIIIlllIlIIllIIll).IllIIIIllIIllIllIlllIlIIl().getPublic(), class_0296.lIlllIlllIIIIlIIlllIllIII(this.lllIIIllIIIIlllIlIIllIIll))).toString(16);
+            String string = new BigInteger(CryptManager.lllIIIllIIIIlllIlIIllIIll(class_0296.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll), class_0296.IlIllllllIIlIIllllIIlIIIl(this.lllIIIllIIIIlllIlIIllIIll).IllIIIIllIIllIllIlllIlIIl().getPublic(), class_0296.lIlllIlllIIIIlIIlllIllIII(this.lllIIIllIIIIlllIlIIllIIll))).toString(16);
             class_0296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, class_0296.IlIllllllIIlIIllllIIlIIIl(this.lllIIIllIIIIlllIlIIllIIll).llllIlIIllIIlllllIIllIIll().hasJoinedServer(new GameProfile((UUID)null, gameProfile.getName()), string));
             if (class_0296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll) != null) {
                 class_0296.lIlllIlllIIIIlIIlllIllIII().info("UUID of player " + class_0296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll).getName() + " is " + class_0296.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll).getId());

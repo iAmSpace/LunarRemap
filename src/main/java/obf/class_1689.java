@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -716,7 +717,7 @@ public class class_1689 {
         if (llIIllIllIlIIlIIllIllllll == null) {
             return false;
         }
-        if (((Boolean) LunarClient.getInstance().getSettingsManager().IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().lIlIlIIlIIIIlIIIIIlllIIII.lIlllIlllIIIIlIIlllIllIII()).booleanValue()) {
+        if (((Boolean) LunarClient.getInstance().getSettingsManager().fpsEnableFpsBoost.getValue()).booleanValue() && ((Boolean) LunarClient.getInstance().getSettingsManager().fpsFullBright.getValue()).booleanValue()) {
             return false;
         }
         if (!Config.IlIIlIIlllllIlIIlIlIlIlIl()) {

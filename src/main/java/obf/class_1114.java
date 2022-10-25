@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -70,7 +71,7 @@ implements class_2249 {
     private int IIIIlIlIIlIIIIlIlllIlIIII;
     public final Map IllIIlllllllIIlIIlIIIIlIl = new HashMap();
     private final Map lllIIIIlIlIIlIIlllIIIIIIl = Maps.newHashMap();
-    private class_2102[] llIlIIlllIIIIIllIIlIlIIII;
+    private IIcon[] llIlIIlllIIIIIllIIlIlIIII;
     private boolean IllIIIlllllIlIlllIlllllII;
     private int llIlllIlIIllIlIIIIllIIlIl;
     private int lIIIllIIIIIllllIlIlIllIll = -1;
@@ -2097,7 +2098,7 @@ implements class_2249 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llIlIIlllIIIIIllIIlIlIIII = new class_2102[10];
+        this.llIlIIlllIIIIIllIIlIlIIII = new IIcon[10];
         for (int i = 0; i < this.llIlIIlllIIIIIllIIlIlIIII.length; ++i) {
             this.llIlIIlllIIIIIllIIlIlIIII[i] = class_08872.lllIIIllIIIIlllIlIIllIIll("destroy_stage_" + i);
         }

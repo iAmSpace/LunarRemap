@@ -5,10 +5,14 @@ package obf;/*
  *  com.moonsworth.client.nethandler.LCPacket
  *  com.moonsworth.client.nethandler.client.LCPacketClientVoice
  */
+import net.minecraft.client.main.Main;
 import com.moonsworth.client.nethandler.LCPacket;
 import com.moonsworth.client.nethandler.client.LCPacketClientVoice;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.network.play.server.S3FPacketCustomPayload;
 
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
@@ -50,8 +54,8 @@ public class class_1499 {
             string2 = accessibleObject.getName() + ":()L" + class_1764.class.getCanonicalName().replaceAll("\\.", "/") + ";";
         }
         for (Method method : class_1764.class.getMethods()) {
-            if (method.getParameterTypes().length != 1 || method.getParameterTypes()[0] != class_0703.class) continue;
-            string3 = method.getName() + ":(L" + class_0703.class.getCanonicalName().replaceAll("\\.", "/") + ";)V";
+            if (method.getParameterTypes().length != 1 || method.getParameterTypes()[0] != Packet.class) continue;
+            string3 = method.getName() + ":(L" + Packet.class.getCanonicalName().replaceAll("\\.", "/") + ";)V";
         }
         for (AccessibleObject accessibleObject : class_1521.class.getFields()) {
             if (((Field)accessibleObject).getType() != Float.TYPE) continue;
@@ -69,7 +73,7 @@ public class class_1499 {
             if (!accessibleObject.isAnnotationPresent(class_2112.class)) continue;
             string7 = ((Method)accessibleObject).getName() + ":(Ljava/lang/String;)Z";
         }
-        class_1499.lllIIIllIIIIlllIlIIllIIll(new String[]{class_1499.lIlllIlllIIIIlIIlllIllIII(class_0917.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_1147.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(Minecraft.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_1764.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_1521.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_0298.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(Main.class.getName()), string, string2, string3, string4, string5, string6, string7});
+        class_1499.lllIIIllIIIIlllIlIIllIIll(new String[]{class_1499.lIlllIlllIIIIlIIlllIllIII(C17PacketCustomPayload.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(S3FPacketCustomPayload.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(Minecraft.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_1764.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_1521.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(class_0298.class.getName()), class_1499.lIlllIlllIIIIlIIlllIllIII(Main.class.getName()), string, string2, string3, string4, string5, string6, string7});
     }
 
     private static String lIlllIlllIIIIlIIlllIllIII(String string) {
@@ -88,7 +92,7 @@ public class class_1499 {
         lllIIIllIIIIlllIlIIllIIll = arrby;
         Minecraft class_06672 = Minecraft.getMinecraft();
         if (class_06672.theWorld != null && class_06672.llIIlIllIllllIlIIIIlIIlll().IlIllllllIIlIIllllIIlIIIl().IllIIlllllllIIlIIlIIIIlIl().isOpen() && LunarClient.getInstance().getNetworkManager().lllIlIIlIIIlIlIIIllIlllIl()) {
-            class_06672.llIIlIllIllllIlIIIIlIIlll().IlIllllllIIlIIllllIIlIIIl().IllIIlllllllIIlIIlIIIIlIl().writeAndFlush((Object)new class_0917(LunarClient.getInstance().lllIlIIlIIIlIlIIIllIlllIl(), arrby));
+            class_06672.llIIlIllIllllIlIIIIlIIlll().IlIllllllIIlIIllllIIlIIIl().IllIIlllllllIIlIIlIIIIlIl().writeAndFlush((Object)new C17PacketCustomPayload(LunarClient.getInstance().lllIlIIlIIIlIlIIIllIlllIl(), arrby));
         }
     }
 

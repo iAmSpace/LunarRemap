@@ -47,7 +47,7 @@ extends class_0229 {
             if (this.IlIllllllIIlIIllllIIlIIIl.lIlllIlllIIIIlIIlllIllIII()) {
                 this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll();
             } else if (this.IlIllllllIIlIIllllIIlIIIl.lIllllIIlIIIlIllllllIIIll() != null) {
-                this.IlIllllllIIlIIllllIIlIIIl.IlIIIIIllllllIIlllIllllll().lllIIIllIIIIlllIlIIllIIll(this.IlIllllllIIlIIllllIIlIIIl.lIllllIIlIIIlIllllllIIIll());
+                this.IlIllllllIIlIIllllIIlIIIl.IlIIIIIllllllIIlllIllllll().onDisconnect(this.IlIllllllIIlIIllllIIlIIIl.lIllllIIlIIIlIllllllIIIll());
             }
         }
     }

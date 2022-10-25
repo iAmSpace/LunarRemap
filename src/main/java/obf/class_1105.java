@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import net.minecraft.crash.CrashReport;
+import net.minecraft.network.Packet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -148,14 +149,14 @@ public class class_1105 {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212, class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212, Packet class_07032) {
         class_0739 class_07392 = (class_0739)this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_15212.llllllIlIllllIlIlIlIIIIlI());
         if (class_07392 != null) {
             class_07392.lllIIIllIIIIlllIlIIllIIll(class_07032);
         }
     }
 
-    public void lllIlIIlIIIlIlIIIllIlllIl(class_1521 class_15212, class_0703 class_07032) {
+    public void lllIlIIlIIIlIlIIIllIlllIl(class_1521 class_15212, Packet class_07032) {
         class_0739 class_07392 = (class_0739)this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_15212.llllllIlIllllIlIlIlIIIIlI());
         if (class_07392 != null) {
             class_07392.lllIlIIlIIIlIlIIIllIlllIl(class_07032);

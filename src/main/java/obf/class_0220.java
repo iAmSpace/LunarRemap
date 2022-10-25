@@ -42,6 +42,7 @@ import java.util.UUID;
 import javax.imageio.ImageIO;
 
 import net.minecraft.crash.CrashReport;
+import net.minecraft.network.play.server.S03PacketTimeUpdate;
 import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.profiler.Profiler;
@@ -235,7 +236,7 @@ class_0721 {
         }
     }
 
-    public void lIIIIlIlIIlllllIIllIIlIII() {
+    public void stopServer() {
         if (!this.llllllIlIllllIlIlIlIIIIlI) {
             IIIllIllIIlIlIlIlIllllIIl.info("Stopping server");
             if (this.lIIIlIIIlIlllIllIIIlIIIlI() != null) {
@@ -324,7 +325,7 @@ class_0721 {
         }
         finally {
             try {
-                this.lIIIIlIlIIlllllIIllIIlIII();
+                this.stopServer();
                 this.IIlllIlIlllIllIIIlllIIlIl = true;
             }
             catch (Throwable throwable) {
@@ -423,7 +424,7 @@ class_0721 {
                 this.lllIlIIlIIIlIlIIIllIlllIl.endSection();
                 if (this.lIlIllIIlIIlIIlIIlIIlIIll % 20 == 0) {
                     this.lllIlIIlIIIlIlIIIllIlllIl.startSection("timeSync");
-                    this.lIlIlIIlIIIIlIIIIIlllIIII.lllIIIllIIIIlllIlIIllIIll(new class_1916(class_09762.IlIIIlIIIIllIIIllIIIIIIll(), class_09762.IIlllIlIlllIllIIIlllIIlIl(), class_09762.IlIIlllllIIlIlIlllllIllll().lllIlIIlIIIlIlIIIllIlllIl("doDaylightCycle")), class_09762.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
+                    this.lIlIlIIlIIIIlIIIIIlllIIII.lllIIIllIIIIlllIlIIllIIll(new S03PacketTimeUpdate(class_09762.IlIIIlIIIIllIIIllIIIIIIll(), class_09762.IIlllIlIlllIllIIIlllIIlIl(), class_09762.IlIIlllllIIlIlIlllllIllll().lllIlIIlIIIlIlIIIllIlllIl("doDaylightCycle")), class_09762.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
                     this.lllIlIIlIIIlIlIIIllIlllIl.endSection();
                 }
                 this.lllIlIIlIIIlIlIIIllIlllIl.startSection("tick");

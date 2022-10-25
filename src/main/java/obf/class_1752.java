@@ -9,6 +9,8 @@ package obf;/*
  *  org.lwjgl.input.Keyboard
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.network.play.client.C17PacketCustomPayload;
+import net.minecraft.util.ResourceLocation;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.init.Items;
@@ -137,8 +139,8 @@ extends class_0229 {
             }
             class_07752 = Unpooled.buffer();
             try {
-                new class_0181((ByteBuf)class_07752).lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII);
-                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0917(string, (ByteBuf)class_07752));
+                new PacketBuffer((ByteBuf)class_07752).lllIIIllIIIIlllIlIIllIIll(this.lIlllIlllIIIIlIIlllIllIII);
+                this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C17PacketCustomPayload(string, (ByteBuf)class_07752));
             }
             catch (Exception exception) {
                 lllIIIllIIIIlllIlIIllIIll.error("Couldn't send book info", (Throwable)exception);
@@ -265,7 +267,7 @@ extends class_0229 {
     private void lllIlIIlIIIlIlIIIllIlllIl(String string) {
         String string2 = this.IIIllIllIIlIlIlIlIllllIIl();
         String string3 = string2 + string;
-        int n = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl(string3 + "" + (Object)((Object)class_1227.lllIIIllIIIIlllIlIIllIIll) + "_", 118);
+        int n = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl(string3 + "" + (Object)((Object) EnumChatFormatting.BLACK) + "_", 118);
         if (n <= 118 && string3.length() < 256) {
             this.lllIIIllIIIIlllIlIIllIIll(string3);
         }
@@ -281,7 +283,7 @@ extends class_0229 {
         if (this.IIIllIIlIIIIIIlIlIIllIIlI) {
             String string = this.llIIlIlIlllIIllIlIlllIllI;
             if (this.IlIIIIIllllllIIlllIllllll) {
-                string = this.IllIIlllllllIIlIIlIIIIlIl / 6 % 2 == 0 ? string + "" + (Object)((Object)class_1227.lllIIIllIIIIlllIlIIllIIll) + "_" : string + "" + (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "_";
+                string = this.IllIIlllllllIIlIIlIIIIlIl / 6 % 2 == 0 ? string + "" + (Object)((Object) EnumChatFormatting.BLACK) + "_" : string + "" + (Object)((Object) EnumChatFormatting.GRAY) + "_";
             }
             String string2 = class_0616.lllIIIllIIIIlllIlIIllIIll("book.editTitle", new Object[0]);
             int n5 = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll(string2);
@@ -290,7 +292,7 @@ extends class_0229 {
             this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl(string, n3 + 36 + (116 - n6) / 2, n4 + 48, 0);
             String string3 = class_0616.lllIIIllIIIIlllIlIIllIIll("book.byAuthor", this.IlIllllllIIlIIllllIIlIIIl.llllIIIIlIIIlIIIIIIlIllll());
             int n7 = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll(string3);
-            this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object)class_1227.IIIllIllIIlIlIlIlIllllIIl) + string3, n3 + 36 + (116 - n7) / 2, n4 + 48 + 10, 0);
+            this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl((Object)((Object) EnumChatFormatting.DARK_GRAY) + string3, n3 + 36 + (116 - n7) / 2, n4 + 48 + 10, 0);
             String string4 = class_0616.lllIIIllIIIIlllIlIIllIIll("book.finalizeWarning", new Object[0]);
             this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll(string4, n3 + 36, n4 + 80, 116, 0);
         } else {
@@ -300,7 +302,7 @@ extends class_0229 {
                 string5 = this.IlIIlllllIIlIlIlllllIllll.lIllllIIlIIIlIllllllIIIll(this.lIlllIlllIlIIIIlllIlIlIIl);
             }
             if (this.IlIIIIIllllllIIlllIllllll) {
-                string5 = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl() ? string5 + "_" : (this.IllIIlllllllIIlIIlIIIIlIl / 6 % 2 == 0 ? string5 + "" + (Object)((Object)class_1227.lllIIIllIIIIlllIlIIllIIll) + "_" : string5 + "" + (Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + "_");
+                string5 = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl() ? string5 + "_" : (this.IllIIlllllllIIlIIlIIIIlIl / 6 % 2 == 0 ? string5 + "" + (Object)((Object) EnumChatFormatting.BLACK) + "_" : string5 + "" + (Object)((Object) EnumChatFormatting.GRAY) + "_");
             }
             int n8 = this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll(string);
             this.lIlIllIIlIIlIIlIIlIIlIIll.lllIlIIlIIIlIlIIIllIlllIl(string, n3 - n8 + this.IIIllIllIIlIlIlIlIllllIIl - 44, n4 + 16, 0);

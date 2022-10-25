@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
  */
 public class class_1748
 extends Item {
-    private class_2102 IIIllIllIIlIlIlIlIllllIIl;
+    private IIcon IIIllIllIIlIlIlIlIllllIIl;
 
     public class_1748() {
         this.IlIIIIIllllllIIlllIllllll(64);
@@ -48,7 +48,7 @@ extends Item {
         this.IIIllIllIIlIlIlIlIllllIIl = class_08872.lllIIIllIIIIlllIlIIllIIll(this.lIlIlIIlIIIIlIIIIIlllIIII() + "_cast");
     }
 
-    public class_2102 IlIIIlIIIIllIIIllIIIIIIll() {
+    public IIcon IlIIIlIIIIllIIIllIIIIIIll() {
         return this.IIIllIllIIlIlIlIlIllllIIl;
     }
 

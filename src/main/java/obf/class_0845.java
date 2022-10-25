@@ -1,23 +1,22 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Proxy;
 import java.net.URL;
+import java.net.URLConnection;
+import java.util.Iterator;
 import java.util.Map;
 
 final class class_0845
 implements Runnable {
-    final /* synthetic */ class_1832 lllIIIllIIIIlllIlIIllIIll;
-    final /* synthetic */ String lllIlIIlIIIlIlIIIllIlllIl;
-    final /* synthetic */ Proxy IlIllllllIIlIIllllIIlIIIl;
-    final /* synthetic */ Map lIlllIlllIIIIlIIlllIllIII;
-    final /* synthetic */ File IlIIIIIllllllIIlllIllllll;
+    final /* synthetic */ class_1832 lllIIIllIIIIlllIlIIllIIll; //
+    final /* synthetic */ String lllIlIIlIIIlIlIIIllIlllIl; //
+    final /* synthetic */ Proxy IlIllllllIIlIIllllIIlIIIl; //
+    final /* synthetic */ Map lIlllIlllIIIIlIIlllIllIII; //
+    final /* synthetic */ File IlIIIIIllllllIIlllIllllll; //
     final /* synthetic */ class_1978 lIllllIIlIIIlIllllllIIIll;
-    final /* synthetic */ int IIIllIIlIIIIIIlIlIIllIIlI;
+    final /* synthetic */ int IIIllIIlIIIIIIlIlIIllIIlI; //
 
     class_0845(class_1832 class_18322, String string, Proxy proxy, Map map, File file, class_1978 class_19782, int n) {
         this.lllIIIllIIIIlllIlIIllIIll = class_18322;
@@ -29,25 +28,17 @@ implements Runnable {
         this.IIIllIIlIIIIIIlIlIIllIIlI = n;
     }
 
-    /*
-     * WARNING - Removed try catching itself - possible behaviour change.
-     * Unable to fully structure code
-     * Enabled aggressive block sorting
-     * Enabled unnecessary exception pruning
-     * Enabled aggressive exception aggregation
-     * Lifted jumps to return sites
-     */
     @Override
     public void run() {
-        block39: {
+        /*block39: {
             block35: {
                 block36: {
                     var1_1 = null;
                     var2_2 = null;
                     var3_3 = null;
                     if (this.lllIIIllIIIIlllIlIIllIIll != null) {
-                        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll("Downloading Texture Pack");
-                        this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII("Making Request...");
+                        this.lllIIIllIIIIlllIlIIllIIll.resetProgressAndMessage("Downloading Texture Pack");
+                        this.lllIIIllIIIIlllIlIIllIIll.resetProgresAndWorkingMessage("Making Request...");
                     }
                     var4_4 = new byte[4096];
                     var5_8 = new URL(this.lllIlIIlIIIlIlIIIllIlllIl);
@@ -63,7 +54,7 @@ implements Runnable {
                     var7_10 = var1_1.getContentLength();
                     var9_13 = var1_1.getContentLength();
                     if (this.lllIIIllIIIIlllIlIIllIIll != null) {
-                        this.lllIIIllIIIIlllIlIIllIIll.lIlllIlllIIIIlIIlllIllIII(String.format("Downloading file (%.2f MB)...", new Object[]{Float.valueOf(var7_10 / 1000.0f / 1000.0f)}));
+                        this.lllIIIllIIIIlllIlIIllIIll.resetProgresAndWorkingMessage(String.format("Downloading file (%.2f MB)...", new Object[]{Float.valueOf(var7_10 / 1000.0f / 1000.0f)}));
                     }
                     if (!this.IlIIIIIllllllIIlllIllllll.exists()) ** GOTO lbl49
                     var10_14 = this.IlIIIIIllllllIIlllIllllll.length();
@@ -167,7 +158,156 @@ lbl93:
                 }
             }
             catch (IOException var4_7) {}
+        }*/
+
+        // That was pain
+
+        File p_151223_0_ = this.IlIIIIIllllllIIlllIllllll;
+        String p_151223_1_ = this.lllIlIIlIIIlIlIIIllIlllIl;
+        class_1978 p_151223_2_ = this.lIllllIIlIIIlIllllllIIIll;
+        Map p_151223_3_ = this.lIlllIlllIIIIlIIlllIllIII;
+        int p_151223_4_ = this.IIIllIIlIIIIIIlIlIIllIIlI;
+        class_1832 p_151223_5_ = this.lllIIIllIIIIlllIlIIllIIll;
+        Proxy p_151223_6_ = this.IlIllllllIIlIIllllIIlIIIl;
+
+        URLConnection var1 = null;
+        InputStream var2 = null;
+        DataOutputStream var3 = null;
+
+        if (p_151223_5_ != null)
+        {
+            p_151223_5_.resetProgressAndMessage("Downloading Texture Pack");
+            p_151223_5_.resetProgresAndWorkingMessage("Making Request...");
         }
+
+        try
+        {
+            byte[] var4 = new byte[4096];
+            URL var5 = new URL(p_151223_1_);
+            var1 = var5.openConnection(p_151223_6_);
+            float var6 = 0.0F;
+            float var7 = (float)p_151223_3_.entrySet().size();
+            Iterator var8 = p_151223_3_.entrySet().iterator();
+
+            while (var8.hasNext())
+            {
+                Map.Entry var9 = (Map.Entry)var8.next();
+                var1.setRequestProperty((String)var9.getKey(), (String)var9.getValue());
+
+                if (p_151223_5_ != null)
+                {
+                    p_151223_5_.setLoadingProgress((int)(++var6 / var7 * 100.0F));
+                }
+            }
+
+            var2 = var1.getInputStream();
+            var7 = (float)var1.getContentLength();
+            int var28 = var1.getContentLength();
+
+            if (p_151223_5_ != null)
+            {
+                p_151223_5_.resetProgresAndWorkingMessage(String.format("Downloading file (%.2f MB)...", new Object[] {Float.valueOf(var7 / 1000.0F / 1000.0F)}));
+            }
+
+            if (p_151223_0_.exists())
+            {
+                long var29 = p_151223_0_.length();
+
+                if (var29 == (long)var28)
+                {
+                    p_151223_2_.func_148522_a(p_151223_0_);
+
+                    if (p_151223_5_ != null)
+                    {
+                        p_151223_5_.func_146586_a();
+                    }
+
+                    return;
+                }
+
+                HttpUtil.getLogger().warn("Deleting " + p_151223_0_ + " as it does not match what we currently have (" + var28 + " vs our " + var29 + ").");
+                p_151223_0_.delete();
+            }
+            else if (p_151223_0_.getParentFile() != null)
+            {
+                p_151223_0_.getParentFile().mkdirs();
+            }
+
+            var3 = new DataOutputStream(new FileOutputStream(p_151223_0_));
+
+            if (p_151223_4_ > 0 && var7 > (float)p_151223_4_)
+            {
+                if (p_151223_5_ != null)
+                {
+                    p_151223_5_.func_146586_a();
+                }
+
+                throw new IOException("Filesize is bigger than maximum allowed (file is " + var6 + ", limit is " + p_151223_4_ + ")");
+            }
+
+            boolean var30 = false;
+            int var31;
+
+            while ((var31 = var2.read(var4)) >= 0)
+            {
+                var6 += (float)var31;
+
+                if (p_151223_5_ != null)
+                {
+                    p_151223_5_.setLoadingProgress((int)(var6 / var7 * 100.0F));
+                }
+
+                if (p_151223_4_ > 0 && var6 > (float)p_151223_4_)
+                {
+                    if (p_151223_5_ != null)
+                    {
+                        p_151223_5_.func_146586_a();
+                    }
+
+                    throw new IOException("Filesize was bigger than maximum allowed (got >= " + var6 + ", limit was " + p_151223_4_ + ")");
+                }
+
+                var3.write(var4, 0, var31);
+            }
+
+            p_151223_2_.func_148522_a(p_151223_0_);
+
+            if (p_151223_5_ != null)
+            {
+                p_151223_5_.func_146586_a();
+            }
+        }
+        catch (Throwable var26)
+        {
+            var26.printStackTrace();
+        }
+        finally
+        {
+            try
+            {
+                if (var2 != null)
+                {
+                    var2.close();
+                }
+            }
+            catch (IOException var25)
+            {
+                ;
+            }
+
+            try
+            {
+                if (var3 != null)
+                {
+                    var3.close();
+                }
+            }
+            catch (IOException var24)
+            {
+                ;
+            }
+        }
+
     }
 }
 

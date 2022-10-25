@@ -54,7 +54,7 @@ extends class_1246 {
         }
         int n4 = Math.min((n + 1) * n2, list.size());
         ChatComponentTranslation class_17902 = new ChatComponentTranslation("commands.help.header", n + 1, n3 + 1);
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIllllllIIlIIllllIIlIIIl);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.DARK_GREEN);
         class_19692.lllIIIllIIIIlllIlIIllIIll(class_17902);
         for (int i = n * n2; i < n4; ++i) {
             class_0291 class_02913 = (class_0291)list.get(i);
@@ -64,7 +64,7 @@ extends class_1246 {
         }
         if (n == 0 && class_19692 instanceof class_0814) {
             ChatComponentTranslation class_17904 = new ChatComponentTranslation("commands.help.footer", new Object[0]);
-            class_17904.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.lIIIIlIlIIlllllIIllIIlIII);
+            class_17904.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GREEN);
             class_19692.lllIIIllIIIIlllIlIIllIIll(class_17904);
         }
     }

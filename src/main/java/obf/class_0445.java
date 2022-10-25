@@ -62,7 +62,7 @@ extends AudioDeviceBase {
                 this.lllIIIllIIIIlllIlIIllIIll = (SourceDataLine)line;
                 this.lllIIIllIIIIlllIlIIllIIll.open(this.lllIlIIlIIIlIlIIIllIlllIl);
                 this.lllIIIllIIIIlllIlIIllIIll.start();
-                this.lllIIIllIIIIlllIlIIllIIll((float)((Integer) LunarClient.getInstance().getSettingsManager().llIIllIllIlIIlIIllIllllll.lIlllIlllIIIIlIIlllIllIII()).intValue());
+                this.lllIIIllIIIIlllIlIIllIIll((float)((Integer) LunarClient.getInstance().getSettingsManager().llIIllIllIlIIlIIllIllllll.getValue()).intValue());
             }
         }
         catch (RuntimeException runtimeException) {

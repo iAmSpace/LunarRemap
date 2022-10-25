@@ -5,6 +5,7 @@ package obf;/*
  *  com.moonsworth.client.nethandler.LCPacket
  *  com.moonsworth.client.nethandler.client.LCPacketEmoteBroadcast
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.client.nethandler.LCPacket;
 import com.moonsworth.client.nethandler.client.LCPacketEmoteBroadcast;
 import com.moonsworth.lunar.client.LunarClient;

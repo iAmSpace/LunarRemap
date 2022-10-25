@@ -5,17 +5,18 @@ package obf;/*
  *  io.netty.util.concurrent.GenericFutureListener
  */
 import io.netty.util.concurrent.GenericFutureListener;
+import net.minecraft.network.Packet;
 
 class class_0244 {
-    private final class_0703 lllIIIllIIIIlllIlIIllIIll;
+    private final Packet lllIIIllIIIIlllIlIIllIIll;
     private final GenericFutureListener[] lllIlIIlIIIlIlIIIllIlllIl;
 
-    public class_0244(class_0703 class_07032, GenericFutureListener ... arrgenericFutureListener) {
+    public class_0244(Packet class_07032, GenericFutureListener ... arrgenericFutureListener) {
         this.lllIIIllIIIIlllIlIIllIIll = class_07032;
         this.lllIlIIlIIIlIlIIIllIlllIl = arrgenericFutureListener;
     }
 
-    static /* synthetic */ class_0703 lllIIIllIIIIlllIlIIllIIll(class_0244 class_02442) {
+    static /* synthetic */ Packet lllIIIllIIIIlllIlIIllIIll(class_0244 class_02442) {
         return class_02442.lllIIIllIIIIlllIlIIllIIll;
     }
 

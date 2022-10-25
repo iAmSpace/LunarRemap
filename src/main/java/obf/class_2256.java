@@ -1,13 +1,15 @@
 package obf;
 
+import com.moonsworth.lunar.client.config.Setting;
+
 /*
  * Decompiled with CFR 0.150.
  */
 public class class_2256
-extends class_1665 {
-    private class_1609 lllIIIllIIIIlllIlIIllIIll = new class_1609(this, "Keybind").lllIlIIlIIIlIlIIIllIlllIl(0);
+extends AbstractModule {
+    private Setting lllIIIllIIIIlllIlIIllIIll = new Setting(this, "Keybind").setValue(0);
 
-    public class_1609 lllIIIllIIIIlllIlIIllIIll() {
+    public Setting lllIIIllIIIIlllIlIIllIIll() {
         return this.lllIIIllIIIIlllIlIIllIIll;
     }
 

@@ -70,7 +70,7 @@ implements class_1622 {
             bl = false;
         }
         ChatComponentTranslation class_17902 = new ChatComponentTranslation("chat.type.admin", class_19692.llllIIIIlIIIlIIIIIIlIllll(), new ChatComponentTranslation(string, arrobject));
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IllIIlllllllIIlIIlIIIIlIl);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.GRAY);
         class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIlIIlIIIlIlIIIllIlllIl(true);
         if (bl) {
             for (class_0814 class_08142 : class_0220.IlIIlllllIIlIlIlllllIllll().lIIIllIIIIIllllIlIlIllIll().IlIIIIIllllllIIlllIllllll) {

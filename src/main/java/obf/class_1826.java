@@ -4,7 +4,9 @@ package obf;/*
  * Could not load the following classes:
  *  org.lwjgl.opengl.GL11
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
+import com.moonsworth.lunar.client.util.cosmetic.Cosmetic;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 

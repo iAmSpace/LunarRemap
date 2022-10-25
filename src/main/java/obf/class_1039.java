@@ -11,9 +11,9 @@ import java.util.List;
 public class class_1039
 extends Block {
     private final boolean llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
-    private class_2102 llIlllIIllIlllIlIlIlIIIll;
-    private class_2102 IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llIlllIIllIlllIlIlIlIIIll;
+    private IIcon IIIIlIIlIIIllIIIIllIIIlII;
 
     public class_1039(boolean bl) {
         super(class_1855.IlIlIIlllIllllllllIIIlIlI);
@@ -23,7 +23,7 @@ extends Block {
         this.lllIIIllIIIIlllIlIIllIIll(class_0931.lIlllIlllIIIIlIIlllIllIII);
     }
 
-    public class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public IIcon llIlllIIllIlllIlIlIlIIIll() {
         return this.IIIIlIIlIIIllIIIIllIIIlII;
     }
 
@@ -32,12 +32,12 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         int n3 = class_1039.IllIIlllllllIIlIIlIIIIlIl(n2);
         return n3 > 5 ? this.IIIIlIIlIIIllIIIIllIIIlII : (n == n3 ? (!class_1039.IIIllIllIIlIlIlIlIllllIIl(n2) && this.lIlllIlllIlIIIIlllIlIlIIl <= 0.0 && this.IlIIlllllIIlIlIlllllIllll <= 0.0 && this.llIIlIlIlllIIllIlIlllIllI <= 0.0 && this.IllIIIIllIIllIllIlllIlIIl >= 1.0 && this.IIIIIIIIlIllIIllIIlllIllI >= 1.0 && this.IIlIIlIlIlIllIIlIlIIIIlll >= 1.0 ? this.IIIIlIIlIIIllIIIIllIIIlII : this.lIlIIllllIlIIIIllIIIIlIIl) : (n == class_0573.lllIIIllIIIIlllIlIIllIIll[n3] ? this.llIlllIIllIlllIlIlIlIIIll : this.llIIIIllIIIIIIIlIIIlIIIIl));
     }
 
-    public static class_2102 lIlllIlllIIIIlIIlllIllIII(String string) {
+    public static IIcon lIlllIlllIIIIlIIlllIllIII(String string) {
         return string == "piston_side" ? Blocks.llIIIIllIIIIIIIlIIIlIIIIl.llIIIIllIIIIIIIlIIIlIIIIl : (string == "piston_top_normal" ? Blocks.llIIIIllIIIIIIIlIIIlIIIIl.IIIIlIIlIIIllIIIIllIIIlII : (string == "piston_top_sticky" ? Blocks.llIIIlllIlllIlIllIIIIllIl.IIIIlIIlIIIllIIIIllIIIlII : (string == "piston_inner" ? Blocks.llIIIIllIIIIIIIlIIIlIIIIl.lIlIIllllIlIIIIllIIIIlIIl : null)));
     }
 

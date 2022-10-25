@@ -9,8 +9,8 @@ import java.util.Random;
 
 public class class_2089
 extends Block {
-    private class_2102[] llllllIlIllllIlIlIlIIIIlI;
-    private class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon[] llllllIlIllllIlIlIlIIIIlI;
+    private IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
 
     protected class_2089(class_1855 class_18552) {
         super(class_18552);
@@ -20,12 +20,12 @@ extends Block {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.lIlIIllllIlIIIIllIIIIlIIl[0];
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(class_1843 class_18432, int n, int n2, int n3, int n4) {
         if (n4 != 1 && n4 != 0) {
             boolean bl;
             int n5 = this.IIIllIIlIIIIIIlIlIIllIIlI(class_18432, n, n2, n3);
@@ -64,8 +64,8 @@ extends Block {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.llllllIlIllllIlIlIlIIIIlI = new class_2102[2];
-        this.lIlIIllllIlIIIIllIIIIlIIl = new class_2102[2];
+        this.llllllIlIllllIlIlIlIIIIlI = new IIcon[2];
+        this.lIlIIllllIlIIIIllIIIIlIIl = new IIcon[2];
         this.llllllIlIllllIlIlIlIIIIlI[0] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_upper");
         this.lIlIIllllIlIIIIllIIIIlIIl[0] = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_lower");
         this.llllllIlIllllIlIlIlIIIIlI[1] = new class_1507(this.llllllIlIllllIlIlIlIIIIlI[0], true, false);

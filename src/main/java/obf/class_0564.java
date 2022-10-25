@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -46,7 +47,7 @@ extends class_1334 {
             this.lllIIIllIIIIlllIlIIllIIll(class_15212);
         }
         this.IlIIlllllIIlIlIlllllIllll.endStartSection("connection");
-        this.IlIlIIlllIllllllllIIIlIlI.lllIIIllIIIIlllIlIIllIIll();
+        this.IlIlIIlllIllllllllIIIlIlI.onNetworkTick();
         this.IlIIlllllIIlIlIlllllIllll.endStartSection("chunkCache");
         this.llllIIIIlIIIlIIIIIIlIllll.lllIlIIlIIIlIlIIIllIlllIl();
         this.IlIIlllllIIlIlIlllllIllll.endStartSection("blocks");

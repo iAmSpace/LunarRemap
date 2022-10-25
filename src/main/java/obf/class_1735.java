@@ -1,5 +1,6 @@
 package obf;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.MathHelper;
 
 /*
@@ -14,7 +15,7 @@ extends class_0123 {
         super(new ResourceLocation("minecraft:minecart.inside"));
         this.lIIIIlIlIIlllllIIllIIlIII = class_08142;
         this.llIIlllIllIllllIIIlIIIIII = class_18602;
-        this.IllIIIllIIIIlIlIlIllIIlll = class_0350.lllIIIllIIIIlllIlIIllIIll;
+        this.IllIIIllIIIIlIlIlIllIIlll = AttenuationType.NONE;
         this.IllIIlllllllIIlIIlIIIIlIl = true;
         this.IIIllIllIIlIlIlIlIllllIIl = 0;
     }

@@ -156,12 +156,12 @@ public class class_1271 {
         return new float[]{f4, f5};
     }
 
-    public static float[] lllIIIllIIIIlllIlIIllIIll(class_1665 class_16652, float f, float f2, class_0321 class_03212) {
+    public static float[] lllIIIllIIIIlllIlIIllIIll(AbstractModule class_16652, float f, float f2, class_0321 class_03212) {
         float f3 = class_03212.lllIIIllIIIIlllIlIIllIIll();
         float f4 = class_03212.lllIlIIlIIIlIlIIIllIlllIl();
         class_0767 class_07672 = class_1271.lllIIIllIIIIlllIlIIllIIll(f, f2, class_03212);
-        float f5 = class_16652.llIllllIlIllIIIlIllIIlIlI * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue();
-        float f6 = class_16652.lIlllIlllIlIIIIlllIlIlIIl * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.lIlllIlllIIIIlIIlllIllIII()).floatValue();
+        float f5 = class_16652.llIllllIlIllIIIlIllIIlIlI * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue();
+        float f6 = class_16652.lIlllIlllIlIIIIlllIlIlIIl * ((Float)class_16652.llIIlIlIlllIIllIlIlllIllI.getValue()).floatValue();
         float f7 = 0.0f;
         float f8 = 0.0f;
         switch (class_07672) {

@@ -31,6 +31,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import net.minecraft.crash.CrashReport;
+import net.minecraft.network.play.server.S40PacketDisconnect;
 import net.minecraft.util.IChatComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -93,11 +94,11 @@ public class class_0267 {
                 if (!class_08002.lIlllIlllIIIIlIIlllIllIII()) {
                     iterator.remove();
                     if (class_08002.lIllllIIlIIIlIllllllIIIll() != null) {
-                        class_08002.IlIIIIIllllllIIlllIllllll().lllIIIllIIIIlllIlIIllIIll(class_08002.lIllllIIlIIIlIllllllIIIll());
+                        class_08002.IlIIIIIllllllIIlllIllllll().onDisconnect(class_08002.lIllllIIlIIIlIllllllIIIll());
                         continue;
                     }
                     if (class_08002.IlIIIIIllllllIIlllIllllll() == null) continue;
-                    class_08002.IlIIIIIllllllIIlllIllllll().lllIIIllIIIIlllIlIIllIIll(new class_0722("Disconnected"));
+                    class_08002.IlIIIIIllllllIIlllIllllll().onDisconnect(new class_0722("Disconnected"));
                     continue;
                 }
                 try {
@@ -113,7 +114,7 @@ public class class_0267 {
                     }
                     lllIlIIlIIIlIlIIIllIlllIl.warn("Failed to handle packet for " + class_08002.lllIlIIlIIIlIlIIIllIlllIl(), (Throwable)exception);
                     object = new class_0722("Internal server error");
-                    class_08002.lllIIIllIIIIlllIlIIllIIll(new class_0542((IChatComponent)object), new class_0521(this, class_08002, (class_0722)object));
+                    class_08002.lllIIIllIIIIlllIlIIllIIll(new S40PacketDisconnect((IChatComponent)object), new class_0521(this, class_08002, (class_0722)object));
                     class_08002.IIIllIIlIIIIIIlIlIIllIIlI();
                 }
             }

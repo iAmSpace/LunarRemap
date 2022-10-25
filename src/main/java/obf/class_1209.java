@@ -12,7 +12,7 @@ extends class_0854 {
     private static final String[][] llIlllIIllIlllIlIlIlIIIll = new String[][]{{"flower_dandelion"}, {"flower_rose", "flower_blue_orchid", "flower_allium", "flower_houstonia", "flower_tulip_red", "flower_tulip_orange", "flower_tulip_white", "flower_tulip_pink", "flower_oxeye_daisy"}};
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"poppy", "blueOrchid", "allium", "houstonia", "tulipRed", "tulipOrange", "tulipWhite", "tulipPink", "oxeyeDaisy"};
     public static final String[] lIlIIllllIlIIIIllIIIIlIIl = new String[]{"dandelion"};
-    private class_2102[] IIIIlIIlIIIllIIIIllIIIlII;
+    private IIcon[] IIIIlIIlIIIllIIIIllIIIlII;
     private int lllIIIIIIlIlllIIlIlIIIllI;
 
     protected class_1209(int n) {
@@ -21,7 +21,7 @@ extends class_0854 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         if (n2 >= this.IIIIlIIlIIIllIIIIllIIIlII.length) {
             n2 = 0;
         }
@@ -30,7 +30,7 @@ extends class_0854 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
-        this.IIIIlIIlIIIllIIIIllIIIlII = new class_2102[llIlllIIllIlllIlIlIlIIIll[this.lllIIIIIIlIlllIIlIlIIIllI].length];
+        this.IIIIlIIlIIIllIIIIllIIIlII = new IIcon[llIlllIIllIlllIlIlIlIIIll[this.lllIIIIIIlIlllIIlIlIIIllI].length];
         for (int i = 0; i < this.IIIIlIIlIIIllIIIIllIIIlII.length; ++i) {
             this.IIIIlIIlIIIllIIIIllIIIlII[i] = class_08872.lllIIIllIIIIlllIlIIllIIll(llIlllIIllIlllIlIlIlIIIll[this.lllIIIIIIlIlllIIlIlIIIllI][i]);
         }

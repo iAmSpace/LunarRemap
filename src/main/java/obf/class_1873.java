@@ -7,6 +7,7 @@ package obf;/*
 import java.awt.Color;
 import java.util.List;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import org.lwjgl.opengl.GL11;
 
@@ -48,7 +49,7 @@ extends class_0759 {
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl - 0.5f, this.lllIIIllIIIIlllIlIIllIIll + this.IlIllllllIIlIIllllIIlIIIl, this.lllIlIIlIIIlIlIIIllIlllIl, -1357572843);
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll, this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII, this.lllIIIllIIIIlllIlIIllIIll + this.IlIllllllIIlIIllllIIlIIIl, this.lllIlIIlIIIlIlIIIllIlllIl + this.lIlllIlllIIIIlIIlllIllIII + 0.5f, -1357572843);
         class_0210.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll + 4.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 3.0f, this.lllIIIllIIIIlllIlIIllIIll + 20.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 19.0f, this.IIIllIIlIIIIIIlIlIIllIIlI.IIIllIIlIIIIIIlIlIIllIIlI() ? class_0115.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.IIIllIllIIlIlIlIlIllllIIl()) : -13158601);
-        if (this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII().startsWith(class_1227.llIIllIllIlIIlIIllIllllll.toString())) {
+        if (this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII().startsWith(EnumChatFormatting.RED.toString())) {
             GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
             class_0857.lllIIIllIIIIlllIlIIllIIll(lIIIIlIlIIlllllIIllIIlIII, 6.5f, this.lllIIIllIIIIlllIlIIllIIll + 24.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 4.0f);
             LunarClient.getInstance().robotoLight16px.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII(), this.lllIIIllIIIIlllIlIIllIIll + 40.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 2.0f, -1);
@@ -58,7 +59,7 @@ extends class_0759 {
             LunarClient.getInstance().robotoBold12px.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lllIIIllIIIIlllIlIIllIIll(), this.lllIIIllIIIIlllIlIIllIIll + 24.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 11.0f, -5460820);
         }
         GL11.glColor4f((float)1.0f, (float)1.0f, (float)1.0f, (float)1.0f);
-        object = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(class_1227.lllIIIllIIIIlllIlIIllIIll(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()), this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl());
+        object = LunarClient.getInstance().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.getTextWithoutFormattingCodes(this.IIIllIIlIIIIIIlIlIIllIIlI.lIlllIlllIIIIlIIlllIllIII()), this.IIIllIIlIIIIIIlIlIIllIIlI.IlIllllllIIlIIllllIIlIIIl());
         class_0857.lllIIIllIIIIlllIlIIllIIll((ResourceLocation)object, 7.0f, this.lllIIIllIIIIlllIlIIllIIll + 5.0f, this.lllIlIIlIIIlIlIIIllIlllIl + 4.0f);
         boolean bl2 = bl && this.lllIIIllIIIIlllIlIIllIIll(f, f2) && f > this.lllIIIllIIIIlllIlIIllIIll + this.IlIllllllIIlIIllllIIlIIIl - 20.0f;
         float f3 = this.IIIllIllIIlIlIlIlIllllIIl.lllIIIllIIIIlllIlIIllIIll(bl2);

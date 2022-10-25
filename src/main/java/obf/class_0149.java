@@ -29,7 +29,7 @@ extends class_1469 {
 
     @Override
     public boolean lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972) {
-        return class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 ? true : super.lllIIIllIIIIlllIlIIllIIll(class_08972);
+        return class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor ? true : super.lllIIIllIIIIlllIlIIllIIll(class_08972);
     }
 
     @Override

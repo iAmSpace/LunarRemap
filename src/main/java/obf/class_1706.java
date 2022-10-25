@@ -7,6 +7,9 @@ package obf;/*
  */
 import java.awt.Color;
 
+import net.minecraft.util.ResourceLocation;
+import com.moonsworth.lunar.client.font.FontRegistry;
+import com.moonsworth.lunar.client.font.LCFontRenderer;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.lang3.text.WordUtils;
 import org.lwjgl.opengl.GL11;

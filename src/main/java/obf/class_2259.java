@@ -14,7 +14,7 @@ public abstract class class_2259
 extends class_0245 {
     int[] llllllIlIllllIlIlIlIIIIlI;
     protected int lIlIIllllIlIIIIllIIIIlIIl;
-    protected class_2102[][] llIlllIIllIlllIlIlIlIIIll = new class_2102[2][];
+    protected IIcon[][] llIlllIIllIlllIlIlIlIIIll = new IIcon[2][];
 
     public class_2259() {
         super(class_1855.IllIIIllIIIIlIlIlIllIIlll, false);
@@ -209,7 +209,7 @@ extends class_0245 {
     }
 
     @Override
-    public abstract class_2102 lllIIIllIIIIlllIlIIllIIll(int var1, int var2);
+    public abstract IIcon lllIIIllIIIIlllIlIIllIIll(int var1, int var2);
 
     public void lllIlIIlIIIlIlIIIllIlllIl(boolean bl) {
         this.IIIIlIIlIIIllIIIIllIIIlII = bl;

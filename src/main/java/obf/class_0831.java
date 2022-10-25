@@ -8,6 +8,7 @@ package obf;/*
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -32,8 +33,8 @@ extends class_1518 {
     protected int lllIIIllIIIIlllIlIIllIIll(class_2174 class_21742, int n, float f) {
         Item class_06112;
         ItemStack class_08972 = class_21742.lllIIlIIIllllllIIIIlIlIlI.lllIlIIlIIIlIlIIIllIlllIl(3 - n);
-        if (class_08972 != null && (class_06112 = class_08972.lllIIIllIIIIlllIlIIllIIll()) instanceof class_0981) {
-            class_0981 class_09812 = (class_0981)class_06112;
+        if (class_08972 != null && (class_06112 = class_08972.lllIIIllIIIIlllIlIIllIIll()) instanceof ItemArmor) {
+            ItemArmor class_09812 = (ItemArmor)class_06112;
             this.lllIIIllIIIIlllIlIIllIIll(class_0796.lllIIIllIIIIlllIlIIllIIll(class_09812, n));
             class_1931 class_19312 = n == 2 ? this.IllIIlllllllIIlIIlIIIIlIl : this.IIIllIIlIIIIIIlIlIIllIIlI;
             class_19312.IIIllIIlIIIIIIlIlIIllIIlI.IllIIIllIIIIlIlIlIllIIlll = n == 0;
@@ -47,7 +48,7 @@ extends class_1518 {
             class_19312.lllIIIllIIIIlllIlIIllIIll = this.llIIllIllIlIIlIIllIllllll.lllIIIllIIIIlllIlIIllIIll;
             class_19312.lllIlIIlIIIlIlIIIllIlllIl = this.llIIllIllIlIIlIIllIllllll.lllIlIIlIIIlIlIIIllIlllIl;
             class_19312.lIlllIlllIIIIlIIlllIllIII = this.llIIllIllIlIIlIIllIllllll.lIlllIlllIIIIlIIlllIllIII;
-            if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() == class_0557.lllIIIllIIIIlllIlIIllIIll) {
+            if (class_09812.IlIIIlIIIIllIIIllIIIIIIll() == ArmorMaterial.CLOTH) {
                 int n2 = class_09812.lllIIlIIIllllllIIIIlIlIlI(class_08972);
                 float f2 = (float)(n2 >> 16 & 0xFF) / 255.0f;
                 float f3 = (float)(n2 >> 8 & 0xFF) / 255.0f;
@@ -70,8 +71,8 @@ extends class_1518 {
     protected void lllIlIIlIIIlIlIIIllIlllIl(class_2174 class_21742, int n, float f) {
         Item class_06112;
         ItemStack class_08972 = class_21742.lllIIlIIIllllllIIIIlIlIlI.lllIlIIlIIIlIlIIIllIlllIl(3 - n);
-        if (class_08972 != null && (class_06112 = class_08972.lllIIIllIIIIlllIlIIllIIll()) instanceof class_0981) {
-            this.lllIIIllIIIIlllIlIIllIIll(class_0796.lllIlIIlIIIlIlIIIllIlllIl((class_0981)class_06112, n));
+        if (class_08972 != null && (class_06112 = class_08972.lllIIIllIIIIlllIlIIllIIll()) instanceof ItemArmor) {
+            this.lllIIIllIIIIlllIlIIllIIll(class_0796.lllIlIIlIIIlIlIIIllIlllIl((ItemArmor)class_06112, n));
             GL11.glColor3f((float)1.0f, (float)1.0f, (float)1.0f);
         }
     }

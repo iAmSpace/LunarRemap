@@ -5,6 +5,8 @@ package obf;/*
  *  com.google.common.collect.Lists
  */
 import com.google.common.collect.Lists;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;

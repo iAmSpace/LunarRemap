@@ -6,6 +6,7 @@ package obf;/*
  */
 import java.util.Random;
 
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -95,7 +96,7 @@ extends class_1603 {
                 }
                 for (int i = 0; i <= 1; ++i) {
                     this.IllIIIllIIIIlIlIlIllIIlll.setSeed(187L);
-                    class_2102 class_21022 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972.IllIIIllIIIIlIlIlIllIIlll(), i);
+                    IIcon class_21022 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972.IllIIIllIIIIlIlIlIllIIlll(), i);
                     if (this.lllIIIllIIIIlllIlIIllIIll) {
                         int n3 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972, i);
                         float f9 = (float)(n3 >> 16 & 0xFF) / 255.0f;
@@ -119,7 +120,7 @@ extends class_1603 {
                 } else {
                     GL11.glScalef((float)0.5f, (float)0.5f, (float)0.5f);
                 }
-                class_2102 class_21023 = class_08972.lllIlIIlIIIlIlIIIllIlllIl();
+                IIcon class_21023 = class_08972.lllIlIIlIIIlIlIIIllIlllIl();
                 if (this.lllIIIllIIIIlllIlIIllIIll) {
                     int n4 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972, 0);
                     float f12 = (float)(n4 >> 16 & 0xFF) / 255.0f;
@@ -144,7 +145,7 @@ extends class_1603 {
         return this.lllIlIIlIIIlIlIIIllIlllIl.IlIIIIIllllllIIlllIllllll.lllIIIllIIIIlllIlIIllIIll(class_17812.lIlllIlllIIIIlIIlllIllIII().IlIllllllIIlIIllllIIlIIIl());
     }
 
-    private void lllIIIllIIIIlllIlIIllIIll(class_1781 class_17812, class_2102 class_21022, int n, float f, float f2, float f3, float f4) {
+    private void lllIIIllIIIIlllIlIIllIIll(class_1781 class_17812, IIcon class_21022, int n, float f, float f2, float f3, float f4) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         if (class_21022 == null) {
             class_1682 class_16822 = Minecraft.getMinecraft().llIIlIIllIIllIlIIllIIllII();
@@ -192,14 +193,14 @@ extends class_1603 {
                 GL11.glPushMatrix();
                 float f15 = 0.125f;
                 GL11.glScalef((float)f15, (float)f15, (float)f15);
-                float f16 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 3000L) / 3000.0f * 8.0f;
+                float f16 = (float)(Minecraft.getSystemTime() % 3000L) / 3000.0f * 8.0f;
                 GL11.glTranslatef((float)f16, (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)-50.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_2059.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 255, 255, f12);
                 GL11.glPopMatrix();
                 GL11.glPushMatrix();
                 GL11.glScalef((float)f15, (float)f15, (float)f15);
-                f16 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % 4873L) / 4873.0f * 8.0f;
+                f16 = (float)(Minecraft.getSystemTime() % 4873L) / 4873.0f * 8.0f;
                 GL11.glTranslatef((float)(-f16), (float)0.0f, (float)0.0f);
                 GL11.glRotatef((float)10.0f, (float)0.0f, (float)0.0f, (float)1.0f);
                 class_2059.lllIIIllIIIIlllIlIIllIIll(class_08682, 0.0f, 0.0f, 1.0f, 1.0f, 255, 255, f12);
@@ -237,7 +238,7 @@ extends class_1603 {
 
     public void lllIIIllIIIIlllIlIIllIIll(class_1854 class_18542, class_1682 class_16822, ItemStack class_08972, int n, int n2) {
         int n3 = class_08972.IllIIIllIIIIlIlIlIllIIlll();
-        class_2102 class_21022 = class_08972.lllIlIIlIIIlIlIIIllIlllIl();
+        IIcon class_21022 = class_08972.lllIlIIlIIIlIlIIIllIlllIl();
         if (class_08972.IlIllllllIIlIIllllIIlIIIl() == 0 && class_1333.lllIIIllIIIIlllIlIIllIIll(Block.lllIIIllIIIIlllIlIIllIIll(class_08972.lllIIIllIIIIlllIlIIllIIll()).lIIIIlIlIIlllllIIllIIlIII())) {
             class_16822.lllIIIllIIIIlllIlIIllIIll(class_1511.lllIIIllIIIIlllIlIIllIIll);
             Block class_05492 = Block.lllIIIllIIIIlllIlIIllIIll(class_08972.lllIIIllIIIIlllIlIIllIIll());
@@ -295,7 +296,7 @@ extends class_1603 {
             GL11.glEnable((int)3008);
             OpenGlHelper.glBlendFunc(770, 771, 1, 0);
             for (int i = 0; i <= 1; ++i) {
-                class_2102 class_21023 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(n3, i);
+                IIcon class_21023 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(n3, i);
                 int n5 = class_08972.lllIIIllIIIIlllIlIIllIIll().lllIIIllIIIIlllIlIIllIIll(class_08972, i);
                 float f = (float)(n5 >> 16 & 0xFF) / 255.0f;
                 float f4 = (float)(n5 >> 8 & 0xFF) / 255.0f;
@@ -364,10 +365,10 @@ extends class_1603 {
 
     private void lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4, int n5) {
         for (int i = 0; i < 2; ++i) {
-            OpenGlHelper.glBlendFunc((Boolean) LunarClient.getInstance().getSettingsManager().IIlIIlIlIlIllIIlIlIIIIlll.lIlllIlllIIIIlIIlllIllIII() != false ? 773 : 772, 1, 0, 0);
+            OpenGlHelper.glBlendFunc((Boolean) LunarClient.getInstance().getSettingsManager().rsShinyPots.getValue() != false ? 773 : 772, 1, 0, 0);
             float f = 0.00390625f;
             float f2 = 0.00390625f;
-            float f3 = (float)(Minecraft.llllllIlIllllIlIlIlIIIIlI() % (long)(3000 + i * 1873)) / (3000.0f + (float)(i * 1873)) * 256.0f;
+            float f3 = (float)(Minecraft.getSystemTime() % (long)(3000 + i * 1873)) / (3000.0f + (float)(i * 1873)) * 256.0f;
             float f4 = 0.0f;
             class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
             float f5 = 4.0f;
@@ -432,7 +433,7 @@ extends class_1603 {
         class_08682.lllIIIllIIIIlllIlIIllIIll();
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, class_2102 class_21022, int n3, int n4) {
+    public void lllIIIllIIIIlllIlIIllIIll(int n, int n2, IIcon class_21022, int n3, int n4) {
         class_0868 class_08682 = class_0868.IlIIIIIllllllIIlllIllllll;
         class_08682.lllIlIIlIIIlIlIIIllIlllIl();
         class_08682.lllIIIllIIIIlllIlIIllIIll(n + 0, n2 + n4, this.lIllllIIlIIIlIllllllIIIll, class_21022.IlIllllllIIlIIllllIIlIIIl(), class_21022.lIllllIIlIIIlIllllllIIIll());

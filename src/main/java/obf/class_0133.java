@@ -40,7 +40,7 @@ extends class_2259 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return (n2 & 3) == 1 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl][1] : ((n2 & 3) == 3 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl][3] : ((n2 & 3) == 2 ? this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl][2] : this.llIlllIIllIlllIlIlIlIIIll[this.lIlIIllllIlIIIIllIIIIlIIl][0]));
     }
 
@@ -55,7 +55,7 @@ extends class_2259 {
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_0887 class_08872) {
         for (int i = 0; i < lllIIIIIIlIlllIIlIlIIIllI.length; ++i) {
-            this.llIlllIIllIlllIlIlIlIIIll[i] = new class_2102[lllIIIIIIlIlllIIlIlIIIllI[i].length];
+            this.llIlllIIllIlllIlIlIlIIIll[i] = new IIcon[lllIIIIIIlIlllIIlIlIIIllI[i].length];
             for (int j = 0; j < lllIIIIIIlIlllIIlIlIIIllI[i].length; ++j) {
                 this.llIlllIIllIlllIlIlIlIIIll[i][j] = class_08872.lllIIIllIIIIlllIlIIllIIll(lllIIIIIIlIlllIIlIlIIIllI[i][j]);
             }

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class class_0738
-extends class_1665 {
+extends AbstractModule {
     public long lllIIIllIIIIlllIlIIllIIll = System.currentTimeMillis();
     private List lllIlIIlIIIlIlIIIllIlllIl = new ArrayList();
 

@@ -12,15 +12,15 @@ import java.util.Random;
 
 public class class_1865
 extends Block {
-    private class_2102 llllllIlIllllIlIlIlIIIIlI;
-    private class_2102 lIlIIllllIlIIIIllIIIIlIIl;
+    private IIcon llllllIlIllllIlIlIlIIIIlI;
+    private IIcon lIlIIllllIlIIIIllIIIIlIIl;
 
     public class_1865() {
         super(class_1855.IlIIIIIllllllIIlllIllllll);
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return n == 1 ? this.llllllIlIllllIlIlIlIIIIlI : (n == 0 ? Blocks.IlIIIIIIllIIlIllIIllIllIl.lIlllIlllIIIIlIIlllIllIII(n) : this.llIIIIllIIIIIIIlIIIlIIIIl);
     }
 
@@ -31,7 +31,7 @@ extends Block {
         this.lIlIIllllIlIIIIllIIIIlIIl = class_08872.lllIIIllIIIIlllIlIIllIIll(this.llllllIlIllllIlIlIlIIIIlI() + "_eye");
     }
 
-    public class_2102 llIlllIIllIlllIlIlIlIIIll() {
+    public IIcon llIlllIIllIlllIlIlIlIIIll() {
         return this.lIlIIllllIlIIIIllIIIIlIIl;
     }
 

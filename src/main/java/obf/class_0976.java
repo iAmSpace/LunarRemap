@@ -20,6 +20,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.item.Item;
+import net.minecraft.network.play.server.*;
 import net.minecraft.profiler.Profiler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -493,7 +494,7 @@ extends class_1334 {
             }
             this.lIllllIIlIIIlIllllllIIIll();
             if (class_18322 != null) {
-                class_18322.lIlllIlllIIIIlIIlllIllIII("Saving chunks");
+                class_18322.resetProgresAndWorkingMessage("Saving chunks");
             }
             this.lIlIlIIlIIIIlIIIIIlllIIII.lllIIIllIIIIlllIlIIllIIll(bl, class_18322);
             ArrayList arrayList = Lists.newArrayList((Iterable)this.IlIlIIlllIllllllllIIIlIlI.lIllllIIlIIIlIllllllIIIll());
@@ -548,7 +549,7 @@ extends class_1334 {
     @Override
     public boolean lIllllIIlIIIlIllllllIIIll(class_1521 class_15212) {
         if (super.lIllllIIlIIIlIllllllIIIll(class_15212)) {
-            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_15212.IlIIlllllIIlIlIlllllIllll, class_15212.llIIlIlIlllIIllIlIlllIllI, class_15212.IllIIIIllIIllIllIlllIlIIl, 512.0, this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new class_0575(class_15212));
+            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_15212.IlIIlllllIIlIlIlllllIllll, class_15212.llIIlIlIlllIIllIlIlllIllI, class_15212.IllIIIIllIIllIllIlllIlIIl, 512.0, this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new S2CPacketSpawnGlobalEntity(class_15212));
             return true;
         }
         return false;
@@ -556,7 +557,7 @@ extends class_1334 {
 
     @Override
     public void lllIIIllIIIIlllIlIIllIIll(class_1521 class_15212, byte by) {
-        this.lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(class_15212, new class_0514(class_15212, by));
+        this.lIlIlIIIIIIlIIllllIlIIllI().lllIlIIlIIIlIlIIIllIlllIl(class_15212, new S19PacketEntityStatus(class_15212, by));
     }
 
     @Override
@@ -571,7 +572,7 @@ extends class_1334 {
         }
         for (class_0814 class_08142 : this.lIllllIIlIIIlIllllllIIIll) {
             if (!(class_08142.lIllllIIlIIIlIllllllIIIll(d, d2, d3) < 4096.0)) continue;
-            ((class_1822)class_08142).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0404(d, d2, d3, f, class_10132.IllIIlllllllIIlIIlIIIIlIl, (class_0864)class_10132.lllIlIIlIIIlIlIIIllIlllIl().get(class_08142)));
+            ((class_1822)class_08142).lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S27PacketExplosion(d, d2, d3, f, class_10132.IllIIlllllllIIlIIlIIIIlIl, (class_0864)class_10132.lllIlIIlIIIlIlIIIllIlllIl().get(class_08142)));
         }
         return class_10132;
     }
@@ -594,7 +595,7 @@ extends class_1334 {
             this.llllIlIIIIIIIIIlllIIlIIIl ^= 1;
             for (class_1103 class_11032 : this.IllllIIIIlIIlIIIIlllIIIIl[n]) {
                 if (!this.lllIIIllIIIIlllIlIIllIIll(class_11032)) continue;
-                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_11032.lllIIIllIIIIlllIlIIllIIll(), class_11032.lllIlIIlIIIlIlIIIllIlllIl(), class_11032.IlIllllllIIlIIllllIIlIIIl(), 64.0, this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new class_1267(class_11032.lllIIIllIIIIlllIlIIllIIll(), class_11032.lllIlIIlIIIlIlIIIllIlllIl(), class_11032.IlIllllllIIlIIllllIIlIIIl(), class_11032.lIllllIIlIIIlIllllllIIIll(), class_11032.lIlllIlllIIIIlIIlllIllIII(), class_11032.IlIIIIIllllllIIlllIllllll()));
+                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_11032.lllIIIllIIIIlllIlIIllIIll(), class_11032.lllIlIIlIIIlIlIIIllIlllIl(), class_11032.IlIllllllIIlIIllllIIlIIIl(), 64.0, this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl, new S24PacketBlockAction(class_11032.lllIIIllIIIIlllIlIIllIIll(), class_11032.lllIlIIlIIIlIlIIIllIlllIl(), class_11032.IlIllllllIIlIIllllIIlIIIl(), class_11032.lIllllIIlIIIlIllllllIIIll(), class_11032.lIlllIlllIIIIlIIlllIllIII(), class_11032.IlIIIIIllllllIIlllIllllll()));
             }
             this.IllllIIIIlIIlIIIIlllIIIIl[n].clear();
         }
@@ -614,19 +615,19 @@ extends class_1334 {
         boolean bl = this.IIIIIIIIlIllIIllIIlllIllI();
         super.IlIIIIIllllllIIlllIllllll();
         if (this.lIIIIlIlIIlllllIIllIIlIII != this.llIIlllIllIllllIIIlIIIIII) {
-            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(7, this.llIIlllIllIllllIIIlIIIIII), this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
+            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(7, this.llIIlllIllIllllIIIlIIIIII), this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
         }
         if (this.llIIllIllIlIIlIIllIllllll != this.lllIIlIIIllllllIIIIlIlIlI) {
-            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(8, this.lllIIlIIIllllllIIIIlIlIlI), this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
+            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(8, this.lllIIlIIIllllllIIIIlIlIlI), this.IlIlIIlllIIlIllIIIlllllIl.IIIllIllIIlIlIlIlIllllIIl);
         }
         if (bl != this.IIIIIIIIlIllIIllIIlllIllI()) {
             if (bl) {
-                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(2, 0.0f));
+                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(2, 0.0f));
             } else {
-                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(1, 0.0f));
+                this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(1, 0.0f));
             }
-            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(7, this.llIIlllIllIllllIIIlIIIIII));
-            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new class_0742(8, this.lllIIlIIIllllllIIIIlIlIlI));
+            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(7, this.llIIlllIllIllllIIIlIIIIII));
+            this.llIIIIllIIIIIIIlIIIlIIIIl.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(new S2BPacketChangeGameState(8, this.lllIIlIIIllllllIIIIlIlIlI));
         }
     }
 
@@ -652,7 +653,7 @@ extends class_1334 {
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(String string, double d, double d2, double d3, int n, double d4, double d5, double d6, double d7) {
-        class_1178 class_11782 = new class_1178(string, (float)d, (float)d2, (float)d3, (float)d4, (float)d5, (float)d6, (float)d7, n);
+        S2APacketParticles class_11782 = new S2APacketParticles(string, (float)d, (float)d2, (float)d3, (float)d4, (float)d5, (float)d6, (float)d7, n);
         for (int i = 0; i < this.lIllllIIlIIIlIllllllIIIll.size(); ++i) {
             class_1822 class_18222 = (class_1822)this.lIllllIIlIIIlIllllllIIIll.get(i);
             class_2208 class_22082 = class_18222.lllIIlIIIllllllIIIIlIlIlI();

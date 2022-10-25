@@ -8,8 +8,8 @@ import java.util.List;
 
 public class class_0937
 extends class_2092 {
-    private static final class_2102[] llllllIlIllllIlIlIlIIIIlI = new class_2102[16];
-    private static final class_2102[] lIlIIllllIlIIIIllIIIIlIIl = new class_2102[16];
+    private static final IIcon[] llllllIlIllllIlIlIlIIIIlI = new IIcon[16];
+    private static final IIcon[] lIlIIllllIlIIIIllIIIIlIIl = new IIcon[16];
 
     public class_0937() {
         super("glass", "glass_pane_top", class_1855.lIIlIIIIIlIlllIlIIlIlIlll, false);
@@ -17,16 +17,16 @@ extends class_2092 {
     }
 
     @Override
-    public class_2102 lllIlIIlIIIlIlIIIllIlllIl(int n, int n2) {
+    public IIcon lllIlIIlIIIlIlIIIllIlllIl(int n, int n2) {
         return llllllIlIllllIlIlIlIIIIlI[n2 % llllllIlIllllIlIlIlIIIIlI.length];
     }
 
-    public class_2102 IllIIlllllllIIlIIlIIIIlIl(int n) {
+    public IIcon IllIIlllllllIIlIIlIIIIlIl(int n) {
         return lIlIIllllIlIIIIllIIIIlIIl[~n & 0xF];
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return this.lllIlIIlIIIlIlIIIllIlllIl(n, ~n2 & 0xF);
     }
 

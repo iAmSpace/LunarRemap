@@ -11,7 +11,7 @@ public class class_2267
 extends class_2116 {
     private class_0775 IIIllIIlIIIIIIlIlIIllIIlI;
 
-    public class_2267(class_0519 class_05192) {
+    public class_2267(IntegratedServer class_05192) {
         super(class_05192);
         this.lllIIIllIIIIlllIlIIllIIll(10);
     }
@@ -30,8 +30,8 @@ extends class_2116 {
         return gameProfile.getName().equalsIgnoreCase(this.lllIIIllIIIIlllIlIIllIIll().IIIIIIIIlIllIIllIIlllIllI()) && this.lllIIIllIIIIlllIlIIllIIll(gameProfile.getName()) != null ? "That name is already taken." : super.lllIIIllIIIIlllIlIIllIIll(socketAddress, gameProfile);
     }
 
-    public class_0519 lllIIIllIIIIlllIlIIllIIll() {
-        return (class_0519)super.IlIllllllIIlIIllllIIlIIIl();
+    public IntegratedServer lllIIIllIIIIlllIlIIllIIll() {
+        return (IntegratedServer)super.IlIllllllIIlIIllllIIlIIIl();
     }
 
     @Override

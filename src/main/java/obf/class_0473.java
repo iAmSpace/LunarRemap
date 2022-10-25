@@ -13,7 +13,7 @@ extends class_0408 {
     }
 
     @Override
-    public class_2102 IlIllllllIIlIIllllIIlIIIl(int n) {
+    public IIcon IlIllllllIIlIIllllIIlIIIl(int n) {
         return class_1487.IIIllIllIIlIlIlIlIllllIIl(n) == 0 ? ((class_1487)this.IllIIIllIIIIlIlIlIllIIlll).lIlIIllllIlIIIIllIIIIlIIl[0] : ((class_1487)this.IllIIIllIIIIlIlIlIllIIlll).lllIIIllIIIIlllIlIIllIIll(true, n);
     }
 

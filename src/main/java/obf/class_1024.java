@@ -45,7 +45,7 @@ extends Thread {
                     if (jsonElement2.getAsJsonObject().has("changedToAt")) {
                         long l = jsonElement2.getAsJsonObject().get("changedToAt").getAsLong();
                         LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(l), ZoneId.systemDefault());
-                        arrayList.add((Object)((Object)class_1227.IllIIlllllllIIlIIlIIIIlIl) + localDateTime.format(this.lllIlIIlIIIlIlIIIllIlllIl) + (Object)((Object)class_1227.IIlllIlIlllIllIIIlllIIlIl) + " " + string2);
+                        arrayList.add((Object)((Object) EnumChatFormatting.GRAY) + localDateTime.format(this.lllIlIIlIIIlIlIIIllIlllIl) + (Object)((Object) EnumChatFormatting.RESET) + " " + string2);
                         continue;
                     }
                     arrayList.add(string2);

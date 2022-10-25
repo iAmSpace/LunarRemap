@@ -1,6 +1,7 @@
 package obf;/*
  * Decompiled with CFR 0.150.
  */
+import net.minecraft.util.ResourceLocation;
 import optifine.Config;
 import net.minecraft.item.Item;
 
@@ -31,7 +32,7 @@ public class class_0698 {
     public int lllllIlllIIllIlIIlIIIllII = 0;
     public int IlIlIIlllIIlIllIIIlllllIl = 1;
     public int lIIlIIIIIlIlllIlIIlIlIlll = 0;
-    public class_2102 lIlIlIIlIIIIlIIIIIlllIIII = null;
+    public IIcon lIlIlIIlIIIIlIIIIIlllIIII = null;
     public Map IlIIIlIIIIllIIIllIIIIIIll = null;
     public static final int IIlllIlIlllIllIIIlllIIlIl = 0;
     public static final int lIlIllIIlIIlIIlIIlIIlIIll = 1;
@@ -347,13 +348,13 @@ public class class_0698 {
             Set set = this.lIllllIIlIIIlIllllllIIIll.keySet();
             for (String string : set) {
                 String string2 = (String)this.lIllllIIlIIIlIllllllIIIll.get(string);
-                class_2102 class_21022 = class_0698.lllIIIllIIIIlllIlIIllIIll(string2, class_15112);
+                IIcon class_21022 = class_0698.lllIIIllIIIIlllIlIIllIIll(string2, class_15112);
                 this.IlIIIlIIIIllIIIllIIIIIIll.put(string, class_21022);
             }
         }
     }
 
-    private static class_2102 lllIIIllIIIIlllIlIIllIIll(String string, class_1511 class_15112) {
+    private static IIcon lllIIIllIIIIlllIlIIllIIll(String string, class_1511 class_15112) {
         String string2;
         ResourceLocation class_17732;
         boolean bl;
@@ -367,7 +368,7 @@ public class class_0698 {
         if (!(bl = Config.IlIllllllIIlIIllllIIlIIIl(class_17732 = new ResourceLocation(string2 = string3 + ".png")))) {
             Config.lllIlIIlIIIlIlIIIllIlllIl("File not found: " + string2);
         }
-        class_2102 class_21022 = class_15112.lllIIIllIIIIlllIlIIllIIll(string);
+        IIcon class_21022 = class_15112.lllIIIllIIIIlllIlIIllIIll(string);
         return class_21022;
     }
 }

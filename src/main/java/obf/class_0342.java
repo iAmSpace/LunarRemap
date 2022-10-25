@@ -7,6 +7,7 @@ package obf;/*
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.play.client.C16PacketClientStatus;
 import org.lwjgl.opengl.GL11;
 
 public class class_0342
@@ -31,7 +32,7 @@ implements class_1216 {
     @Override
     public void n_() {
         this.IlIllllllIIlIIllllIIlIIIl = class_0616.lllIIIllIIIIlllIlIIllIIll("gui.stats", new Object[0]);
-        this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0499(class_1297.lllIlIIlIIIlIlIIIllIlllIl));
+        this.lllllIlllIIllIlIIlIIIllII.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C16PacketClientStatus(class_1297.lllIlIIlIIIlIlIIIllIlllIl));
     }
 
     public void lIllllIIlIIIlIllllllIIIll() {
@@ -78,7 +79,7 @@ implements class_1216 {
         if (this.lIIIIlIlIIlllllIIllIIlIII) {
             this.llIIlIllIllllIlIIIIlIIlll();
             this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, class_0616.lllIIIllIIIIlllIlIIllIIll("multiplayer.downloadingStats", new Object[0]), this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2, 0xFFFFFF);
-            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, lllIIIllIIIIlllIlIIllIIll[(int)(Minecraft.llllllIlIllllIlIlIlIIIIlI() / 150L % (long)lllIIIllIIIIlllIlIIllIIll.length)], this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 + this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll * 2, 0xFFFFFF);
+            this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, lllIIIllIIIIlllIlIIllIIll[(int)(Minecraft.getSystemTime() / 150L % (long)lllIIIllIIIIlllIlIIllIIll.length)], this.IlIlIIlllIIlIllIIIlllllIl / 2, this.lIIlIIIIIlIlllIlIIlIlIlll / 2 + this.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll * 2, 0xFFFFFF);
         } else {
             this.IllIIIllIIIIlIlIlIllIIlll.lllIIIllIIIIlllIlIIllIIll(n, n2, f);
             this.lllIIIllIIIIlllIlIIllIIll(this.lIlIllIIlIIlIIlIIlIIlIIll, this.IlIllllllIIlIIllllIIlIIIl, this.IlIlIIlllIIlIllIIIlllllIl / 2, 20, 0xFFFFFF);

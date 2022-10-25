@@ -8,8 +8,8 @@ import java.util.Random;
 
 public abstract class class_1975
 extends class_1988 {
-    protected class_2102[] llllllIlIllllIlIlIlIIIIlI;
-    protected class_2102[] lIlIIllllIlIIIIllIIIIlIIl;
+    protected IIcon[] llllllIlIllllIlIlIlIIIIlI;
+    protected IIcon[] lIlIIllllIlIIIIllIIIIlIIl;
 
     public class_1975() {
         super(class_1855.lIlllIlllIIIIlIIlllIllIII);
@@ -50,12 +50,12 @@ extends class_1988 {
     }
 
     @Override
-    protected class_2102 IllIIlllllllIIlIIlIIIIlIl(int n) {
+    protected IIcon IllIIlllllllIIlIIlIIIIlIl(int n) {
         return this.llllllIlIllllIlIlIlIIIIlI[n % this.llllllIlIllllIlIlIlIIIIlI.length];
     }
 
     @Override
-    protected class_2102 IllIIIllIIIIlIlIlIllIIlll(int n) {
+    protected IIcon IllIIIllIIIIlIlIlIllIIlll(int n) {
         return this.lIlIIllllIlIIIIllIIIIlIIl[n % this.lIlIIllllIlIIIIllIIIIlIIl.length];
     }
 }

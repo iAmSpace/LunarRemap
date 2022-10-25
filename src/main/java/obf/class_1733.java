@@ -33,7 +33,7 @@ extends class_1469 {
     }
 
     public static boolean lllIIIllIIIIlllIlIIllIIll(ItemStack class_08972, int n, Random random) {
-        return class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof class_0981 && random.nextFloat() < 0.6f ? false : random.nextInt(n + 1) > 0;
+        return class_08972.lllIIIllIIIIlllIlIIllIIll() instanceof ItemArmor && random.nextFloat() < 0.6f ? false : random.nextInt(n + 1) > 0;
     }
 }
 

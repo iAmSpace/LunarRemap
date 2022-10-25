@@ -26,6 +26,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import net.minecraft.network.play.server.S37PacketStatistics;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.stats.StatBase;
@@ -102,7 +103,7 @@ extends class_1707 {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         HashMap hashMap = Maps.newHashMap();
         for (Map.Entry entry : jsonObject.entrySet()) {
-            StatBase class_03192 = StatList.lllIIIllIIIIlllIlIIllIIll((String)entry.getKey());
+            StatBase class_03192 = StatList.func_151177_a((String)entry.getKey());
             if (class_03192 != null) {
                 class_1142 class_11422 = new class_1142();
                 if (((JsonElement)entry.getValue()).isJsonPrimitive() && ((JsonElement)entry.getValue()).getAsJsonPrimitive().isNumber()) {
@@ -167,7 +168,7 @@ extends class_1707 {
                 hashMap.put(class_03192, this.lllIIIllIIIIlllIlIIllIIll(class_03192));
             }
         }
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1095(hashMap));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S37PacketStatistics(hashMap));
     }
 
     public void lllIlIIlIIIlIlIIIllIlllIl(class_1822 class_18222) {
@@ -177,7 +178,7 @@ extends class_1707 {
             hashMap.put(class_07472, this.lllIIIllIIIIlllIlIIllIIll((StatBase)class_07472));
             this.IlIIIIIllllllIIlllIllllll.remove(class_07472);
         }
-        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1095(hashMap));
+        class_18222.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S37PacketStatistics(hashMap));
     }
 
     public boolean IlIIIIIllllllIIlllIllllll() {

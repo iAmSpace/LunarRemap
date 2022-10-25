@@ -8,6 +8,8 @@ package obf;/*
  */
 import com.google.gson.JsonParseException;
 import java.io.IOException;
+
+import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,7 +46,7 @@ extends class_1924 {
         catch (IOException iOException) {
             IlIllllllIIlIIllllIIlIIIl.error("Couldn't load metadata info", (Throwable)iOException);
         }
-        return (Object)((Object)class_1227.llIIllIllIlIIlIIllIllllll) + "Missing pack.mcmeta :(";
+        return (Object)((Object) EnumChatFormatting.RED) + "Missing pack.mcmeta :(";
     }
 
     @Override

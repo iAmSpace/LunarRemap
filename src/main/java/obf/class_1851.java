@@ -14,7 +14,7 @@ public class class_1851
 extends class_0854
 implements class_0588 {
     public static final String[] llllllIlIllllIlIlIlIIIIlI = new String[]{"oak", "spruce", "birch", "jungle", "acacia", "roofed_oak"};
-    private static final class_2102[] lIlIIllllIlIIIIllIIIIlIIl = new class_2102[llllllIlIllllIlIlIlIIIIlI.length];
+    private static final IIcon[] lIlIIllllIlIIIIllIIIIlIIl = new IIcon[llllllIlIllllIlIlIlIIIIlI.length];
 
     protected class_1851() {
         float f = 0.4f;
@@ -33,7 +33,7 @@ implements class_0588 {
     }
 
     @Override
-    public class_2102 lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
+    public IIcon lllIIIllIIIIlllIlIIllIIll(int n, int n2) {
         return lIlIIllllIlIIIIllIIIIlIIl[MathHelper.lllIIIllIIIIlllIlIIllIIll(n2 &= 7, 0, 5)];
     }
 

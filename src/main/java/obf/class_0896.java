@@ -13,6 +13,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import optifine.Config;
 

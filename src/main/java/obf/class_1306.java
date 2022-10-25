@@ -32,10 +32,10 @@ implements class_0677 {
     @Override
     public boolean lllIIIllIIIIlllIlIIllIIll(int n, int n2, int n3, int n4, int n5, int n6) {
         this.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(n);
-        if (Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.lIlllIlllIIIIlIIlllIllIII < 250L) {
+        if (Minecraft.getSystemTime() - this.lIlllIlllIIIIlIIlllIllIII < 250L) {
             this.IlIllllllIIlIIllllIIlIIIl.IIIllIIlIIIIIIlIlIIllIIlI();
         }
-        this.lIlllIlllIIIIlIIlllIllIII = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.lIlllIlllIIIIlIIlllIllIII = Minecraft.getSystemTime();
         return false;
     }
 

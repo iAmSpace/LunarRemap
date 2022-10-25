@@ -20,6 +20,7 @@ import java.util.Properties;
 import java.util.Random;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import optifine.Config;
 import net.minecraft.client.settings.GameSettings;

@@ -14,7 +14,7 @@ implements class_0677 {
         String string;
         int n8 = n3 + n5 / 2 - this.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll / 2;
         this.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll.lllIlIIlIIIlIlIIIllIlllIl(class_0616.lllIIIllIIIIlllIlIIllIIll("lanServer.scanning", new Object[0]), this.lllIIIllIIIIlllIlIIllIIll.lllllIlllIIllIlIIlIIIllII.IlIlIIlllIIlIllIIIlllllIl / 2 - this.lllIIIllIIIIlllIlIIllIIll.IlIlllIIIIIIlIIllIIllIlll.lllIIIllIIIIlllIlIIllIIll(class_0616.lllIIIllIIIIlllIlIIllIIll("lanServer.scanning", new Object[0])) / 2, n8, 0xFFFFFF);
-        switch ((int)(Minecraft.llllllIlIllllIlIlIlIIIIlI() / 300L % 4L)) {
+        switch ((int)(Minecraft.getSystemTime() / 300L % 4L)) {
             default: {
                 string = "O o o";
                 break;

@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.nio.IntBuffer;
 import javax.imageio.ImageIO;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
 import org.apache.logging.log4j.LogManager;

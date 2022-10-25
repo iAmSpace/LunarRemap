@@ -9,6 +9,12 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListenableFutureTask;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.network.handshake.client.C00Handshake;
+import net.minecraft.network.login.client.C00PacketLoginStart;
+import net.minecraft.network.play.client.C16PacketClientStatus;
+import net.minecraft.network.play.server.S2BPacketChangeGameState;
+import net.minecraft.util.ResourceLocation;
 import com.moonsworth.lunar.client.LunarClient;
 import io.netty.util.concurrent.GenericFutureListener;
 import java.awt.image.BufferedImage;
@@ -104,7 +110,7 @@ implements class_0721 {
     private int IllllIIlIIIllIlllIlllIllI;
     private int tempDisplayWidth;
     private int tempDisplayHeight;
-    private class_0519 llllIIllIlIlllllllIIlIIlI;
+    private IntegratedServer theIntegratedServer;
     public class_0510 lIlIlIIlIIIIlIIIIIlllIIII;
     public class_1176 IlIIIlIIIIllIIIllIIIIIIll;
     public boolean IIlllIlIlllIllIIIlllIIlIl;
@@ -123,12 +129,12 @@ implements class_0721 {
     public String IllIIIIllIIllIllIlllIlIIl;
     public int IIIIIIIIlIllIIllIIlllIllI;
     public boolean IIlIIlIlIlIllIIlIlIIIIlll;
-    long llIIIlllIlllIlIllIIIIllIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+    long llIIIlllIlllIlIllIIIIllIl = Minecraft.getSystemTime();
     private int IlIlIllIIlIIIIlllIlIllIlI;
     private final boolean jvm64bit;
     private final boolean isDemo;
     private class_0800 lIlllIIllIIIIIIlIlIIlIllI;
-    private boolean llIIIlIlIlIIlIllIIIllIlIl;
+    private boolean integratedServerIsRunning;
     public final Profiler mcProfiler = new Profiler();
     private long lIIlIIlIllIlIIlIlIIlIlIlI = -1L;
     private class_1900 llIIIIIlIIlIIIIllIIIlIIII;
@@ -148,7 +154,7 @@ implements class_0721 {
     private final Thread lIIlllIIlIlIlIIIlIlllIIll = Thread.currentThread();
     volatile boolean IlIlIIlllIllllllllIIIlIlI = true;
     public String llllIIIIlIIIlIIIIIIlIllll = "";
-    long llIIIIllIIIIIIIlIIIlIIIIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+    long llIIIIllIIIIIIIlIIIlIIIIl = Minecraft.getSystemTime();
     int IIllIllIIllIIlllIIIlIlllI;
     long llllllIlIllllIlIlIlIIIIlI = -1L;
     private String IlIIlIIlllllIlIIlIlIlIlIl = "root";
@@ -243,7 +249,7 @@ implements class_0721 {
     public void IlIllllllIIlIIllllIIlIIIl() {
         int n;
         int n2 = n = Keyboard.getEventKey() == 0 ? Keyboard.getEventCharacter() : Keyboard.getEventKey();
-        if (!(n == 0 || Keyboard.isRepeatEvent() || this.lllllIlllIIllIlIIlIIIllII instanceof class_1681 && ((class_1681)this.lllllIlllIIllIlIIlIIIllII).IlIllllllIIlIIllllIIlIIIl > Minecraft.llllllIlIllllIlIlIlIIIIlI() - 20L || !Keyboard.getEventKeyState())) {
+        if (!(n == 0 || Keyboard.isRepeatEvent() || this.lllllIlllIIllIlIIlIIIllII instanceof class_1681 && ((class_1681)this.lllllIlllIIllIlIIlIIIllII).IlIllllllIIlIIllllIIlIIIl > Minecraft.getSystemTime() - 20L || !Keyboard.getEventKeyState())) {
             if (n == this.gameSettings.lllIlllllIllIlIIlIlIIIlll.IIIllIllIIlIlIlIlIllllIIl()) {
                 this.lllllIlllIIllIlIIlIIIllII();
             } else if (n == this.gameSettings.IIIIIllIIlIlIlIIlIlIlIllI.IIIllIllIIlIlIlIlIllllIIl()) {
@@ -252,7 +258,7 @@ implements class_0721 {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(String string, int n) {
+    public void setServer(String string, int n) {
         this.IllIIIIllIIllIllIlllIlIIl = string;
         this.IIIIIIIIlIllIIllIIlllIllI = n;
     }
@@ -632,7 +638,7 @@ implements class_0721 {
         System.gc();
     }
 
-    public void IllIIlllllllIIlIIlIIIIlIl() {
+    public void run() {
         this.IlIlIIlllIllllllllIIIlIlI = true;
         try {
             this.llllIIllIlIlllllllIIlIIlI();
@@ -760,8 +766,8 @@ implements class_0721 {
         this.mcProfiler.endSection();
         this.lllIIIllIIIIlllIlIIllIIll("Post render");
         ++this.IIllIllIIllIIlllIIIlIlllI;
-        boolean bl = this.IIlIllIIlllllIIlIIllllIIl = this.IlIlIIlllIllllllllIIIlIlI() && this.lllllIlllIIllIlIIlIIIllII != null && this.lllllIlllIIllIlIIlIIIllII.lIlllIlllIIIIlIIlllIllIII() && !this.llllIIllIlIlllllllIIlIIlI.lIIlIIlIllIlIIlIlIIlIlIlI();
-        while (Minecraft.llllllIlIllllIlIlIlIIIIlI() >= this.llIIIIllIIIIIIIlIIIlIIIIl + 1000L) {
+        boolean bl = this.IIlIllIIlllllIIlIIllllIIl = this.isSingleplayer() && this.lllllIlllIIllIlIIlIIIllII != null && this.lllllIlllIIllIlIIlIIIllII.lIlllIlllIIIIlIIlllIllIII() && !this.theIntegratedServer.lIIlIIlIllIlIIlIlIIlIlIlI();
+        while (Minecraft.getSystemTime() >= this.llIIIIllIIIIIIIlIIIlIIIIl + 1000L) {
             llIIlIlIlllIIllIlIlllIllI = IlIIlllllIIlIlIlllllIllll;
             IlIIlllllIIlIlIlllllIllll = this.IIllIllIIllIIlllIIIlIlllI;
             this.llllIIIIlIIIlIIIIIIlIllll = IlIIlllllIIlIlIlllllIllll + " fps, " + class_0734.IlIIIIIllllllIIlllIllllll + " chunk updates";
@@ -946,7 +952,7 @@ implements class_0721 {
 
     public void IlIlllIIIIIIlIIllIIllIlll() {
         if (this.IIlIIlIlIlIllIIlIlIIIIlll) {
-            class_1335.lllIIIllIIIIlllIlIIllIIll();
+            KeyBinding.lllIIIllIIIIlllIlIIllIIll();
             this.IIlIIlIlIlIllIIlIlIIIIlll = false;
             this.llIllllIlIllIIIlIllIIlIlI.lllIlIIlIIIlIlIIIllIlllIl();
         }
@@ -955,7 +961,7 @@ implements class_0721 {
     public void IlIlIIlIlIllIIlIlIIllIIIl() {
         if (this.lllllIlllIIllIlIIlIIIllII == null) {
             this.lllIIIllIIIIlllIlIIllIIll(new class_2078());
-            if (this.IlIlIIlllIllllllllIIIlIlI() && !this.llllIIllIlIlllllllIIlIIlI.lIIlIIlIllIlIIlIlIIlIlIlI()) {
+            if (this.isSingleplayer() && !this.theIntegratedServer.lIIlIIlIllIlIIlIlIIlIlIlI()) {
                 this.lIIIIllIIllIIIlIIIllIllII.lllIIIllIIIIlllIlIIllIIll();
             }
         }
@@ -1143,7 +1149,7 @@ implements class_0721 {
             switch (n) {
                 case 0: {
                     object = null;
-                    ((class_0742)object).lIlllIlllIIIIlIIlllIllIII();
+                    ((S2BPacketChangeGameState)object).lIlllIlllIIIIlIIlllIllIII();
                     break;
                 }
                 case 1: {
@@ -1223,14 +1229,14 @@ implements class_0721 {
             this.mcProfiler.endStartSection("mouse");
             while (Mouse.next()) {
                 int n = Mouse.getEventButton();
-                class_1335.lllIIIllIIIIlllIlIIllIIll(n - 100, Mouse.getEventButtonState());
+                KeyBinding.lllIIIllIIIIlllIlIIllIIll(n - 100, Mouse.getEventButtonState());
                 if (Mouse.getEventButtonState()) {
-                    class_1335.lllIIIllIIIIlllIlIIllIIll(n - 100);
+                    KeyBinding.lllIIIllIIIIlllIlIIllIIll(n - 100);
                 } else {
                     LunarClient.getInstance().getEventBus().callEvent(new class_0773(n));
                 }
                 LunarClient.getInstance().getEventBus().callEvent(new class_0479(n, Mouse.getEventButtonState()));
-                long l2 = Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.llIIIlllIlllIlIllIIIIllIl;
+                long l2 = Minecraft.getSystemTime() - this.llIIIlllIlllIlIllIIIIllIl;
                 if (l2 > 200L) continue;
                 int n2 = Mouse.getEventDWheel();
                 if (n2 != 0) {
@@ -1260,19 +1266,19 @@ implements class_0721 {
             this.mcProfiler.endStartSection("keyboard");
             while (Keyboard.next()) {
                 int n;
-                class_1335.lllIIIllIIIIlllIlIIllIIll(Keyboard.getEventKey(), Keyboard.getEventKeyState());
+                KeyBinding.lllIIIllIIIIlllIlIIllIIll(Keyboard.getEventKey(), Keyboard.getEventKeyState());
                 if (Keyboard.getEventKeyState()) {
-                    class_1335.lllIIIllIIIIlllIlIIllIIll(Keyboard.getEventKey());
+                    KeyBinding.lllIIIllIIIIlllIlIIllIIll(Keyboard.getEventKey());
                 }
                 if (this.lIIlIIlIllIlIIlIlIIlIlIlI > 0L) {
-                    if (Minecraft.llllllIlIllllIlIlIlIIIIlI() - this.lIIlIIlIllIlIIlIlIIlIlIlI >= 6000L) {
+                    if (Minecraft.getSystemTime() - this.lIIlIIlIllIlIIlIlIIlIlIlI >= 6000L) {
                         throw new class_0892(new CrashReport("Manually triggered debug crash", new Throwable()));
                     }
                     if (!Keyboard.isKeyDown((int)46) || !Keyboard.isKeyDown((int)61)) {
                         this.lIIlIIlIllIlIIlIlIIlIlIlI = -1L;
                     }
                 } else if (Keyboard.isKeyDown((int)46) && Keyboard.isKeyDown((int)61)) {
-                    this.lIIlIIlIllIlIIlIlIIlIlIlI = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+                    this.lIIlIIlIllIlIIlIlIIlIlIlI = Minecraft.getSystemTime();
                 }
                 this.IlIllllllIIlIIllllIIlIIIl();
                 if (!Keyboard.getEventKeyState()) continue;
@@ -1280,16 +1286,16 @@ implements class_0721 {
                     this.lllIIIllIIIIlllIlIIllIIll(class_0713.lllIIIllIIIIlllIlIIllIIll(this.lllllIlllIIllIlIIlIIIllII));
                 }
                 LunarClient.getInstance().getEventBus().callEvent(new class_0288(Keyboard.getEventKey()));
-                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().lllIIIllIIIIlllIlIIllIIll.IIIllIllIIlIlIlIlIllllIIl()) {
+                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().keyOpenMenu.IIIllIllIIlIlIlIlIllllIIl()) {
                     this.lllIIIllIIIIlllIlIIllIIll(new class_0822());
                 }
-                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl()) {
+                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().keyOpenVoiceMenu.IIIllIllIIlIlIlIlIllllIIl()) {
                     this.lllIIIllIIIIlllIlIIllIIll(new class_1470());
                 }
-                if ((n = LunarClient.getInstance().getSettingsManager().lIllllIIlIIIlIllllllIIIll.IIIllIllIIlIlIlIlIllllIIl()) != 0 && Keyboard.getEventKey() == n) {
+                if ((n = LunarClient.getInstance().getSettingsManager().keyHideNamePlates.IIIllIllIIlIlIlIlIllllIIl()) != 0 && Keyboard.getEventKey() == n) {
                     boolean bl2 = this.IIIIlIIlIIIllIIIIllIIIlII = !this.IIIIlIIlIIIllIIIIllIIIlII;
                 }
-                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().IlIIIIIllllllIIlllIllllll.IIIllIllIIlIlIlIlIllllIIl()) {
+                if (Keyboard.getEventKey() == LunarClient.getInstance().getSettingsManager().keyDragToLook.IIIllIllIIlIlIlIlIllllIIl()) {
                     LunarClient.getInstance().getModuleManager().IlIIIlIIIIllIIIllIIIIIIll.lllIIIllIIIIlllIlIIllIIll();
                 }
                 if (Keyboard.getEventKey() == 62 && this.lIIlIIIIIlIlllIlIIlIlIlll != null) {
@@ -1355,7 +1361,7 @@ implements class_0721 {
                     this.lIIIIlIlIIlllllIIllIIlIII.llIllllIlIllIIIlIllIIlIlI();
                     continue;
                 }
-                this.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new class_0499(class_1297.IlIllllllIIlIIllllIIlIIIl));
+                this.llIIlIllIllllIlIIIIlIIlll().lllIIIllIIIIlllIlIIllIIll(new C16PacketClientStatus(class_1297.IlIllllllIIlIIllllIIlIIIl));
                 this.lllIIIllIIIIlllIlIIllIIll(new class_2085(this.lIIIIlIlIIlllllIIllIIlIII));
             }
             while (this.gameSettings.lIlIlllIllllIIlllIlllIIIl.lIllllIIlIIIlIllllllIIIll()) {
@@ -1451,7 +1457,7 @@ implements class_0721 {
             this.lIlllIIllIIIIIIlIlIIlIllI.lllIIIllIIIIlllIlIIllIIll();
         }
         this.mcProfiler.endSection();
-        this.llIIIlllIlllIlIllIIIIllIl = Minecraft.llllllIlIllllIlIlIlIIIIlI();
+        this.llIIIlllIlllIlIllIIIIllIl = Minecraft.getSystemTime();
     }
 
     public void lllIIIllIIIIlllIlIIllIIll(String string, String string2, class_1078 class_10782) {
@@ -1468,9 +1474,9 @@ implements class_0721 {
             class_10782 = new class_1078(class_07702);
         }
         try {
-            this.llllIIllIlIlllllllIIlIIlI = new class_0519(this, string, string2, class_10782);
-            this.llllIIllIlIlllllllIIlIIlI.lIlIlIIlIIIIlIIIIIlllIIII();
-            this.llIIIlIlIlIIlIllIIIllIlIl = true;
+            this.theIntegratedServer = new IntegratedServer(this, string, string2, class_10782);
+            this.theIntegratedServer.lIlIlIIlIIIIlIIIIIlllIIII();
+            this.integratedServerIsRunning = true;
         }
         catch (Throwable throwable) {
             CrashReport class_02232 = CrashReport.lllIIIllIIIIlllIlIIllIIll(throwable, "Starting integrated server");
@@ -1480,12 +1486,12 @@ implements class_0721 {
             throw new class_0892(class_02232);
         }
         this.IlIlIIlllIIlIllIIIlllllIl.lllIlIIlIIIlIlIIIllIlllIl(class_0616.lllIIIllIIIIlllIlIIllIIll("menu.loadingLevel", new Object[0]));
-        while (!this.llllIIllIlIlllllllIIlIIlI.lIIlIlllIllIlIlllIIIIIIII()) {
-            object = this.llllIIllIlIlllllllIIlIIlI.lllIlIIlIIIlIlIIIllIlllIl();
+        while (!this.theIntegratedServer.lIIlIlllIllIlIlllIIIIIIII()) {
+            object = this.theIntegratedServer.lllIlIIlIIIlIlIIIllIlllIl();
             if (object != null) {
-                this.IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII(class_0616.lllIIIllIIIIlllIlIIllIIll((String)object, new Object[0]));
+                this.IlIlIIlllIIlIllIIIlllllIl.resetProgresAndWorkingMessage(class_0616.lllIIIllIIIIlllIlIIllIIll((String)object, new Object[0]));
             } else {
-                this.IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII("");
+                this.IlIlIIlllIIlIllIIIlllllIl.resetProgresAndWorkingMessage("");
             }
             try {
                 Thread.sleep(200L);
@@ -1493,11 +1499,11 @@ implements class_0721 {
             catch (InterruptedException interruptedException) {}
         }
         this.lllIIIllIIIIlllIlIIllIIll((class_0229)null);
-        object = this.llllIIllIlIlllllllIIlIIlI.lIIIlIIIlIlllIllIIIlIIIlI().lllIIIllIIIIlllIlIIllIIll();
+        object = this.theIntegratedServer.lIIIlIIIlIlllIllIIIlIIIlI().lllIIIllIIIIlllIlIIllIIll();
         class_0800 class_08002 = class_0800.lllIIIllIIIIlllIlIIllIIll((SocketAddress)object);
         class_08002.lllIIIllIIIIlllIlIIllIIll(new class_0188(class_08002, this, null));
-        class_08002.lllIIIllIIIIlllIlIIllIIll(new class_0302(5, object.toString(), 0, class_0546.lIlllIlllIIIIlIIlllIllIII), new GenericFutureListener[0]);
-        class_08002.lllIIIllIIIIlllIlIIllIIll(new class_1222(this.getSession().func_148256_e()), new GenericFutureListener[0]);
+        class_08002.lllIIIllIIIIlllIlIIllIIll(new C00Handshake(5, object.toString(), 0, EnumConnectionState.LOGIN), new GenericFutureListener[0]);
+        class_08002.lllIIIllIIIIlllIlIIllIIll(new C00PacketLoginStart(this.getSession().func_148256_e()), new GenericFutureListener[0]);
         this.lIlllIIllIIIIIIlIlIIlIllI = class_08002;
     }
 
@@ -1512,18 +1518,18 @@ implements class_0721 {
             if (class_17642 != null) {
                 class_17642.lllIlIIlIIIlIlIIIllIlllIl();
             }
-            if (this.llllIIllIlIlllllllIIlIIlI != null) {
-                this.llllIIllIlIlllllllIIlIIlI.llIIllIllIlIIlIIllIllllll();
+            if (this.theIntegratedServer != null) {
+                this.theIntegratedServer.llIIllIllIlIIlIIllIllllll();
             }
-            this.llllIIllIlIlllllllIIlIIlI = null;
+            this.theIntegratedServer = null;
             this.lIlIlIIlIIIIlIIIIIlllIIII.lllIlIIlIIIlIlIIIllIlllIl();
             this.lIIlIIIIIlIlllIlIIlIlIlll.IllIIIllIIIIlIlIlIllIIlll().lllIIIllIIIIlllIlIIllIIll();
         }
         this.llIIlllIllIllllIIIlIIIIII = null;
         this.lIlllIIllIIIIIIlIlIIlIllI = null;
         if (this.IlIlIIlllIIlIllIIIlllllIl != null) {
-            this.IlIlIIlllIIlIllIIIlllllIl.lllIIIllIIIIlllIlIIllIIll(string);
-            this.IlIlIIlllIIlIllIIIlllllIl.lIlllIlllIIIIlIIlllIllIII("");
+            this.IlIlIIlllIIlIllIIIlllllIl.resetProgressAndMessage(string);
+            this.IlIlIIlllIIlIllIIIlllllIl.resetProgresAndWorkingMessage("");
         }
         if (class_05642 == null && this.theWorld != null) {
             if (this.mcResourcePackRepository.IlIIIIIllllllIIlllIllllll() != null) {
@@ -1531,7 +1537,7 @@ implements class_0721 {
             }
             this.mcResourcePackRepository.lIllllIIlIIIlIllllllIIIll();
             this.lllIIIllIIIIlllIlIIllIIll((class_1092)null);
-            this.llIIIlIlIlIIlIllIIIllIlIl = false;
+            this.integratedServerIsRunning = false;
         }
         this.lIIIIllIIllIIIlIIIllIllII.lllIlIIlIIIlIlIIIllIlllIl();
         this.theWorld = class_05642;
@@ -1735,8 +1741,8 @@ implements class_0721 {
         for (class_0025 class_00252 : this.mcResourcePackRepository.IlIllllllIIlIIllllIIlIIIl()) {
             class_12962.func_152768_a("resource_pack[" + n++ + "]", class_00252.lIlllIlllIIIIlIIlllIllIII());
         }
-        if (this.llllIIllIlIlllllllIIlIIlI != null && this.llllIIllIlIlllllllIIlIIlI.IlIIIlIllIIIllIIIIlIIlIll() != null) {
-            class_12962.func_152768_a("snooper_partner", this.llllIIllIlIlllllllIIlIIlI.IlIIIlIllIIIllIIIIlIIlIll().lIllllIIlIIIlIllllllIIIll());
+        if (this.theIntegratedServer != null && this.theIntegratedServer.IlIIIlIllIIIllIIIIlIIlIll() != null) {
+            class_12962.func_152768_a("snooper_partner", this.theIntegratedServer.IlIIIlIllIIIllIIIIlIIlIll().lIllllIIlIIIlIllllllIIIll());
         }
     }
 
@@ -1878,22 +1884,27 @@ implements class_0721 {
         return this.IlIllllllIIlIIllllIIlIIIl;
     }
 
-    public boolean IIIIlIllIlIIlIIlIllIlIlll() {
-        return this.llIIIlIlIlIIlIllIIIllIlIl;
+    public boolean isIntegratedServerRunning() {
+        return this.integratedServerIsRunning;
     }
 
-    public boolean IlIlIIlllIllllllllIIIlIlI() {
-        return this.llIIIlIlIlIIlIllIIIllIlIl && this.llllIIllIlIlllllllIIlIIlI != null;
+    public boolean isSingleplayer() {
+        return this.integratedServerIsRunning && this.theIntegratedServer != null;
     }
 
-    public class_0519 llllIIIIlIIIlIIIIIIlIllll() {
-        return this.llllIIllIlIlllllllIIlIIlI;
+    public IntegratedServer getIntegratedServer() {
+        return this.theIntegratedServer;
     }
 
-    public static void llIIIIllIIIIIIIlIIIlIIIIl() {
-        class_0519 class_05192;
-        if (theMinecraft != null && (class_05192 = theMinecraft.llllIIIIlIIIlIIIIIIlIllll()) != null) {
-            class_05192.lIIIIlIlIIlllllIIllIIlIII();
+    public static void stopIntegratedServer() {
+        if (theMinecraft != null)
+        {
+            IntegratedServer integratedserver = theMinecraft.getIntegratedServer();
+
+            if (integratedserver != null)
+            {
+                integratedserver.stopServer();
+            }
         }
     }
 
@@ -1901,7 +1912,7 @@ implements class_0721 {
         return this.lIIIlIIIlIlllIllIIIlIIIlI;
     }
 
-    public static long llllllIlIllllIlIlIlIIIIlI() {
+    public static long getSystemTime() {
         return Sys.getTime() * 1000L / Sys.getTimerResolution();
     }
 
@@ -1954,7 +1965,7 @@ implements class_0721 {
     }
 
     public class_0260 llIlllIlIIllIlIIIIllIIlIl() {
-        return this.lllllIlllIIllIlIIlIIIllII instanceof class_0867 ? class_0260.lIlllIlllIIIIlIIlllIllIII : (this.lIIIIlIlIIlllllIIllIIlIII != null ? (this.lIIIIlIlIIlllllIIllIIlIII.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlllIIlIllIIIlllllIl instanceof class_1439 ? class_0260.IlIIIIIllllllIIlllIllllll : (this.lIIIIlIlIIlllllIIllIIlIII.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlllIIlIllIIIlllllIl instanceof class_1863 ? (class_0178.IlIllllllIIlIIllllIIlIIIl != null && class_0178.lllIlIIlIIIlIlIIIllIlllIl > 0 ? class_0260.lIllllIIlIIIlIllllllIIIll : class_0260.IIIllIIlIIIIIIlIlIIllIIlI) : (this.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII && this.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.IlIllllllIIlIIllllIIlIIIl ? class_0260.IlIllllllIIlIIllllIIlIIIl : class_0260.lllIlIIlIIIlIlIIIllIlllIl))) : class_0260.lllIIIllIIIIlllIlIIllIIll);
+        return this.lllllIlllIIllIlIIlIIIllII instanceof class_0867 ? class_0260.CREDITS : (this.lIIIIlIlIIlllllIIllIIlIII != null ? (this.lIIIIlIlIIlllllIIllIIlIII.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlllIIlIllIIIlllllIl instanceof class_1439 ? class_0260.NETHER : (this.lIIIIlIlIIlllllIIllIIlIII.lIlIllIIlIIlIIlIIlIIlIIll.IlIlIIlllIIlIllIIIlllllIl instanceof class_1863 ? (class_0178.IlIllllllIIlIIllllIIlIIIl != null && class_0178.lllIlIIlIIIlIlIIIllIlllIl > 0 ? class_0260.END_BOSS : class_0260.END) : (this.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII && this.lIIIIlIlIIlllllIIllIIlIII.lIIlIlIlIlIllIIlIIllllIll.IlIllllllIIlIIllllIIlIIIl ? class_0260.CREATIVE : class_0260.GAME))) : class_0260.MENU);
     }
 
     /*

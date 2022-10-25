@@ -22,6 +22,9 @@ import java.util.Date;
 import java.util.Random;
 
 import net.minecraft.init.Items;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.*;
+import net.minecraft.network.play.server.*;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.util.IChatComponent;
@@ -61,7 +64,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll() {
+    public void onNetworkTick() {
         this.IIIllIIlIIIIIIlIlIIllIIlI = false;
         ++this.IlIIIIIllllllIIlllIllllll;
         this.lIlllIlllIIIIlIIlllIllIII.lllIlIIlIIIlIlIIIllIlllIl.startSection("keepAlive");
@@ -69,7 +72,7 @@ implements class_1829 {
             this.lIIIIlIlIIlllllIIllIIlIII = this.IlIIIIIllllllIIlllIllllll;
             this.IIIllIllIIlIlIlIlIllllIIl = this.IlIllllllIIlIIllllIIlIIIl();
             this.IllIIlllllllIIlIIlIIIIlIl = (int)this.IIIllIllIIlIlIlIlIllllIIl;
-            this.lllIIIllIIIIlllIlIIllIIll(new class_1080(this.IllIIlllllllIIlIIlIIIIlIl));
+            this.lllIIIllIIIIlllIlIIllIIll(new S00PacketKeepAlive(this.IllIIlllllllIIlIIlIIIIlIl));
         }
         if (this.llIIlllIllIllllIIIlIIIIII > 0) {
             --this.llIIlllIllIllllIIIlIIIIII;
@@ -88,17 +91,17 @@ implements class_1829 {
 
     public void lllIIIllIIIIlllIlIIllIIll(String string) {
         class_0722 class_07222 = new class_0722(string);
-        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0542(class_07222), new class_1559(this, class_07222));
+        this.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S40PacketDisconnect(class_07222), new class_1559(this, class_07222));
         this.lllIIIllIIIIlllIlIIllIIll.IIIllIIlIIIIIIlIlIIllIIlI();
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0836 class_08362) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0CPacketInput class_08362) {
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(class_08362.IlIllllllIIlIIllllIIlIIIl(), class_08362.lIlllIlllIIIIlIIlllIllIII(), class_08362.IlIIIIIllllllIIlllIllllll(), class_08362.lIllllIIlIIIlIllllllIIIll());
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0983 class_09832) {
+    public void lllIIIllIIIIlllIlIIllIIll(C03PacketPlayer class_09832) {
         class_0976 class_09762 = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIllllllllIlIllllllllIlI);
         this.IIIllIIlIIIIIIlIlIIllIIlI = true;
         if (!this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIllIIlIlIlIlIllllIIl) {
@@ -248,11 +251,11 @@ implements class_1829 {
         this.IlIlIIlIlIllIIlIlIIllIIIl = d2;
         this.lllllIlllIIllIlIIlIIIllII = d3;
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(d, d2, d3, f, f2);
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0717(d, d2 + (double)1.62f, d3, f, f2, false));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S08PacketPlayerPosLook(d, d2 + (double)1.62f, d3, f, f2, false));
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1557 class_15572) {
+    public void lllIIIllIIIIlllIlIIllIIll(C07PacketPlayerDigging class_15572) {
         class_0976 class_09762 = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIllllllllIlIllllllllIlI);
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         if (class_15572.IIIllIIlIIIIIIlIlIIllIIlI() == 4) {
@@ -291,24 +294,24 @@ implements class_1829 {
                 if (!this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_09762, n, n2, n3, this.lllIlIIlIIIlIlIIIllIlllIl)) {
                     this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(n, n2, n3, class_15572.lIllllIIlIIIlIllllllIIIll());
                 } else {
-                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_09762));
+                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_09762));
                 }
             } else if (class_15572.IIIllIIlIIIIIIlIlIIllIIlI() == 2) {
                 this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(n, n2, n3);
                 if (class_09762.a_(n, n2, n3).lIllllIIlIIIlIllllllIIIll() != class_1855.lllIIIllIIIIlllIlIIllIIll) {
-                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_09762));
+                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_09762));
                 }
             } else if (class_15572.IIIllIIlIIIIIIlIlIIllIIlI() == 1) {
                 this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl(n, n2, n3);
                 if (class_09762.a_(n, n2, n3).lIllllIIlIIIlIllllllIIIll() != class_1855.lllIIIllIIIIlllIlIIllIIll) {
-                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_09762));
+                    this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_09762));
                 }
             }
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2016 class_20162) {
+    public void lllIIIllIIIIlllIlIIllIIll(C08PacketPlayerBlockPlacement class_20162) {
         Object object;
         class_0976 class_09762 = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIllllllllIlIllllllllIlI);
         ItemStack class_08972 = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll();
@@ -325,8 +328,8 @@ implements class_1829 {
             this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, class_09762, class_08972);
         } else if (class_20162.lIlllIlllIIIIlIIlllIllIII() >= this.lIlllIlllIIIIlIIlllIllIII.llIlllIlIIllIlIIIIllIIlIl() - 1 && (class_20162.lIllllIIlIIIlIllllllIIIll() == 1 || class_20162.lIlllIlllIIIIlIIlllIllIII() >= this.lIlllIlllIIIIlIIlllIllIII.llIlllIlIIllIlIIIIllIIlIl())) {
             object = new ChatComponentTranslation("build.tooHigh", this.lIlllIlllIIIIlIIlllIllIII.llIlllIlIIllIlIIIIllIIlIl());
-            ((class_1014)object).lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_0710((IChatComponent)object));
+            ((class_1014)object).lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S02PacketChat((IChatComponent)object));
             bl = true;
         } else {
             if (this.IlIlIIlllIIlIllIIIlllllIl && this.lllIlIIlIIIlIlIIIllIlllIl.lIllllIIlIIIlIllllllIIIll((double)n + 0.5, (double)n2 + 0.5, (double)n3 + 0.5) < 64.0 && !this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(class_09762, n, n2, n3, this.lllIlIIlIIIlIlIIIllIlllIl)) {
@@ -335,7 +338,7 @@ implements class_1829 {
             bl = true;
         }
         if (bl) {
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_09762));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_09762));
             if (n4 == 0) {
                 --n2;
             }
@@ -354,7 +357,7 @@ implements class_1829 {
             if (n4 == 5) {
                 ++n;
             }
-            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_2088(n, n2, n3, class_09762));
+            this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S23PacketBlockChange(n, n2, n3, class_09762));
         }
         if ((class_08972 = this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll()) != null && class_08972.lllIlIIlIIIlIlIIIllIlllIl == 0) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll[this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl] = null;
@@ -367,17 +370,17 @@ implements class_1829 {
             this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl();
             this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIIlIIIIIIlIlIIllIIlI = false;
             if (!ItemStack.lllIlIIlIIIlIlIIIllIlllIl(this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll(), class_20162.IIIllIIlIIIIIIlIlIIllIIlI())) {
-                this.lllIIIllIIIIlllIlIIllIIll(new class_1480(this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII, ((class_1291)object).IIIllIIlIIIIIIlIlIIllIIlI, this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll()));
+                this.lllIIIllIIIIlllIlIIllIIll(new S2FPacketSetSlot(this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII, ((class_1291)object).IIIllIIlIIIIIIlIlIIllIIlI, this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll()));
             }
         }
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(IChatComponent class_22552) {
+    public void onDisconnect(IChatComponent class_22552) {
         IlIllllllIIlIIllllIIlIIIl.info(this.lllIlIIlIIIlIlIIIllIlllIl.llllIIIIlIIIlIIIIIIlIllll() + " lost connection: " + class_22552);
         this.lIlllIlllIIIIlIIlllIllIII.lIlllIIllIIIIIIlIlIIlIllI();
         ChatComponentTranslation class_17902 = new ChatComponentTranslation("multiplayer.player.left", this.lllIlIIlIIIlIlIIIllIlllIl.llIIIIllIIIIIIIlIIIlIIIIl());
-        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.IlIlllIIIIIIlIIllIIllIlll);
+        class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.YELLOW);
         this.lIlllIlllIIIIlIIlllIllIII.lIIIllIIIIIllllIlIlIllIll().lllIIIllIIIIlllIlIIllIIll(class_17902);
         this.lllIlIIlIIIlIlIIIllIlllIl.lllllIlllIIllIlIIlIIIllII();
         this.lIlllIlllIIIIlIIlllIllIII.lIIIllIIIIIllllIlIlIllIll().IlIIIIIllllllIIlllIllllll(this.lllIlIIlIIIlIlIIIllIlllIl);
@@ -387,10 +390,10 @@ implements class_1829 {
         }
     }
 
-    public void lllIIIllIIIIlllIlIIllIIll(class_0703 class_07032) {
+    public void lllIIIllIIIIlllIlIIllIIll(Packet class_07032) {
         Object object;
-        if (class_07032 instanceof class_0710) {
-            class_0710 class_07102 = (class_0710)class_07032;
+        if (class_07032 instanceof S02PacketChat) {
+            S02PacketChat class_07102 = (S02PacketChat)class_07032;
             object = this.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIlIIIIlllIlIlIIl();
             if (object == class_1210.lllIlIIlIIIlIlIIIllIlllIl) {
                 return;
@@ -408,7 +411,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0361 class_03612) {
+    public void lllIIIllIIIIlllIlIIllIIll(C09PacketHeldItemChange class_03612) {
         if (class_03612.IlIllllllIIlIIllllIIlIIIl() >= 0 && class_03612.IlIllllllIIlIIllllIIlIIIl() < class_0503.lllIlIIlIIIlIlIIIllIlllIl()) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lllIIlIIIllllllIIIIlIlIlI.IlIllllllIIlIIllllIIlIIIl = class_03612.IlIllllllIIlIIllllIIlIIIl();
             this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
@@ -418,11 +421,11 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1960 class_19602) {
+    public void lllIIIllIIIIlllIlIIllIIll(C01PacketChatMessage class_19602) {
         if (this.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIlIIIIlllIlIlIIl() == class_1210.lllIlIIlIIIlIlIIIllIlllIl) {
             ChatComponentTranslation class_17902 = new ChatComponentTranslation("chat.cannotSend", new Object[0]);
-            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(class_1227.llIIllIllIlIIlIIllIllllll);
-            this.lllIIIllIIIIlllIlIIllIIll(new class_0710(class_17902));
+            class_17902.lllIlIIlIIIlIlIIIllIlllIl().lllIIIllIIIIlllIlIIllIIll(EnumChatFormatting.RED);
+            this.lllIIIllIIIIlllIlIIllIIll(new S02PacketChat(class_17902));
         } else {
             this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
             String string = class_19602.IlIllllllIIlIIllllIIlIIIl();
@@ -450,7 +453,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0012 class_00122) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0APacketAnimation class_00122) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         if (class_00122.IlIllllllIIlIIllllIIlIIIl() == 1) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lIIlIIIIIlIlllIlIIlIlIlll();
@@ -458,7 +461,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1233 class_12332) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0BPacketEntityAction class_12332) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         if (class_12332.IlIllllllIIlIIllllIIlIIIl() == 1) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lIlllIlllIIIIlIIlllIllIII(true);
@@ -481,7 +484,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1680 class_16802) {
+    public void lllIIIllIIIIlllIlIIllIIll(C02PacketUseEntity class_16802) {
         class_0976 class_09762 = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIllllllllIlIllllllllIlI);
         class_1521 class_15212 = class_16802.lllIIIllIIIIlllIlIIllIIll(class_09762);
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
@@ -507,7 +510,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0499 class_04992) {
+    public void lllIIIllIIIIlllIlIIllIIll(C16PacketClientStatus class_04992) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         class_1297 class_12972 = class_04992.IlIllllllIIlIIllllIIlIIIl();
         switch (class_12972) {
@@ -544,24 +547,24 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2144 class_21442) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0DPacketCloseWindow class_21442) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIlIIlIlIllIIlIlIIllIIIl();
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1454 class_14542) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0EPacketClickWindow class_14542) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         if (this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII == class_14542.IlIllllllIIlIIllllIIlIIIl() && this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl(this.lllIlIIlIIIlIlIIIllIlllIl)) {
             ItemStack class_08972 = this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll(class_14542.lIlllIlllIIIIlIIlllIllIII(), class_14542.IlIIIIIllllllIIlllIllllll(), class_14542.IllIIlllllllIIlIIlIIIIlIl(), (class_0814)this.lllIlIIlIIIlIlIIIllIlllIl);
             if (ItemStack.lllIlIIlIIIlIlIIIllIlllIl(class_14542.IIIllIIlIIIIIIlIlIIllIIlI(), class_08972)) {
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1434(class_14542.IlIllllllIIlIIllllIIlIIIl(), class_14542.lIllllIIlIIIlIllllllIIIll(), true));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S32PacketConfirmTransaction(class_14542.IlIllllllIIlIIllllIIlIIIl(), class_14542.lIllllIIlIIIlIllllllIIIll(), true));
                 this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIIlIIIIIIlIlIIllIIlI = true;
                 this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl();
                 this.lllIlIIlIIIlIlIIIllIlllIl.IlIlllIIIIIIlIIllIIllIlll();
                 this.lllIlIIlIIIlIlIIIllIlllIl.IIIllIIlIIIIIIlIlIIllIIlI = false;
             } else {
                 this.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII, class_14542.lIllllIIlIIIlIllllllIIIll());
-                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1434(class_14542.IlIllllllIIlIIllllIIlIIIl(), class_14542.lIllllIIlIIIlIllllllIIIll(), false));
+                this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S32PacketConfirmTransaction(class_14542.IlIllllllIIlIIllllIIlIIIl(), class_14542.lIllllIIlIIIlIllllllIIIll(), false));
                 this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll((class_0814)this.lllIlIIlIIIlIlIIIllIlllIl, false);
                 ArrayList<ItemStack> arrayList = new ArrayList<ItemStack>();
                 for (int i = 0; i < this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl.size(); ++i) {
@@ -573,7 +576,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_1853 class_18532) {
+    public void lllIIIllIIIIlllIlIIllIIll(C11PacketEnchantItem class_18532) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         if (this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII == class_18532.IlIllllllIIlIIllllIIlIIIl() && this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl(this.lllIlIIlIIIlIlIIIllIlllIl)) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lllIlIIlIIIlIlIIIllIlllIl(this.lllIlIIlIIIlIlIIIllIlllIl, class_18532.lIlllIlllIIIIlIIlllIllIII());
@@ -582,7 +585,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0286 class_02862) {
+    public void lllIIIllIIIIlllIlIIllIIll(C10PacketCreativeInventoryAction class_02862) {
         if (this.lllIlIIlIIIlIlIIIllIlllIl.IlIllllllIIlIIllllIIlIIIl.lllIlIIlIIIlIlIIIllIlllIl()) {
             boolean bl;
             boolean bl2 = class_02862.IlIllllllIIlIIllllIIlIIIl() < 0;
@@ -608,7 +611,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0039 class_00392) {
+    public void lllIIIllIIIIlllIlIIllIIll(C0FPacketConfirmTransaction class_00392) {
         Short s = (Short)this.lllIIlIIIllllllIIIIlIlIlI.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII);
         if (s != null && class_00392.lIlllIlllIIIIlIIlllIllIII() == s.shortValue() && this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lIlllIlllIIIIlIIlllIllIII == class_00392.IlIllllllIIlIIllllIIlIIIl() && !this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.IlIllllllIIlIIllllIIlIIIl(this.lllIlIIlIIIlIlIIIllIlllIl)) {
             this.lllIlIIlIIIlIlIIIllIlllIl.lIIIlIllllIlllIIIIIllIIIl.lllIIIllIIIIlllIlIIllIIll((class_0814)this.lllIlIIlIIIlIlIIIllIlllIl, true);
@@ -616,7 +619,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0317 class_03172) {
+    public void lllIIIllIIIIlllIlIIllIIll(C12PacketUpdateSign class_03172) {
         this.lllIlIIlIIIlIlIIIllIlllIl.IlIIlllllIIlIlIlllllIllll();
         class_0976 class_09762 = this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl.lIIllllllllIlIllllllllIlI);
         if (class_09762.IlIIIIIllllllIIlllIllllll(class_03172.IlIllllllIIlIIllllIIlIIIl(), class_03172.lIlllIlllIIIIlIIlllIllIII(), class_03172.IlIIIIIllllllIIlllIllllll())) {
@@ -654,7 +657,7 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0062 class_00622) {
+    public void lllIIIllIIIIlllIlIIllIIll(C00PacketKeepAlive class_00622) {
         if (class_00622.IlIllllllIIlIIllllIIlIIIl() == this.IllIIlllllllIIlIIlIIIIlIl) {
             int n = (int)(this.IlIllllllIIlIIllllIIlIIIl() - this.IIIllIllIIlIlIlIlIllllIIl);
             this.lllIlIIlIIIlIlIIIllIlllIl.IllIIlllllllIIlIIlIIIIlIl = (this.lllIlIIlIIIlIlIIIllIlllIl.IllIIlllllllIIlIIlIIIIlIl * 3 + n) / 4;
@@ -666,21 +669,21 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_2065 class_20652) {
+    public void lllIIIllIIIIlllIlIIllIIll(C13PacketPlayerAbilities class_20652) {
         this.lllIlIIlIIIlIlIIIllIlllIl.lIIlIlIlIlIllIIlIIllllIll.lllIlIIlIIIlIlIIIllIlllIl = class_20652.lIlllIlllIIIIlIIlllIllIII() && this.lllIlIIlIIIlIlIIIllIlllIl.lIIlIlIlIlIllIIlIIllllIll.IlIllllllIIlIIllllIIlIIIl;
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0287 class_02872) {
+    public void lllIIIllIIIIlllIlIIllIIll(C14PacketTabComplete class_02872) {
         ArrayList arrayList = Lists.newArrayList();
         for (String string : this.lIlllIlllIIIIlIIlllIllIII.lllIIIllIIIIlllIlIIllIIll(this.lllIlIIlIIIlIlIIIllIlllIl, class_02872.IlIllllllIIlIIllllIIlIIIl())) {
             arrayList.add(string);
         }
-        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new class_1719(arrayList.toArray(new String[arrayList.size()])));
+        this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll.lllIIIllIIIIlllIlIIllIIll(new S3APacketTabComplete(arrayList.toArray(new String[arrayList.size()])));
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0681 class_06812) {
+    public void lllIIIllIIIIlllIlIIllIIll(C15PacketClientSettings class_06812) {
         this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(class_06812);
     }
 
@@ -690,9 +693,9 @@ implements class_1829 {
      * Lifted jumps to return sites
      */
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0917 class_09172) {
+    public void lllIIIllIIIIlllIlIIllIIll(C17PacketCustomPayload class_09172) {
         if ("MC|BEdit".equals(class_09172.IlIllllllIIlIIllllIIlIIIl())) {
-            class_0181 class_01812 = new class_0181(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
+            PacketBuffer class_01812 = new PacketBuffer(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
             try {
                 ItemStack class_08972 = class_01812.IlIllllllIIlIIllllIIlIIIl();
                 if (class_08972 == null) {
@@ -716,7 +719,7 @@ implements class_1829 {
             }
         }
         if ("MC|BSign".equals(class_09172.IlIllllllIIlIIllllIIlIIIl())) {
-            class_0181 class_01813 = new class_0181(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
+            PacketBuffer class_01813 = new PacketBuffer(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
             try {
                 ItemStack class_08974 = class_01813.IlIllllllIIlIIllllIIlIIIl();
                 if (class_08974 == null) {
@@ -760,7 +763,7 @@ implements class_1829 {
                 this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(new ChatComponentTranslation("advMode.notEnabled", new Object[0]));
                 return;
             } else if (this.lllIlIIlIIIlIlIIIllIlllIl.lllIIIllIIIIlllIlIIllIIll(2, "") && this.lllIlIIlIIIlIlIIIllIlllIl.lIIlIlIlIlIllIIlIIllllIll.lIlllIlllIIIIlIIlllIllIII) {
-                class_0181 class_01814 = new class_0181(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
+                PacketBuffer class_01814 = new PacketBuffer(Unpooled.wrappedBuffer((byte[])class_09172.lIlllIlllIIIIlIIlllIllIII()));
                 try {
                     Object object;
                     byte by = class_01814.readByte();
@@ -773,7 +776,7 @@ implements class_1829 {
                     } else if (by == 1 && (object = this.lllIlIIlIIIlIlIIIllIlllIl.lIlIllIIlIIlIIlIIlIIlIIll.lllIIIllIIIIlllIlIIllIIll(class_01814.readInt())) instanceof class_2200) {
                         class_04842 = ((class_2200)object).IlIIIIIllllllIIlllIllllll();
                     }
-                    object = class_01814.IlIllllllIIlIIllllIIlIIIl(class_01814.readableBytes());
+                    object = class_01814.readStringFromBuffer(class_01814.readableBytes());
                     if (class_04842 == null) return;
                     class_04842.lllIIIllIIIIlllIlIIllIIll((String)object);
                     class_04842.lIlllIlllIIIIlIIlllIllIII();
@@ -826,8 +829,8 @@ implements class_1829 {
     }
 
     @Override
-    public void lllIIIllIIIIlllIlIIllIIll(class_0546 class_05462, class_0546 class_05463) {
-        if (class_05463 != class_0546.lllIlIIlIIIlIlIIIllIlllIl) {
+    public void lllIIIllIIIIlllIlIIllIIll(EnumConnectionState class_05462, EnumConnectionState class_05463) {
+        if (class_05463 != EnumConnectionState.PLAY) {
             throw new IllegalStateException("Unexpected change in protocol!");
         }
     }
