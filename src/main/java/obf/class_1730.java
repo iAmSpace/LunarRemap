@@ -1,0 +1,28 @@
+package obf;/*
+ * Decompiled with CFR 0.150.
+ * 
+ * Could not load the following classes:
+ *  io.netty.channel.Channel
+ *  io.netty.channel.ChannelHandler
+ *  io.netty.channel.ChannelInitializer
+ */
+import io.netty.channel.Channel;
+import io.netty.channel.ChannelHandler;
+import io.netty.channel.ChannelInitializer;
+
+class class_1730
+extends ChannelInitializer {
+    final /* synthetic */ class_0267 lllIIIllIIIIlllIlIIllIIll;
+
+    class_1730(class_0267 class_02672) {
+        this.lllIIIllIIIIlllIlIIllIIll = class_02672;
+    }
+
+    protected void initChannel(Channel channel) {
+        class_0800 class_08002 = new class_0800(false);
+        class_08002.lllIIIllIIIIlllIlIIllIIll(new class_1635(class_0267.lllIlIIlIIIlIlIIIllIlllIl(this.lllIIIllIIIIlllIlIIllIIll), class_08002));
+        class_0267.lllIIIllIIIIlllIlIIllIIll(this.lllIIIllIIIIlllIlIIllIIll).add(class_08002);
+        channel.pipeline().addLast("packet_handler", (ChannelHandler)class_08002);
+    }
+}
+
